@@ -1,0 +1,8 @@
+# Version 1.0.0
+# =======================================================
+# Ignore compiled files
+# =======================================================
+/Resources/Public/Css/*
+!/Resources/Public/Css/.gitkeep
+/Resources/Public/JavaScript/*
+!/Resources/Public/JavaScript/.gitkeep

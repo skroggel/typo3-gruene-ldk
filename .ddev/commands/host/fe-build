@@ -1,0 +1,8 @@
+#!/bin/bash
+
+## Description: Start the Webpack/Vue Watcher
+## Usage: build
+## Example: "ddev build"
+
+ddev npm --prefix ${DDEV_DOCROOT}/../packages/site_default/Resources/Private/Assets/ install
+ddev npm --prefix ${DDEV_DOCROOT}/../packages/site_default/Resources/Private/Assets/ run build

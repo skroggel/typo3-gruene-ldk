@@ -1,0 +1,225 @@
+#############################################################################
+# Config
+#############################################################################
+page = PAGE
+page {
+    typeNum = 0
+    shortcutIcon = EXT:site_default/Resources/Public/Icons/favicon-24px.png
+
+    headerData {
+
+        1000 = COA
+        1000 {
+
+            # Redirect for no Script
+            10 = TEXT
+            10 {
+                wrap = <noscript><meta http-equiv="refresh" content = "0;url=|"></noscript>
+                typolink {
+                    parameter = {$page.specialPages.noScriptPid}
+                    forceAbsoluteUrl = 1
+                    returnLast = url
+                }
+                if {
+                    value = {$page.specialPages.noScriptPid}
+                    equals.data = TSFE:id
+                    negate = 1
+                }
+            }
+
+            # Redirect for old browsers
+            20 = COA
+            20 {
+
+                10 = TEXT
+                10.value (
+                    <script>
+                        var outdatedPattern = /(?:msie |Trident\/7.0;(.*)rv:11.0)/i;
+                        if(outdatedPattern.test(window.navigator.userAgent)) {
+                )
+
+                20 = TEXT
+                20.wrap = window.location.href = "|";
+                20.typolink {
+                    parameter = {$page.specialPages.oldBrowserPid}
+                    forceAbsoluteUrl = 1
+                    returnLast = url
+                }
+
+                30 = TEXT
+                30.value (
+                    }
+                    </script>
+                )
+
+                if {
+                    value = {$page.specialPages.oldBrowserPid}
+                    equals.data = TSFE:id
+                    negate = 1
+                }
+            }
+        }
+
+        2000 = TEXT
+        2000 {
+            value (
+                <link rel="apple-touch-icon" type="image/png" href="{path:EXT:site_default/Resources/Public/Icons/favicon-24px.png}">
+                <link rel="apple-touch-icon" type="image/png" sizes="32x32" href="{path:EXT:site_default/Resources/Public/Icons/favicon-32px.png}">
+                <link rel="apple-touch-icon" type="image/png" sizes="57x57" href="{path:EXT:site_default/Resources/Public/Icons/favicon-57px.png}">
+                <link rel="apple-touch-icon" type="image/png" sizes="72x72" href="{path:EXT:site_default/Resources/Public/Icons/favicon-72px.png}">
+                <link rel="apple-touch-icon" type="image/png" sizes="96x96" href="{path:EXT:site_default/Resources/Public/Icons/favicon-96px.png}">
+                <link rel="apple-touch-icon" type="image/png" sizes="114x114" href="{path:EXT:site_default/Resources/Public/Icons/favicon-114px.png}">
+                <link rel="apple-touch-icon" type="image/png" sizes="128x128" href="{path:EXT:site_default/Resources/Public/Icons/favicon-128px.png}">
+                <link rel="apple-touch-icon" type="image/png" sizes="167x167" href="{path:EXT:site_default/Resources/Public/Icons/favicon-167px.png}">
+                <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="{path:EXT:site_default/Resources/Public/Icons/favicon-180px.png}">
+                <link rel="apple-touch-icon" type="image/png" sizes="192x192" href="{path:EXT:site_default/Resources/Public/Icons/favicon-192px.png}">
+                <link rel="apple-touch-icon" type="image/png" sizes="195x195" href="{path:EXT:site_default/Resources/Public/Icons/favicon-194px.png}">
+
+                <link rel="icon" type="image/png" href="{path:EXT:site_default/Resources/Public/Icons/favicon-24px.png}">
+                <link rel="icon" type="image/png" sizes="32x32" href="{path:EXT:site_default/Resources/Public/Icons/favicon-32px.png}">
+                <link rel="icon" type="image/png" sizes="57x57" href="{path:EXT:site_default/Resources/Public/Icons/favicon-57px.png}">
+                <link rel="icon" type="image/png" sizes="72x72" href="{path:EXT:site_default/Resources/Public/Icons/favicon-72px.png}">
+                <link rel="icon" type="image/png" sizes="96x96" href="{path:EXT:site_default/Resources/Public/Icons/favicon-96px.png}">
+                <link rel="icon" type="image/png" sizes="114x114" href="{path:EXT:site_default/Resources/Public/Icons/favicon-114px.png}">
+                <link rel="icon" type="image/png" sizes="128x128" href="{path:EXT:site_default/Resources/Public/Icons/favicon-128px.png}">
+                <link rel="icon" type="image/png" sizes="167x167" href="{path:EXT:site_default/Resources/Public/Icons/favicon-167px.png}">
+                <link rel="icon" type="image/png" sizes="180x180" href="{path:EXT:site_default/Resources/Public/Icons/favicon-180px.png}">
+                <link rel="icon" type="image/png" sizes="192x192" href="{path:EXT:site_default/Resources/Public/Icons/favicon-192px.png}">
+                <link rel="icon" type="image/png" sizes="195x195" href="{path:EXT:site_default/Resources/Public/Icons/favicon-194px.png}">
+            )
+            insertData = 1
+        }
+    }
+
+
+    meta {
+        viewport = {$page.meta.viewport}
+        robots = {$page.meta.robots}
+        apple-mobile-web-app-capable = {$page.meta.apple-mobile-web-app-capable}
+        X-UA-Compatible = {$page.meta.compatible}
+        X-UA-Compatible {
+            attribute = http-equiv
+        }
+    }
+
+
+    10 = FLUIDTEMPLATE
+    10 {
+        # Template names will be generated automatically by converting the applied
+        # backend_layout, there is no explicit mapping necessary.
+        #
+        # BackendLayout Key
+        # subnavigation_right_2_columns -> SubnavigationRight2Columns.html
+        #
+        # Backend Record
+        # uid: 1 -> 1.html
+        #
+        # Database Entry
+        # value: -1 -> None.html
+        # value: pagets__subnavigation_right_2_columns -> SubnavigationRight2Columns.html
+        templateName = TEXT
+        templateName {
+            cObject = TEXT
+            cObject {
+                data = pagelayout
+                required = 1
+                case = ucfirst
+                split {
+                    token = pagets__
+                    cObjNum = 1
+                    1.current = 1
+                }
+            }
+            ifEmpty = Default
+        }
+        templateRootPaths {
+            0 = EXT:site_default/Resources/Private/Page/Templates/
+            1 = {$page.fluidtemplate.templateRootPath}
+        }
+        partialRootPaths {
+            0 = EXT:site_default/Resources/Private/Page/Partials/
+            1 = EXT:site_default/Resources/Private/Content/Partials
+            2 = {$page.fluidtemplate.partialRootPath}
+        }
+        layoutRootPaths {
+            0 = EXT:site_default/Resources/Private/Page/Layouts/
+            1 = {$page.fluidtemplate.layoutRootPath}
+        }
+        dataProcessing {
+        10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+            10 {
+                references.fieldName = media
+            }
+        }
+        settings {
+            rootPid = TEXT
+            rootPid.value = {$page.rootPid}
+
+            schemaOrg = COA
+            schemaOrg {
+
+                teaserImage = COA
+                teaserImage {
+                    width = TEXT
+                    width.value = {$page.schemaOrg.teaserImage.width}
+
+                    height = TEXT
+                    height.value = {$page.schemaOrg.teaserImage.height}
+                }
+
+                organization = COA
+                organization{
+                    name = TEXT
+                    name = {$page.schemaOrg.organization.name}
+
+                    sameAs = COA
+                    sameAs  {
+                        10 = TEXT
+                        10 = https://www.warteck-invest.ch
+                    }
+                }
+            }
+        }
+    }
+
+    includeCSS {
+        siteDefaultLayout = EXT:site_default/Resources/Public/Css/styles.css
+    }
+
+    includeCSSLibs {
+        flyoutMenu = EXT:site_default/Resources/Public/Css/flyout-menu.css
+        pulldownMenu = EXT:site_default/Resources/Public/Css/pulldown-menu.css
+        slideMenu = EXT:site_default/Resources/Public/Css/jquery.slide-menu.css
+        responsiveTables = EXT:site_default/Resources/Public/Libs/BasicTable/basictable.min.css
+        # owl = EXT:site_default/Resources/Public/Libs/Owl/owl.carousel.min.css
+    }
+
+    includeJS {
+
+    }
+
+    includeJSFooter {
+        siteDefaultScripts = EXT:site_default/Resources/Public/JavaScript/scripts.js
+    }
+
+    includeJSLibs {
+    }
+
+    includeJSFooterlibs {
+        siteDefaultScripts = EXT:site_default/Resources/Public/JavaScript/vendor.js
+        flyoutMenu = EXT:site_default/Resources/Public/JavaScript/flyout-menu.js
+        pulldownMenu = EXT:site_default/Resources/Public/JavaScript/pulldown-menu.js
+        slideMenu = EXT:site_default/Resources/Public/JavaScript/jquery.slide-menu.js
+        responsiveTables = EXT:site_default/Resources/Public/Libs/BasicTable/jquery.basictable.min.js
+        # owl = EXT:site_default/Resources/Public/Libs/Owl/owl.carousel.min.js
+    }
+}
+
+
+// if critical css is rendered remove all redirects!
+pageCriticalCss < page
+pageCriticalCss {
+    typeNum = 1715339215
+    headerData.1000 >
+}
+

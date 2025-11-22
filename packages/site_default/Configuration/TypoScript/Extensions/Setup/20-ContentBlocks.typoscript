@@ -1,0 +1,12 @@
+lib.contentBlock {
+    layoutRootPaths {
+        5 = EXT:site_default/Resources/Private/FluidStyledContent/Layouts
+    }
+    partialRootPaths {
+        5 = EXT:site_default/Resources/Private/FluidStyledContent/Partials
+        6 = EXT:site_default/Resources/Private/Content/Partials
+    }
+    templateRootPaths {
+        5 = EXT:site_default/Resources/Private/FluidStyledContent/Templates
+    }
+}

@@ -1,0 +1,4 @@
+tx_news.templateLayouts {
+	  0 = Default
+	  1 = Teaser Box
+}

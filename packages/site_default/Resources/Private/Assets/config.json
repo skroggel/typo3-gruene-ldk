@@ -1,0 +1,104 @@
+{
+	"critical": {
+		"baseUrl": "https://example.ddev.site:8443",
+		"suffix": "_critical.min.css",
+		"dimensions": [
+			{
+				"width": 390,
+				"height": 844
+			},
+			{
+				"width": 576,
+				"height": 800
+			},
+			{
+				"width": 768,
+				"height": 1024
+			},
+			{
+				"width": 1024,
+				"height": 1400
+			},
+			{
+				"width": 1400,
+				"height": 1024
+			},
+			{
+				"width": 1920,
+				"height": 1024
+			}
+		],
+		"pages": [
+			{
+				"url": "/",
+				"template": "home"
+			}
+		],
+		"dest": "../../Public/CriticalCss/"
+	},
+	"paths": {
+		"styles": {
+			"source": {
+				"default": [
+					"src/scss/styles.scss",
+					"src/scss/editor.scss",
+					"src/scss/fsc-defaults.scss"
+				],
+				"vendor": [
+					"node_modules/@madj2k/fe-frontend-kit/tools/better-resize-event/better-resize-event.scss",
+					"node_modules/@madj2k/fe-frontend-kit/menus/flyout-menu/flyout-menu-2.0.0.scss",
+					"node_modules/@madj2k/fe-frontend-kit/menus/pulldown-menu/pulldown-menu-2.0.0.scss",
+					"node_modules/@madj2k/fe-frontend-kit/tools/scrolling/scrolling-2.0.0.scss",
+					"node_modules/@madj2k/fe-frontend-kit/tools/element-in-viewport/element-in-viewport-2.0.scss"
+				],
+				"plugins": [
+					"src/scss/plugins/**/*.scss"
+				]
+			},
+			"dest": "../../Public/Css/"
+		},
+		"scripts": {
+			"source": {
+				"default": [
+					"src/js/scripts.js",
+					"!src/js/**/_*.js",
+					"!src/js/plugin/*",
+					"!src/js/plugin/*"
+				],
+				"plugins": [
+					"src/js/plugins/**/*.js",
+					"src/js/modules/**/*.js"
+				],
+				"vendor": [
+					"node_modules/jquery/dist/jquery.js",
+					"node_modules/jquery.easing/jquery.easing.js",
+					"node_modules/bootstrap/dist/js/bootstrap.js",
+					"node_modules/lottie-web/build/player/lottie.js",
+					"node_modules/lenis/dist/lenis.min.js",
+					"node_modules/@madj2k/fe-frontend-kit/tools/better-resize-event/better-resize-event-2.0.js",
+					"node_modules/@madj2k/fe-frontend-kit/menus/flyout-menu/flyout-menu-2.0.js",
+					"node_modules/@madj2k/fe-frontend-kit/menus/pulldown-menu/pulldown-menu-2.0.js",
+					"node_modules/@madj2k/fe-frontend-kit/tools/scrolling/scrolling-2.0.js",
+					"node_modules/@madj2k/fe-frontend-kit/tools/element-in-viewport/element-in-viewport-2.0.js"
+				]
+			},
+			"dest": "../../Public/JavaScript/"
+		},
+		"watch": {
+			"styles": "./src/scss/**/*.{css,less,scss}",
+			"scripts": "./src/js/**/*.js"
+		}
+	},
+	"run": {
+		"development": {
+			"uglify": true,
+			"cleancss": false,
+			"autoprefixer": true
+		},
+		"production": {
+			"uglify": true,
+			"cleancss": true,
+			"autoprefixer": true
+		}
+	}
+}

@@ -1,0 +1,183 @@
+/* ==================================================
+* Table
+* ================================================== */
+/* Initialisation via JS:
+
+$('.table-responsive table:has(thead)').basictable({
+  breakpoint: 768,
+});
+
+ */
+
+.table {
+    @include copy-small;
+    margin-bottom:0;
+
+    width: 100%;
+    vertical-align: top;
+    color: $color-secondary;
+    border: 0;
+
+    tr {
+        border-bottom: 1px solid map-get($color-map, 'secondary-100');
+
+        &:last-child {
+            border-bottom: 0;
+        }
+    }
+
+    th,
+    td {
+        color: $color-secondary;
+        padding: rem-calc(16);
+        border: 0;
+    }
+
+    thead {
+
+        tr {
+            border:0;
+        }
+
+        td, th {
+            background-color: map-get($color-map, 'secondary-100');
+            // font-weight: $font-weight-bold;
+            font-family: $font-family-sans;
+        }
+
+        th:first-child,
+        td:first-child {
+            border-top-left-radius: rem-calc(8);
+        }
+
+        th:last-child,
+        td:last-child {
+            border-top-right-radius: rem-calc(8);
+        }
+    }
+
+    tbody {
+        tr {
+            border-color: map-get($color-map, 'secondary-100');
+        }
+    }
+
+    // table with no thead have to be made responsive manually
+    @include media-breakpoint-down(md) {
+
+        &:not(:has(thead)) {
+
+            /** no border between table-blocks */
+            tr {
+                border: 0;
+                display: flex;
+                flex-direction: column;
+            }
+
+            tbody {
+
+                display: block;
+
+                /** build visual table block */
+                tr > *:first-child {
+                    margin-top: map-get($spacers, 3);
+                }
+
+                td, th {
+
+                    /** border between visual rows */
+                    border-bottom: 1px solid map-get($color-map, 'secondary-100');
+
+                    &:last-child {
+                        border-bottom: 0;
+                    }
+                }
+            }
+
+            tbody tr:first-of-type {
+                td, th {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+
+    // JS based responsive table
+    @include media-breakpoint-down(md) {
+
+        &.bt {
+
+            /** no border between table-blocks */
+            tr {
+                border: 0;
+            }
+
+            tbody td {
+
+                /** border between visual rows */
+                border-bottom: 1px solid map-get($color-map, 'secondary-100');
+
+                &:last-child {
+                    border-bottom: 0;
+                }
+
+                /** build visual table block */
+                &:first-of-type {
+                    margin-top: map-get($spacers, 3);
+                }
+
+                /** column on the left side on mobile */
+                &::before {
+                    width: 50%;
+                    content: attr(data-th); // remove ":"
+                }
+            }
+
+            tbody tr:first-of-type {
+                td {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+}
+
+
+/** Table with two axes */
+.table.two-axes {
+
+    /* second axis */
+    tr td:first-of-type {
+        // font-weight: $font-weight-bold;
+        font-family: $font-family-sans;
+    }
+
+    // JS-based responsive table
+    @include media-breakpoint-down(md) {
+
+        &.bt {
+            /** additional label of first axis  */
+            tbody td:first-of-type {
+                &::before {
+                    display: none;
+                }
+            }
+
+            /* first row with header - first axis */
+            tr td:first-of-type {
+                background-color: map-get($color-map, 'secondary-100');
+                // font-weight: $font-weight-bold;
+                font-family: $font-family-sans;
+                border-top-left-radius: rem-calc(8);
+                border-top-right-radius: rem-calc(8);
+                margin-top: map-get($spacers, 2);
+            }
+
+            tbody tr:first-of-type {
+                td:first-of-type {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+}

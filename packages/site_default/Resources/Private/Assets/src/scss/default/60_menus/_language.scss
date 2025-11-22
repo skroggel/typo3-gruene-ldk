@@ -1,0 +1,35 @@
+/* ==================================================
+* Main-Menu
+* ================================================== */
+.nav-language {
+
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    .nav-pulldown {
+
+        // flag
+        &-link-image {
+            width:rem-calc(24);
+            height: rem-calc(24);
+            display:inline-block;
+            overflow:hidden;
+
+            img {
+                width:100%;
+                height:100%;
+                object-fit:cover;
+                display:block;
+            }
+        }
+    }
+
+    // arrow-down
+    .toggle {
+        &-icon {
+            font-size: rem-calc(16);
+            width: rem-calc(16);
+        }
+    }
+}

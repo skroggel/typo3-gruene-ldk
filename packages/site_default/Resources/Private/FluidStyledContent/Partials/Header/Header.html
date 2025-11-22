@@ -1,0 +1,8 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+	<f:if condition="{header}">
+		<f:comment><!-- @see EXT:site_default/Resources/Private/Mask/Frontend/Partials/Utils/Header.html --></f:comment>
+		<f:alias map="{wrapClass: 'default'}">
+			<f:render partial="Utils/Header" arguments="{_all}" />
+		</f:alias>
+	</f:if>
+</html>

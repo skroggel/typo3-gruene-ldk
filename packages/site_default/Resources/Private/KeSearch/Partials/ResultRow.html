@@ -1,0 +1,20 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:kesearch="http://typo3.org/ns/Tpwd/KeSearch/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+    <div class="search-result-item">
+        <a class="link-wrap" href="{resultrow.url}">
+            <f:render partial="Utils/Header"
+                      arguments="{header: '{resultrow.title -> f:format.stripTags()}',
+                                  wrapClass: 'search-result-header',
+                                  layout: 4, visualLayout: 5, settings: settings}" />
+
+            <p class="search-result-path">
+                <f:format.raw>{resultrow.url}</f:format.raw>
+            </p>
+
+            <p class="search-result-content"><f:format.raw>{resultrow.teaser}</f:format.raw></p>
+        </a>
+    </div>
+
+</html>

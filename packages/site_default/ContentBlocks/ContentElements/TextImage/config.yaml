@@ -1,0 +1,11 @@
+name: madj2k/text-image
+prefixType: vendor # prefixing with vendor for reuse of database fields
+fields:
+  - identifier: madj2k/palette-header
+    type: Basic
+  - identifier: madj2k/bodytext-reduced-required
+    type: Basic
+  - identifier: tab-media
+    type: Tab
+  - identifier: madj2k/assets-single-required
+    type: Basic

@@ -1,0 +1,11 @@
+#############################################################################
+# Config
+#############################################################################
+config {
+    no_cache = 0
+    removeDefaultJS = 0
+    admPanel = 0
+    prefixLocalAnchors = all
+    headerComment = Built by us
+    sendCacheHeaders = 1
+}

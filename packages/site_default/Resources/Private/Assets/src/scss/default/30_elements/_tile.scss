@@ -1,0 +1,74 @@
+/* ==================================================
+* Tile
+* ================================================== */
+.tile-wrap {
+    display:flex;
+    gap: rem-calc(20);
+    flex-wrap: wrap;
+}
+
+.tile {
+
+    flex-basis: 100%;
+    @include media-breakpoint-up(sm) {
+        @include flex-basis(2, rem-calc(20));
+    }
+
+    @include media-breakpoint-up(md) {
+        @include flex-basis(3, rem-calc(20));
+    }
+
+    @include media-breakpoint-up(xl) {
+        @include flex-basis(4, rem-calc(20));
+    }
+
+    &-inner {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: rem-calc(24);
+    }
+
+    &-image {
+        width: 100%;
+        overflow: hidden;
+        margin: 0;
+
+        img {
+          //  aspect-ratio: 1/1;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        img[src$=".svg"] {
+            height: 100%;
+        }
+    }
+
+    &-body {
+        padding-top: rem-calc(24);
+        color: $color-text;
+    }
+
+    &-category {
+        @include copy-small;
+        display:block;
+        padding-bottom: rem-calc(6);
+    }
+
+    &-header {
+        .headline {
+            @include hyphenate;
+        }
+    }
+
+    &-textwrap {
+        @include copy-small;
+        color: $color-text;
+    }
+
+    &-footer {
+        padding-top: rem-calc(24);
+        color: $color-text;
+    }
+}

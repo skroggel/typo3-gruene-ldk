@@ -1,0 +1,53 @@
+/* ==================================================
+* Main-Menu
+* ================================================== */
+.nav-main {
+
+    &-list {
+        justify-content: center;
+        width: 100%;
+    }
+
+    &-item {
+        @include h4;
+    }
+
+    &-link {
+        // accessibility
+        @include accessibility-outline($color: $color-outline);
+    }
+
+    &-link.level-1,
+    &-link.level-1:link,
+    &-link.level-1:visited,
+    &-link.level-1:hover {
+
+        @include h4;
+        color: $color-secondary
+
+        /** Fix for menu jumping on active/hover
+        &::after {
+            display:block;
+            content:attr(title);
+            font-family: $font-family-sans;
+            visibility: hidden;
+            overflow: hidden;
+            height: 0;
+        }*/
+    }
+
+    &-link.level-1 {
+
+        &:hover,
+        &.active {
+            color: $color-primary;
+            text-decoration: underline;
+            padding-bottom: rem-calc(2); // fix for strange behavior
+        }
+
+        &.active {
+            padding-bottom: rem-calc(0); // fix for strange behavior
+        }
+    }
+}
+

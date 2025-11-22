@@ -1,0 +1,69 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:kesearch="http://typo3.org/ns/Tpwd/KeSearch/ViewHelpers"
+      xmlns:siteDefault="http://typo3.org/ns/Madj2k/SiteDefault/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+    <f:layout name="General" />
+
+    <f:section name="content">
+
+        <f:render section="ResultCount" arguments="{_all}"/>
+        <f:switch expression="{conf.templateLayoutOverride}">
+            <f:case value="20"><f:render section="ResultCount" arguments="{_all}"/></f:case>
+            <f:defaultCase><f:render section="Default" arguments="{_all}"/></f:defaultCase>
+        </f:switch>
+    </f:section>
+
+    <!-- ================================================================================= -->
+
+    <f:section name="ResultCount">
+        <f:if condition="{siteDefault:searchWord()}">
+            <f:then>
+                <f:variable name="text"><f:translate key="search.resultsForWord" extensionName="site_default" arguments="{0: numberofresults, 1: '{siteDefault:searchWord()}'}" /></f:variable>
+            </f:then>
+            <f:else>
+                <f:variable name="text"><f:translate key="search.headline" extensionName="site_default" /></f:variable>
+            </f:else>
+        </f:if>
+        <f:render partial="Utils/Header"
+                  arguments="{header: text, wrapClass: 'search-header', settings: settings}" />
+    </f:section>
+
+    <!-- ================================================================================= -->
+
+    <f:section name="Default">
+
+        <f:if condition="{wordsTooShort}">
+            <div class="alert alert-warning" role="alert">
+                {f:translate(key: 'LLL:EXT:ke_search/Resources/Private/Language/locallang_searchbox.xlf:searchword_length_error', arguments: {0: extConf.searchWordLength})}
+            </div>
+        </f:if>
+
+        <f:if condition="{errors -> f:count()}">
+            <div class="alert alert-danger" role="alert">
+                <f:for each="{errors}" as="error">
+                    <div class="ke_search-error">{error}</div>
+                </f:for>
+            </div>
+        </f:if>
+
+        <f:if condition="{numberofresults} == 0">
+            <f:then>
+                <f:render partial="NoResults" arguments="{conf: conf, noResultsText: noResultsText}" />
+            </f:then>
+            <f:else>
+                <f:render partial="ResultRows" arguments="{conf: conf,
+                                                           numberofresults: numberofresults,
+                                                           resultrows: resultrows,
+                                                           sortingLinks: sortingLinks,
+                                                           pagination:pagination,
+                                                           queryTime:queryTime,
+                                                           queryTimeText:queryTimeText
+                                                           }" />
+            </f:else>
+        </f:if>
+
+
+    </f:section>
+
+</html>

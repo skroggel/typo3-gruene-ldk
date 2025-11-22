@@ -1,0 +1,24 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true"
+>
+
+    <f:if condition="{file}">
+        <f:if condition="{fileMobile} && {fileTablet}">
+            <f:then>
+                <f:render partial="Utils/Media" arguments="{file: file, wrapClass: '{wrapClass} d-none d-lg-block',
+                                                            settings: settings, settingsVariant: 'desktop'}" />
+
+                <f:render partial="Utils/Media" arguments="{file: fileTablet, wrapClass: '{wrapClass} d-none d-sm-block d-lg-none',
+                                                            settings: settings, settingsVariant: 'tablet'}" />
+
+                <f:render partial="Utils/Media" arguments="{file: fileMobile, wrapClass: '{wrapClass} d-block d-sm-none',
+                                                            settings: settings, settingsVariant: 'mobile'}" />
+            </f:then>
+            <f:else>
+                <f:render partial="Utils/Media" arguments="{file: file, wrapClass: '{wrapClass}',
+                                                            settings: settings, settingsVariant: 'desktop'}" />
+            </f:else>
+        </f:if>
+    </f:if>
+
+</html>

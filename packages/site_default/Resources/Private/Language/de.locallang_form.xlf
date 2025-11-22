@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" target-language="de" datatype="plaintext" original="messages" >
+        <body>
+
+			<trans-unit id="element.first-name.properties.label" approved="yes">
+				<source>First Name</source>
+				<target>Vorname</target>
+			</trans-unit>
+			<trans-unit id="element.first-name.properties.placeholder" approved="yes">
+				<source>First Name</source>
+				<target>Vorname</target>
+			</trans-unit>
+			<trans-unit id="element.last-name.properties.label" approved="yes">
+				<source>Last Name</source>
+				<target>Nachname</target>
+			</trans-unit>
+			<trans-unit id="element.last-name.properties.placeholder" approved="yes">
+				<source>Last Name</source>
+				<target>Nachname</target>
+			</trans-unit>
+			<trans-unit id="element.company.properties.label" approved="yes">
+				<source>Company</source>
+				<target>Unternehmen</target>
+			</trans-unit>
+			<trans-unit id="element.company.properties.placeholder" approved="yes">
+				<source>Company</source>
+				<target>Unternehmen</target>
+			</trans-unit>
+			<trans-unit id="element.address.properties.label" approved="yes">
+				<source>Street, Number</source>
+				<target>Straße, Hausnr.</target>
+			</trans-unit>
+			<trans-unit id="element.address.properties.placeholder" approved="yes">
+				<source>Street, Number</source>
+				<target>Straße, Hausnr.</target>
+			</trans-unit>
+			<trans-unit id="element.zip.properties.label" approved="yes">
+				<source>ZIP</source>
+				<target>PLZ</target>
+			</trans-unit>
+			<trans-unit id="element.zip.properties.placeholder" approved="yes">
+				<source>ZIP</source>
+				<target>PLZ</target>
+			</trans-unit>
+			<trans-unit id="element.city.properties.label" approved="yes">
+				<source>City</source>
+				<target>Ort</target>
+			</trans-unit>
+			<trans-unit id="element.city.properties.placeholder" approved="yes">
+				<source>City</source>
+				<target>Ort</target>
+			</trans-unit>
+			<trans-unit id="element.telephone.properties.label" approved="yes">
+				<source>Telephone</source>
+				<target>Telefon</target>
+			</trans-unit>
+			<trans-unit id="element.telephone.properties.placeholder" approved="yes">
+				<source>Telephone</source>
+				<target>Telefon</target>
+			</trans-unit>
+			<trans-unit id="element.country.properties.label" approved="yes">
+				<source>Country</source>
+				<target>Land</target>
+			</trans-unit>
+			<trans-unit id="element.country.properties.placeholder" approved="yes">
+				<source>Country</source>
+				<target>Land</target>
+			</trans-unit>
+			<trans-unit id="element.email.properties.label" approved="yes">
+				<source>E-Mail</source>
+				<target>E-Mail</target>
+			</trans-unit>
+			<trans-unit id="element.email.properties.placeholder" approved="yes">
+				<source>E-Mail</source>
+				<target>E-Mail</target>
+			</trans-unit>
+			<trans-unit id="element.message.properties.label" approved="yes">
+				<source>Message</source>
+				<target>Nachricht</target>
+			</trans-unit>
+			<trans-unit id="element.message.properties.placeholder" approved="yes">
+				<source>Message</source>
+				<target>Nachricht</target>
+			</trans-unit>
+			<trans-unit id="element.consent-privacy-policy.properties.label" approved="yes">
+				<source>I have read the #privacyPolicy# and agree that my personal data may be used for the purpose of processing my enquiry. I can revoke my consent at any time with effect for the future by sending an e-mail to %s.</source>
+				<target>Ich habe die #privacyPolicy# gelesen und bin damit einverstanden, dass meine personenbezogenen Daten zum Zwecke der Bearbeitung meiner Anfrage verwendet werden. Ich kann meine Einwilligung per E-Mail an %s jederzeit mit Wirkung für die Zukunft widerrufen.</target>
+			</trans-unit>
+			<trans-unit id="element.consent-privacy-policy.properties.linkText" approved="yes">
+				<source>Privacy Policy</source>
+				<target>Datenschutzerklärung</target>
+			</trans-unit>
+			<trans-unit id="element.captcha.properties.label" approved="yes">
+				<source>Captcha (Spam-Protection)</source>
+				<target>Captcha (Spam-Schutz)</target>
+			</trans-unit>
+
+
+			<trans-unit id="element.Form.renderingOptions.submitButtonLabel" approved="yes">
+				<source>Send</source>
+				<target>Senden</target>
+			</trans-unit>
+			<trans-unit id="finisher.Confirmation.message" approved="yes">
+				<source>Thank you for your message. We will get in touch with you as soon as possible.</source>
+				<target>Vielen Dank für Ihre Nachricht. Wir setzen uns zeitnah mit Ihnen in Verbindung.</target>
+			</trans-unit>
+
+
+			<trans-unit id="validation.error.1221559976" approved="yes">
+				<source>Please enter a valid e-mail address.</source>
+				<target>Bitte geben Sie eine gültige E-Mail-Adresse ein.</target>
+			</trans-unit>
+			<trans-unit id="validation.error.1221560910" approved="yes">
+				<source>This field must be filled in.</source>
+				<target>Dieses Feld muss ausgefüllt werden.</target>
+			</trans-unit>
+			<trans-unit id="validation.error.1221560718" approved="yes">
+				<source>This field must be filled in.</source>
+				<target>Dieses Feld muss ausgefüllt werden.</target>
+			</trans-unit>
+			<trans-unit id="validation.error.1347992400" approved="yes">
+				<source>This field must be filled in.</source>
+				<target>Dieses Feld muss ausgefüllt werden.</target>
+			</trans-unit>
+			<trans-unit id="validation.error.1347992453" approved="yes">
+				<source>This field must be filled in.</source>
+				<target>Dieses Feld muss ausgefüllt werden.</target>
+			</trans-unit>
+
+        </body>
+    </file>
+</xliff>

@@ -1,0 +1,94 @@
+/* ==================================================
+* Basic maps
+* ================================================== */
+@use 'sass:math';
+
+$page-padding: (
+    xs: $spacer,
+    sm: $spacer, // mobile
+    md: $spacer,
+    lg: $spacer, // tablet
+    xl: $spacer,
+    xxl: $spacer,
+    xxxl: $spacer
+);
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px, // mobile
+    md: 768px,
+    lg: 992px, // tablet
+    xl: 1200px,
+    xxl: 1400px,
+    xxxl: $page-max-width // custom
+);
+
+$container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1140px,
+    xxl: 1320px,
+    xxxl: $page-max-inner-width // custom
+);
+
+$spacers: (
+    0: 0,
+    1: 8px,
+    2: 12px,
+    3: 16px,
+    4: 24px,
+    5: 32px,
+    6: 40px,
+    7: 48px,
+    8: 56px,
+    9: 64px,
+    10: 80px,
+    11: 96px,
+    12: 160px
+);
+
+$content-spacers-blocks: (
+    'text',
+    'text-image',
+    'text-video'
+);
+$content-spacers: (
+    'xs': (
+        'section': map-get($spacers, 6), // space between different sections
+        'block': map-get($spacers, 4), // space between content blocks
+    ),
+    'sm': (
+        'section': map-get($spacers, 6), // space between different sections
+        'block': map-get($spacers, 4), // space between content blocks
+    ),
+    'md': (
+        'section': map-get($spacers, 6), // space between different sections
+        'block': map-get($spacers, 4), // space between content blocks
+    ),
+    'lg': (
+        'section': map-get($spacers, 7), // space between different sections
+        'block': map-get($spacers, 6), // space between content blocks
+    ),
+    'xl': (
+        'section': map-get($spacers, 7), // space between different sections
+        'block': map-get($spacers, 6), // space between content blocks
+    ),
+    'xxl': (
+        'section': map-get($spacers, 7), // space between different sections
+        'block': map-get($spacers, 6), // space between content blocks
+    ),
+    'xxxl': (
+        'section': map-get($spacers, 7), // space between different sections
+        'block': map-get($spacers, 6), // space between content blocks
+    )
+);
+
+$gutters: (
+    0: 0,
+    1: $grid-gutter-width * .25,
+    2: $grid-gutter-width * .5,
+    3: $grid-gutter-width,
+    4: $grid-gutter-width * 1.5,
+    5: $grid-gutter-width * 3,
+);

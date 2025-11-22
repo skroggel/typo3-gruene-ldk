@@ -1,0 +1,7 @@
+styles {
+    templates {
+        layoutRootPath = EXT:site_default/Resources/Private/Layouts/ContentElements/
+        partialRootPath = EXT:site_default/Resources/Private/Partials/ContentElements/
+        templateRootPath = EXT:site_default/Resources/Private/Templates/ContentElements/
+    }
+}

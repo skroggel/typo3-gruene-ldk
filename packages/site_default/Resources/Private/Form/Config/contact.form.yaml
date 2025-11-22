@@ -1,0 +1,193 @@
+type: Form
+identifier: contact
+label: "Contact"
+prototypeName: standard
+renderingOptions:
+  fluidAdditionalAttributes:
+    novalidate: "novalidate"
+  formNavigation:
+    btnSubmitClassAttribute: cta
+
+renderables:
+  step-contact:
+    identifier: step-contact
+    type: Page
+    renderables:
+
+      row-salutation:
+        identifier: row-salutation
+        type: GridRow
+        renderables:
+          salutation:
+            identifier: salutation
+            type: Salutation
+            validators:
+              - identifier: NotEmpty
+
+      row-names:
+        identifier: row-names
+        type: GridRow
+        renderables:
+          first-name:
+            identifier: first-name
+            type: Text
+            validators:
+              - identifier: NotEmpty
+            properties:
+              additionalClassAttribute: as-placeholder # must be added to template "field" until TYPO3 v14
+              fluidAdditionalAttributes:
+                placeholder: 'First Name'
+
+          last-name:
+            identifier: last-name
+            type: Text
+            validators:
+              - identifier: NotEmpty
+            properties:
+              additionalClassAttribute: as-placeholder # must be added to template "field" until TYPO3 v14
+              fluidAdditionalAttributes:
+                placeholder: 'Last Name'
+
+      row-company:
+        identifier: row-company
+        type: GridRow
+        renderables:
+          company:
+            identifier: company
+            type: Text
+            properties:
+              additionalClassAttribute: as-placeholder # must be added to template "field" until TYPO3 v14
+              fluidAdditionalAttributes:
+                placeholder: 'Company'
+
+      row-address:
+        identifier: row-address
+        type: GridRow
+        renderables:
+          address:
+            identifier: address
+            type: Text
+            validators:
+              - identifier: NotEmpty
+            properties:
+              additionalClassAttribute: as-placeholder # must be added to template "field" until TYPO3 v14
+              fluidAdditionalAttributes:
+                placeholder: 'Address'
+
+      row-zip-city:
+        identifier: row-zip-city
+        type: GridRow
+        renderables:
+          zip:
+            identifier: zip
+            type: Text
+            validators:
+              - identifier: NotEmpty
+            properties:
+              additionalClassAttribute: as-placeholder # must be added to template "field" until TYPO3 v14
+              fluidAdditionalAttributes:
+                placeholder: 'ZIP'
+
+          city:
+            identifier: city
+            type: Text
+            validators:
+              - identifier: NotEmpty
+            properties:
+              additionalClassAttribute: as-placeholder # must be added to template "field" until TYPO3 v14
+              fluidAdditionalAttributes:
+                placeholder: 'City'
+
+      row-telephone-country:
+        identifier: row-telephone-country
+        type: GridRow
+        renderables:
+          telephone:
+            identifier: telephone
+            type: Telephone
+            validators:
+              - identifier: Phone
+                options:
+                  allowLeadingPlus: 1
+            properties:
+              additionalClassAttribute: as-placeholder # must be added to template "field" until TYPO3 v14
+              fluidAdditionalAttributes:
+                placeholder: 'Telephone'
+
+          country:
+            identifier: country
+            type: Text
+            properties:
+              additionalClassAttribute: as-placeholder # must be added to template "field" until TYPO3 v14
+              fluidAdditionalAttributes:
+                placeholder: 'Country'
+
+      row-email:
+        identifier: row-email
+        type: GridRow
+        renderables:
+          email:
+            identifier: email
+            type: TextEmail
+            validators:
+              - identifier: BetterEmailAddress
+              - identifier: NotEmpty
+            properties:
+              additionalClassAttribute: as-placeholder # must be added to template "field" until TYPO3 v14
+              fluidAdditionalAttributes:
+                placeholder: 'Email'
+
+      row-message:
+        identifier: row-message
+        type: GridRow
+        renderables:
+          message:
+            identifier: message
+            type: Textarea
+            validators:
+              - identifier: NotEmpty
+            properties:
+              additionalClassAttribute: as-placeholder # must be added to template "field" until TYPO3 v14
+              fluidAdditionalAttributes:
+                placeholder: 'Message'
+
+      consent-container:
+        identifier: consent-container
+        type: ConsentContainer
+        renderables:
+          row-consent:
+            identifier: row-consent
+            type: GridRow
+            renderables:
+              consent-privacy-policy:
+                identifier: consent-privacy-policy
+                type: ConsentCheckbox
+                properties:
+                  hideText: 1
+                  privacyPolicyPid: 36 # fallback
+                validators:
+                  - identifier: NotEmpty
+
+          row-captcha:
+            identifier: row-captcha
+            type: GridRow
+            renderables:
+              captcha:
+                identifier: hcaptcha
+                type: Hcaptcha
+                properties:
+                  containerClassAttribute: 'form-element form-element-hcaptcha hcaptcha'
+                  elementClassAttribute: 'form-hcaptcha'
+                validators:
+                  - identifier: Hcaptcha
+
+finishers:
+
+  emailToReceiver:
+    identifier: EmailToReceiver
+
+  emailToSender:
+    identifier: EmailToSender
+
+  confirmation:
+    identifier: ConfirmationMessage

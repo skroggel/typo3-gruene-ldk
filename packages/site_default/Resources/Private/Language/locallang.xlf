@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2023-09-17UTC13:49:100">
+		<body>
+
+ 			<trans-unit id="menu.mainmenu">
+				<source>Mainmenu</source>
+			</trans-unit>
+			<trans-unit id="menu.mobile">
+				<source>Mobile Menu</source>
+			</trans-unit>
+			<trans-unit id="menu.language">
+				<source>Language</source>
+			</trans-unit>
+			<trans-unit id="menu.search">
+				<source>Search</source>
+			</trans-unit>
+			<trans-unit id="menu.open">
+				<source>Opens the menu</source>
+			</trans-unit>
+			<trans-unit id="menu.openSubmenu">
+				<source>Opens the sub-menu</source>
+			</trans-unit>
+			<trans-unit id="menu.levelUp">
+				<source>One menu-level up</source>
+			</trans-unit>
+			<trans-unit id="menu.back">
+				<source>back</source>
+			</trans-unit>
+			<trans-unit id="menu.metanav">
+				<source>Meta Navigation</source>
+			</trans-unit>
+			<trans-unit id="menu.subnav">
+				<source>Sub-Navigation</source>
+			</trans-unit>
+			<trans-unit id="menu.languageSwitch">
+				<source>Language Switch</source>
+			</trans-unit>
+			<trans-unit id="menu.languageSwitch.current">
+				<source>Current Language:</source>
+			</trans-unit>
+
+
+			<trans-unit id="menu.jumpToNavigation">
+				<source>Jump to main menu</source>
+			</trans-unit>
+			<trans-unit id="menu.jumpToContent">
+				<source>Jump to main content</source>
+			</trans-unit>
+
+
+			<trans-unit id="label.readMore">
+				<source>read more</source>
+				<target>weiterlesen</target>
+			</trans-unit>
+			<trans-unit id="label.learnMore">
+				<source>learn more</source>
+				<target>mehr erfahren</target>
+			</trans-unit>
+			<trans-unit id="label.showMore">
+				<source>show more</source>
+				<target>mehr anzeigen</target>
+			</trans-unit>
+			<trans-unit id="label.showLess">
+				<source>show less</source>
+				<target>weniger anzeigen</target>
+			</trans-unit>
+			<trans-unit id="label.searchPlaceholder">
+				<source>Search Keyword</source>
+				<target>Suchbegriff</target>
+			</trans-unit>
+			<trans-unit id="label.searchStart">
+				<source>Start Search</source>
+				<target>Suche starten</target>
+			</trans-unit>
+
+
+			<trans-unit id="news.dateFormat">
+				<source>d-m-Y</source>
+				<target>d.m.Y</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

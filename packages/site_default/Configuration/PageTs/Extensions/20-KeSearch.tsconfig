@@ -1,0 +1,7 @@
+TCEFORM {
+    tt_content {
+        pi_flexform.ke_search_pi1.view.templateLayout.addItems {
+            // 20 = ResultCount
+        }
+    }
+}

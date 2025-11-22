@@ -1,0 +1,138 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+    <f:comment><!--
+            "layout" sets the headline-tag. This is normally set via backend.
+            If "layout" is not set, settings.header.defaultHeaderType is used for the tag
+            If "layout" is not set, settings.header.defaultLayoutType is used to add a css-class for the visual representation
+            If "layout" and settings.header.defaultLayoutType are not set, settings.header.defaultHeaderType is used to add a css-class for the visual representation
+            If you want "layout" only to affect the visual representation, but not the tag used, you can use settings.header.overrideHeaderType to override the tag.
+        --></f:comment>
+    <f:if condition="{header}">
+
+        <f:variable name="htmlLayout" value="{f:if(condition:'{settings.header.overrideHeaderType}', then: '{settings.header.overrideHeaderType}', else: '{layout}')}"/>
+        <f:if condition="!{visualLayout}">
+            <f:variable name="visualLayout" value="{f:if(condition:'{layout} && !{isDefault}', then: '{layout}', else: '{settings.header.defaultLayoutType}')}"/>
+        </f:if>
+        <f:if condition="!{iconClass}">
+            <f:variable name="iconClass" value="{settings.header.iconClass}"/>
+        </f:if>
+
+        <f:variable name="defaultCase" value="0" />
+        <f:switch expression="{htmlLayout}">
+            <f:case value="1">
+                <div class="{wrapClass}">
+                    <h1 class="{f:if(condition:'{visualLayout}', then: 'h{visualLayout}', else: 'h1')} {class} headline" {additionalAttributes -> f:format.raw()}>
+                        <f:link.typolink parameter="{link}" class="link-headline {linkStyle}">
+                            <f:render section="Inner" arguments="{_all}" />
+                        </f:link.typolink>
+                    </h1>
+                </div>
+            </f:case>
+            <f:case value="2">
+                <div class="{wrapClass}">
+                    <h2 class="{f:if(condition:'{visualLayout}', then: 'h{visualLayout}', else: 'h2')} {class} headline" {additionalAttributes -> f:format.raw()}>
+                        <f:link.typolink parameter="{link}" class="link-headline {linkStyle}">
+                            <f:render section="Inner" arguments="{_all}" />
+                        </f:link.typolink>
+                    </h2>
+                </div>
+            </f:case>
+            <f:case value="3">
+                <div class="{wrapClass}">
+                    <h3 class="{f:if(condition:'{visualLayout}', then: 'h{visualLayout}', else: 'h3')} {class} headline" {additionalAttributes -> f:format.raw()}>
+                        <f:link.typolink parameter="{link}" class="link-headline {linkStyle}">
+                            <f:render section="Inner" arguments="{_all}" />
+                        </f:link.typolink>
+                    </h3>
+                </div>
+            </f:case>
+            <f:case value="4">
+                <div class="{wrapClass}">
+                    <h4 class="{f:if(condition:'{visualLayout}', then: 'h{visualLayout}', else: 'h4')} {class} headline" {additionalAttributes -> f:format.raw()}>
+                        <f:link.typolink parameter="{link}" class="link-headline {linkStyle}">
+                            <f:render section="Inner" arguments="{_all}" />
+                        </f:link.typolink>
+                    </h4>
+                </div>
+            </f:case>
+            <f:case value="5">
+                <div class="{wrapClass}">
+                    <h5 class="{f:if(condition:'{visualLayout}', then: 'h{visualLayout}', else: 'h5')} {class} headline" {additionalAttributes -> f:format.raw()}>
+                        <f:link.typolink parameter="{link}" class="link-headline {linkStyle}">
+                            <f:render section="Inner" arguments="{_all}" />
+                        </f:link.typolink>
+                    </h5>
+                </div>
+            </f:case>
+            <f:case value="6">
+                <div class="{wrapClass}">
+                    <h6 class="{f:if(condition:'{visualLayout}', then: 'h{visualLayout}', else: 'h6')} {class} headline" {additionalAttributes -> f:format.raw()}>
+                        <f:link.typolink parameter="{link}" class="link-headline {linkStyle}">
+                            <f:render section="Inner" arguments="{_all}" />
+                        </f:link.typolink>
+                    </h6>
+                </div>
+            </f:case>
+            <f:comment><!-- defined special case: h2 with .h1 --></f:comment>
+            <f:case value="10">
+                <div class="{wrapClass}">
+                    <h2 class="h1 {class} headline" {additionalAttributes -> f:format.raw()}>
+                        <f:link.typolink parameter="{link}" class="link-headline {linkStyle}">
+                            <f:render section="Inner" arguments="{_all}" />
+                        </f:link.typolink>
+                    </h2>
+                </div>
+            </f:case>
+            <f:comment><!-- defined special case: h3 with .h2 --></f:comment>
+            <f:case value="20">
+                <div class="{wrapClass}">
+                    <h3 class="h2 {class} headline" {additionalAttributes -> f:format.raw()}>
+                        <f:link.typolink parameter="{link}" class="link-headline {linkStyle}">
+                            <f:render section="Inner" arguments="{_all}" />
+                        </f:link.typolink>
+                    </h3>
+                </div>
+            </f:case>
+            <f:case value="100">
+                <f:comment> -- do not show header --</f:comment>
+            </f:case>
+            <f:defaultCase>
+                <f:variable name="defaultCase" value="1" />
+            </f:defaultCase>
+        </f:switch>
+
+        <f:comment><!-- Fix for isse with call of partials in switch-Vh since TYPO3 v13. Can not be called directly --></f:comment>
+        <f:if condition="{defaultCase}">
+            <f:if condition="{settings.header.defaultHeaderType}">
+                <f:then>
+                    <f:render partial="Utils/Header" arguments="{header: header, layout: settings.header.defaultHeaderType,
+                                                                      link: link, linkStyle: linkStyle, wrapClass: wrapClass,
+                                                                      class:class, settings: settings, isDefault: 1,
+                                                                      additionalAttributes: additionalAttributes}"/>
+                </f:then>
+                <f:else>
+                    <f:render partial="Utils/Header" arguments="{header: header, layout: 2, link: link, linkStyle: linkStyle,
+                                                                      wrapClass: wrapClass, class:class, settings: settings,
+                                                                      isDefault: 1, additionalAttributes: additionalAttributes}"/>
+                </f:else>
+            </f:if>
+        </f:if>
+    </f:if>
+
+    <f:comment><!-- ===================================================================== --></f:comment>
+    <f:section name="Inner">
+
+        <f:if condition="{innerHtml}">
+            <f:then>
+                {innerHtml -> f:format.raw()}
+            </f:then>
+            <f:else>
+                <span>
+                    <f:format.html parseFuncTSPath="lib.parseFunc_Headline">{header}</f:format.html>
+                </span>
+                <f:if condition="{link} && {iconClass}"><span class="{iconClass}"></span></f:if>
+            </f:else>
+        </f:if>
+
+    </f:section>
+</html>

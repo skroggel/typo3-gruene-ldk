@@ -1,0 +1,53 @@
+/* ==================================================
+* Footer-Menu
+* ================================================== */
+@use 'sass:math';
+
+.nav-footer {
+
+    &-list {
+        flex-wrap: wrap;
+        gap: rem-calc($spacer);
+        @include media-breakpoint-up(lg) {
+            gap: rem-calc(70);
+            row-gap: rem-calc($spacer);
+        }
+    }
+
+    &-item {
+        margin-bottom: rem-calc(math.div(strip-unit($grid-gutter-width), 2));
+    }
+
+    &-link,
+    &-link:link,
+    &-link:visited,
+    &-link:hover {
+        color: $color-secondary;
+        text-decoration: none;
+    }
+
+    &-link:hover {
+        text-decoration: underline;
+    }
+}
+
+.nav-mobile {
+    .nav-footer {
+        padding-top: rem-calc(math.div(strip-unit($grid-gutter-width), 2));
+
+        &-list {
+            gap: rem-calc(math.div(strip-unit($grid-gutter-width), 2)) !important;
+        }
+
+        &-link,
+        &-link:link,
+        &-link:visited,
+        &-link:hover {
+            color: $color-white;
+        }
+
+        &-link:hover {
+           text-decoration: underline;
+        }
+    }
+}

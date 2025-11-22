@@ -1,0 +1,12 @@
+identifier: madj2k/palette-cta
+prefixType: vendor # prefixing with vendor for reuse of database fields
+fields:
+  - identifier: palette_cta
+    type: Palette
+    label: LLL:EXT:site_default/ContentBlocks/Basics/ContentElements/language/labels.xlf:palettes.palette_cta.label
+    fields:
+      - identifier: madj2k/cta-link
+        type: Basic
+      - identifier:  madj2k/cta-label
+        type: Basic
+

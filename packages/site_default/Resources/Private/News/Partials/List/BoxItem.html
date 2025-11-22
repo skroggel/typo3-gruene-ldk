@@ -1,0 +1,60 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+
+    <div class="box box-has-image box-news {wrapClass}" itemscope="itemscope" itemtype="https://schema.org/Article">
+        <n:link newsItem="{newsItem}"
+                settings="{settings}"
+                title="{newsItem.title -> f:format.stripTags()}"
+                additionalAttributes="{itemprop:'url'}"
+                class="link-wrap">
+
+            <div class="box-inner bg-color-lightgrey">
+
+                <f:comment><!-- Image --></f:comment>
+                <f:render partial="Utils/Media"
+                          arguments="{file: newsItem.txSiteDefaultImagePreview.0, wrapClass:'box-image',
+                                      settings: customSettings}"/>
+
+                <f:comment><!-- Content --></f:comment>
+                <div class="box-content">
+
+                    <header>
+                        <f:comment><!-- Tags and Date--></f:comment>
+                        <div class="box-tags">
+                            <div class="tag">
+                                <span class="icon-calendar"></span><span><f:format.date
+                                    format="{f:translate(key:'news.dateFormat', extensionName:'site_default')}">{newsItem.datetime}</f:format.date></span>
+                            </div>
+                            <f:if condition="{newsItem.categories}">
+                                <div class="tag">
+                                    <span class="icon-tag"></span><span><f:render partial="Category/ItemsImploded"
+                                        arguments="{categories:newsItem.categories, settings: customSettings}" /></span>
+                                </div>
+                            </f:if>
+
+                        </div>
+
+                        <f:comment><!-- Header--></f:comment>
+                        <f:render partial="Utils/Header"
+                                  arguments="{header: newsItem.title, wrapClass:'box-header',
+                                              settings: customSettings, additionalAttributes: 'itemprop=\"headline\"'}" />
+
+                    </header>
+
+                    <f:comment><!-- Teaser --></f:comment>
+                    <f:render partial="Utils/Bodytext" section="Inline"
+                              arguments="{text: newsItem.teaser, wrapClass: 'box-text',
+                                          settings: customSettings, additionalAttributes: 'itemprop=\"description\"'}" />
+
+                    <f:comment><!-- Link / CTA --></f:comment>
+                    <div class="box-cta">
+                        <f:render partial="Utils/Cta"
+                                  arguments="{label: ctaLabel, type:'default', settings: customSettings}" />
+                    </div>
+                </div>
+            </div>
+        </n:link>
+    </div>
+
+</html>

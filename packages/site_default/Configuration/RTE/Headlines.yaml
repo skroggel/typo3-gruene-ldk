@@ -1,0 +1,39 @@
+# Add configuration for the editor
+# For complete documentation see http://docs.ckeditor.com/#!/api/CKEDITOR.config
+
+imports:
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml" }
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml" }
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml" }
+
+editor:
+  config:
+    contentsCss: "EXT:site_default/Resources/Public/Css/editor.css"
+
+    format_tags: ""
+
+    toolbarGroups:
+      - { name: basicstyles, groups: [ basicstyles ] }
+      - { name: document, groups: [ mode ] }
+
+    toolbar:
+      items:
+        - bold
+        - softhyphen
+        - '|'
+        - removeFormat
+        - specialCharacters
+        - sourceEditing
+
+    autoParagraph: false
+    shiftEnterMode: 2
+    enterMode: 2
+    height: '6em'
+
+    removeButtons:
+      - Italic
+      - Underline
+      - Strike
+      - Subscript
+      - Superscript
+

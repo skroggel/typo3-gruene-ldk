@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages">
+		<body>
+
+			<!-- @see https://docs.typo3.org/p/friendsoftypo3/content-blocks/main/en-us/API/AutomaticLanguageKeys/Index.html#api_automatic_language_keys -->
+
+			<!-- palettes -->
+			<trans-unit id="palettes.palette_-header.label">
+				<source>Header</source>
+				<target>Überschriften</target>
+			</trans-unit>
+			<trans-unit id="palettes.palette_cta.label">
+				<source>CTA</source>
+				<target>CTA</target>
+			</trans-unit>
+
+
+			<!-- fields -->
+			<trans-unit id="header.label">
+				<source>Header</source>
+				<target>Titel</target>
+			</trans-unit>
+			<trans-unit id="subheader.label">
+				<source>Subheader</source>
+				<target>Untertitel</target>
+			</trans-unit>
+			<trans-unit id="overline.label">
+				<source>Overline</source>
+				<target>Overline</target>
+			</trans-unit>
+			<trans-unit id="assets.label">
+				<source>Media</source>
+				<target>Medien</target>
+			</trans-unit>
+			<trans-unit id="bodytext.label">
+				<source>Text</source>
+				<target>Text</target>
+			</trans-unit>
+			<trans-unit id="cta_link.label">
+				<source>CTA Link</source>
+				<target>CTA Link</target>
+			</trans-unit>
+			<trans-unit id="cta_label.label">
+				<source>CTA Label</source>
+				<target>CTA Beschriftung</target>
+			</trans-unit>
+			<trans-unit id="teaser.label">
+				<source>Teaser</source>
+				<target>Teaser</target>
+			</trans-unit>
+			<trans-unit id="image_orientation.label">
+				<source>Image Orientation</source>
+				<target>Bildausrichtung</target>
+			</trans-unit>
+			<trans-unit id="image_orientation.items.left.label">
+				<source>Left</source>
+				<target>Links</target>
+			</trans-unit>
+			<trans-unit id="image_orientation.items.right.label">
+				<source>Right</source>
+				<target>Rechts</target>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

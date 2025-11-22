@@ -1,0 +1,49 @@
+#
+# BACKENDLAYOUT: DEFAULT
+#
+mod {
+    web_layout {
+        BackendLayouts {
+            multiColumn {
+                title = LLL:EXT:site_default/Resources/Private/Language/locallang_be.xlf:backend_layout.multiColumn
+                config {
+                    backend_layout {
+                    colCount = 2
+                    rowCount = 3
+                        rows {
+                            1 {
+                                columns {
+                                    1 {
+                                        name = LLL:EXT:site_default/Resources/Private/Language/locallang_be.xlf:backend_layout.column.content
+                                    }
+                                }
+                            }
+                            2 {
+                                columns {
+                                    1 {
+                                        name = LLL:EXT:site_default/Resources/Private/Language/locallang_be.xlf:backend_layout.column.left
+                                        colPos = 10
+                                    }
+                                    2 {
+                                        name = LLL:EXT:site_default/Resources/Private/Language/locallang_be.xlf:backend_layout.column.right
+                                        colPos = 11
+                                    }
+                                }
+                            }
+                            3 {
+                                columns {
+                                    1 {
+                                        name = LLL:EXT:site_default/Resources/Private/Language/locallang_be.xlf:backend_layout.column.content
+                                        colPos = 1
+                                        colspan = 2
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                icon = EXT:site_default/Resources/Public/Images/BackendLayouts/Default.png
+            }
+        }
+    }
+}

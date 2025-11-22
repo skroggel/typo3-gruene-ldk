@@ -1,0 +1,16 @@
+identifier: madj2k/image-orientation
+prefixType: vendor # prefixing with vendor for reuse of database fields
+fields:
+  - identifier: image_orientation
+    type: Select
+    renderType: selectSingle
+    default: 'left'
+    label: LLL:EXT:site_default/ContentBlocks/Basics/ContentElements/language/labels.xlf:image_orientation.label
+    items:
+      - value: left
+        label: Left
+        icon: content-beside-text-img-left
+      - value: right
+        label: Right
+        icon: content-beside-text-img-right
+

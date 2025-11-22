@@ -1,0 +1,11 @@
+identifier: madj2k/assets-single-required
+prefixType: vendor # prefixing with vendor for reuse of database fields
+fields:
+  - identifier: assets
+    useExistingField: true
+    type: File
+    extendedPalette: true
+    minitems: 1
+    maxitems: 1
+    allowed: gif,jpg,jpeg,png,svg,webp
+    label: LLL:EXT:site_default/ContentBlocks/Basics/ContentElements/language/labels.xlf:assets.label

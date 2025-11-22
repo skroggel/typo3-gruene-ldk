@@ -1,0 +1,8 @@
+identifier: madj2k/overline
+prefixType: vendor # prefixing with vendor for reuse of database fields
+fields:
+  - identifier: overline
+    type: Textarea
+    enableRichtext: true
+    richtextConfiguration: Headlines
+    label: LLL:EXT:site_default/ContentBlocks/Basics/ContentElements/language/Labels.xlf:overline.label

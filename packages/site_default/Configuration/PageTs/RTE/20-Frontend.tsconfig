@@ -1,0 +1,13 @@
+#############################################################################
+# Configure Frontend-RTE
+#############################################################################
+/*
+RTE.default.FE < RTE.default
+RTE.default.FE {
+    showStatusBar = 0
+    hideButtons = chMode, blockstyle, textstyle, underline, strikethrough, subscript, superscript, lefttoright, righttoleft, left, center, right, justifyfull, table, inserttag, findreplace, removeformat, copy, cut, paste
+    FE >
+    userElements >
+    userLinks >
+}
+*/

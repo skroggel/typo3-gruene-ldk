@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages">
+		<body>
+
+			<!-- @see https://docs.typo3.org/p/friendsoftypo3/content-blocks/main/en-us/API/AutomaticLanguageKeys/Index.html#api_automatic_language_keys -->
+
+			<!-- palettes -->
+			<trans-unit id="palettes.palette_header.label">
+				<source>Header</source>
+			</trans-unit>
+			<trans-unit id="palettes.palette_cta.label">
+				<source>CTA</source>
+			</trans-unit>
+
+
+			<!-- fields -->
+			<trans-unit id="header.label">
+				<source>Header</source>
+			</trans-unit>
+			<trans-unit id="subheader.label">
+				<source>Subheader</source>
+			</trans-unit>
+			<trans-unit id="overline.label">
+				<source>Overline</source>
+			</trans-unit>
+			<trans-unit id="assets.label">
+				<source>Media</source>
+			</trans-unit>
+			<trans-unit id="bodytext.label">
+				<source>Text</source>
+			</trans-unit>
+			<trans-unit id="cta_link.label">
+				<source>CTA Link</source>
+			</trans-unit>
+			<trans-unit id="cta_label.label">
+				<source>CTA Label</source>
+			</trans-unit>
+			<trans-unit id="teaser.label">
+				<source>Teaser</source>
+			</trans-unit>
+			<trans-unit id="image_orientation.label">
+				<source>Image Orientation</source>
+			</trans-unit>
+			<trans-unit id="image_orientation.items.left.label">
+				<source>Left</source>
+			</trans-unit>
+			<trans-unit id="image_orientation.items.right.label">
+				<source>Right</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

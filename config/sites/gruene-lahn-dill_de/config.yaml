@@ -1,0 +1,73 @@
+accelerator:
+  htmlMinifier:
+    enable: 1
+  pseudoCdn:
+    enable: 0
+  criticalCss:
+    enable: 0
+acceleratorVariants:
+  -
+    htmlMinifier:
+      enable: 0
+    condition: 'applicationContext == "Development/Local"'
+base: 'https://www.gruene-lahn-dill.de/'
+baseVariants:
+  -
+    base: 'https://gruene-ldk.ddev.site:8443/'
+    condition: 'applicationContext == "Development/Local"'
+  -
+    base: 'https://test.gruene-lahn-dill.de/'
+    condition: 'applicationContext == "Production/Staging"'
+dependencies:
+  - madj2k/site-default
+errorHandling:
+  -
+    errorCode: 404
+    errorHandler: Page
+    errorContentSource: 't3://page?uid=3'
+klarokratie:
+  klaro:
+    customCss: 'EXT:site_default/Resources/Public/Css/klaro.css'
+    config: EXT:klarokratie/Resources/Public/Config/KlaroConfigMinimal.js
+    includes:
+      - EXT:klarokratie/Resources/Public/Config/Includes/GoogleAnalytics.js
+  googleAnalytics:
+    enable: 0
+    useTagManager: 1
+    tagId: '012345'
+languages:
+  -
+    title: Deutsch
+    enabled: true
+    languageId: 0
+    base: /
+    locale: de_DE.UTF-8
+    navigationTitle: ''
+    flag: de
+    hreflang: ''
+    websiteTitle: ''
+  -
+    title: Englisch
+    enabled: false
+    locale: en_GB.UTF-8
+    hreflang: ''
+    base: /en/
+    navigationTitle: ''
+    fallbackType: strict
+    fallbacks: ''
+    flag: en-us-gb
+    languageId: 1
+rootPageId: 1
+routeEnhancers:
+  PageTypeSuffix:
+    type: PageType
+    default: ''
+    index: ''
+    map:
+      sitemap.xml: 1533906435
+websiteTitle: example.de
+imports:
+  -
+    resource: 'EXT:site_default/Configuration/Routes/Search.yaml'
+  -
+    resource: 'EXT:site_default/Configuration/Routes/News.yaml'

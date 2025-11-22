@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2023-09-17UTC13:49:100">
+		<body>
+			<trans-unit id="backend_layout.default">
+				<source>Default</source>
+			</trans-unit>
+			<trans-unit id="backend_layout.home">
+				<source>Home</source>
+			</trans-unit>
+			<trans-unit id="backend_layout.multiColumn">
+				<source>Multi-Column</source>
+			</trans-unit>
+
+
+			<trans-unit id="backend_layout.column.content">
+				<source>Content</source>
+			</trans-unit>
+			<trans-unit id="backend_layout.column.left">
+				<source>Left</source>
+			</trans-unit>
+			<trans-unit id="backend_layout.column.right">
+				<source>Right</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

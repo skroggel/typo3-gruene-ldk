@@ -1,0 +1,18 @@
+#!/bin/bash
+
+## Description: Inserts basic pages into a new installation
+## Usage: t3-init-pages
+## Example: "ddev t3-init-pages"
+
+set -o errexit pipefail nounset
+#set -x
+
+echo "INSERT INTO pages (uid, pid, title, doktype, slug, is_siteroot) VALUES
+(1, 0, 'Startseite', 1, '/', 1),
+(2, 1, 'Spezial', 254, '', 0),
+(3, 2, 'Seite nicht gefunden', 1, '/seite-nicht-gefunden', 0),
+(4, 2, 'Veralteter Browser', 1, '/veralteter-browser', 0),
+(5, 2, 'Kein JavaScript aktiviert', 1, '/kein-javascript-aktiviert', 0);" | ddev mysql
+
+
+

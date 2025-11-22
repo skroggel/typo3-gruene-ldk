@@ -1,0 +1,78 @@
+/* ==================================================
+* Slide-nav
+* ================================================== */
+.slide-nav {
+    position: absolute;
+    left: 0;
+    top: -100vh;
+
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+    z-index: 890;
+    display: none;
+
+    a span, button span {
+        pointer-events: none;
+    }
+
+    &.open {
+        display: block;
+    }
+
+    .slide-nav-container {
+        position: absolute;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+    }
+
+    .slide-nav-card {
+        position: absolute;
+        top: 0;
+        left: 100%;
+
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        z-index: 666;
+
+        &.opening,
+        &.closing {
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 20px 20px;
+        }
+
+        &.active {
+            left: 0;
+            z-index: 9999;
+        }
+    }
+
+    .slide-nav-inner {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        overflow-y: auto;
+
+        margin: 0;
+        padding: 50px;
+    }
+
+    .slide-nav-list {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+    }
+
+    .slide-nav-item {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+}

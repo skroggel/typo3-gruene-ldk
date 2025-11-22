@@ -1,0 +1,50 @@
+#############################################################################
+# Stage
+#############################################################################
+lib.siteDefault {
+
+    fluidTemplates {
+
+        stage = FLUIDTEMPLATE
+        stage {
+
+            file = EXT:site_default/Resources/Private/FluidTemplates/Templates/Stage.html
+            partialRootPaths.0 = EXT:site_default/Resources/Private/FluidTemplates/Partials/Stage/
+            partialRootPaths.1 = EXT:site_default/Resources/Private/Mask/Frontend/Partials/
+            partialRootPaths.1712245685 = {$plugin.tx_mediautils.view.partialRootPath}
+
+            dataProcessing {
+                10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+                10 {
+                    references {
+                        table = pages
+                        data = levelfield: -1, media, slide
+                    }
+                    as = media
+                }
+            }
+
+            variables {
+                pageTitle = TEXT
+                pageTitle.data = page:title
+            }
+
+            settings.tx_smsresponsiveimages < lib.madj2kMediaUtils.responsiveImages
+            settings.tx_smsresponsiveimages {
+
+                loading = eager
+                breakpoints {
+                    0 {
+                        cropVariant = default
+                    }
+                    1 {
+                        cropVariant = tablet
+                    }
+                    2 {
+                        cropVariant = mobile
+                    }
+                }
+            }
+        }
+    }
+}

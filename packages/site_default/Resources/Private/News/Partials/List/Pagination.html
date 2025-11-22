@@ -1,0 +1,75 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+      data-namespace-typo3-fluid="true"
+>
+    <f:if condition="{pagination.allPageNumbers -> f:count()} > 1">
+        <nav class="pagination">
+            <ul class="pagination-list">
+
+                <f:comment><!-- previous --></f:comment>
+                    <li class="pagination-item">
+                    <f:if condition="{pagination.previousPageNumber} && {pagination.previousPageNumber} >= {pagination.firstPageNumber}">
+                        <f:then>
+                            <a href="{f:uri.action(action:actionName, arguments:{currentPage: pagination.previousPageNumber},addQueryString:1)}"
+                               class="pagination-link pagination-prev"
+                               title="{f:translate(key:'pagination.previous', extensionName: 'siteDefault')}"></a>
+                        </f:then>
+                        <f:else>
+                            <a
+                                class="pagination-link pagination-prev disabled"
+                                title="{f:translate(key:'pagination.previous', extensionName: 'siteDefault')}"
+                            ></a>
+                        </f:else>
+                    </f:if>
+                </li>
+
+                <f:comment><!-- has less pages --></f:comment>
+                <f:if condition="{pagination.hasLessPages}">
+                    <li class="pagination-item page-item">
+                        <span class="pagination-placeholder"></span>
+                    </li>
+                </f:if>
+
+                <f:comment><!-- pages --></f:comment>
+                <f:for each="{pagination.allPageNumbers}" as="page">
+                    <li
+                        class="pagination-item{f:if(condition:'{paginator.currentPageNumber}=={page}',then:' active')}"
+                    >
+                        <a href="{f:uri.action(action:actionName, arguments:{currentPage: page},addQueryString:1)}"
+                           title="{f:translate(key: \'pagination.page\', extensionName: \'siteDefault\')} {page}"
+                           class="pagination-link"
+                        >
+                            {page}
+                        </a>
+                    </li>
+                </f:for>
+
+                <f:comment><!-- has less pages --></f:comment>
+                <f:if condition="{pagination.hasMorePages}">
+                    <li class="pagination-item page-item">
+                        <span class="pagination-placeholder"></span>
+                    </li>
+                </f:if>
+
+                <f:comment><!-- Last page --></f:comment>
+                <li class="pagination-item">
+                    <f:if condition="{pagination.nextPageNumber} && {pagination.nextPageNumber} <= {pagination.lastPageNumber}">
+                    <f:then>
+                            <a href="{f:uri.action(action:actionName, arguments:{currentPage: pagination.nextPageNumber},addQueryString:1)}"
+                               title="{f:translate(key:'pagination.next', extensionName: 'siteDefault')}"
+                               class="pagination-link pagination-next"
+                            ></a>
+                        </f:then>
+                        <f:else>
+                            <a
+                                class="pagination-link pagination-next disabled"
+                                title="{f:translate(key:'pagination.next', extensionName: 'siteDefault')}"
+                            ></a>
+                        </f:else>
+                    </f:if>
+                </li>
+            </ul>
+        </nav>
+    </f:if>
+
+</html>

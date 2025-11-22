@@ -1,0 +1,65 @@
+/* ==================================================
+* Basic variables
+* ================================================== */
+$color-map: (
+    'black': #000000,
+    'white': #ffffff,
+    'clover': #008939, // klee
+    'pine': #005538, // tanne
+    'gras': #8ABD24, // grashalm
+    'sky': #0BA1DD, // himmel
+    'sand': #F5F1E9, // sand
+    'sun': #FFF17A, // sonne
+    'red': #ad0000,
+
+    'clover-50': #E5F3EB,
+    'clover-100': #CCE7D7,
+    'clover-200': #B2DCC4,
+    'clover-300': #99D0B0,
+    'clover-400': #66B888,
+    'clover-500': #33A161,
+    'clover-700': #006E2E,
+    'clover-800': #005222,
+    'clover-900': #003717,
+    'clover-950': #002911,
+
+    'pine-50': #D5EEE6,
+    'pine-100': #BEDDD2,
+    'pine-200': #A6CCBF,
+    'pine-300': #8EBBAB,
+    'pine-400': #5F9885,
+    'pine-500': #2F765E,
+    'pine-700': #00432C,
+    'pine-800': #003221,
+    'pine-900': #002216,
+
+    'grey-50': #F9FAFB,
+    'grey-100': #F3FAF6,
+    'grey-200': #E6ECEA,
+    'grey-300': #D1DBDA,
+    'grey-400': #9CABAF,
+    'grey-500': #6B7A80,
+    'grey-600': #4B5D63,
+    'grey-700': #374951,
+    'grey-800': #1F2F37,
+    'grey-900': #111E27,
+    'grey-950': #031112,
+
+    'sand-500': #F7F4ED,
+    'sand-700': #EFE8DB,
+
+    'sky-500': #3CB4E4,
+    'sky-700': #0981B1,
+
+    'gras-500': #A1CA50,
+    'gras-700': #6E971D,
+);
+
+// some basic variables
+$color-white: map-get($color-map, 'white');
+$color-black: map-get($color-map, 'black');
+$color-primary: map-get($color-map, 'clover');
+$color-secondary: map-get($color-map, 'pine');
+$color-text: map-get($color-map, 'pine-900');
+$color-error: map-get($color-map, 'red');
+$color-outline: map-get($color-map, 'primary');

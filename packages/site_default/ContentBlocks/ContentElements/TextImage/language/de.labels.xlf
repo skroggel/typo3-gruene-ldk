@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages">
+		<body>
+
+			<!-- @see https://docs.typo3.org/p/friendsoftypo3/content-blocks/main/en-us/API/AutomaticLanguageKeys/Index.html#api_automatic_language_keys -->
+
+			<!-- element -->
+			<trans-unit id="title">
+				<source>Text-Image</source>
+				<target>Text-Image</target>
+			</trans-unit>
+			<trans-unit id="description">
+				<source>This module is a simple text-image block. First, an editorial text area with a headline and body text is displayed, followed by an image below. The design is deliberately kept simple and is suitable for content where the text is in the foreground and the image serves as a supporting element.</source>
+				<target>Dieses Modul ist ein einfacher Text-Bild-Block. Zuerst wird ein redaktioneller Textbereich mit Überschrift und Fließtext angezeigt, darunter folgt ein Bild. Die Darstellung ist bewusst schlicht gehalten und eignet sich für Inhalte, bei denen der Text im Vordergrund steht und das Bild unterstützend ergänzt.</target>
+			</trans-unit>
+
+			<!-- tabs -->
+			<trans-unit id="tabs.tab-media">
+				<source>Media</source>
+				<target>Medien</source>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

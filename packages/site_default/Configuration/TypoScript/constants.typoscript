@@ -1,0 +1,26 @@
+#=====================================================================================
+# Import setup from external extensions
+#=====================================================================================
+@import 'EXT:sms_responsive_images/Configuration/TypoScript/Base/constants.typoscript'
+@import 'EXT:hcaptcha/Configuration/TypoScript/constants.typoscript'
+
+#=====================================================================================
+# Import setup from site-package
+#=====================================================================================
+@import './ContentElements/Constants/'
+@import './Extensions/Constants/'
+@import './FluidTemplates/Constants/'
+@import './Menus/Constants/'
+@import './Pages/Constants/'
+@import './ParseFuncs/Constants/'
+@import './Utilities/Constants/'
+
+
+# Environments
+[applicationContext matches "#^Development#"]
+    @import './__DEV/Constants/'
+[END]
+
+[applicationContext matches "#^Production/Staging#"]
+    @import './__STAGE/Constants/'
+[END]

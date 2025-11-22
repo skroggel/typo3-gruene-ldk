@@ -1,0 +1,23 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true"
+>
+    <section class="csp-section csp-not-last accordion js-appear-on-scroll" id="c{data.uid}">
+
+        <div class="container-xxxl">
+            <div class="row">
+                <div class="col-12 offset-xl-1 col-xl-11">
+                    <div class="toggle-list accordion" id="accordion-container-{data.uid}" role="tablist">
+                        <f:for each="{data._grids.accordion_items}" as="item" iteration="i">
+                            <f:comment><!-- {item.data} contains the Content Block data object. --></f:comment>
+                            <f:format.raw>{item.content}</f:format.raw>
+                        </f:for>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+</html>

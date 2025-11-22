@@ -1,0 +1,14 @@
+/* ==================================================
+* Page
+* ================================================== */
+
+@include page-padding(
+    $page-padding: $page-padding,
+    $page-wrap-class: '.page',
+    $wrap-class: '.fullwidth',
+    $default-padding: $spacer,
+);
+
+.page {
+    padding-top: rem-calc(300);
+}

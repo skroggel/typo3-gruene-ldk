@@ -1,0 +1,46 @@
+/* ==================================================
+* Stage / Stage-Slider
+* ================================================== */
+.stage-slider {
+
+    .stage-inner {
+        height: rem-calc(500);
+        @include media-breakpoint-up(xl) {
+            height: rem-calc(970);
+        }
+    }
+
+    .owl-carousel .owl-item  {
+        height: 500px;
+        @include media-breakpoint-up(xl) {
+            height: rem-calc(970);
+        }
+    }
+
+    &:has(.owl-dots:not(.disabled)) {
+        .stage-inner-content {
+            @include media-breakpoint-down(xxxl) {
+                padding-bottom: rem-calc(map-get($spacers, 5)) !important;
+            }
+        }
+    }
+}
+
+.stage-inner {
+
+    height: rem-calc(450);
+    overflow: hidden;
+    @include media-breakpoint-up(xl) {
+        height: rem-calc(970);
+    }
+
+    .overline,
+    .subheader {
+        @include h4;
+    }
+
+    .headline,
+    .subheader {
+        color: $color-white;
+    }
+}

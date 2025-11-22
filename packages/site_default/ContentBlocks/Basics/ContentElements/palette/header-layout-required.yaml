@@ -1,0 +1,12 @@
+identifier: madj2k/palette-header-layout-required
+prefixType: vendor # prefixing with vendor for reuse of database fields
+fields:
+  - identifier: palette_header
+    type: Palette
+    label: LLL:EXT:site_default/ContentBlocks/Basics/ContentElements/language/labels.xlf:palettes.palette_header.label
+    fields:
+      - identifier: madj2k/header-required
+        type: Basic
+      - type: Linebreak
+      - identifier: header_layout
+        useExistingField: true

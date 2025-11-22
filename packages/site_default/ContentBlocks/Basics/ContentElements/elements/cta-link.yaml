@@ -1,0 +1,6 @@
+identifier: madj2k/cta-link
+prefixType: vendor # prefixing with vendor for reuse of database fields
+fields:
+  - identifier: cta_link
+    type: Link
+    label: LLL:EXT:site_default/ContentBlocks/Basics/ContentElements/language/labels.xlf:cta_link.label

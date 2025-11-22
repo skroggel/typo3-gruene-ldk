@@ -1,0 +1,39 @@
+/* ==================================================
+* Quote
+* ================================================== */
+.quote {
+
+    @include h2;
+    color: $color-secondary;
+
+    @include media-breakpoint-up(xxl) {
+        font-size: rem-calc(52);
+        line-height: rem-calc(62);
+    }
+
+    &-inner {
+        display: inline;
+
+        ::before {
+            content: "“";
+        }
+        ::after {
+            content:"”"
+        }
+        p {
+            display: inline;
+        }
+    }
+
+    &-cite {
+        font-size: rem-calc(22);
+        line-height: rem-calc(26);
+        font-style: normal;
+        font-weight: $font-weight-bold;
+
+        @include media-breakpoint-up(xxl) {
+            @include h4;
+        }
+
+    }
+}

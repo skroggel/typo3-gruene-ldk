@@ -1,0 +1,4 @@
+/*.input-group:has(select[name*="tx_mask_icon"]) .input-group-text.input-group-icon,
+.input-group:has(select[name*="tx_sitedefault_icon"]) .input-group-text.input-group-icon {
+    background-color: #71B127;
+}*/

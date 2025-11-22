@@ -1,0 +1,18 @@
+name: madj2k/site-default
+label: 'Site Package (Default)'
+dependencies:
+  - typo3/fluid-styled-content
+  - typo3/fluid-styled-content-css
+  - typo3/form
+  - typo3/seo-sitemap
+  - madj2k/accelerator
+  - madj2k/copyright-guardian
+  - madj2k/dr-serp
+  - madj2k/dr-serp-news
+  - madj2k/dr-serp-meta-tags-no-inheritance
+  - madj2k/forminator
+  - madj2k/klarokratie
+  - madj2k/media-utils
+  - madj2k/media-utils-bootstrap
+  - georgringer/news
+  - tpwd/ke_search

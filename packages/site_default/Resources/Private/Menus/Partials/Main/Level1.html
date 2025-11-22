@@ -1,0 +1,62 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true"
+>
+
+    <f:if condition="{menuItems}">
+        <f:for each="{menuItems}" as="menuItem" iteration="iterator">
+            <f:variable name="title">{f:if(condition: '{noHtml}', then: '{menuItem.data.title}', else: '{menuItem.title}')}</f:variable>
+            <f:variable name="id">{f:if(condition: '{hasKeyboardEntryPoint} && {iterator.cycle} == 1', then: 'first-menu-item', else: 'menu-item-{menuItem.data.uid}')}</f:variable>
+
+            <li class="nav-inline-item nav-main-item level-1{f:if(condition:'{menuItem.active}', then:' active')}"
+                role="none">
+
+                <f:if condition="{menuItem.children}">
+                    <f:comment><!-- Variant with submenu --></f:comment>
+                    <f:then>
+                        <a class="nav-inline-link nav-main-link js-flyout-toggle level-1{f:if(condition:'{menuItem.active}', then:' active')}"
+                           href="{menuItem.link}"
+                           id="{id}"
+                           target="{menuItem.target}"
+                           title="{menuItem.data.title}"
+                           role="menuitem"
+                           aria-label="Open menu"
+                           aria-controls="nav-main-flyout-{menuItem.data.uid}"
+                           aria-haspopup="true"
+                           aria-expanded="false">
+                               <span><f:format.html parseFuncTSPath="lib.parseFunc_Inline">{title}</f:format.html></span>
+                        </a>
+
+                        <div class="flyout js-flyout"
+                             id="nav-main-flyout-{menuItem.data.uid}"
+                             data-position-ref="siteheader-inner"
+                             data-padding-ref="first-menu-item"
+                        >
+                            <div class="flyout-container nav-main-flyout-container js-flyout-container">
+                                <div class="nav-main-flyout-inner js-flyout-inner bg-color-white">
+                                    <ul class="nav-main-list level-2" role="menu">
+                                        <f:render partial="Level2" arguments="{menuItems: menuItem.children}" />
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </f:then>
+
+
+                    <f:comment><!-- Variant without submenu --></f:comment>
+                    <f:else>
+                        <a class="nav-inline-link nav-main-link level-1{f:if(condition:'{menuItem.active}', then:' active')}"
+                           href="{f:if(condition:'{menuItem.data.tx_klarokratie_open_modal}', then:'#', else:'{menuItem.link}')}"
+                           id="{id}"
+                           {f:if(condition:'{menuItem.data.tx_klarokratie_open_modal}', then:'onclick="javascript:klaro.show(undefined, true);return false;"')}
+                           target="{menuItem.target}"
+                           title="{menuItem.data.title}"
+                           role="menuitem">
+                                <span><f:format.html parseFuncTSPath="lib.parseFunc_Inline">{title}</f:format.html></span>
+                        </a>
+                    </f:else>
+                </f:if>
+            </li>
+        </f:for>
+    </f:if>
+
+</html>

@@ -1,0 +1,78 @@
+/* ==================================================
+* Icons
+* ================================================== */
+/** Fixes */
+[class^="icon-"], [class*=" icon-"] {
+    display: inline-block; // do not inherit text-decoration
+    pointer-events: none; // prevent JS-events
+}
+
+/**
+ * Add margin
+ * But only if there is an icon- AND a text-element
+ *
+ * Usage:
+ *   <a href="#">
+ *     <span class="icon-whatever icon></span>
+ *     <span class="WHATEVER">Label</span>
+ *   </a>
+ *   OR if there is no icon but the behavior is wanted nevertheless:
+ *   <a class="flex-icon" href="#">
+ *     <span class="WHATEVER">Label</span>
+ *   </a>
+ */
+@include flex-icon(
+    $selectors-map: (
+        a: ':not(.link-wrap)',
+        p: '',
+        span: '',
+        button: ''
+    ),
+    $margin: 5
+);
+
+
+
+@font-face {
+    font-family: 'Icomoon';
+    src:  url('../Fonts/Icomoon/icomoon.eot?gaveu7');
+    src:  url('../Fonts/Icomoon/icomoon.eot?gaveu7#iefix') format('embedded-opentype'),
+    url('../Fonts/Icomoon/icomoon.ttf?gaveu7') format('truetype'),
+    url('../Fonts/Icomoon/icomoon.woff?gaveu7') format('woff'),
+    url('../Fonts/Icomoon/icomoon.svg?gaveu7#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"], .icomoon  {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'Icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+.icon-arrow-down {
+    &:before {
+        content: $icon-arrow-down;
+    }
+}
+.icon-arrow-left {
+    &:before {
+        content: $icon-arrow-left;
+    }
+}
+.icon-arrow-right {
+    &:before {
+        content: $icon-arrow-right;
+    }
+}

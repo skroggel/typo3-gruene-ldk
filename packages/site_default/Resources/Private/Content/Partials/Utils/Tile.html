@@ -1,0 +1,87 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+
+	<f:if condition="{link}">
+		<f:then>
+			<f:if condition="{linkToNewsDetail}">
+				<f:then>
+					<div class="tile">
+						<f:link.action pageUid="{linkToNewsDetail}" action="detail" controller="News"
+									   extensionName="News" pluginName="Pi1"
+									   arguments="{news: link}" class="link-wrap">
+							<f:render section="Inner" arguments="{_all}" />
+						</f:link.action>
+					</div>
+				</f:then>
+				<f:else>
+					<div class="tile">
+						<f:link.typolink parameter="{link}" class="link-wrap">
+							<f:render section="Inner" arguments="{_all}" />
+						</f:link.typolink>
+					</div>
+				</f:else>
+			</f:if>
+		</f:then>
+		<f:else>
+			<div class="tile">
+				<f:render section="Inner" arguments="{_all}" />
+			</div>
+		</f:else>
+	</f:if>
+
+	<f:comment><!-- ============================================================== --></f:comment>
+
+	<f:section name="Inner">
+
+		<div class="tile-inner">
+
+            <div class="tile-image">
+                <f:render partial="Utils/Media" arguments="{file: image, wrapClass: 'tile-image',
+                                                            settings: settings}" />
+            </div>
+
+			<div class="tile-body">
+				<f:if condition="{subline -> f:format.trim()} || {newsCategories -> f:format.trim()}">
+					<span class="tile-category">
+						<f:if condition="{subline}">
+							<f:then>
+								{subline}
+							</f:then>
+							<f:else>
+								{newsCategories}
+							</f:else>
+						</f:if>
+					</span>
+				</f:if>
+
+                <f:render partial="Utils/Header"
+                          arguments="{header: header, layout: 4, wrapClass: 'tile-header'}"/>
+
+                <div class="tile-textwrap">
+                    <f:if condition="{noCrop}">
+                        <f:then>
+                            <f:render partial="Utils/Bodytext" section="Inline"
+                                      arguments="{text: text, class: 'tile-text'}" />
+                        </f:then>
+                        <f:else>
+                            <f:format.crop maxCharacters="170" respectWordBoundaries="true" respectHtml="true">
+                                <f:render partial="Utils/Bodytext" section="Inline"
+                                          arguments="{text: text, class: 'tile-text'}" />
+                            </f:format.crop>
+                        </f:else>
+                    </f:if>
+                </div>
+            </div>
+
+            <div class="tile-footer">
+                <f:if condition="{link}">
+                    <div class="tile-cta">
+                        <f:render partial="Utils/Cta" arguments="{label: ctaLabel, type:'default'}" />
+                    </div>
+                </f:if>
+            </div>
+		</div>
+	</f:section>
+</html>
+
+

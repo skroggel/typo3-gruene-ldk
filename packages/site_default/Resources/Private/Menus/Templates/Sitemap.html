@@ -1,0 +1,11 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true"
+>
+    <f:if condition="{menuItems}">
+        <nav aria-label="{f:translate(key:'menu.mainmenu', extensionName:'SiteDefault')}" class="nav-main">
+            <ul class="nav-inline-list nav-sitemap-list level-1" role="menu">
+                <f:render partial="Level1" arguments="{menuItems: menuItems}" />
+            </ul>
+        </nav>
+    </f:if>
+</html>

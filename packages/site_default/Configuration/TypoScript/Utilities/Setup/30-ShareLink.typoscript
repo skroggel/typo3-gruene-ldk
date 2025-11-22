@@ -1,0 +1,19 @@
+#############################################################################
+# Share-Link
+#############################################################################
+lib.siteDefault {
+
+    utilities {
+        shareLink = TEXT
+    	shareLink {
+    		typolink {
+    			parameter.data = page:uid
+    			absolute=1
+    			uniqueLinkVars = 1
+                addQueryString = 1
+                forceAbsoluteUrl = 1
+                returnLast = url
+            }
+    	}
+    }
+}

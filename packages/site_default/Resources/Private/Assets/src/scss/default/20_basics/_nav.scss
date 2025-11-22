@@ -1,0 +1,32 @@
+/* ==================================================
+* Nav
+* ================================================== */
+@use 'sass:math';
+
+.nav-block {
+    @include nav-block(
+        $link-color: $color-secondary,
+        $active-color: $color-primary
+    )
+}
+
+.nav-inline {
+    @include nav-inline(
+        $list-gap: $spacer,
+        $link-color: $color-secondary,
+        $link-active-color: $color-primary
+    )
+}
+
+.nav-pulldown {
+    @include nav-pulldown(
+        $pad-x: $spacer,
+        $pad-y: 0,
+        $item-y: 10,
+        $item-gap: 12,
+        $bg-color: $color-primary,
+        $text-color: $color-white,
+        $border-color: $color-white,
+        $border-width: 1px
+    )
+}

@@ -1,0 +1,60 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:schema="http://typo3.org/ns/Brotkrueml/Schema/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:variable
+    name="articleLink"
+    value="{f:uri.page(pageUid: '{data.uid}', absolute:1)}"
+/>
+
+<schema:type.article
+    -id="https://www.warteck-invest.ch/page/#article-{data.uid}"
+    headline="{data.title -> f:format.stripTags()}"
+    alternativeHeadline="{data.subtitle -> f:format.stripTags()}"
+    dateCreated="{data.crdate -> f:format.date(format:'c')}"
+    dateModified="{data.tstamp -> f:format.date(format:'c')}"
+    datePublished="{f:if(condition: '{data.lastUpdated}', then: '{data.lastUpdated}', else: '{data.tstamp -> f:format.date(format:\'c\')}')}"
+    description="{f:if(condition: '{data.abstract}', then: '{data.abstract}', else: '{data.description}')}"
+    articleBody="{f:cObject(typoscriptObjectPath:'lib.siteDefault.utilities.getContent', data:'{colPos: 0}') -> f:format.stripTags()}"
+    keywords="{data.keywords}"
+    url="{articleLink}"
+    inLanguage="{siteLanguage.locale.languageCode}"
+>
+    <schema:type.webPage
+        -as="mainEntityOfPage"
+        url="{articleLink}"
+    />
+
+    <f:if condition="{data.tx_sitedefault_image_teaser}">
+        <schema:type.imageObject
+            -as="image"
+            -id="https://www.warteck-invest.ch/page/#image-{data.tx_sitedefault_image_teaser.uid}"
+            text="{data.tx_sitedefault_image_teaser.originalResource.alternative}"
+            width="{settings.schemaOrg.teaserImage.width.value}"
+            height="{settings.schemaOrg.teaserImage.height.value}"
+            url="{f:uri.image(image:data.tx_sitedefault_image_teaser,
+                          width:settings.schemaOrg.teaserImage.width.value,
+                          height:settings.schemaOrg.teaserImage.height.value,
+                          absolute:1)}"
+        />
+    </f:if>
+
+    <schema:type.organization
+        -as="publisher"
+        name="{settings.schemaOrg.organization.name.value}"
+    >
+
+        <f:for each="{settings.schemaOrg.organization.sameAs}" as="link" iteration="i">
+            <f:if condition="!{i.isLast}">
+                <schema:property -as="sameAs" value="{link}"/>
+            </f:if>
+        </f:for>
+
+        <schema:type.imageObject
+            -as="logo"
+            url="{f:uri.image(src:'EXT:site_default/Resources/Public/Images/logo-desktop.svg', absolute:1)}"
+        />
+    </schema:type.organization>
+</schema:type.article>
+
+</html>

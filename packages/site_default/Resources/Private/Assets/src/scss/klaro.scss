@@ -1,0 +1,80 @@
+// We need at least the mixins
+@import "../../node_modules/bootstrap/scss/mixins";
+
+@import "../../node_modules/@madj2k/fe-frontend-kit/sass/bootstrap-5.3/10_mixins";
+@import "default/00_mixins/_import";
+@import "default/10_config/_base";
+@import "default/10_config/_colors";
+@import "default/10_config/_font";
+@import "default/10_config/_maps";
+@import "default/20_basics/_cta";
+
+body .klaro {
+    --green1: #{$color-primary};
+    --green2: #{$color-primary};
+    --green3: #{$color-primary};
+    --font-family: #{$font-family-sans-serif};
+
+    &.cm-as-context-notice {
+        padding:0;
+    }
+
+    .context-notice {
+        @include copy;
+        background-color: $color-secondary;
+        border-color: $color-secondary;
+        border-radius:0;
+    }
+
+    label {
+        margin:0;
+    }
+
+    .cookie-modal .cm-btn,
+    .context-notice .cm-btn,
+    .cookie-notice .cm-btn {
+        border-radius: 0;
+        @extend .cta;
+        @extend .cta-small;
+    }
+
+    .context-notice .cm-btn.cm-btn-success-var,
+    .cookie-notice .cm-btn.cm-btn-success-var,
+    .cookie-modal .cm-btn.cm-btn-success-var,
+    .cookie-modal .cm-btn.cm-btn-accept,
+    .cookie-modal .cm-btn.cm-btn-decline {
+        color: $color-white;
+        background-color: $color-secondary;
+
+        &:hover {
+            background-color: $color-secondary;
+        }
+    }
+
+    .context-notice .cm-list-label .slider,
+    .cookie-notice .cm-list-label .slider,
+    .cookie-modal .cm-list-label .slider {
+        background-color: #676767;
+    }
+
+    .cookie-modal .cm-caret,
+    .cookie-modal .cm-list-description {
+        @include copy-small;
+    }
+
+    .cookie-modal .cm-header{
+        @include copy;
+        .title {
+            @include h2;
+        }
+    }
+
+    .cookie-modal .cm-list-title {
+        @include h6;
+        margin-bottom: 0
+    }
+
+    .cookie-modal .cm-footer-buttons {
+        margin-top: 1rem;
+    }
+}

@@ -1,0 +1,51 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true"
+>
+
+    <f:for each="{menuItems}" as="menuItem">
+        <li class="nav-mobile-item level-1{f:if(condition: menuItem.active, then:' active')}" role="none">
+            <f:if condition="{menuItem.children}">
+                <f:then>
+                    <div class="nav-mobile-linkwrap level-1">
+                        <button class="toggle"
+                             data-bs-toggle="collapse"
+                             data-bs-target="#nav-mobile-sublist-{menuItem.data.uid}"
+                             aria-expanded="{f:if(condition: menuItem.active, then: 'true', else:'false')}"
+                             aria-controls="nav-mobile-sublist-{menuItem.data.uid}"
+                             data-bs-parent="#mobile-nav-list"
+                             role="menuitem">
+                            <span class="nav-mobile-link level-1{f:if(condition: menuItem.active, then:' active')}"
+                                  id="nav-mobile-link-{menuItem.data.uid}"
+                                  title="{menuItem.data.title}">
+                                {menuItem.data.title}
+                            </span><span class="icon-plus icon toggle-icon"></span>
+                        </button>
+                    </div>
+                    <ul class="nav-mobile-list level-2{f:if(condition: menuItem.active, then: ' show', else:' collapse')}"
+                        id="nav-mobile-sublist-{menuItem.data.uid}"
+                        role="menu">
+                        <f:if condition="{showParentLink}">
+                            <f:render partial="Level2"
+                                      arguments="{menuItems: {0: menuItem},
+                                                 titleOverride: '{f:translate(key:\'menu.overview\', extensionName:\'SiteDefault\')}'}" />
+                        </f:if>
+                        <f:render partial="Level2" arguments="{menuItems: menuItem.children}" />
+                    </ul>
+                </f:then>
+                <f:else>
+                    <div class="nav-mobile-linkwrap level-1">
+                        <a class="nav-mobile-link level-1{f:if(condition: menuItem.active, then:' active')}"
+                           href="{f:if(condition:'{menuItem.data.tx_klarokratie_open_modal}', then:'#', else :'{menuItem.link}')}"
+                           {f:if(condition:'{menuItem.data.tx_klarokratie_open_modal}', then:'onclick="javascript:klaro.show(undefined, true);return false;"')}
+                           target="{menuItem.target}"
+                           title="{menuItem.title -> f:format.stripTags()}"
+                           role="menuitem">
+                            <f:if condition="{menuItem.data.tx_sitedefault_icon_class}"><span
+                                class="{menuItem.data.tx_sitedefault_icon_class} nav-mobile-icon"></span></f:if><span>{menuItem.data.title}</span>
+                        </a>
+                    </div>
+                </f:else>
+            </f:if>
+        </li>
+    </f:for>
+</html>

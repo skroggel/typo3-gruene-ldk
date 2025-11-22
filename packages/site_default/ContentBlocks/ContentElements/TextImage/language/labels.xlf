@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages">
+		<body>
+			<!-- @see https://docs.typo3.org/p/friendsoftypo3/content-blocks/main/en-us/API/AutomaticLanguageKeys/Index.html#api_automatic_language_keys -->
+
+			<!-- element -->
+			<trans-unit id="title">
+				<source>Text-Image</source>
+			</trans-unit>
+			<trans-unit id="description">
+				<source>This module is a simple text-image block. First, an editorial text area with a headline and body text is displayed, followed by an image below. The design is deliberately kept simple and is suitable for content where the text is in the foreground and the image serves as a supporting element.</source>
+			</trans-unit>
+
+			<!-- tabs -->
+			<trans-unit id="tabs.tab-media">
+				<source>Media</source>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

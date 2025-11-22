@@ -1,0 +1,42 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true"
+>
+
+    <f:comment><!-- Check if element is used as standalone or as embedded element --></f:comment>
+    <f:if condition="{data.rawRecord.foreign_table_parent_uid}">
+        <f:then>
+            <div class="csp-block csp-not-last">
+                <f:render section="Inner" arguments="{_all}" />
+            </div>
+        </f:then>
+        <f:else>
+            <section class="csp-section csp-not-last text-image js-appear-on-scroll" id="c{data.uid}">
+                <div class="container-content">
+                    <div class="row">
+                        <div class="col-12">
+                            <f:render section="Inner" arguments="{_all}" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </f:else>
+    </f:if>
+
+    <f:comment><!-- ==================================== --></f:comment>
+    <f:section name="Inner">
+
+        <f:render partial="Utils/Header"
+                  arguments="{header: data.madj2k_header, wrapClass: 'text-image-headline',
+                                             layout: data.header_layout, settings: settings}" />
+
+        <f:render partial="Utils/Bodytext"
+                  arguments="{text: data.bodytext, wrapClass: 'text-image-text'}" />
+
+        <f:render partial="Utils/Media"
+                  arguments="{file: data.assets.0, wrapClass: 'mt-3 mt-sm-4 mt-lg-6 text-image-image parallax-img js-parallax-img', settings: settings}" />
+
+    </f:section>
+
+</html>
+
+

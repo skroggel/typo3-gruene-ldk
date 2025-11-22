@@ -1,0 +1,42 @@
+// We need at least the mixins
+@import "../../node_modules/bootstrap/scss/mixins";
+
+// The basics
+@import "../../node_modules/@madj2k/fe-frontend-kit/sass/bootstrap-5.3/10_mixins";
+@import "default/00_mixins/_import";
+@import "default/10_config/_base";
+@import "default/10_config/_colors";
+@import "default/10_config/_font";
+@import "default/10_config/_maps";
+
+// set all breakpoints to zero because we don't want media-queries in the editor
+// this way the largest possible value will be used which should be the settings for Desktop
+$grid-breakpoints: (
+    xs: 0,
+    sm: 0, // mobile
+    md: 0,
+    lg: 0, // tablet
+    xl: 0,
+    xxl: 0,
+    xxxl: 0 // custom
+);
+
+// typography
+@import "default/20_basics/_icons";
+@import "default/20_basics/_typography";
+@import "default/20_basics/_table";
+ul {
+    @extend .ul;
+}
+ol {
+    @extend .ol;
+}
+
+// CTA & links
+@import "default/20_basics/_link";
+@import "default/20_basics/_cta";
+
+a:not(.cta):not(.link) {
+    @extend .link;
+    font-size: inherit;
+}

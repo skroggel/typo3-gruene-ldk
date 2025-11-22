@@ -1,0 +1,8 @@
+#!/bin/bash
+
+## Description: build critical css
+## Usage: critical
+## Example: "ddev critical"
+
+ddev npm --prefix ${DDEV_DOCROOT}/../packages/site_default/Resources/Private/Assets/ install
+ddev npm --prefix ${DDEV_DOCROOT}/../packages/site_default/Resources/Private/Assets/ run critical

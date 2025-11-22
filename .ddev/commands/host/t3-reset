@@ -1,0 +1,9 @@
+#!/bin/bash
+
+## Description: Updates database, installs extensions and clears caches
+## Usage: t3-reset
+## Example: "ddev t3-reset"
+
+ddev typo3 database:updateschema "*.add,*.change"
+ddev typo3 install:extensionsetupifpossible
+ddev typo3 cache:flush

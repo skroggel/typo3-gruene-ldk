@@ -1,0 +1,134 @@
+#############################################################################
+# Default-Parser for HTML
+#############################################################################
+lib.parseFunc_RTE {
+
+    // add default class to links
+    nonTypoTagStdWrap.HTMLparser {
+        tags.a.fixAttrib.class {
+            default = link
+            always = 1
+        }
+    }
+
+    nonTypoTagStdWrap.encapsLines {
+
+        // RTE Tuning --> gegen Standardklassen
+        addAttributes.P.class >
+        remapTag >
+        addAttributes.DIV.class >
+
+        // No additional wrapper around this tags
+        encapsTagList = cite, div, p, pre, h1, h2, h3, h4, h5, h6, ul, ol, li
+    }
+
+    externalBlocks {
+
+        //===============================================================
+        // no p-Tags in tables
+        //===============================================================
+        table.HTMLtableCells {
+
+            default >
+            default.stdWrap {
+                parseFunc =< lib.parseFunc
+                HTMLparser {
+                  removeTags = p
+                  keepNonMatchedTags = 1
+                }
+            }
+        }
+
+        //===============================================================
+        // Set classes and remove strange behaviour
+        //===============================================================
+        table.stdWrap.HTMLparser = 1
+        table.stdWrap.HTMLparser.tags.table.fixAttrib.class {
+            default = table
+            always = 1
+            list = table, two-axes
+        }
+
+        dl >
+        dl {
+            stripNL = 1
+
+            // Remove  p-Tags around dl-Tags
+            stdWrap {
+                HTMLparser {
+                    // tags zum expliziten Entfernen
+                    removeTags = p
+
+                    // alle anderen behalten wir (z.B. li)
+                    keepNonMatchedTags = 1
+                }
+            }
+        }
+
+        ul >
+        ul {
+            stripNL = 1
+            callRecursive = 1
+            callRecursive {
+
+                // set default class
+                tagStdWrap.HTMLparser = 1
+                tagStdWrap.HTMLparser.tags.ul.fixAttrib.class {
+                    default = ul
+                    always = 1
+                }
+            }
+
+            // Remove p-Tags around li-Tags
+            stdWrap {
+                HTMLparser {
+                    // tags zum expliziten Entfernen
+                    removeTags = p
+
+                    // alle anderen behalten wir (z.B. li)
+                    keepNonMatchedTags = 1
+                }
+            }
+        }
+
+        ol >
+        ol < .ul
+        ol {
+            callRecursive {
+                // set default class
+                tagStdWrap.HTMLparser.tags.ol.fixAttrib.class {
+                    default = ol
+                    always = 1
+                }
+            }
+        }
+
+        // Remove style-attribute
+        blockquote {
+            callRecursive = 1
+            callRecursive {
+                tagStdWrap.HTMLparser = 1
+                tagStdWrap.HTMLparser.tags.blockquote.overrideAttribs >
+            }
+        }
+
+        // fixing class of figure-wrapper around tables
+		figure {
+			callRecursive = 1
+			callRecursive {
+				tagStdWrap.HTMLparser = 1
+				tagStdWrap.HTMLparser.tags.figure.fixAttrib.class {
+					default = figure table table-responsive
+					always = 1
+					list = figure table table-responsive
+				}
+			}
+		}
+    }
+}
+
+
+
+
+
+

@@ -1,0 +1,48 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+    <f:render section="Default" arguments="{_all}" />
+
+    <f:comment><!-- ============================================================= --></f:comment>
+
+    <f:section name="Default">
+        <f:variable name="idAttribute">{f:if(condition:'{id}', then:'id="{id}"')}</f:variable>
+        <f:if condition="{text}">
+            <div class="{wrapClass}" {idAttribute} {additionalAttributes -> f:format.raw()}>
+                <f:if condition="{cropSize}">
+                    <f:then>
+                        <f:format.crop respectHtml="true" maxCharacters="{cropSize}">
+                            <f:format.html parseFuncTSPath="lib.parseFunc_RTE">{text}</f:format.html>
+                        </f:format.crop>
+                    </f:then>
+                    <f:else>
+                        <f:format.html parseFuncTSPath="lib.parseFunc_RTE">{text}</f:format.html>
+                    </f:else>
+                </f:if>
+            </div>
+        </f:if>
+    </f:section>
+
+    <f:comment><!-- ============================================================= --></f:comment>
+
+    <f:section name="Inline">
+        <f:if condition="{text}">
+            <f:variable name="idAttribute">{f:if(condition:'{id}', then:'id="{id}"')}</f:variable>
+            <span class="{wrapClass}" {idAttribute} {additionalAttributes -> f:format.raw()}>
+                <f:if condition="{cropSize}">
+                    <f:then>
+                        <f:format.crop respectHtml="true" maxCharacters="{cropSize}">
+                            <f:format.html parseFuncTSPath="lib.parseFunc_Inline">{text}</f:format.html>
+                        </f:format.crop>
+                    </f:then>
+                    <f:else>
+                        <f:format.html parseFuncTSPath="lib.parseFunc_Inline">{text}</f:format.html>
+                    </f:else>
+                </f:if>
+            </span>
+        </f:if>
+    </f:section>
+
+
+
+
+</html>

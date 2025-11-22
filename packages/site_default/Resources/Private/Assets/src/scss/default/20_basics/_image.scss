@@ -1,0 +1,47 @@
+/******************************************
+	Images
+******************************************/
+figcaption {
+    @include copy-small;
+    margin-top: 1em;
+}
+
+.img {
+	margin-bottom: 0;
+	display: inline-block;
+
+    &-inner {
+        height:100%;
+        width:100%;
+    }
+
+    &.fit-contain,
+    &.fit-cover {
+        height: 100%;
+        width: 100%;
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &.fit-contain {
+        img {
+            object-fit: contain;
+        }
+    }
+
+
+    img {
+		max-width: 100vw;
+        width: 100%
+	}
+
+	// bring SVGs to fit max-width
+    img[src$=".svg"] {
+        height: auto;
+        max-width: 100%;
+    }
+}

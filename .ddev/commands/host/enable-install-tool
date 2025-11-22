@@ -1,0 +1,13 @@
+#!/bin/bash
+
+## Description: create the install tool opener "ENABLE_INSTALL_TOOL"
+## Usage: enable-install-tool
+## Example: "ddev enable-install-tool"
+
+FULLURL=${DDEV_APPROOT}/config/
+FILENAME="ENABLE_INSTALL_TOOL"
+
+touch ${FULLURL}${FILENAME}
+echo ${FULLURL}
+
+ddev launch typo3/install.php

@@ -1,0 +1,57 @@
+# Add configuration for the editor
+# For complete documentation see http://docs.ckeditor.com/#!/api/CKEDITOR.config
+
+imports:
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml" }
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml" }
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml" }
+
+editor:
+  config:
+    contentsCss: "EXT:site_default/Resources/Public/Css/editor.css"
+
+    # Styles in dropdown
+    stylesSet:
+      - { name: "H2 as H1", element: "h2", attributes: { 'class': 'h1' } }
+      - { name: "Paragraph Big", element: "p", attributes: { 'class': 'p-big' } }
+
+    # formats in dropdown
+    format_tags: "p;h1;h2;h3;h4;h5;pre"
+
+    toolbar:
+      items:
+        - style
+        - heading
+        # grouping separator
+        - '|'
+        - bold
+        - italic
+        - subscript
+        - superscript
+        - softhyphen
+        - '|'
+        - findAndReplace
+        - link
+        - '|'
+        - removeFormat
+        - undo
+        - redo
+        - '|'
+        - specialCharacters
+        - sourceEditing
+
+    justifyClasses:
+      - text-left
+      - text-center
+      - text-right
+      - text-justify
+
+    extraPlugins:
+      - justify
+
+    removePlugins:
+      - image
+
+    removeButtons:
+      - Underline
+      - Strike

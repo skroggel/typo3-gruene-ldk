@@ -1,0 +1,152 @@
+/******************************************
+	Links
+******************************************/
+a {
+    @include accessibility-outline();
+}
+
+.link-wrap,
+.link-wrap:link,
+.link-wrap:visited,
+.link-wrap:hover {
+
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+        .cta {
+            color: $color-white;
+            background-color: $color-secondary;
+
+            &.cta-default {
+                .cta-inner {
+                    border: rem-calc(1) solid $color-white;
+                }
+            }
+        }
+    }
+}
+
+
+[class^="bg-color-"]:not([class^="bg-color-light"]):not([class^="bg-color-none"]):not([class^="bg-color-white"]),
+[class*=" bg-color-"]:not([class*=" bg-color-light"]):not([class*=" bg-color-none"]):not([class*=" bg-color-white"])  {
+    .link-wrap,
+    .link-wrap:link,
+    .link-wrap:visited,
+    .link-wrap:hover {
+        &:hover {
+            .cta {
+                color: $color-secondary;
+                background-color: $color-white;
+
+                &.cta-default {
+                    .cta-inner {
+                        border: rem-calc(1) solid $color-white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.link {
+    @include link;
+    color: $color-secondary;
+    text-decoration: underline;
+}
+
+.link,
+.link-headline {
+    position: relative;
+    display: inline-block;
+    z-index: 50;
+    transition: all 0.5s;
+
+    &:before {
+        position: absolute;
+        z-index: -1;
+        content: '';
+        background: $color-primary;
+        height: 1em;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        //opacity: 0.7;
+        transition: all 0.5s;
+    }
+
+    &:hover:before {
+        width: 100%;
+    }
+
+    /*
+    &:hover {
+        background: rgba(253, 238, 25, 0.4);
+        box-shadow: 0 0 rem-calc(10) rem-calc(5) rgba(253, 238, 25, 0.4)
+    }*/
+
+    &-fax,
+    &-phone {
+        color: inherit;
+        // pointer-events: none;
+        // cursor: default;
+    }
+
+    // used by BE-Editor (RichTextEditor)
+    /*
+	&-rte {
+		&-internal {
+		}
+
+		&-external {
+		}
+
+		&-download {
+		}
+
+		&-email {
+		}
+
+		&-phone {
+		}
+
+		&-arrow-right {
+			display: inline-block; // remove underline on hover for pseudo-element
+			&:after {
+				display: inline-block; // remove underline on hover for pseudo-element
+				content: $icon-arrow-big-right;
+				font-family: "icons" !important;
+				font-size: 0.9em;
+				speak: never;
+				font-style: normal;
+				font-weight: normal;
+				font-variant: normal;
+				text-transform: none;
+				-webkit-font-smoothing: antialiased;
+				padding-left: 10px;
+				text-decoration: none;
+			}
+		}
+	}*/
+}
+
+.link-headline {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+[class^="bg-color-"]:not([class^="bg-color-light"]):not([class^="bg-color-none"]):not([class^="bg-color-white"]),
+[class*=" bg-color-"]:not([class*=" bg-color-light"]):not([class*=" bg-color-none"]):not([class*=" bg-color-white"])  {
+    .link,
+    .link-headline {
+        text-decoration:none;
+        &:hover {
+            text-decoration: underline;
+        }
+        &:before {
+            width: 0;
+        }
+    }
+}

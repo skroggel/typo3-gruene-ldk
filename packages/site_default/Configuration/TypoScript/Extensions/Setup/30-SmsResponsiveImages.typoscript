@@ -1,0 +1,14 @@
+/**
+* Inherit global settings to all relevant extensions!
+*/
+plugin.tx_news {
+    settings._custom {
+        _global.settings.tx_smsresponsiveimages < lib.madj2kMediaUtils.responsiveImages
+    }
+}
+
+plugin.tx_kesearch_pi2 {
+    settings._custom {
+        _global.settings.tx_smsresponsiveimages < lib.madj2kMediaUtils.responsiveImages
+    }
+}

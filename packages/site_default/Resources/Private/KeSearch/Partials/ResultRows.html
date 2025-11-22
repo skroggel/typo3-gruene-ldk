@@ -1,0 +1,19 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:kesearch="http://typo3.org/ns/Tpwd/KeSearch/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+    <f:if condition="{conf.pagebrowserOnTop}">
+        <f:render partial="PageBrowser" arguments="{conf: conf, numberofresults:numberofresults, pagination:pagination}" />
+    </f:if>
+
+    <div class="search-result-list" id="kesearch_results">
+        <f:for each="{resultrows}" as="resultrow">
+            <f:render partial="ResultRow" arguments="{conf: conf, resultrow: resultrow}" />
+        </f:for>
+    </div>
+
+    <f:if condition="{conf.pagebrowserAtBottom}">
+       <f:render partial="PageBrowser" arguments="{conf: conf, numberofresults:numberofresults, pagination:pagination}" />
+    </f:if>
+
+</html>

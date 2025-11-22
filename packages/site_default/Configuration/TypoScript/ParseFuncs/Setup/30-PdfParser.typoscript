@@ -1,0 +1,37 @@
+#############################################################################
+# Parser for PDFs
+#############################################################################
+
+lib.parseFunc_PDF < lib.parseFunc_RTE
+lib.parseFunc_PDF {
+
+    tags {
+
+        # Links have to be absolute
+        a {
+            typolink {
+                forceAbsoluteUrl = 1
+                target = _blank
+                extTarget = _blank
+            }
+        }
+    }
+
+    externalBlocks {
+        // Remove p-tags in blockquote
+        blockquote {
+            stripNL = 1
+            stdWrap {
+            HTMLparser = 1
+                HTMLparser {
+                    allowTags = blockquote, strong, i, sub, sup
+                    denyTags = *
+                }
+            }
+        }
+    }
+}
+
+
+
+

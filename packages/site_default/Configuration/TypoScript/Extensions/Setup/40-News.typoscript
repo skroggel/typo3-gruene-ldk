@@ -1,0 +1,125 @@
+# ==============================================
+# FE-Plugin configuration for EXT:news
+# ==============================================
+plugin.tx_news {
+
+	view {
+		templateRootPaths {
+			0 = EXT:news/Resources/Private/Templates/
+			1 = {$plugin.tx_news.view.templateRootPath}
+			10 = EXT:site_default/Resources/Private/News/Templates/
+		}
+
+		partialRootPaths {
+			0 = EXT:news/Resources/Private/Partials/
+			1 = {$plugin.tx_news.view.partialRootPath}
+			10 = EXT:site_default/Resources/Private/News/Partials/
+			20 = EXT:site_default/Resources/Private/Content/Partials/
+			1712245685 = {$plugin.tx_mediautils.view.partialRootPath}
+		}
+
+		layoutRootPaths {
+			0 = EXT:news/Resources/Private/Layouts/
+			1 = {$plugin.tx_news.view.layoutRootPath}
+			10 = EXT:site_default/Resources/Private/News/Layouts/
+		}
+	}
+	settings {
+
+	    list {
+
+            paginate {
+                itemsPerPage = 6
+                insertAbove = 0
+                insertBelow = 1
+            }
+
+	        _custom {
+
+                listBox {
+                    tx_smsresponsiveimages < lib.madj2kMediaUtils.responsiveImages
+                    tx_smsresponsiveimages {
+
+                        breakpoints {
+                            0 {
+                                cropVariant = preview-small
+                            }
+                            1 {
+                                cropVariant = preview-small
+                            }
+                            2 {
+                                cropVariant = preview-small
+                            }
+                        }
+                    }
+                    header {
+                        defaultHeaderType = 3
+                        // overrideHeaderType = 2
+                        // defaultLayoutType = 2
+                    }
+                    media {
+                        image {
+                            fallback = EXT:site_default/Resources/Public/Images/DefaultImages/Tiles.png
+                            dimensions {
+                                width = 316
+                            }
+                        }
+                    }
+                }
+
+                teaserBox {
+                    tx_smsresponsiveimages < lib.madj2kMediaUtils.responsiveImages
+                    tx_smsresponsiveimages {
+
+                        breakpoints {
+                            0 {
+                                cropVariant = preview-big
+                            }
+                            1 {
+                                cropVariant = preview-big
+                            }
+                            2 {
+                                cropVariant = preview-big
+                            }
+                        }
+                    }
+
+                    header {
+                        defaultHeaderType = 3
+                        // overrideHeaderType = 2
+                        // defaultLayoutType = 2
+                    }
+                    media {
+                        image {
+                            fallback = EXT:site_default/Resources/Public/Images/DefaultImages/Tiles.png
+                            dimensions {
+                                width = 436
+                            }
+                        }
+                    }
+                }
+
+                teaserSlider {
+                    tx_smsresponsiveimages < lib.madj2kMediaUtils.responsiveImages
+                    header {
+                        defaultHeaderType = 4
+                        // overrideHeaderType = 2
+                        // defaultLayoutType = 2
+                    }
+                }
+	        }
+	    }
+
+		detail {
+
+			showPrevNext = 1
+
+			# override pageTitleProvider
+			pageTitle {
+				// provider = Multivisio\site_default\PageTitle\NewsTitleProvider
+				properties = alternativeTitle,title
+			}
+		}
+	}
+}
+

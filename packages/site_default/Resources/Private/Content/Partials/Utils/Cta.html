@@ -1,0 +1,70 @@
+    <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+    <f:if condition="!{iconPosition}">
+        <f:variable name="iconPosition" value="before" />
+    </f:if>
+
+    <div class="cta-wrap {wrapClass}">
+        <f:if condition="{link}">
+            <f:then>
+                <f:render section="Linked" arguments="{_all}" />
+            </f:then>
+            <f:else>
+                <f:render section="NoLink" arguments="{_all}" />
+            </f:else>
+        </f:if>
+    </div>
+
+    <f:comment><!-- ============================================================= --></f:comment>
+
+    <f:section name="Linked">
+
+        <f:comment><!-- We use a switch here because this way we can also handle icons --></f:comment>
+        <f:switch expression="{type}">
+            <f:case value="small">
+                <f:link.typolink parameter="{link}" class="cta cta-{type} {class}" title="{label}">
+                    <span class="cta-inner"><f:if condition="{iconPosition} == 'before'"><f:render section="Icon" arguments="{_all}" /></f:if><span>{label}</span><f:if condition="{iconPosition} == 'after'"><f:render section="Icon" arguments="{_all}" /></f:if></span>
+                </f:link.typolink>
+            </f:case>
+            <f:defaultCase>
+                <f:link.typolink parameter="{link}" class="cta cta-default {class}" title="{label}">
+                    <span class="cta-inner"><f:if condition="{iconPosition} == 'before'"><f:render section="Icon" arguments="{_all}" /></f:if><span>{label}</span><f:if condition="{iconPosition} == 'after'"><f:render section="Icon" arguments="{_all}" /></f:if></span>
+                </f:link.typolink>
+            </f:defaultCase>
+        </f:switch>
+    </f:section>
+
+    <f:comment><!-- ============================================================= --></f:comment>
+
+    <f:section name="NoLink">
+
+        <f:comment><!-- We use a switch here because this way we can also handle icons --></f:comment>
+        <f:switch expression="{type}">
+            <f:case value="small">
+                <button class="cta cta-{type} {class}" title="{label}">
+                    <span class="cta-inner"><f:if condition="{iconPosition} == 'before'"><f:render section="Icon" arguments="{_all}" /></f:if><span>{label}</span><f:if condition="{iconPosition} == 'after'"><f:render section="Icon" arguments="{_all}" /></f:if></span>
+                </button>
+            </f:case>
+            <f:defaultCase>
+                <button class="cta cta-default {class}" title="{label}">
+                    <span class="cta-inner"><f:if condition="{iconPosition} == 'before'"><f:render section="Icon" arguments="{_all}" /></f:if><span>{label}</span><f:if condition="{iconPosition} == 'after'"><f:render section="Icon" arguments="{_all}" /></f:if></span>
+                </button>
+            </f:defaultCase>
+        </f:switch>
+    </f:section>
+
+    <f:comment><!-- ============================================================= --></f:comment>
+    <f:section name="Icon"><f:spaceless><f:if condition="{iconType} == 'sprite'">
+        <f:then><span class="icon">
+            <svg aria-hidden="true" focusable="false">
+                <use href="{f:uri.image(src:'EXT:site_default/Resources/Public/Icons/sprite.svg')}#{icon}"></use>
+            </svg>
+        </span>
+        </f:then>
+        <f:else><f:spaceless>
+            <f:if condition="{icon}'"><span class="icon-{icon} icon"></span></f:if>
+        </f:spaceless></f:else>
+    </f:if>
+    </f:spaceless></f:section>
+
+    </html>

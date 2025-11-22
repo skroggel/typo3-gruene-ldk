@@ -1,0 +1,523 @@
+/* ==================================================
+* Form
+* ================================================== */
+@use 'sass:math';
+
+.form {
+
+    &-element {
+        position: relative;
+        margin-bottom: map-get($spacers, 2);
+        align-items: end;
+
+        .h-captcha {
+            line-height: 0;
+        }
+
+        .invalid-feedback {
+            @include copy-small;
+            color: $color-error;
+            font-weight: $font-weight-bold;
+            margin-left: rem-calc(14);
+            display:block;
+            margin-bottom:rem-calc($spacer);
+        }
+
+        &:has(.form-check-input) {
+            &.is-invalid {
+                .invalid-feedback {
+                    margin-left: rem-calc(25);
+                }
+
+                .form-check-field:before {
+                    border: rem-calc(1) solid $color-error;
+                }
+            }
+        }
+
+        &.is-invalid {
+            .form-label {
+                color: $color-error;
+                font-weight: $font-weight-bold;
+            }
+            .form-control {
+                border-color: $color-error;
+            }
+        }
+
+        // custom dropdown icon
+        /*
+        &-select {
+            position: relative;
+            &:after {
+                @extend .icomoon;
+                content: $icon-arrow-down;
+                font-size: rem-calc(24);
+                align-content: center;
+                text-align: right;
+
+                background-color: $color-white;
+                display: block;
+
+                padding-right: rem-calc(16);
+                pointer-events: auto;
+
+                position: absolute;
+                right: rem-calc(1);
+                bottom: rem-calc(1);
+                width: rem-calc(50);
+                height: rem-calc(48);
+
+                @include media-breakpoint-up(xl) {
+                    height: rem-calc(65);
+                }
+            }
+        }*/
+
+        &.label-as-placeholder {
+            .form-label {
+
+                @include copy;
+                position: absolute;
+                left: rem-calc(16);
+                top: 50%;
+                transform: translateY(-40%);
+                z-index: 49;
+            }
+
+            .form-select,
+            .form-control {
+                &::placeholder {
+                    color: transparent;
+                }
+            }
+
+            // if NO placeholder is shown, we need a label at the top
+            /**
+             * Note on :placeholder-shown:
+             * Autoprefixer incorrectly interprets :placeholder-shown as ::placeholder
+             * and generates legacy selectors like :-moz-placeholder and :-ms-input-placeholder.
+             *
+             * To avoid this, we use a dummy selector :__ph-shown__ in SCSS.
+             * - Autoprefixer ignores it (no unwanted vendor prefixes).
+             * - After Autoprefixer runs, a custom PostCSS plugin replaces
+             *   :__ph-shown__ back to :placeholder-shown.
+             *
+             * This ensures clean CSS output without invalid legacy selectors.
+             */
+            &:not(:has(.select2)):not(:has(.form-control:__ph-shown__)),
+            &:has(.select2-selection--single):not(:has(.select2-selection__placeholder)),
+            &:has(.select2-selection--multiple):has(.select2-selection__choice){
+                .form-label {
+
+                    @include copy-small;
+                    position: static;
+                    z-index: 51;
+                }
+            }
+        }
+
+        // do not show label if we have a placeholder for select2
+        &:has(.select2--single):has(.select2-selection__placeholder),
+        &:has(.select2-container--open) {
+            .form-label {
+                visibility: hidden;
+            }
+        }
+    }
+
+    &-element-gridrow,
+    &-element-fieldset {
+        margin-bottom: 0;
+    }
+
+    &-label {
+        @include copy-small;
+        color: $color-text;
+        display: block;
+        margin-bottom: rem-calc(math.div($spacer, 2));
+    }
+
+    &-select,
+    &-control {
+        @include copy;
+        @include accessibility-outline();
+
+        line-height: 1rem;
+        color: $color-text;
+
+        border: rem-calc(1) solid $color-primary;
+        border-radius: rem-calc(0);
+        background-color: $color-white;
+
+        margin-bottom:0;
+        padding: rem-calc(16) rem-calc(16) rem-calc(12) rem-calc(16);
+
+        display: block;
+        width: 100%;
+
+        /*
+        height: rem-calc(50);
+
+        @include media-breakpoint-up(xl) {
+            padding: rem-calc(22) rem-calc(16) rem-calc(16) rem-calc(16);
+            height: rem-calc(67);
+        }*/
+
+        &:active {
+            border-color: $color-secondary;
+        }
+
+        &:focus,
+        &:focus-visible {
+            border: rem-calc(1) solid $color-secondary;
+            outline: 0;
+            box-shadow: none;
+        }
+
+        &:focus-visible {
+            border-color: transparent;
+            @include accessibility-outline($color: $color-outline);
+        }
+
+        &.error {
+            border-color: $color-primary;
+        }
+    }
+
+    &-check {
+        padding-left:0;
+
+        &-wrapping-label {
+            display: flex;
+        }
+
+        a {
+            @include link;
+            @include copy-small;
+            font-size: initial;
+        }
+
+        // for this to work, the input field needs to be wrapped in a span with the class .form-check-field
+        // and both need to wrapped by the label-field to be clickable
+        .form-check-field:has(input[type="checkbox"]) {
+            @include checkbox(
+                $size: 16px,
+                $default-bg-color: $color-secondary,
+                $default-border-color: $color-secondary,
+                $default-icon: null,
+                $active-bg-color: $color-primary,
+                $active-border-color: $color-primary,
+                $active-icon: '../Images/input-radio-active.svg'
+            );
+            @include accessibility-outline($color: $color-outline);
+
+        }
+        .form-check-field:has(input[type="radio"]) {
+            @include radio(
+                $size: 16px,
+                $default-bg-color: $color-secondary,
+                $default-border-color: $color-secondary,
+                $default-icon: null,
+                $active-bg-color: $color-primary,
+                $active-border-color: $color-primary,
+                $active-icon: '../Images/input-radio-active.svg'
+            );
+            @include accessibility-outline($color: $color-outline);
+
+        }
+        .form-check-label {
+            @include copy-small;
+        }
+    }
+
+    .input-group {
+
+        border: rem-calc(1) solid transparent;
+        border-radius: rem-calc(4);
+
+        &:has(.form-control:active),
+        &:has(.form-select:active) {
+            border: rem-calc(1) solid $color-secondary;
+        }
+
+        &:has(.form-control:focus),
+        &:has(.form-select:focus) {
+
+            border: rem-calc(1) solid $color-secondary;
+
+            .form-control:focus,
+            .form-select:focus{
+                border-color: transparent;
+            }
+        }
+
+        &:has(.form-control:focus-visible),
+        &:has(.form-select:focus-visible) {
+
+            @include accessibility-outline($color: $color-outline);
+            border-color: transparent;
+
+            .form-control:focus-visible,
+            .form-select:focus-visible{
+                outline:0;
+            }
+        }
+
+        &-text {
+            position: relative;
+            background-color: $color-white;
+            border-left: 0;
+            border-radius: 0;
+            font-size: rem-calc(18);
+
+            // accessibility
+            @include accessibility-outline($color: $color-outline);
+
+            // override bootstrap defaults which lead to an cropped outline!
+            &:focus-visible {
+                position: relative;
+                margin-left: inherit !important;
+                border-top-left-radius: inherit !important;
+                border-bottom-left-radius: inherit !important;
+            }
+        }
+    }
+
+    /*
+    .select2-container--open {
+        z-index: 65;
+        .select2-selection {
+            background-color: $color-white !important;
+        }
+    }
+    */
+}
+
+textarea.form-control {
+    min-height: rem-calc(200);
+}
+
+[class^="bg-color-"]:not([class^="bg-color-light"]):not([class^="bg-color-none"]):not([class^="bg-color-white"]),
+[class*=" bg-color-"]:not([class*=" bg-color-light"]):not([class*=" bg-color-none"]):not([class*=" bg-color-white"])  {
+    .form {
+
+        &-select,
+        &-control {
+            border: rem-calc(1) solid $color-white;
+        }
+
+        .input-group-text {
+            border: rem-calc(1) solid $color-white;
+        }
+    }
+}
+
+/* ====================================================================
+   Select2
+====================================================================
+.select2-container {
+    @include copy-small;
+    margin-bottom:0;
+    color: $color-text;
+    background-color: transparent;
+    z-index: 50;
+
+    .select2-selection__placeholder {
+        color: $color-text;
+    }
+
+    // select-field
+    .select2-selection {
+        border: rem-calc(1) solid $color-secondary;
+        border-radius: rem-calc(6);
+        background-color: $color-white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: rem-calc(42);
+
+        // accessibility
+        @include accessibility-outline();
+
+        // displayed selected value(s)
+        .select2-selection__rendered {
+            @include list-reset;
+
+            display: inline-block;
+            padding: rem-calc(10) rem-calc(14) rem-calc(10) rem-calc(14);
+        }
+
+        // options for reset and removal of options
+        .select2-selection__choice__remove,
+        .select2-selection__clear {
+            float:right;
+            color: $color-text;
+            margin-left:rem-calc(10);
+            font-size: rem-calc(25);
+            font-weight: normal;
+        }
+
+        // dropdown arrow
+        .select2-selection__arrow {
+            font-size: rem-calc(1);
+            line-height: 1;
+
+            b {
+                @extend .icomoon;
+                // @extend .icon-arrow-down;
+
+                font-size: rem-calc(6);
+                color: $color-text;
+                padding-right: rem-calc(14);
+            }
+        }
+    }
+
+    .select2-dropdown {
+        border: rem-calc(1) solid $color-secondary;
+        border-radius: rem-calc(6);
+        background-color: $color-white;
+
+        // no search field in dropdown
+        .select2-search--dropdown,
+        .select2-search__field {
+            display: none;
+        }
+
+        .select2-results__options {
+            display: flex;
+            flex-direction: column;
+        }
+
+        // active option
+        .select2-results__option {
+            &--highlighted {
+                color: $color-primary;
+            }
+        }
+    }
+
+    // options in dropdown when opened
+    .select2-results__option {
+        padding: 0 rem-calc(10) rem-calc(10);
+        &:last-child {
+            padding-bottom:0;
+        }
+     }
+
+    // multi-select
+    &.select2-container--multiple-dropdown {
+
+        // select-field
+        .select2-selection {
+            background-color: transparent;
+
+            // comma-separated list of selected items
+            .select2-selection__rendered {
+
+                display: flex;
+                gap: 0;
+
+                .select2-selection__choice {
+                    display: flex;
+                    .select2-selection__choice__remove {
+                        order: 99;
+                    }
+
+                    & + .select2-selection__choice {
+                        &:before {
+                            content: ',';
+                            padding-right: rem-calc(8);
+                        }
+                    }
+                }
+
+                // icon for clearing all values
+                .select2-selection__clear {
+                    order: 99;
+                    margin-right: 2rem;
+                    visibility:hidden;
+                }
+
+                .select2-search--inline {
+                    order: 100;
+                }
+
+                // hide search field visually but keep it for accessibility
+                .select2-search__field:focus,
+                .select2-search__field:focus-visible,
+                .select2-search__field {
+                    @include copy-small;
+                    margin: 0;
+                    padding: 0;
+
+                    width: 100%;
+                    outline: 0;
+                    background-color: transparent;
+                }
+            }
+
+            // dropdown arrow
+            &:after {
+                // content: $icon-arrow-down;
+                @extend .icomoon;
+                // @extend .icon-arrow-down;
+
+                font-size: rem-calc(6);
+                color: $color-text;
+                padding-right: rem-calc(14);
+            }
+        }
+
+        // dropdown when opened
+        .select2-dropdown {
+
+            //  checkbox for options
+            .select2-results__option:not(.select2-results__message){
+
+                @include checkbox(
+                    $size: 16px,
+                    $default-bg-color: $color-secondary,
+                    $default-border-color: $color-secondary,
+                    $default-icon: null,
+                    $active-bg-color: $color-primary,
+                    $active-border-color: $color-primary,
+                    $active-icon: '../Images/input-radio-active.svg'
+                );
+                padding-left: rem-calc(38);
+                &::before {
+                    left: rem-calc(10);
+                }
+            }
+        }
+    }
+
+    // if dropdown is opened!
+    &--open {
+        z-index: 60;
+
+        .select2-selection {
+            position: relative;
+            z-index: 52;
+            border-color: $color-secondary;
+        }
+
+        .select2-dropdown {
+            padding-top: rem-calc(16);
+            padding-bottom: rem-calc(16);
+
+            &--above {
+                top: rem-calc(6);
+                //  padding-top: rem-calc(10);
+                box-shadow: 0 rem-calc(-25) rem-calc(50) #00000040;
+            }
+
+            &--below {
+                top: rem-calc(-6);
+                box-shadow: 0 rem-calc(25) rem-calc(50) #00000040;
+            }
+        }
+    }
+}
+*/

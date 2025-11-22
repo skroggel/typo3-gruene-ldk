@@ -1,0 +1,9 @@
+#############################################################################
+# Parser for inline text (e.g. description of tile)
+#############################################################################
+
+lib.parseFunc_Inline < lib.parseFunc_Headline
+lib.parseFunc_Inline {
+
+}
+

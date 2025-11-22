@@ -1,0 +1,42 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+
+    <div class="news-tile" itemscope="itemscope" itemtype="https://schema.org/Article">
+        <n:link newsItem="{newsItem}"
+                additionalAttributes="{itemprop:'url'}"
+                settings="{settings}"
+                title="{newsItem.title -> f:format.stripTags()}"
+                class="news-tile-wrap link-wrap">
+
+            <f:comment><!-- Categories --></f:comment>
+            <f:if condition="{newsItem.categories}">
+                <span class="news-tile-category">
+                    <f:render partial="Category/ItemsImploded"
+                      arguments="{categories: newsItem.categories, settings: customSettings}" />
+                </span>
+            </f:if>
+
+            <f:comment><!-- Header --></f:comment>
+            <f:render partial="Utils/Header"
+                      arguments="{header: newsItem.title, wrapClass:'news-tile-header', settings: customSettings,
+                                  additionalAttributes: 'itemprop=\"headline\"'}" />
+
+            <f:comment><!-- Date --> </f:comment>
+            <p class="news-tile-textwrap">
+                <span class="news-tile-date">
+                    <f:format.date format="{f:translate(key:'news.dateFormat', extensionName:'site_default')}">{newsItem.datetime}</f:format.date>
+                </span> -
+                <f:render partial="Utils/Bodytext"
+                          section="Inline"
+                          arguments="{text: newsItem.teaser, wrapClass: 'news-tile-text', settings: customSettings,
+                                      additionalAttributes: 'itemprop=\"description\"'}" />
+            </p>
+
+            <div class="news-tile-cta">
+                <f:render partial="Utils/Cta"
+                          arguments="{label: '{f:translate(key:\'label.readMore\', extensionName:\'site_default\')}', type: 'small'}" />
+            </div>
+        </n:link>
+    </div>
+</html>

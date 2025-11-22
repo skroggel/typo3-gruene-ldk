@@ -1,0 +1,91 @@
+{
+	"name": "typo3/cms-base-distribution",
+	"description" : "TYPO3 CMS Base Distribution",
+	"license": "GPL-2.0-or-later",
+	"type": "project",
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"config": {
+		"allow-plugins": {
+			"typo3/class-alias-loader": true,
+			"typo3/cms-composer-installers": true,
+			"helhum/dotenv-connector": true,
+			"helhum/typo3-console-plugin": true
+		},
+		"platform": {
+			"php": "8.4.0"
+		},
+		"sort-packages": true,
+		"preferred-install": {
+			"madj2k/*": "source",
+			"*": "dist"
+		}
+	},
+	"extra": {
+		"helhum/typo3-console": {
+			"install-binary": false,
+			"install-extension-dummy": false
+		},
+		"helhum/dotenv-connector": {
+			"cache-dir": "var/cache"
+		}
+	},
+	"repositories": [
+		{
+			"type": "composer",
+			"url": "https://composer.typo3.org/"
+		},
+		{
+			"type": "path",
+			"url": "./packages/*/"
+		}
+	],
+	"require": {
+		"brotkrueml/schema": "~3.12.0",
+		"helhum/dotenv-connector": "~3.1.0",
+		"helhum/typo3-console": "~8.2.0",
+		"ichhabrecht/content-defender": "~3.5.0",
+		"dreistromland/typo3-hcaptcha": "2.3.0",
+		"friendsoftypo3/content-blocks": "~1.3.15",
+		"madj2k/site-default": "@dev",
+		"madj2k/t3-accelerator": "~13.4.0",
+		"madj2k/t3-copyright-guardian": "~13.4.0",
+		"madj2k/t3-dr-serp": "~13.4.0",
+		"madj2k/t3-forminator": "~13.4.0",
+		"madj2k/t3-klarokratie": "~13.4.0",
+		"madj2k/t3-media-utils": "~13.4.0",
+		"typo3/cms-backend": "^13.4.0",
+		"typo3/cms-belog": "^13.4.0",
+		"typo3/cms-beuser": "^13.4.0",
+		"typo3/cms-core": "^13.4.0",
+		"typo3/cms-dashboard": "^13.4.0",
+		"typo3/cms-extbase": "^13.4.0",
+		"typo3/cms-extensionmanager": "^13.4.0",
+		"typo3/cms-felogin": "^13.4.0",
+		"typo3/cms-filelist": "^13.4.0",
+		"typo3/cms-fluid": "^13.4.0",
+		"typo3/cms-fluid-styled-content": "^13.4.0",
+		"typo3/cms-form": "^13.4.0",
+		"typo3/cms-frontend": "^13.4.0",
+		"typo3/cms-impexp": "^13.4.0",
+		"typo3/cms-info": "^13.4.0",
+		"typo3/cms-install": "^13.4.0",
+		"typo3/cms-reactions": "^13.4.0",
+		"typo3/cms-rte-ckeditor": "^13.4.0",
+		"typo3/cms-seo": "^13.4.0",
+		"typo3/cms-setup": "^13.4.0",
+		"typo3/cms-sys-note": "^13.4.0",
+		"typo3/cms-t3editor": "^13.4.0",
+		"typo3/cms-tstemplate": "^13.4.0",
+		"typo3/cms-viewpage": "^13.4.0",
+		"typo3/cms-webhooks": "^13.4.0",
+		"georgringer/news": "~12.3.0",
+		"sitegeist/sms-responsive-images": "~3.1.0",
+		"tpwd/ke_search": "~6.4.0",
+		"yoast-seo-for-typo3/yoast_seo": "~11.0.0"
+	},
+	"require-dev": {
+		"typo3/testing-framework": "*",
+		"ichhabrecht/filefill": "~4.3.0"
+	}
+}

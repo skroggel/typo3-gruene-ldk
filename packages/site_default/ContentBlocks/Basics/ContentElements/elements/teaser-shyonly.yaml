@@ -1,0 +1,8 @@
+identifier: madj2k/teaser-shyonly
+prefixType: vendor # prefixing with vendor for reuse of database fields
+fields:
+  - identifier: teaser
+    type: Textarea
+    enableRichtext: true
+    richtextConfiguration: ShyOnly
+    label: LLL:EXT:site_default/ContentBlocks/Basics/ContentElements/language/labels.xlf:teaser.label

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages">
+		<body>
+			<!-- @see https://docs.typo3.org/p/friendsoftypo3/content-blocks/main/en-us/API/AutomaticLanguageKeys/Index.html#api_automatic_language_keys -->
+
+			<!-- element -->
+			<trans-unit id="title">
+				<source>Text</source>
+			</trans-unit>
+			<trans-unit id="description">
+				<source>The module is a pure text block. It contains only continuous text with an optional heading. It is suitable for short pieces of information or longer text passages that do not require images or other design elements..</source>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

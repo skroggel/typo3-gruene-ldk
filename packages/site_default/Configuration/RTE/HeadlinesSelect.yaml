@@ -1,0 +1,23 @@
+# Add configuration for the editor
+# For complete documentation see http://docs.ckeditor.com/#!/api/CKEDITOR.config
+
+imports:
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml" }
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml" }
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml" }
+  - { resource: "EXT:site_default/Configuration/RTE/Headlines.yaml" }
+
+editor:
+  config:
+    # formats in dropdown
+    format_tags: "h1;h2;h3;h4;h5"
+
+    toolbar:
+      items:
+        - heading
+        - bold
+        - softhyphen
+        - '|'
+        - removeFormat
+        - specialCharacters
+        - sourceEditing

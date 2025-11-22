@@ -1,0 +1,30 @@
+// ############################################################################
+// Menus
+// ############################################################################
+lib.siteDefault {
+
+    navigation {
+
+		mobile < .main
+		mobile {
+
+			10 {
+				file = EXT:site_default/Resources/Private/Menus/Templates/Mobile.html
+				partialRootPaths.0 = EXT:site_default/Resources/Private/Menus/Partials/Mobile/
+
+                dataProcessing {
+                    20 < lib.siteDefault.navigation.top.10.dataProcessing.10
+                    20.as = topMenuItems
+
+                    30 < lib.siteDefault.navigation.footer.10.dataProcessing.10
+                    30.as = footerMenuItems
+                }
+
+                variables {
+                    searchPid = TEXT
+                    searchPid.value = 6
+                }
+			}
+		}
+    }
+}

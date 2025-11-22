@@ -1,0 +1,67 @@
+#=====================================================================================
+# Import setup from external extensions
+#=====================================================================================
+@import 'EXT:sms_responsive_images/Configuration/TypoScript/Base/setup.typoscript'
+@import 'EXT:hcaptcha/Configuration/TypoScript/setup.typoscript'
+
+#=====================================================================================
+# Import setup from site-package
+#=====================================================================================
+@import './ContentElements/Setup/'
+@import './Extensions/Setup/'
+@import './FluidTemplates/Setup/'
+@import './Menus/Setup/'
+@import './Pages/Setup/'
+@import './ParseFuncs/Setup/'
+@import './Utilities/Setup/'
+
+
+# Environments
+[applicationContext matches "#^Development#"]
+    @import './__DEV/Setup/'
+[END]
+
+[applicationContext matches "#^Production/Staging#"]
+    @import './__STAGE/Setup/'
+[END]
+
+
+##################################
+#### Add form configuration   ####
+##################################
+plugin.tx_form {
+	settings {
+		yamlConfigurations {
+			1749909775 = EXT:site_default/Configuration/Yaml/FormSetup.yaml
+		}
+	}
+}
+
+module.tx_form {
+	settings {
+		yamlConfigurations {
+			1749909775 = EXT:site_default/Configuration/Yaml/FormSetup.yaml
+		}
+	}
+}
+
+
+// ====================================================
+// Add configuration for hcaptcha
+//=====================================================
+plugin {
+	tx_hcaptcha {
+		view {
+			partialRootPaths.1732379504 = EXT:site_default/Resources/Private/Forms/Partials/
+		}
+
+		_LOCAL_LANG.de {
+           	error_hcaptcha_missing-input-response = Dieses Feld muss ausgefüllt werden.
+           	error_hcaptcha_invalid-input-response = Bitte überprüfen Sie Ihre Eingabe.
+           	error_hcaptcha_timeout-or-duplicate = Doppelte Übermittlung des Formulars. Bitte überprüfen Sie das Captcha erneut.
+           	error_hcaptcha_invalid-input-secret = Ungültiges Secret.
+           	error_hcaptcha_invalid-post-form = Fehlender Validierungswert in POST-Request.
+		   	error_hcaptcha_generic  = Bitte überprüfen Sie Ihre Eingabe.
+        }
+	}
+}

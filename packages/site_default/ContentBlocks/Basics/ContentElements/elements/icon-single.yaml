@@ -1,0 +1,11 @@
+identifier: madj2k/icon-single
+prefixType: vendor # prefixing with vendor for reuse of database fields
+fields:
+  - identifier: assets
+    useExistingField: true
+    type: File
+    extendedPalette: true
+    minitems: 1
+    maxitems: 1
+    allowed: svg,json
+    label: LLL:EXT:site_default/ContentBlocks/Basics/ContentElements/language/labels.xlf:assets.label

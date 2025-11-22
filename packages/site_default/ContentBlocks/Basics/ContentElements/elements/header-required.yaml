@@ -1,0 +1,9 @@
+identifier: madj2k/header-required
+prefixType: vendor # prefixing with vendor for reuse of database fields
+fields:
+  - identifier: header
+    type: Textarea
+    enableRichtext: true
+    richtextConfiguration: Headlines
+    required: true
+    label: LLL:EXT:site_default/ContentBlocks/Basics/ContentElements/language/labels.xlf:header.label

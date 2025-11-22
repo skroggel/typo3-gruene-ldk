@@ -1,0 +1,10 @@
+identifier: madj2k/bodytext-reduced-required
+prefixType: vendor # prefixing with vendor for reuse of database fields
+fields:
+  - identifier: bodytext
+    useExistingField: true
+    type: Textarea
+    enableRichtext: true
+    richtextConfiguration: Reduced
+    required: true
+    label: LLL:EXT:site_default/ContentBlocks/Basics/ContentElements/language/labels.xlf:bodytext.label

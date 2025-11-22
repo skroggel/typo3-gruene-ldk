@@ -1,0 +1,16 @@
+/* ==================================================
+* Basic variables
+* ================================================== */
+// spacing
+$spacer : 16px;
+$grid-gutter-width: 16px;
+$grid-gutter-width-mobile: 20px; // custom setting
+$page-max-width: 1920px;
+$page-max-inner-width: 1440px;
+
+$icon-arrow-down: unquote('"\\e90a"');
+$icon-arrow-up: unquote('"\\e909"');
+$icon-arrow-left: unquote('"\\e90b"');
+$icon-arrow-right: unquote('"\\e900"');
+$icon-close: unquote('"\\e905"');
+$icon-minus: unquote('"\\e909"');

@@ -1,0 +1,53 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true"
+>
+    <f:render partial="KeyboardShortcuts" />
+
+    <div class="siteheader" id="siteheader">
+        <div class="siteheader-inner" id="siteheader-inner">
+            <div class="container-xxxl">
+                <div class="row">
+                    <div class="col-6 col-xl-3">
+                        <div class="siteheader-brand">
+                            <f:link.page pageUid="{settings.rootPid}" class="siteheader-brand-link">
+                                <f:image src="EXT:site_default/Resources/Public/Images/logo-desktop.svg"
+                                         width="208"
+                                         height="66"
+                                         alt="Logo" class="siteheader-brand-logo siteheader-desktop d-none d-xl-block"/>
+                                <f:image src="EXT:site_default/Resources/Public/Images/logo-mobile.svg"
+                                         width="150"
+                                         height="48"
+                                         alt="Logo" class="siteheader-brand-logo siteheader-brand-logo-mobile d-block d-xl-none"/>
+                            </f:link.page>
+                        </div>
+                    </div>
+
+                    <div class="col-7 d-none d-xl-block h-100">
+                        <div class="siteheader-main">
+                             <f:cObject typoscriptObjectPath="lib.siteDefault.navigation.main"/>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-xl-2 justify">
+                        <div class="siteheader-meta toggle-group">
+                            <f:cObject typoscriptObjectPath="lib.siteDefault.navigation.language"/>
+
+                            <div class="nav-search d-none d-xl-block">
+                                <button class="toggle js-search-overlay-toggle"
+                                        aria-label="{f:translate(key:'menu.search', extensionName:'SiteDefault')}"
+                                        aria-controls="search-overlay"
+                                        aria-expanded="false">
+                                    <span class="icon-search icon toggle-icon"></span>
+                                </button>
+                            </div>
+
+                            <div class="d-bĺock d-xl-none">
+                                <f:cObject typoscriptObjectPath="lib.siteDefault.navigation.mobile"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</html>

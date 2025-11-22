@@ -1,0 +1,21 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true"
+>
+
+    <div class="sitefooter bg-color-light-grey fullwidth-1">
+        <div class="sitefooter-inner pt-2 pt-xl-4 pb-2 pb-xl-2">
+            <div class="container-xxxl">
+                <div class="row">
+                    <div class="col-12">
+                        <f:cObject typoscriptObjectPath="lib.siteDefault.navigation.sitemap"/>
+                    </div>
+                </div>
+                <div class="row align-items-end">
+                    <div class="col-12 col-lg-7 mt-2 mt-lg-0">
+                        <f:cObject typoscriptObjectPath="lib.siteDefault.navigation.footer"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</html>

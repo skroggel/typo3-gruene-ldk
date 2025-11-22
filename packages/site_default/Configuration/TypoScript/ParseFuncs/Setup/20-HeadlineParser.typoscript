@@ -1,0 +1,21 @@
+#############################################################################
+# Parser for headlines
+#############################################################################
+
+lib.parseFunc_Headline < lib.parseFunc_RTE
+lib.parseFunc_Headline {
+
+    nonTypoTagStdWrap {
+        HTMLparser = 1
+            HTMLparser {
+            keepNonMatchedTags = 0
+            allowTags = strong, br, span
+        }
+
+        encapsLines {
+            encapsTagList =
+            nonWrappedTag =
+        }
+    }
+}
+

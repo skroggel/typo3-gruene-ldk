@@ -1,0 +1,66 @@
+/******************************************
+	Button
+******************************************/
+.cta {
+    color: $color-secondary;
+    background-color: $color-primary;
+    transition: background-color 0.5s, color 0.5s;
+    border:0;
+    display: inline-block;
+
+    span {
+        pointer-events: none; // prevent JS-events
+    }
+
+    &-default {
+        @include copy-small;
+        line-height: 1em;
+        border-top-left-radius: rem-calc(12);
+        padding: rem-calc(10);
+
+        .cta-inner {
+            display: inline-block;
+            border: rem-calc(1) solid $color-secondary;
+            border-top-left-radius: rem-calc(12);
+            padding: rem-calc(5) rem-calc(15) rem-calc(5) rem-calc(15);
+            transition: border 0.5s;
+        }
+    }
+
+    &-small {
+        display: inline;
+        @include copy-small;
+        padding-left: rem-calc(10);
+        padding-right: rem-calc(10);
+    }
+
+    &:hover {
+        color: $color-white;
+        background-color: $color-secondary;
+
+        &.cta-default {
+            .cta-inner {
+                border: rem-calc(1) solid $color-white;
+            }
+        }
+    }
+}
+
+[class^="bg-color-"]:not([class^="bg-color-light"]):not([class^="bg-color-none"]):not([class^="bg-color-white"]),
+[class*=" bg-color-"]:not([class*=" bg-color-light"]):not([class*=" bg-color-none"]):not([class*=" bg-color-white"])  {
+    .cta {
+        &:hover {
+            color: $color-secondary;
+            background-color: $color-white;
+
+            &.cta-default {
+                .cta-inner {
+                    border: rem-calc(1) solid $color-secondary;
+                }
+            }
+        }
+    }
+}
+
+
+

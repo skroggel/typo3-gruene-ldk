@@ -1,0 +1,19 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+    <f:comment><!-- no csp-section class here --></f:comment>
+    <div class="stage">
+        <div class="fullwidth-1 stage-container">
+            <f:render partial="Utils/Media" arguments="{file: media.0, wrapClass: 'stage-image', settings: settings}" />
+        </div>
+
+        <div class="container-xxl">
+            <div class="row">
+                <div class="col-12">
+                    <f:render partial="Utils/Header"
+                              arguments="{header: pageTitle, layout: 1, wrapClass: 'stage-header', class: 'bubble'}" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+</html>

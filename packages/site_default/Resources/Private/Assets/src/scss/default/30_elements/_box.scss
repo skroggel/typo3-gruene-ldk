@@ -1,0 +1,130 @@
+/* ==================================================
+* Box
+* ================================================== */
+.box-wrap {
+    display:flex;
+    gap: rem-calc(48) rem-calc(20);
+    flex-wrap: wrap;
+}
+
+.box {
+
+    @include copy-small;
+    flex-basis: calc(100%);
+
+    @include media-breakpoint-up(md) {
+        @include flex-basis(2, rem-calc(20))
+    }
+
+    @include media-breakpoint-up(xxl) {
+        @include flex-basis(3, rem-calc(20))
+    }
+
+    &-inner {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        border-top-right-radius: rem-calc(24);
+        overflow: hidden;
+    }
+
+    &-content {
+        height:100%;
+        padding: rem-calc(30) rem-calc(20) rem-calc(30) rem-calc(20);
+    }
+
+    &-has-image {
+
+        height: initial;
+
+        .box-header {
+            .headline {
+                color: $color-secondary;
+            }
+        }
+
+        .box-image,
+        .box-content {
+            flex-basis:100%;
+            flex-grow: 1;
+        }
+
+        .box-content{
+            padding-top: rem-calc(24);
+            padding-bottom: rem-calc(24);
+        }
+
+        .box-image {
+            overflow:hidden;
+            min-height: rem-calc(214);
+            max-height: rem-calc(214);
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit:cover;
+            }
+        }
+
+        // for big box
+        &.box-is-big {
+
+            .box-inner {
+                @include media-breakpoint-up(md) {
+                    flex-direction: row;
+                }
+            }
+
+            .box-image,
+            .box-content {
+                flex-basis:100%;
+                @include media-breakpoint-up(md) {
+                    flex-basis:50%;
+                }
+            }
+
+            .box-image {
+                min-height: initial;
+                max-height: initial;
+            }
+        }
+    }
+
+    &-image {
+        img {
+            max-height:100%;
+        }
+    }
+
+    &-header {
+        .headline {
+            @include hyphenate;
+        }
+    }
+
+    &-text {
+
+        @include copy-small;
+        color: $color-text;
+
+        p + p {
+            margin-top: rem-calc(12);
+        }
+
+        .link {
+            @include copy-small;
+        }
+    }
+
+    &-cta {
+        margin-top: rem-calc(25);
+        text-align: right;
+    }
+}
+
+
+.aside {
+    .box {
+        height: 100%;
+    }
+}

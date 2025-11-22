@@ -1,0 +1,21 @@
+/* ==================================================
+* Toggles
+* ================================================== */
+.toggle-group {
+    @include toggle-group(
+        $gap: $spacer
+    )
+}
+
+.toggle {
+    @include toggle(
+        $icon-size: 20px,
+        $icon-color: $color-black,
+        $icon-mappings: (
+            "icon-hamburger": $icon-close,
+            "icon-plus": $icon-minus
+        )
+    );
+
+    @include accessibility-outline($color: $color-outline);
+}

@@ -1,0 +1,155 @@
+#############################################################################
+# Configure Backend-RTE
+#############################################################################
+RTE {
+    default {
+        preset = Default
+    }
+
+    // Set default link classes for all presets!
+    classesAnchor {
+
+        externalLink {
+            class = link external-link
+            name = Externer Link
+            type = url
+            target = _blank
+        }
+
+        /*
+            externalLinkArrowRight {
+                class = link link-rte-arrow-right
+                name = Externer Link mit Pfeil
+                type = url
+                target = _blank
+            }
+
+            externalLinkButton {
+                class = cta
+                name = Button
+                type = url
+                target = _blank
+            }
+
+            externalLinkButtonOutline {
+                class = cta cta-outline
+                name = Button Outline
+                type = url
+                target = _blank
+            }
+        */
+
+        internalLink {
+            class = link internal-link
+            name = Interner Link
+            type = page
+            target =
+        }
+
+        /*
+
+            internalLinkArrowRight {
+                class = link link-rte-arrow-right
+                name = Interner Link mit Pfeil
+                type = page
+                target =
+            }
+
+            internalLinkButton {
+                class = cta
+                name = Button
+                type = page
+                target =
+            }
+
+            internalLinkButtonOutline {
+                class = cta cta-outline
+                name = Button Outline
+                type = page
+                target =
+            }
+        */
+
+        download {
+            class = link link-download
+            name = Download Link
+            type = file
+            target =
+        }
+
+        /*
+            downloadArrowRight {
+                class = link link-rte-arrow-right
+                name = Download Link mit Pfeil
+                type = file
+                target =
+            }
+
+            downloadButton {
+                class = cta
+                title = Button
+                type = file
+                target =
+            }
+
+            downloadButtonOutline {
+                class = cta cta-outline
+                name = Button Outline
+                type = file
+                target =
+            }
+        */
+
+        email {
+            class = link link-rte-email
+            name = E-Mail
+            type = email
+            target =
+        }
+
+        telephone  {
+            class = link link-rte-phone
+            name = Telefon
+            type = telephone
+            target =
+        }
+    }
+
+    buttons {
+
+        link {
+
+            // Remove folder tab
+            options.removeItems = folder
+
+            // Default classes
+            page.properties {
+                class.default = link internal-link
+            }
+            file.properties {
+                class.default = link link-download
+            }
+            url.properties {
+                class.default = link external-link
+            }
+            email.properties {
+                class.default = link link-rte-email
+            }
+            telephone.properties {
+                class.default = link link-rte-phone
+            }
+
+            // allowed classes
+            properties.class.allowedClasses = link internal-link, link external-link, link link-download, link link-rte-email, link link-rte-phone
+
+            // allow additional params
+            queryParametersSelector.enabled = 1
+
+            // allow related-attribute
+            relAttribute.enabled = 0
+
+            // disallow target selector
+            targetSelector.disabled = 0
+        }
+    }
+}

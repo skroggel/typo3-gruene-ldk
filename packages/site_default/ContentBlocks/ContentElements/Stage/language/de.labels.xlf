@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages">
+		<body>
+
+			<!-- @see https://docs.typo3.org/p/friendsoftypo3/content-blocks/main/en-us/API/AutomaticLanguageKeys/Index.html#api_automatic_language_keys -->
+
+			<!-- element -->
+			<trans-unit id="title">
+				<source>Stage</source>
+				<target>Stage</target>
+			</trans-unit>
+			<trans-unit id="description">
+				<source>First element of the page</source>
+				<target>Erstes Element in der Seite</target>
+			</trans-unit>
+
+			<!-- tabs -->
+			<trans-unit id="tabs.tab-media">
+				<source>Media</source>
+				<target>Medien</source>
+			</trans-unit>
+
+			<!-- palettes -->
+			<trans-unit id="palettes.palette-header.label">
+				<source>Header</source>
+				<target>Überschriften</target>
+			</trans-unit>
+
+			<!-- fields -->
+			<trans-unit id="madj2k_stage_header.label">
+				<source>Header</source>
+				<target>Header</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,19 @@
+#############################################################################
+# Share-Link
+#############################################################################
+lib.siteDefault {
+
+    utilities {
+
+       searchbox = COA_INT
+       searchbox {
+         10 < plugin.tx_kesearch_pi1
+
+         # result page
+         10.resultPage = 6
+
+         10.overrideStartingPoint = 100
+       }
+    }
+}
+

@@ -1,0 +1,7 @@
+name: madj2k/text
+prefixType: vendor # prefixing with vendor for reuse of database fields
+fields:
+  - identifier: madj2k/palette-header
+    type: Basic
+  - identifier: madj2k/bodytext-reduced-required
+    type: Basic

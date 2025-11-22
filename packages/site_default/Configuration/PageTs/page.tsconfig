@@ -1,0 +1,16 @@
+@import 'EXT:site_default/Configuration/PageTs/BackendLayouts/'
+@import 'EXT:site_default/Configuration/PageTs/Extensions/'
+@import 'EXT:site_default/Configuration/PageTs/Permissions/'
+@import 'EXT:site_default/Configuration/PageTs/RTE/'
+@import 'EXT:site_default/Configuration/PageTs/TCEFORM/'
+@import 'EXT:site_default/Configuration/PageTs/TCEMAIN/'
+@import 'EXT:site_default/Configuration/PageTs/Wizards/'
+
+# Environments
+[applicationContext matches "#^Development#"]
+    @import 'EXT:site_default/Configuration/PageTs/__DEV/TsConfig.tsconfig'
+[END]
+
+[applicationContext matches "#^Production/Staging#"]
+    @import 'EXT:site_default/Configuration/PageTs/__STAGE/TsConfig.tsconfig'
+[END]

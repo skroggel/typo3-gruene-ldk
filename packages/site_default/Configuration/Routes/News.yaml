@@ -1,0 +1,32 @@
+routeEnhancers:
+  News:
+    type: Extbase
+    extension: News
+    plugin: Pi1
+    strictMode: true
+    defaultController: 'News::list'
+    routes:
+      # categories
+      - routePath: 'news/category/{category}'
+        _controller: 'News::list'
+        _arguments:
+          category: overwriteDemand/categories
+
+      # list
+      - routePath: 'news/list'
+        _controller: 'News::list'
+
+      # details
+      - routePath: 'article/{news-title}'
+        _controller: 'News::detail'
+        _arguments:
+          news-title: news
+
+    aspects:
+      news-title:
+        type: NewsTitle
+      category:
+        type: StaticRangeMapper
+        start: '1'
+        end: '999'
+

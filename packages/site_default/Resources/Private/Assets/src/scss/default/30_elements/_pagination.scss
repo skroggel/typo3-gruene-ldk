@@ -1,0 +1,79 @@
+/* ==================================================
+* Pagination
+* ================================================== */
+@use 'sass:math';
+.pagination {
+
+    @include copy-small;
+    margin-top: map-get($spacers, 4);
+    margin-bottom: 0;
+    display:block;
+
+    &-list {
+        @include list-reset;
+        display: flex;
+        justify-content: center;
+        gap: rem-calc(math.ceil(math.div($spacer,2)));
+
+        @include media-breakpoint-up(lg) {
+            gap: rem-calc($spacer);
+        }
+    }
+
+
+    &-link,
+    &-link:link,
+    &-link:visited,
+    &-link:hover,
+    &-placeholder {
+        font-family: $font-family-sans;
+        padding: rem-calc(8) rem-calc(14) rem-calc(8) rem-calc(14);
+        text-decoration: none;
+        color: $color-white;
+        background-color: $color-secondary;
+
+        min-width: rem-calc(40);
+        display: block;
+        text-align: center;
+
+        &.disabled {
+            opacity: 0.4;
+        }
+
+    }
+
+    &-link:hover,
+    &-link:active {
+        color: $color-white;
+        background-color: $color-primary;
+    }
+
+    &-item.active {
+        & > .pagination-link {
+            color: $color-white;
+            background-color: $color-primary;
+        }
+    }
+
+    &-placeholder {
+        &::before {
+            content: '…';
+        }
+    }
+
+    &-prev,
+    &-next {
+        &::before {
+            @extend .icomoon;
+            content: $icon-arrow-right;
+            font-weight:bold;
+            font-size: rem-calc(16);
+        }
+    }
+
+    &-prev {
+        &::before {
+            content: $icon-arrow-left;
+        }
+    }
+}

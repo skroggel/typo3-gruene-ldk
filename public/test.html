@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <title>Proof of Concept</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 40px;
+            background: #f0f0f0;
+        }
+
+        .word-tag {
+            display: inline-block;
+            background: #3d8f4e;
+            color: #fff;
+            font-weight: 700;
+            font-size: 20px;
+            padding: 24px; /* mehr Innenabstand links/rechts (B) */
+            margin-right: -24px; /* schiebt Worte optisch zusammen */
+            /* fixe Winkel in px (A) */
+            clip-path: polygon(12px 0, 100% 0, calc(100% - 12px) 100%, 0 100%);
+        }
+
+        p {
+            max-width: 500px;
+            line-height: 1.4;
+            // text-indent: -1.2em;   /* erste Zeile weiter links */
+            padding-left: 1.7em;   /* zweite Zeile rückt als Ganzes nach rechts */
+            margin-bottom: 1.2em;
+        }
+    </style>
+</head>
+<body>
+
+<p>
+    <span class="word-tag">Ein </span><span class="word-tag">sehr </span><span class="word-tag">langer </span><span class="word-tag">Text, </span><span class="word-tag">der </span><span class="word-tag">automatisch </span><span class="word-tag">umbricht </span><span class="word-tag">und </span><span class="word-tag">trotzdem </span><span class="word-tag">die </span><span class="word-tag">Schräge </span><span class="word-tag">korrekt </span><span class="word-tag">beibehält. </span>
+</p>
+
+</body>
+</html>

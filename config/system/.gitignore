@@ -1,0 +1,5 @@
+# Override rules from ddev which are generated automatically
+# /.gitignore
+
+# /AdditionalConfiguration.php
+/drushrc.php

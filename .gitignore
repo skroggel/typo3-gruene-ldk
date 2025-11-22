@@ -1,0 +1,56 @@
+# Version 1.0.1
+# =======================================================
+# Ignore editor-files, vendor and other basic stuff
+# =======================================================
+.DS_Store
+.build
+node_modules
+bower_components
+vendor
+
+/.buildpath
+/.bowerrc
+/.bundle
+/.env
+/.idea
+/.project
+/.php-version
+/.phpunit.result.cache
+/.settings
+
+# =======================================================
+# Files for development and deployment
+# =======================================================
+/.ddev/*
+!/.ddev/commands
+!/.ddev/config.yaml
+/dev/*.sql
+/.surf/Credentials/*
+!/.surf/Credentials/_Example.php
+/.dumps
+
+# =======================================================
+# Ignore locally used htaccess, test-files and assets
+# =======================================================
+/public/.htaccess
+/public/.htpasswd
+/public/ext_*.nginx
+/public/data*.txt
+
+# =======================================================
+# Ignore cache folders, logs and assets
+# =======================================================
+/public/_assets
+/public/typo3conf/deprecation_*
+/public/typo3temp/
+/public/uploads
+/var/
+
+# =======================================================
+# Fileadmin
+# =======================================================
+/public/fileadmin/
+
+# =======================================================
+# Add custom stuff here
+# =======================================================

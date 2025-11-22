@@ -1,0 +1,187 @@
+/// Typography style for `<h1>` elements.
+///
+/// @group Typography
+///
+/// @author Steffen Kroggel <developer@steffenkroggel>
+/// @license GNU General Public License v3.0 https://www.gnu.org/licenses/gpl-3.0.en.html
+///
+@mixin h1 {
+    @include font-format($font-formats: $font-formats, $font-format: 'h1', $tablet-breakpoint: sm, $desktop-breakpoint: lg);
+}
+
+/// Typography style for `<h2>` elements.
+///
+/// @group Typography
+///
+/// @author Steffen Kroggel <developer@steffenkroggel>
+/// @license GNU General Public License v3.0 https://www.gnu.org/licenses/gpl-3.0.en.html
+///
+@mixin h2 {
+    @include font-format($font-formats: $font-formats, $font-format: 'h2', $tablet-breakpoint: sm, $desktop-breakpoint: lg);
+}
+
+/// Typography style for `<h3>` elements.
+///
+/// @group Typography
+///
+/// @author Steffen Kroggel <developer@steffenkroggel>
+/// @license GNU General Public License v3.0 https://www.gnu.org/licenses/gpl-3.0.en.html
+///
+@mixin h3 {
+    @include font-format($font-formats: $font-formats, $font-format: 'h3', $tablet-breakpoint: sm, $desktop-breakpoint: lg);
+}
+
+/// Typography style for `<h4>` elements.
+///
+/// @group Typography
+///
+/// @author Steffen Kroggel <developer@steffenkroggel>
+/// @license GNU General Public License v3.0 https://www.gnu.org/licenses/gpl-3.0.en.html
+///
+@mixin h4 {
+    @include font-format($font-formats: $font-formats, $font-format: 'h4', $tablet-breakpoint: sm, $desktop-breakpoint: lg);
+}
+
+/// Typography style for body copy text.
+///
+/// @group Typography
+///
+/// @author Steffen Kroggel <developer@steffenkroggel>
+/// @license GNU General Public License v3.0 https://www.gnu.org/licenses/gpl-3.0.en.html
+///
+@mixin copy {
+    @include font-format($font-formats: $font-formats, $font-format: 'copy', $tablet-breakpoint: sm, $desktop-breakpoint: lg);
+}
+
+/// Typography style for small body copy.
+///
+/// @group Typography
+///
+/// @author Steffen Kroggel <developer@steffenkroggel>
+/// @license GNU General Public License v3.0 https://www.gnu.org/licenses/gpl-3.0.en.html
+///
+@mixin copy-small {
+    @include font-format($font-formats: $font-formats, $font-format: 'copy-small', $tablet-breakpoint: sm, $desktop-breakpoint: lg);
+}
+
+/// Typography style for links (without additional decoration).
+///
+/// @group Typography
+///
+/// @author Steffen Kroggel <developer@steffenkroggel>
+/// @license GNU General Public License v3.0 https://www.gnu.org/licenses/gpl-3.0.en.html
+///
+@mixin link {
+    @include font-format($font-formats: $font-formats, $font-format: 'link', $tablet-breakpoint: sm, $desktop-breakpoint: lg);
+}
+
+/// Typography style for subheaders.
+///
+/// @group Typography
+///
+/// @author Steffen Kroggel <developer@steffenkroggel>
+/// @license GNU General Public License v3.0 https://www.gnu.org/licenses/gpl-3.0.en.html
+///
+@mixin subheader-1 {
+    @include font-format($font-formats: $font-formats, $font-format: 'subheader-1', $tablet-breakpoint: sm, $desktop-breakpoint: lg);
+}
+
+/// Typography style for subheaders.
+///
+/// @group Typography
+///
+/// @author Steffen Kroggel <developer@steffenkroggel>
+/// @license GNU General Public License v3.0 https://www.gnu.org/licenses/gpl-3.0.en.html
+///
+@mixin subheader-2 {
+    @include font-format($font-formats: $font-formats, $font-format: 'subheader-2', $tablet-breakpoint: sm, $desktop-breakpoint: lg);
+}
+
+/// Typography style for subheaders.
+///
+/// @group Typography
+///
+/// @author Steffen Kroggel <developer@steffenkroggel>
+/// @license GNU General Public License v3.0 https://www.gnu.org/licenses/gpl-3.0.en.html
+///
+@mixin subheader-3 {
+    @include font-format($font-formats: $font-formats, $font-format: 'subheader-3', $tablet-breakpoint: sm, $desktop-breakpoint: lg);
+}
+
+
+/// Applies typographic styles for the lead
+///
+/// @group Utilities
+///
+/// @author Steffen Kroggel <developer@steffenkroggel>
+/// @license GNU General Public License v3.0 https://www.gnu.org/licenses/gpl-3.0.en.html
+///
+@mixin lead {
+    @include font-format($font-formats: $font-formats, $font-format: 'lead', $tablet-breakpoint: sm, $desktop-breakpoint: lg);
+}
+
+/// Applies typographic styles for the input
+///
+/// @group Utilities
+///
+/// @author Steffen Kroggel <developer@steffenkroggel>
+/// @license GNU General Public License v3.0 https://www.gnu.org/licenses/gpl-3.0.en.html
+///
+@mixin input {
+    @include font-format($font-formats: $font-formats, $font-format: 'input', $tablet-breakpoint: sm, $desktop-breakpoint: lg);
+}
+
+/// Applies typographic styles for the input-label
+///
+/// @group Utilities
+///
+/// @author Steffen Kroggel <developer@steffenkroggel>
+/// @license GNU General Public License v3.0 https://www.gnu.org/licenses/gpl-3.0.en.html
+///
+@mixin input-label {
+    @include font-format($font-formats: $font-formats, $font-format: 'input-label', $tablet-breakpoint: sm, $desktop-breakpoint: lg);
+}
+
+/// Applies typographic styles for the button
+///
+/// @group Utilities
+///
+/// @author Steffen Kroggel <developer@steffenkroggel>
+/// @license GNU General Public License v3.0 https://www.gnu.org/licenses/gpl-3.0.en.html
+///
+@mixin button {
+    @include font-format($font-formats: $font-formats, $font-format: 'button', $tablet-breakpoint: sm, $desktop-breakpoint: lg);
+}
+
+/// Enables word breaking and hyphenation for improved long text handling.
+///
+/// Works across modern and legacy browsers.
+///
+/// @group Utilities
+///
+/// @author Steffen Kroggel <developer@steffenkroggel>
+/// @license GNU General Public License v3.0 https://www.gnu.org/licenses/gpl-3.0.en.html
+///
+@mixin hyphenate() {
+    overflow-wrap: break-word;
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+}
+
+/// Resets list styles: removes bullets and spacing.
+///
+/// Useful for unstyled lists or when customizing lists from scratch.
+///
+/// @group Utilities
+///
+/// @author Steffen Kroggel <developer@steffenkroggel>
+/// @license GNU General Public License v3.0 https://www.gnu.org/licenses/gpl-3.0.en.html
+///
+@mixin list-reset {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}

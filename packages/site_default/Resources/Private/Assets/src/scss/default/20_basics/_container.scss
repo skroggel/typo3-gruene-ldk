@@ -1,0 +1,14 @@
+/* ==================================================
+* Container
+* ================================================== */
+// we define this very special container for the header separately
+.container-max {
+    @extend .container;
+    max-width: rem-calc($page-max-width);
+}
+
+.container-xxxl {
+    @extend .container;
+    max-width: rem-calc($page-max-inner-width);
+}
+

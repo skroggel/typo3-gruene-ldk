@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages">
+		<body>
+
+			<!-- @see https://docs.typo3.org/p/friendsoftypo3/content-blocks/main/en-us/API/AutomaticLanguageKeys/Index.html#api_automatic_language_keys -->
+
+			<!-- element -->
+			<trans-unit id="title">
+				<source>Accordion Item</source>
+				<target>Akkordeon Item</target>
+			</trans-unit>
+			<trans-unit id="description">
+				<source>Item for Accordion</source>
+				<target>Element Akkordeon</target>
+			</trans-unit>
+
+			<!-- fields -->
+			<trans-unit id="accordion_item_items.label">
+				<source>Contents</source>
+				<target>Inhalte</target>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

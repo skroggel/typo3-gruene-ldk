@@ -1,0 +1,12 @@
+/* ==================================================
+* Section
+* ================================================== */
+@include section-spacing(
+    $section-class: 'csp-section',
+    $block-class: 'csp-block',
+    $not-last-class: 'csp-not-last',
+    $utility-append-class: 'sp',
+    $csp-blocks: $content-spacers-blocks,
+    $content-spacers: $content-spacers
+);
+

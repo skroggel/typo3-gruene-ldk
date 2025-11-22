@@ -1,0 +1,55 @@
+// ############################################################################
+// Menus
+// ############################################################################
+lib.siteDefault {
+
+    navigation {
+
+		main = COA
+		main {
+
+			10  = FLUIDTEMPLATE
+			10 {
+
+				file = EXT:site_default/Resources/Private/Menus/Templates/Main.html
+				partialRootPaths.0 = EXT:site_default/Resources/Private/Menus/Partials/Main/
+
+				dataProcessing {
+					10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+					10 {
+
+                        levels = 3
+                        entryLevel = 0
+                        expandAll = 1
+                        includeSpacer = 0
+
+                        titleField = nav_title // title
+                        as = menuItems
+
+                        dataProcessing {
+                            10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+                            10 {
+                                references.fieldName = media
+                                as = image
+                            }
+
+                            20 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+                            20 {
+                                references.fieldName = tx_sitedefault_image_flyout
+                                as = imageFlyout
+                            }
+                        }
+                    }
+                }
+
+                variables {
+                    rootPid = TEXT
+                    rootPid.value = 1
+
+                    currentPid = TEXT
+                    currentPid.data = TSFE:id
+                }
+			}
+		}
+    }
+}

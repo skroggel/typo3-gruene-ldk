@@ -1,0 +1,93 @@
+/******************************************
+ OWL- Slider
+******************************************/
+@use 'sass:math';
+
+.owl-carousel  {
+
+    .img {
+        display: block;
+    }
+
+    .owl-dots {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+
+        display: flex;
+        gap: rem-calc(math.div(strip-unit($grid-gutter-width), 2));
+        justify-content: center;
+        margin-top: rem-calc($spacer);
+        margin-bottom: rem-calc(map-get($spacers, 2));
+
+        @include media-breakpoint-up(xl) {
+            margin-bottom: rem-calc($spacer);
+        }
+    }
+
+    button.owl-dot {
+        width:  rem-calc($spacer);
+        height: rem-calc($spacer);
+        border-radius: rem-calc($spacer);
+        background-color: $color-white;
+
+        @include accessibility-outline();
+
+        &.active {
+            background-color: $color-secondary;
+        }
+    }
+
+    .owl-nav {
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: rem-calc($page-max-inner-width);
+        @include media-breakpoint-up(xxxl) {
+            position: static;
+            max-width: none;
+        }
+
+        .owl-prev,
+        .owl-next {
+            position: absolute;
+            bottom: rem-calc($spacer);
+            z-index: 50;
+
+            font-size: rem-calc(45) !important;
+            line-height: 1em !important;
+            color: $color-white !important;
+
+            @include media-breakpoint-up(xxxl) {
+                bottom: 50%;
+                transform: translateY(-50%);
+                font-size: rem-calc(86) !important;
+            }
+
+            @include accessibility-outline();
+            @extend .icomoon;
+            @extend .icon-arrow-left;
+
+            span {
+                display: none;
+            }
+
+            &.disabled {
+                opacity: 0.5;
+                cursor: not-allowed;
+            }
+        }
+
+
+        .owl-prev   {
+            left: rem-calc(map-get($spacers, 2));
+        }
+
+        .owl-next {
+            right: rem-calc(map-get($spacers, 2));
+            @extend .icon-arrow-right;
+        }
+    }
+}
+
+

@@ -1,0 +1,64 @@
+#!/bin/bash
+
+## Description: Fetch a database from production and load it into current project
+## Usage: fetch-production-db
+## Example: "ddev fetch-production-db"
+
+set -o errexit pipefail nounset
+#set -x
+
+SSH_TARGET="example@your-server.de -p222"
+T3CMS_BIN_PATH=/usr/home/example/public_html/src/typo3/current/vendor/bin/typo3
+PHP_BIN_PATH=/usr/bin/php
+
+echo "!!!!"
+echo "ATTENTION: This command is currently not configured"
+echo "!!!!"
+exit
+
+EXCLUDED_TABLES=(
+[bf]e_sessions
+[bf]e_users
+cache_*
+cf_*
+index_*
+sys_history
+sys_http_report
+sys_log
+tx_extensionmanager_domain_model_extension
+tx_powermail_domain_model_answer
+tx_powermail_domain_model_mail
+tx_kesearch_index
+tx_kesearch_stat_word
+tx_kesearch_stat_search
+tx_solr_statistics
+zzz_*
+)
+
+IGNORED_TABLES_STRING=''
+for TABLE in "${EXCLUDED_TABLES[@]}"
+do :
+   IGNORED_TABLES_STRING+=" -e '${TABLE}'"
+done
+
+
+DUMPDIR=${DDEV_APPROOT}/.dumps
+mkdir -p "${DUMPDIR}"
+echo "Fetching DB from ${SSH_TARGET} into ${DUMPDIR}/${DDEV_SITENAME}-production.sql.gz"
+ssh ${SSH_TARGET} "${PHP_BIN_PATH} ${T3CMS_BIN_PATH} database:export -c Default ${IGNORED_TABLES_STRING} | gzip -9 -c" > "${DUMPDIR}"/"${DDEV_SITENAME}"-production.sql.gz
+ddev export-db > "${DUMPDIR}"/"${DDEV_SITENAME}"-original.sql.gz
+ddev import-db --file="${DUMPDIR}"/"${DDEV_SITENAME}"-production.sql.gz
+
+ddev typo3 database:updateschema "*.add,*.change"
+ddev typo3 install:extensionsetupifpossible
+ddev typo3 cache:flush
+ddev typo3 cache:warmup
+
+# disable MFA for local development and add local user
+echo "UPDATE be_users SET mfa = NULL WHERE mfa IS NOT NULL;" | ddev mysql
+echo "INSERT INTO be_users (pid, username, password, admin) VALUES (0, 'dev-admin', '\$argon2i\$v=19\$m=65536,t=16,p=1\$ZHNSeEZnNnN0QUNjT3NNcA\$8mq780G0iaVcdH67Ry1peonjzfBAFBuoX2rp7ADUQos', 1);" | ddev mysql
+echo -e "\e[0;31m================================================================================"
+echo -e "New backend-user created: 'dev-admin' with password 'TestTest123!'"
+echo -e "================================================================================\e[0m"
+
+

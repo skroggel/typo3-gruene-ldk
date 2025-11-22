@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages">
+		<body>
+
+			<!-- @see https://docs.typo3.org/p/friendsoftypo3/content-blocks/main/en-us/API/AutomaticLanguageKeys/Index.html#api_automatic_language_keys -->
+
+			<!-- element -->
+			<trans-unit id="title">
+				<source>Accordion</source>
+				<target>Akkordeon</target>
+			</trans-unit>
+			<trans-unit id="description">
+				<source>The element is an accordion module. It presents multiple items with headlines that can be expanded to reveal additional content such as text or optionally images. It is useful for presenting complex topics in a structured and space-saving way, allowing users to open only the sections that interest them.</source>
+				<target>Das Element ist ein Akkordeon-Modul. Es zeigt mehrere aufklappbare Punkte, die jeweils eine Überschrift enthalten und bei Klick zusätzliche Inhalte wie Text oder optional auch Bilder darstellen. Es eignet sich, um komplexe Themen strukturiert und platzsparend darzustellen und Nutzerinnen die Möglichkeit zu geben, gezielt Inhalte zu öffnen.</target>
+			</trans-unit>
+
+			<!-- fields -->
+			<trans-unit id="accordion_items.label">
+				<source>Items</source>
+				<target>Items</target>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

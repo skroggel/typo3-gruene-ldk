@@ -1,0 +1,34 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+    <div aria-label="{f:translate(key:'menu.mobile', extensionName:'SiteDefault')}" class="nav-mobile">
+
+        <button class="toggle js-flyout-toggle"
+                aria-label="{f:translate(key:'menu.open', extensionName:'SiteDefault')}"
+                aria-controls="nav-mobile"
+                aria-haspopup="true"
+                aria-expanded="false">
+            <span class="icon-hamburger icon toggle-icon"></span>
+        </button>
+
+        <div class="flyout js-flyout" id="nav-mobile" data-position-ref="siteheader-inner">
+            <div class="flyout-container js-flyout-container bg-color-primary">
+
+                <div class="nav-mobile-inner js-flyout-inner bg-color-primary ps-1 pe-1 pb-3">
+
+                    <f:render partial="SearchBox" arguments="{_all}" />
+
+                    <f:if condition="{menuItems}">
+                        <nav aria-label="{f:translate(key:'menu.mainmenu', extensionName:'SiteDefault')}">
+                            <ul class="nav-mobile-list level-1" id="mobile-nav-list" role="menu">
+                                <f:render partial="Level1" arguments="{menuItems: menuItems, showParentLink: 0}" />
+                            </ul>
+                        </nav>
+                    </f:if>
+
+                    <f:cObject typoscriptObjectPath="lib.siteDefault.navigation.footer"/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</html>

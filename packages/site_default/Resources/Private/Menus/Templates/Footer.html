@@ -1,0 +1,10 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+    <f:if condition="{menuItems}">
+        <nav aria-label="{f:translate(key:'menu.metanav', extensionName:'siteDefault')}" class="nav-footer">
+            <ul class="nav-inline-list nav-footer-list level1" role="menubar">
+                <f:render partial="Level1" arguments="{menuItems: menuItems}" />
+            </ul>
+        </nav>
+    </f:if>
+</html>

@@ -1,0 +1,55 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true"
+>
+
+    <nav aria-label="{f:translate(key:'menu.languageSwitch', extensionName:'SiteDefault')}" class="nav-language" >
+        <div class="pulldown-wrap js-pulldown-wrap nav-pulldown-wrap">
+            <button class="toggle nav-pulldown-toggle pulldown-toggle js-pulldown-toggle"
+               aria-label="{f:translate(key:'menu.open', extensionName:'SiteDefault')}"
+               aria-controls="nav-language"
+               aria-haspopup="true"
+               aria-expanded="false">
+                <span class="nav-pulldown-link-image nav-language-flag"><f:image
+                    src="EXT:site_default/Resources/Public/Images/Flags/{currentLanguageCode}.svg"
+                    alt="{f:translate(key:'menu.languageSwitch.current', extensionName:'SiteDefault')} {currentLanguageCode}" /></span>
+                <span class="icon-arrow-down icon toggle-icon" role="none"></span>
+            </button>
+
+            <div class="pulldown js-pulldown nav-pulldown" id="nav-language">
+                <div class="pulldown-inner">
+                    <ul class="nav-pulldown-list" role="menu">
+                        <f:for each="{languageItems}" as="languageItem" iteration="iterator">
+                            <li class="nav-pulldown-list-item" role="none">
+                                <f:if condition="{languageItem.available}">
+                                    <f:then>
+                                        <a class="nav-pulldown-link {f:if(condition:'{languageItem.active}', then:'active')}"
+                                           href="{languageItem.link}"
+                                           hreflang="{languageItem.hreflang}"
+                                           role="menuitem">
+                                            <span class="nav-pulldown-link-image nav-language-flag"><f:image
+                                                src="EXT:site_default/Resources/Public/Images/Flags/{languageItem.twoLetterIsoCode}.svg"
+                                                alt="{languageItem.twoLetterIsoCode}"/></span>
+                                            <span class="nav-pulldown-link-label nav-language-label">{languageItem.navigationTitle}</span>
+                                        </a>
+                                    </f:then>
+                                    <f:else>
+                                        <a class="nav-pulldown-link {f:if(condition:'{languageItem.active}', then:'active')}"
+                                           href="/{languageItem.twoLetterIsoCode}{currentLink}"
+                                           hreflang="{languageItem.hreflang}"
+                                           role="menuitem">
+                                            <span class="nav-pulldown-link-image nav-language-flag"><f:image
+                                                src="EXT:site_default/Resources/Public/Images/Flags/{languageItem.twoLetterIsoCode}.svg"
+                                                alt="{languageItem.twoLetterIsoCode}" /></span>
+                                            <span class="nav-pulldown-link-label nav-language-label">{languageItem.navigationTitle}</span>
+                                        </a>
+                                    </f:else>
+                                </f:if>
+                            </li>
+                        </f:for>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+</html>

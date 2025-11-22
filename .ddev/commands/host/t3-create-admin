@@ -1,0 +1,17 @@
+#!/bin/bash
+
+## Description: Create an admin-user
+## Usage: t3-create-admin
+## Example: "ddev t3-create-admin"
+
+set -o errexit pipefail nounset
+#set -x
+
+# disable MFA for local development and add local user
+echo "UPDATE be_users SET mfa = NULL WHERE mfa IS NOT NULL;" | ddev mysql
+echo "INSERT INTO be_users (pid, username, password, admin) VALUES (0, 'dev-admin', '\$argon2i\$v=19\$m=65536,t=16,p=1\$ZHNSeEZnNnN0QUNjT3NNcA\$8mq780G0iaVcdH67Ry1peonjzfBAFBuoX2rp7ADUQos', 1);" | ddev mysql
+echo -e "\e[0;31m================================================================================"
+echo -e "New backend-user created: 'dev-admin' with password 'TestTest123!'"
+echo -e "================================================================================\e[0m"
+
+

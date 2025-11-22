@@ -1,0 +1,83 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers" data-namespace-typo3-fluid="true">
+
+	<f:layout name="List" />
+
+	<!--
+		=====================
+			Templates/News/List.html
+	-->
+
+	<f:section name="TeaserBox">
+        <f:if condition="{news}">
+            <f:render partial="List/BoxItem"
+                      arguments="{newsItem: news.0, settings:settings, customSettings: settings.list._custom.teaserBox,
+                                 ctaLabel: '{f:translate(key: \'label.readMore\', extensionName: \'site_default\')}',
+                                 wrapClass: 'box-is-big'}" />
+        </f:if>
+
+	</f:section>
+
+    <f:comment><!-- ============================================================= --> </f:comment>
+
+    <f:section name="TeaserSlider">
+
+        <div class="teaser-news-slider-items owl-carousel js-news-teaser-slider">
+            <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
+                <f:render partial="List/SliderItem"
+                          arguments="{newsItem: newsItem, settings:settings, customSettings: settings.list._custom.teaserSlider,
+                                     iterator:iterator}" />
+            </f:for>
+        </div>
+
+    </f:section>
+
+	<f:comment><!-- ============================================================= --> </f:comment>
+
+	<f:section name="Default">
+
+		<!--TYPO3SEARCH_end-->
+		<f:if condition="{news}">
+			<f:then>
+				<div class="news-list">
+					<f:if condition="{settings.hidePagination}">
+						<f:then>
+							<f:for each="{news}" as="newsItem" iteration="iterator">
+                                <f:render partial="List/BoxItem"
+                                          arguments="{newsItem: newsItem, settings: settings, customSettings: settings.list._custom.listBox,
+                                                      ctaLabel: '{f:translate(key: \'label.learnMore\', extensionName: \'site_default\')}',
+                                                      iterator:iterator}" />
+							</f:for>
+						</f:then>
+						<f:else>
+							<f:if condition="{settings.list.paginate.insertAbove}">
+								<f:render partial="List/Pagination"
+									arguments="{pagination: pagination.pagination, paginator: pagination.paginator}" />
+							</f:if>
+
+                            <div class="box-wrap">
+                                <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
+                                    <f:render partial="List/BoxItem"
+                                              arguments="{newsItem: newsItem, settings: settings, customSettings: settings.list._custom.listBox,
+                                                          ctaLabel: '{f:translate(key: \'label.learnMore\', extensionName: \'site_default\')}',
+                                                          iterator:iterator}" />
+                                </f:for>
+                            </div>
+							<f:if condition="{settings.list.paginate.insertBelow}">
+								<f:render partial="List/Pagination"
+									arguments="{pagination: pagination.pagination, paginator: pagination.paginator}" />
+							</f:if>
+						</f:else>
+					</f:if>
+				</div>
+			</f:then>
+			<f:else>
+				<div class="no-news-found">
+					<f:translate key="list_nonewsfound" />
+				</div>
+			</f:else>
+		</f:if>
+		<!--TYPO3SEARCH_begin-->
+	</f:section>
+
+</html>

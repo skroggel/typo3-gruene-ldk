@@ -1,0 +1,27 @@
+#############################################################################
+# Misc
+#############################################################################
+lib.siteDefault {
+
+    utilities {
+        copyright = TEXT
+        copyright.data = date:U
+        copyright.strftime = %Y
+        copyright.noTrimWrap = |&copy; {site:websiteTitle} ||
+        copyright.noTrimWrap.insertData = 1
+
+        //==================================================================
+        date = TEXT
+        date.data = date:U
+        date.strftime = %d.%m.%Y
+        date.wrap =  |
+
+        //==================================================================
+        language = TEXT
+        language {
+            data = siteLanguage:locale
+            split.token = _
+            split.returnKey = 0
+        }
+    }
+}

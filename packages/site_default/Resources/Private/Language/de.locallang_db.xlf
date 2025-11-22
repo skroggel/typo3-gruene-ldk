@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages"
+		  date="2023-09-17UTC13:49:100">
+		<body>
+
+			<trans-unit id="pages.palettes.flyout">
+				<source>Flyout</source>
+				<target>Flyout</target>
+			</trans-unit>
+
+
+			<trans-unit id="pages.tx_sitedefault_icon_class">
+				<source>CSS-Class for Icon</source>
+				<target>CSS-Klasse für Icon</target>
+			</trans-unit>
+			<trans-unit id="pages.tx_sitedefault_icon">
+				<source>Icon</source>
+				<target>Icon</target>
+			</trans-unit>
+			<trans-unit id="pages.tx_sitedefault_color">
+				<source>Color</source>
+				<target>Farbe</target>
+			</trans-unit>
+			<trans-unit id="pages.tx_sitedefault_subline">
+				<source>Category / Label</source>
+				<target>Kategorie / Bezeichnung</target>
+			</trans-unit>
+			<trans-unit id="pages.tx_sitedefault_image_teaser">
+				<source>Teaser-Image</source>
+				<target>Teaser-Bild</target>
+			</trans-unit>
+			<trans-unit id="pages.tx_sitedefault_image_flyout">
+				<source>Image for Flyout</source>
+				<target>Bild für Flyout</target>
+			</trans-unit>
+			<trans-unit id="pages.tx_sitedefault_headline_flyout">
+				<source>Headline for Flyout</source>
+				<target>Überschrift für Flyout</target>
+			</trans-unit>
+			<trans-unit id="pages.tx_sitedefault_label_flyout">
+				<source>Label for Flyout</source>
+				<target>Label für Flyout</target>
+			</trans-unit>
+
+
+			<trans-unit id="tx_news_domain_model_news.tx_sitedefault_title_cleaned">
+				<source>Title for Slug (is generated automatically when post is saved)</source>
+				<target>Titel für Slug (wird automatisch generiert, wenn Beitrag gespeichet wird)</target>
+			</trans-unit>
+			<trans-unit id="tx_news_domain_model_news.tx_sitedefault_image_preview">
+				<source>Teaser Image</source>
+				<target>Vorschau-Bild</target>
+			</trans-unit>
+			<trans-unit id="tx_news_domain_model_news.tx_sitedefault_location">
+				<source>Location</source>
+				<target>Ort</target>
+			</trans-unit>
+			<trans-unit id="tx_news_domain_model_news.tx_sitedefault_introduction">
+				<source>Introduction</source>
+				<target>Einleitung</target>
+			</trans-unit>
+			<trans-unit id="tx_news_domain_model_news.tx_sitedefault_datetime_end">
+				<source><![CDATA[Date & Time (End)]]></source>
+				<target><![CDATA[Datum & Zeit (Ende)]]></target>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>
