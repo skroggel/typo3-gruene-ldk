@@ -35,11 +35,9 @@
 
 @font-face {
     font-family: 'Icomoon';
-    src:  url('../Fonts/Icomoon/icomoon.eot?gaveu7');
-    src:  url('../Fonts/Icomoon/icomoon.eot?gaveu7#iefix') format('embedded-opentype'),
-    url('../Fonts/Icomoon/icomoon.ttf?gaveu7') format('truetype'),
-    url('../Fonts/Icomoon/icomoon.woff?gaveu7') format('woff'),
-    url('../Fonts/Icomoon/icomoon.svg?gaveu7#icomoon') format('svg');
+    src:  url('../Fonts/icomoon.ttf?gaveu7') format('truetype'),
+    url('../Fonts/icomoon.woff?gaveu7') format('woff'),
+    url('../Fonts/icomoon.svg?gaveu7#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: block;
@@ -61,9 +59,29 @@
 }
 
 
-.icon-arrow-down {
+.icon-close {
     &:before {
-        content: $icon-arrow-down;
+        content: $icon-close;
+    }
+}
+.icon-youtube {
+    &:before {
+        content: $icon-youtube;
+    }
+}
+.icon-facebook {
+    &:before {
+        content: $icon-facebook;
+    }
+}
+.icon-instagram {
+    &:before {
+        content: $icon-instagram;
+    }
+}
+.icon-arrow-right {
+    &:before {
+        content: $icon-arrow-right;
     }
 }
 .icon-arrow-left {
@@ -71,8 +89,23 @@
         content: $icon-arrow-left;
     }
 }
-.icon-arrow-right {
+.icon-arrow-down {
     &:before {
-        content: $icon-arrow-right;
+        content: $icon-arrow-down;
+    }
+}
+.icon-arrow-up {
+    &:before {
+        content: $icon-arrow-up;
+    }
+}
+.icon-hamburger {
+    &:before {
+        content: $icon-hamburger;
+    }
+}
+.icon-search {
+    &:before {
+        content: $icon-search;
     }
 }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ae6eb00629bff328ea9c777fdef3b585",
+    "content-hash": "91f035e327b7997121577c7b4d361fc2",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -2202,63 +2202,6 @@
                 "source": "https://github.com/skroggel/t3-forminator/tree/v13.4.6-stable"
             },
             "time": "2025-07-17T15:45:39+00:00"
-        },
-        {
-            "name": "madj2k/t3-klarokratie",
-            "version": "v13.4.19-stable",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/skroggel/t3-klarokratie.git",
-                "reference": "3cc27df62fbb3955d36d4c153d4919a30dcdf567"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/skroggel/t3-klarokratie/zipball/3cc27df62fbb3955d36d4c153d4919a30dcdf567",
-                "reference": "3cc27df62fbb3955d36d4c153d4919a30dcdf567",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.4",
-                "typo3/cms-core": "~10.4.0 || ~11.5.0 || ~12.4.0 || ~13.4.0"
-            },
-            "type": "typo3-cms-extension",
-            "extra": {
-                "typo3/cms": {
-                    "extension-key": "klarokratie"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Madj2k\\Klarokratie\\": "Classes/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Steffen Kroggel",
-                    "email": "developer@steffenkroggel.de",
-                    "homepage": "https://www.steffenkroggel.de",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Includes Klaro! Consent-Manager into TYPO3. Completely file-based configuration for versioning without having to take care of database-entries. This extension automatically adds a consent-overlay to embedded YouTube- and Vimeo-Videos. It also comes with a ready-to-use integration for Google Analytics / Google Tag Manager and etracker.",
-            "homepage": "https://www.steffenkroggel.de",
-            "keywords": [
-                "Consent management",
-                "Klaro",
-                "TYPO3 CMS",
-                "dsgvo",
-                "gdpr"
-            ],
-            "support": {
-                "email": "developer@steffenkroggel.de",
-                "issues": "https://github.com/skroggel/t3-klarokratie/issues",
-                "source": "https://github.com/skroggel/t3-klarokratie/tree/v13.4.19-stable"
-            },
-            "time": "2025-08-07T11:55:45+00:00"
         },
         {
             "name": "madj2k/t3-media-utils",

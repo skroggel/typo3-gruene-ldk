@@ -1,0 +1,50 @@
+/* ==================================================
+* Text-Marker
+* ================================================== */
+@mixin text-marker (
+    $mark-height: 0.6em,
+    $mark-top: 0.1em,
+    $mark-color: map-get($color-map, 'sun'),
+    $mark-skrew: calc($mark-height / 100 * 22.5),
+    $mark-overlap: 0.3em,
+    $transition-duration: 0.3s,
+    $transition-easing: ease-out
+){
+    position: relative;
+    display: inline-block;
+    margin-inline: calc(#{$mark-overlap} * -1);
+    padding-inline: $mark-overlap;
+    color: inherit;
+    text-decoration: none;
+    background-color: transparent;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: $mark-top;
+        width: 0;
+        height: 100%;
+        z-index: 0;
+
+        background-image: linear-gradient(to bottom right,transparent 0 50%, $mark-color 50% 100%),linear-gradient($mark-color, $mark-color), linear-gradient(to top left,transparent 50%,$mark-color 50%);
+        background-size: $mark-skrew $mark-height,calc(100% - #{$mark-skrew} * 2 + .5px) $mark-height, $mark-skrew $mark-height;
+        background-position: 0 100%,bottom,100% 100%;
+        background-repeat: no-repeat;
+
+        transition: width $transition-duration $transition-easing;
+        transform-origin: left;
+        pointer-events: none;
+    }
+
+    &.active::before,
+    &:hover::before {
+        width: 100%;
+    }
+
+    > * {
+        position: relative;
+        z-index: 1;
+    }
+}
+

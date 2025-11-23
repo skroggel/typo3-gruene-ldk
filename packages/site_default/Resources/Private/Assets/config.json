@@ -46,9 +46,8 @@
 				],
 				"vendor": [
 					"node_modules/@madj2k/fe-frontend-kit/tools/better-resize-event/better-resize-event.scss",
-					"node_modules/@madj2k/fe-frontend-kit/menus/flyout-menu/flyout-menu-2.0.0.scss",
-					"node_modules/@madj2k/fe-frontend-kit/menus/pulldown-menu/pulldown-menu-2.0.0.scss",
-					"node_modules/@madj2k/fe-frontend-kit/tools/scrolling/scrolling-2.0.0.scss",
+					"node_modules/@madj2k/fe-frontend-kit/menus/flyout-menu/flyout-menu-2.0.scss",
+					"node_modules/@madj2k/fe-frontend-kit/tools/scrolling/scrolling-2.0.scss",
 					"node_modules/@madj2k/fe-frontend-kit/tools/element-in-viewport/element-in-viewport-2.0.scss"
 				],
 				"plugins": [
@@ -77,7 +76,6 @@
 					"node_modules/lenis/dist/lenis.min.js",
 					"node_modules/@madj2k/fe-frontend-kit/tools/better-resize-event/better-resize-event-2.0.js",
 					"node_modules/@madj2k/fe-frontend-kit/menus/flyout-menu/flyout-menu-2.0.js",
-					"node_modules/@madj2k/fe-frontend-kit/menus/pulldown-menu/pulldown-menu-2.0.js",
 					"node_modules/@madj2k/fe-frontend-kit/tools/scrolling/scrolling-2.0.js",
 					"node_modules/@madj2k/fe-frontend-kit/tools/element-in-viewport/element-in-viewport-2.0.js"
 				]

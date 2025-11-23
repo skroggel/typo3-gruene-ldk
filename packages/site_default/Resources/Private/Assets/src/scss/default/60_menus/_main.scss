@@ -3,13 +3,16 @@
 * ================================================== */
 .nav-main {
 
+    margin-bottom: rem-calc(-10);
+
     &-list {
         justify-content: center;
         width: 100%;
-    }
+        gap: rem-calc(map-get($spacers, 6));
 
-    &-item {
-        @include h4;
+        @include media-breakpoint-up(xl) {
+            gap: rem-calc(map-get($spacers, 10));
+        }
     }
 
     &-link {
@@ -22,32 +25,59 @@
     &-link.level-1:visited,
     &-link.level-1:hover {
 
-        @include h4;
-        color: $color-secondary
+        font-size: rem-calc(25);
+        line-height: 100%;
+        color: $color-black;
 
-        /** Fix for menu jumping on active/hover
+        /** Fix for menu jumping on active/hover*/
         &::after {
-            display:block;
+            display: block;
             content:attr(title);
-            font-family: $font-family-sans;
+            font-weight: bold;
             visibility: hidden;
             overflow: hidden;
             height: 0;
-        }*/
+        }
     }
 
     &-link.level-1 {
+        @include text-marker();
 
-        &:hover,
-        &.active {
-            color: $color-primary;
-            text-decoration: underline;
-            padding-bottom: rem-calc(2); // fix for strange behavior
+        &.active,
+        &:hover {
         }
 
         &.active {
-            padding-bottom: rem-calc(0); // fix for strange behavior
+            font-weight: bold;
         }
     }
 }
 
+
+/**
+ * blur-effect
+ */
+.background-blur {
+    position:fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(128, 128, 128, 0.7);
+    transition: opacity 0.5s ease-in-out;
+    opacity:0;
+    z-index:-1;
+}
+
+.flyout-open,
+.flyout-closing {
+    .background-blur {
+        z-index:90;
+    }
+}
+
+.flyout-open{
+    .background-blur {
+        opacity:1;
+    }
+}

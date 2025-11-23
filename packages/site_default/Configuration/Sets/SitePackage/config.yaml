@@ -11,7 +11,7 @@ dependencies:
   - madj2k/dr-serp-news
   - madj2k/dr-serp-meta-tags-no-inheritance
   - madj2k/forminator
-  - madj2k/klarokratie
+  # - madj2k/klarokratie
   - madj2k/media-utils
   - madj2k/media-utils-bootstrap
   - georgringer/news

@@ -187,10 +187,8 @@ page {
     }
 
     includeCSSLibs {
-        flyoutMenu = EXT:site_default/Resources/Public/Css/flyout-menu.css
-        pulldownMenu = EXT:site_default/Resources/Public/Css/pulldown-menu.css
-        slideMenu = EXT:site_default/Resources/Public/Css/jquery.slide-menu.css
-        responsiveTables = EXT:site_default/Resources/Public/Libs/BasicTable/basictable.min.css
+        siteDefaultLayout = EXT:site_default/Resources/Public/Css/vendor.css
+        # responsiveTables = EXT:site_default/Resources/Public/Libs/BasicTable/basictable.min.css
         # owl = EXT:site_default/Resources/Public/Libs/Owl/owl.carousel.min.css
     }
 
@@ -207,10 +205,7 @@ page {
 
     includeJSFooterlibs {
         siteDefaultScripts = EXT:site_default/Resources/Public/JavaScript/vendor.js
-        flyoutMenu = EXT:site_default/Resources/Public/JavaScript/flyout-menu.js
-        pulldownMenu = EXT:site_default/Resources/Public/JavaScript/pulldown-menu.js
-        slideMenu = EXT:site_default/Resources/Public/JavaScript/jquery.slide-menu.js
-        responsiveTables = EXT:site_default/Resources/Public/Libs/BasicTable/jquery.basictable.min.js
+        # responsiveTables = EXT:site_default/Resources/Public/Libs/BasicTable/jquery.basictable.min.js
         # owl = EXT:site_default/Resources/Public/Libs/Owl/owl.carousel.min.js
     }
 }

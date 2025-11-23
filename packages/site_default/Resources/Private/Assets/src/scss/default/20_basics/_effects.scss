@@ -1,0 +1,32 @@
+/* ==================================================
+* Effects
+* ================================================== */
+.effect-text-marker {
+    &:hover {
+        margin-inline: calc(0.3em * -1);
+        padding-inline: 0.3em;
+        background-color: transparent;
+        background-image:
+            linear-gradient(
+                to bottom right,
+                transparent 0 50%,
+                map-get($color-map, 'sun') 50% 100%
+            ),
+            linear-gradient(
+                map-get($color-map, 'sun'),
+                map-get($color-map, 'sun')
+            ),
+            linear-gradient(
+                to top left,
+                transparent 50%,
+                map-get($color-map, 'sun') 50%
+            );
+        background-size: 0.18em 0.8em, calc(100% - 0.18em * 2 + 0.5px) 0.8em, 0.18em 0.8em;
+        background-position: 0 100%, bottom, 100% 100%;
+        background-repeat: no-repeat;
+        color: inherit;
+        box-decoration-break: clone;
+        display: inline-block;
+        text-decoration: none;
+    }
+}
