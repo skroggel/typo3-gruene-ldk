@@ -13,6 +13,8 @@ lib.siteDefault {
 
 				file = EXT:site_default/Resources/Private/Menus/Templates/Main.html
 				partialRootPaths.0 = EXT:site_default/Resources/Private/Menus/Partials/Main/
+                partialRootPaths.1 = EXT:site_default/Resources/Private/Content/Partials/
+                partialRootPaths.2 = EXT:media_utils/Resources/Private/Partials/
 
 				dataProcessing {
 					10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
@@ -48,6 +50,7 @@ lib.siteDefault {
 
                     currentPid = TEXT
                     currentPid.data = TSFE:id
+
                 }
 			}
 		}

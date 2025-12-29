@@ -27,7 +27,7 @@ a {
     }
 }
 
-
+/*
 [class^="bg-color-"]:not([class^="bg-color-light"]):not([class^="bg-color-none"]):not([class^="bg-color-white"]),
 [class*=" bg-color-"]:not([class*=" bg-color-light"]):not([class*=" bg-color-none"]):not([class*=" bg-color-white"])  {
     .link-wrap,
@@ -47,7 +47,7 @@ a {
             }
         }
     }
-}
+}*/
 
 
 .link {
@@ -136,7 +136,7 @@ a {
     text-decoration: none;
 }
 
-
+/*
 [class^="bg-color-"]:not([class^="bg-color-light"]):not([class^="bg-color-none"]):not([class^="bg-color-white"]),
 [class*=" bg-color-"]:not([class*=" bg-color-light"]):not([class*=" bg-color-none"]):not([class*=" bg-color-white"])  {
     .link,
@@ -149,4 +149,4 @@ a {
             width: 0;
         }
     }
-}
+}*/

@@ -1,0 +1,19 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true"
+>
+    <f:for each="{menuItems}" as="menuItem">
+        <f:variable name="title">{f:if(condition: '{noHtml}', then: '{menuItem.data.title}', else: '{menuItem.title}')}</f:variable>
+
+        <li class="nav-main-item nav-block-item level-3{f:if(condition: menuItem.active, then:' active')}"
+            role="none">
+            <a class="nav-main-link nav-block-link level-3{f:if(condition: menuItem.active, then:' active')}"
+               href="{f:if(condition:'{menuItem.data.tx_klarokratie_open_modal}', then:'#', else :'{menuItem.link}')}"
+               {f:if(condition:'{menuItem.data.tx_klarokratie_open_modal}', then:'onclick="javascript:klaro.show(undefined, true);return false;"')}
+               target="{menuItem.target}"
+               title="{menuItem.data.title}"
+               role="menuitem">
+                <span><f:format.html parseFuncTSPath="lib.parseFunc_Inline">{title}</f:format.html></span>
+            </a>
+        </li>
+    </f:for>
+</html>

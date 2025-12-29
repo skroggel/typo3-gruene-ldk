@@ -26,17 +26,58 @@
                                <span><f:format.html parseFuncTSPath="lib.parseFunc_Inline">{title}</f:format.html></span>
                         </a>
 
-                        <div class="flyout js-flyout"
+                        <div class="flyout nav-main-flyout js-flyout"
                              id="nav-main-flyout-{menuItem.data.uid}"
                              data-position-ref="siteheader-inner"
                              data-padding-ref="first-menu-item"
                         >
-                            <div class="flyout-container nav-main-flyout-container js-flyout-container">
-                                <div class="nav-main-flyout-inner js-flyout-inner bg-color-white">
-                                    <ul class="nav-main-list level-2" role="menu">
-                                        <f:render partial="Level2" arguments="{menuItems: menuItem.children}" />
-                                    </ul>
+                            <div class="flyout-container nav-main-flyout-container bg-color-grey-200 js-flyout-container ">
+                                <div class="flyout-inner nav-main-flyout-inner js-flyout-inner">
+                                    <div class="nav-main-flyout-wrap">
+                                        <div class="nav-main-flyout-content p-9">
+
+                                            <p class="headline h2">
+                                                <span>
+                                                    <f:format.html parseFuncTSPath="lib.parseFunc_Inline">{title}</f:format.html>
+                                                </span>
+                                            </p>
+
+                                            <div class="toggle-list accordion nav-main-flyout-accordion"
+                                                 id="accordion-container-{menuItem.data.uid}"
+                                                 role="tablist"
+                                            >
+                                                <f:render partial="Level2" arguments="{menuItems: menuItem.children, parentItem: menuItem}" />
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="nav-main-flyout-toggle-container">
+                                        <button class="toggle nav-main-flyout-toggle-close js-flyout-close"
+                                                aria-label="{f:translate(key:'menu.close', extensionName:'siteDefault')}"
+                                                aria-controls="nav-main-flyout-{menuItem.data.uid}"
+                                        >
+                                            <span class="icon-close icon toggle-icon"></span>
+                                        </button>
+                                    </div>
+
+                                    <f:render partial="Utils/Media"
+                                              arguments="{
+                                                    file: menuItem.imageFlyout.0,
+                                                    wrapClass: 'nav-main-flyout-image effect-edge-cut',
+                                                    settings: {
+                                                        media: {
+                                                            image: {
+                                                                dimensions: {
+                                                                    maxWidth : 1000
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }" />
                                 </div>
+
+
                             </div>
                         </div>
                     </f:then>

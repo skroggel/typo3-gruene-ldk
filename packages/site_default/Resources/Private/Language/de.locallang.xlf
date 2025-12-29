@@ -24,6 +24,10 @@
 				<source>Opens the menu</source>
 				<target>Öffnet das Menü</target>
 			</trans-unit>
+			<trans-unit id="menu.close">
+				<source>Closes the menu</source>
+				<target>Schließt das Menü</target>
+			</trans-unit>
 			<trans-unit id="menu.openSubmenu">
 				<source>Opens the sub-menu</source>
 				<target>Öffnet das Unter-Menü</target>

@@ -2,40 +2,62 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8" />
-    <title>Proof of Concept</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parallelogramm Headline</title>
     <style>
+        :root {
+            --green-primary: #2e8b57;
+            --font-size-headline: 2rem;
+            --font-family: Arial, sans-serif;
+        }
+
         body {
-            font-family: sans-serif;
-            padding: 40px;
-            background: #f0f0f0;
+            font-family: var(--font-family);
+            margin: 2rem;
+            background: #fff;
         }
 
-        .word-tag {
+        .angled-headline {
+            margin-bottom: 2rem;
+        }
+
+        .angled-headline-box {
             display: inline-block;
-            background: #3d8f4e;
-            color: #fff;
-            font-weight: 700;
-            font-size: 20px;
-            padding: 24px; /* mehr Innenabstand links/rechts (B) */
-            margin-right: -24px; /* schiebt Worte optisch zusammen */
-            /* fixe Winkel in px (A) */
-            clip-path: polygon(12px 0, 100% 0, calc(100% - 12px) 100%, 0 100%);
+            background-color: var(--green-primary);
+            padding: 0.5rem 1.5rem;
+            color: white;
+            font-weight: bold;
+            transform: skewX(-15deg);
         }
 
-        p {
-            max-width: 500px;
-            line-height: 1.4;
-            // text-indent: -1.2em;   /* erste Zeile weiter links */
-            padding-left: 1.7em;   /* zweite Zeile rückt als Ganzes nach rechts */
-            margin-bottom: 1.2em;
+        .angled-headline-headline {
+            margin: 0;
+            font-size: var(--font-size-headline);
+            transform: skewX(15deg); /* Gegenskew für lesbaren Text */
+            display: inline-block;
+            font-style: italic;
+        }
+
+        @media (min-width: 768px) {
+            .angled-headline-headline {
+                font-size: 2.5rem;
+            }
         }
     </style>
 </head>
 <body>
 
-<p>
-    <span class="word-tag">Ein </span><span class="word-tag">sehr </span><span class="word-tag">langer </span><span class="word-tag">Text, </span><span class="word-tag">der </span><span class="word-tag">automatisch </span><span class="word-tag">umbricht </span><span class="word-tag">und </span><span class="word-tag">trotzdem </span><span class="word-tag">die </span><span class="word-tag">Schräge </span><span class="word-tag">korrekt </span><span class="word-tag">beibehält. </span>
-</p>
+<section class="angled-headline">
+    <div class="angled-headline-box">
+        <h2 class="angled-headline-headline">Termine 2025</h2>
+    </div>
+</section>
+
+<section class="angled-headline">
+    <div class="angled-headline-box">
+        <h2 class="angled-headline-headline">Noch ein<br>mehrzeiliger Test</h2>
+    </div>
+</section>
 
 </body>
 </html>

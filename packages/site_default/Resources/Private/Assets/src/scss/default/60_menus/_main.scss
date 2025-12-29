@@ -3,9 +3,8 @@
 * ================================================== */
 .nav-main {
 
-    margin-bottom: rem-calc(-10);
-
     &-list {
+        @include list-reset();
         justify-content: center;
         width: 100%;
         gap: rem-calc(map-get($spacers, 6));
@@ -15,7 +14,24 @@
         }
     }
 
-    &-link {
+    &-item {
+        display: flex;
+        justify-content: end;
+        flex-direction: column;
+    }
+
+    &-link,
+    &-link:link,
+    &-link:visited,
+    &-link:hover{
+        font-size: rem-calc(20);
+        line-height: 100%;
+        color: map-get($color-map, 'grey-800');
+
+        @include media-breakpoint-up(xl) {
+            font-size: rem-calc(25);
+        }
+
         // accessibility
         @include accessibility-outline($color: $color-outline);
     }
@@ -25,9 +41,12 @@
     &-link.level-1:visited,
     &-link.level-1:hover {
 
-        font-size: rem-calc(25);
-        line-height: 100%;
-        color: $color-black;
+        position: relative;
+        top: rem-calc(4);
+
+        @include media-breakpoint-up(xl) {
+            top: rem-calc(3);
+        }
 
         /** Fix for menu jumping on active/hover*/
         &::after {
@@ -40,15 +59,132 @@
         }
     }
 
-    &-link.level-1 {
-        @include text-marker();
 
-        &.active,
-        &:hover {
+    &-list.level-3 {
+        margin-left: rem-calc(map-get($spacers, 4));
+        margin-top: rem-calc(map-get($spacers, 3));
+    }
+
+    &-item.level-3 {
+        margin-top: rem-calc(map-get($spacers, 1));
+        width: max-content;
+        display: block;
+    }
+
+    &-link.level-3,
+    &-link.level-3:link,
+    &-link.level-3:visited,
+    &-link.level-3:hover {
+        font-size: rem-calc(18);
+
+        @include media-breakpoint-up(xl) {
+            font-size: rem-calc(20);
         }
+    }
+
+
+    /**  Hover-effects */
+    &-link.level-1,
+    &-link.level-3 {
+        @include text-marker();
 
         &.active {
             font-weight: bold;
+        }
+    }
+
+    &-link.level-2 {
+        .toggle-text {
+            pointer-events: all;
+            @include text-marker();
+        }
+
+        &:hover {
+            .toggle-text:before {
+                width: 100%;
+            }
+        }
+        &.active {
+            .toggle-text {
+                font-weight: bold;
+            }
+        }
+    }
+
+
+    /** Accordion */
+    .toggle-list {
+        @include toggle-list(
+            $padding-y: $spacer,
+            $border-color: map-get($color-map, 'grey-800'),
+            $border-size: 1px,
+            $font-color: map-get($color-map, 'grey-800'),
+            $font-color-active: map-get($color-map, 'grey-800'),
+            $icon-size: 24px,
+            $icon-style: ''
+        );
+    }
+
+
+    /** Flyout stuff */
+    &-flyout {
+
+        &-wrap {
+            max-width: rem-calc($page-max-inner-width);
+            margin-left: auto;
+            margin-right: auto;
+
+            min-height: rem-calc(450);
+            max-height: 100vh
+        }
+
+        &-toggle-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            // left: 50%;
+            // max-width: rem-calc($page-max-inner-width);
+            // transform: translateX(-50%);
+            width: 100%;
+            z-index: 10;
+        }
+
+
+        &-toggle-close {
+            position: absolute;
+            right: rem-calc(map-get($spacers, 5));
+            top: rem-calc(map-get($spacers, 5));
+            pointer-events: all;
+
+            // accessibility
+            @include accessibility-outline($color: $color-outline);
+
+            .icon {
+                font-size: rem-calc(48) !important;
+                color: $color-white !important;
+            }
+        }
+
+        &-image {
+            position: absolute;
+            left: calc(60vw);
+            top:0;
+            width: 40vw;
+
+            .img-inner {
+                display: flex;
+                justify-content: center;
+            }
+
+            img {
+                object-fit: cover;
+                width: auto;
+            }
+        }
+
+        &-content {
+            width: 60vw;
+            max-width: rem-calc(800);
         }
     }
 }
@@ -79,5 +215,11 @@
 .flyout-open{
     .background-blur {
         opacity:1;
+    }
+}
+
+.flyout-open {
+    .siteheader {
+        position:absolute;
     }
 }

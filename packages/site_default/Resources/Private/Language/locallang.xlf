@@ -18,6 +18,9 @@
 			<trans-unit id="menu.open">
 				<source>Opens the menu</source>
 			</trans-unit>
+			<trans-unit id="menu.close">
+				<source>Closes the menu</source>
+			</trans-unit>
 			<trans-unit id="menu.openSubmenu">
 				<source>Opens the sub-menu</source>
 			</trans-unit>

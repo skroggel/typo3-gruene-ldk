@@ -32,18 +32,18 @@
 
                             <div class="siteheader-menu">
 
-                                <div class="d-none d-lg-block">
+                                <div class="d-none d-md-flex">
                                     <f:cObject typoscriptObjectPath="lib.siteDefault.navigation.main"/>
                                 </div>
 
-                                <button class="toggle js-search-overlay-toggle"
+                                <button class="toggle siteheader-toggle js-search-overlay-toggle d-none d-md-flex"
                                         aria-label="{f:translate(key:'menu.search', extensionName:'SiteDefault')}"
                                         aria-controls="search-overlay"
                                         aria-expanded="false">
                                     <span class="icon-search icon toggle-icon"></span>
                                 </button>
 
-                                <div class="d-flex d-lg-none">
+                                <div class="d-flex d-md-none">
                                     <f:cObject typoscriptObjectPath="lib.siteDefault.navigation.mobile"/>
                                 </div>
                             </div>

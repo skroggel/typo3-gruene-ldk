@@ -6,7 +6,18 @@ window.addEventListener('DOMContentLoaded', () => {
   // Menu
   // ==========================================================================
   document.querySelectorAll('.js-flyout-toggle').forEach((el) => {
-    new Madj2kFlyoutMenu(el, { animationDuration: 800 });
+    new Madj2kFlyoutMenu(el, {
+      animationDuration: 800,
+      heightMode: 'full',
+      scrollMode: 'inner'
+    });
+  });
+
+  document.addEventListener('madj2k-flyoutmenu-opening', () => {
+    document.querySelector('body').classList.add('block-scroll-classes');
+  });
+  document.addEventListener('madj2k-flyoutmenu-closed', () => {
+    document.querySelector('body').classList.remove('block-scroll-classes');
   });
 
 

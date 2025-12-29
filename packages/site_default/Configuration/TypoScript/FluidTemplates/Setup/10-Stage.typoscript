@@ -10,7 +10,7 @@ lib.siteDefault {
 
             file = EXT:site_default/Resources/Private/FluidTemplates/Templates/Stage.html
             partialRootPaths.0 = EXT:site_default/Resources/Private/FluidTemplates/Partials/Stage/
-            partialRootPaths.1 = EXT:site_default/Resources/Private/Mask/Frontend/Partials/
+            partialRootPaths.1 = EXT:site_default/Resources/Private/Content/Partials/
             partialRootPaths.1712245685 = {$plugin.tx_mediautils.view.partialRootPath}
 
             dataProcessing {

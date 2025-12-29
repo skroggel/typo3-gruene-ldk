@@ -1,32 +1,29 @@
 /* ==================================================
 * Effects
 * ================================================== */
-.effect-text-marker {
-    &:hover {
-        margin-inline: calc(0.3em * -1);
-        padding-inline: 0.3em;
-        background-color: transparent;
-        background-image:
-            linear-gradient(
-                to bottom right,
-                transparent 0 50%,
-                map-get($color-map, 'sun') 50% 100%
-            ),
-            linear-gradient(
-                map-get($color-map, 'sun'),
-                map-get($color-map, 'sun')
-            ),
-            linear-gradient(
-                to top left,
-                transparent 50%,
-                map-get($color-map, 'sun') 50%
-            );
-        background-size: 0.18em 0.8em, calc(100% - 0.18em * 2 + 0.5px) 0.8em, 0.18em 0.8em;
-        background-position: 0 100%, bottom, 100% 100%;
-        background-repeat: no-repeat;
-        color: inherit;
-        box-decoration-break: clone;
+.effect-edge-cut {
+    mask-image: url('../Images/image-mask-edge.svg');
+    mask-repeat: no-repeat;
+    mask-size: auto 100%;
+    mask-position: left top;
+    height: 100%
+}
+
+
+.effect-skewed-text {
+    display: inline-block;
+    background-color: $color-primary; // z. B. aus deiner Farb-Map
+    padding: rem-calc(8) rem-calc(24);
+    transform: skewX(-12deg);
+
+    span {
+        transform: skewX(12deg); // Gegenskew für Text
         display: inline-block;
-        text-decoration: none;
+        color: $color-white;
+
+    }
+
+    @include media-breakpoint-up(lg) {
+        padding: rem-calc(12) rem-calc(32);
     }
 }

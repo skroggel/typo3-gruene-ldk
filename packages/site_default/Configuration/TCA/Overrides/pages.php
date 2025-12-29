@@ -16,82 +16,11 @@ call_user_func(
             'richtextConfiguration' => 'ShyOnly'
         ] ;
 
-        $colors = ['orange', 'cyan', 'dark-green', 'green', 'grey', 'yellow'];
-        $colorItems = [
-            [
-                'label' => '---',
-                'value' => ''
-            ]
-        ];
-        foreach ($colors as $color) {
-            $colorItems[] = [
-                'label' => $color,
-                'value' => $color
-            ];
-        }
-
         //===========================================================================
 		// Add fields
 		//===========================================================================
 		\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('pages',
 			[
-				'tx_sitedefault_icon_class' => [
-					'exclude' => true,
-					'label' => 'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_db.xlf:pages.tx_sitedefault_icon_class',
-					'config' => [
-						'type' => 'input',
-						'size' => 30,
-						'eval' => 'trim',
-						'behaviour' => [
-							'allowLanguageSynchronization' => false
-						]
-					],
-				],
-                'tx_sitedefault_icon' => [
-                    'exclude' => true,
-                    'label' => 'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_db.xlf:pages.tx_sitedefault_icon',
-                    'config' => [
-                        'type' => 'select',
-                        'renderType' => 'selectSingle',
-                        'fileFolderConfig' => [
-                            'folder' => 'EXT:site_default/Resources/Public/Icons/Selectable',
-                            'allowedExtensions' => 'svg,png,jpg',
-                            'depth' => 1,
-                        ],
-                        'size' => 1,
-                        'maxitems' => 1,
-                        'items' => [
-                            [
-                                'label' => '---',
-                                'value' => ''
-                            ]
-                        ],
-                        'default' => '',
-                    ],
-                ],
-                'tx_sitedefault_color' => [
-                    'exclude' => true,
-                    'label' => 'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_db.xlf:pages.tx_sitedefault_color',
-                    'config' => [
-                        'type' => 'select',
-                        'renderType' => 'selectSingle',
-                        'items' => $colorItems,
-                        'size' => 1,
-                        'maxitems' => 1,
-                    ],
-                ],
-                'tx_sitedefault_subline' => [
-                    'exclude' => 0,
-                    'label' => 'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_db.xlf:pages.tx_sitedefault_subline',
-                    'config' => [
-                        'type' => 'input',
-                        'size' => 30,
-                        'eval' => 'trim',
-                        'behaviour' => [
-                            'allowLanguageSynchronization' => true
-                        ]
-                    ],
-                ],
                 'tx_sitedefault_image_teaser' => [
                     'exclude' => 0,
                     'label' => 'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_db.xlf:pages.tx_sitedefault_image_teaser',
@@ -126,7 +55,7 @@ call_user_func(
                     'label' => 'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_db.xlf:pages.tx_sitedefault_image_flyout',
                     'config' => [
                         'type' => 'file',
-                        'minitems' => 0,
+                        'minitems' => 1,
                         'maxitems' => 1,
                         'allowed' => ['jpeg','jpg','png','gif','svg','webp'],
                         'overrideChildTca' => [
@@ -137,9 +66,9 @@ call_user_func(
                                             'Preview' => [
                                                 'title' => 'Flyout',
                                                 'allowedAspectRatios' => [
-                                                    'portrait' => [
+                                                    '4/3' => [
                                                         'title' => 'Flyout',
-                                                        'value' => 405 / 192
+                                                        'value' => 4/3
                                                     ],
                                                 ],
                                             ],
@@ -148,30 +77,6 @@ call_user_func(
                                 ],
                             ],
                         ],
-                    ],
-                ],
-                'tx_sitedefault_headline_flyout' => [
-                    'exclude' => 0,
-                    'label' => 'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_db.xlf:pages.tx_sitedefault_headline_flyout',
-                    'config' => [
-                        'type' => 'input',
-                        'size' => 30,
-                        'eval' => 'trim',
-                        'behaviour' => [
-                            'allowLanguageSynchronization' => true
-                        ]
-                    ],
-                ],
-                'tx_sitedefault_label_flyout' => [
-                    'exclude' => 0,
-                    'label' => 'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_db.xlf:pages.tx_sitedefault_label_flyout',
-                    'config' => [
-                        'type' => 'input',
-                        'size' => 30,
-                        'eval' => 'trim',
-                        'behaviour' => [
-                            'allowLanguageSynchronization' => true
-                        ]
                     ],
                 ],
             ]
@@ -188,20 +93,20 @@ call_user_func(
         }
 
 
-        //  add icon_class AND an empty palette for the flyout
+        //  add empty palette for the flyout
 		\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
 			'pages',
-			'tx_sitedefault_icon, tx_sitedefault_color, --palette--;LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_db.xlf:pages.palettes.flyout;flyout',
+			'--palette--;LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_db.xlf:pages.palettes.flyout;flyout',
 			'',
-			'after:layout'
+			'after:media'
 		);
 
+
         // add fields to new palette
-        /*
         $GLOBALS['TCA']['pages']['palettes']['flyout'] = [
-            'showitem' => 'tx_sitedefault_headline_flyout, tx_sitedefault_label_flyout, --linebreak--, tx_sitedefault_image_flyout'
+            'showitem' => 'tx_sitedefault_image_flyout'
         ];
-        */
+
 
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
             'pages',
@@ -210,21 +115,12 @@ call_user_func(
             'after:title'
         );
 
-        /*
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
-            'pages',
-            'tx_sitedefault_subline',
-            '',
-            'after:abstract'
-        );*/
-
-        /*
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
             'pages',
             'tx_sitedefault_image_teaser',
             '',
             'after:media'
-        );*/
+        );
 
 
         //======================================================================================================

@@ -298,6 +298,7 @@ textarea.form-control {
     min-height: rem-calc(200);
 }
 
+/*
 [class^="bg-color-"]:not([class^="bg-color-light"]):not([class^="bg-color-none"]):not([class^="bg-color-white"]),
 [class*=" bg-color-"]:not([class*=" bg-color-light"]):not([class*=" bg-color-none"]):not([class*=" bg-color-white"])  {
     .form {
@@ -312,7 +313,7 @@ textarea.form-control {
         }
     }
 }
-
+*/
 /* ====================================================================
    Select2
 ====================================================================

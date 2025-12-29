@@ -14,7 +14,6 @@
     display: inline-block;
     margin-inline: calc(#{$mark-overlap} * -1);
     padding-inline: $mark-overlap;
-    color: inherit;
     text-decoration: none;
     background-color: transparent;
 
@@ -38,6 +37,7 @@
     }
 
     &.active::before,
+    &.open::before,
     &:hover::before {
         width: 100%;
     }

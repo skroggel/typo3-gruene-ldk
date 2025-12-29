@@ -10,10 +10,10 @@
 .toggle {
     @include toggle(
         $icon-size: 20px,
-        $icon-color: $color-black,
+        $icon-color: $color-primary,
         $icon-mappings: (
             "icon-hamburger": $icon-close,
-            "icon-plus": $icon-close
+            "icon-arrow-down": $icon-arrow-up
         )
     );
 
