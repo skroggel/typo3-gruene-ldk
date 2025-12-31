@@ -4,7 +4,7 @@
     <f:render partial="KeyboardShortcuts" />
 
     <div class="siteheader" id="siteheader">
-        <div class="siteheader-inner" id="siteheader-inner">
+        <div class="siteheader-inner page-padding-full" id="siteheader-inner">
             <div class="container-xxxl g-0 h-100 d-flex flex-column justify-content-between">
                 <div class="row g-0 h-100">
                     <div class="col-3 col-md-2 col-lg-3">
@@ -36,7 +36,7 @@
                                     <f:cObject typoscriptObjectPath="lib.siteDefault.navigation.main"/>
                                 </div>
 
-                                <button class="toggle siteheader-toggle js-search-overlay-toggle d-none d-md-flex"
+                                <button class="toggle siteheader-toggle js-search-overlay-toggle"
                                         aria-label="{f:translate(key:'menu.search', extensionName:'SiteDefault')}"
                                         aria-controls="search-overlay"
                                         aria-expanded="false">
@@ -44,6 +44,15 @@
                                 </button>
 
                                 <div class="d-flex d-md-none">
+                                    <button href="#" class="toggle siteheader-toggle js-slide-nav-toggle"
+                                            title="{f:translate(key:'menu.open', extensionName:'siteDefault')}"
+                                            aria-label="{f:translate(key:'menu.open', extensionName:'siteDefault')}"
+                                            aria-haspopup="true"
+                                            aria-expanded="false"
+                                            aria-controls="slide-nav">
+                                        <span class="icon-hamburger icon toggle-icon"></span>
+                                    </button>
+
                                     <f:cObject typoscriptObjectPath="lib.siteDefault.navigation.mobile"/>
                                 </div>
                             </div>

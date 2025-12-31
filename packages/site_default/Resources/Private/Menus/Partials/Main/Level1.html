@@ -36,18 +36,18 @@
                                     <div class="nav-main-flyout-wrap">
                                         <div class="nav-main-flyout-content p-9">
 
-                                            <p class="headline h2">
+                                            <p class="headline lead-menu mb-5">
                                                 <span>
                                                     <f:format.html parseFuncTSPath="lib.parseFunc_Inline">{title}</f:format.html>
                                                 </span>
                                             </p>
 
-                                            <div class="toggle-list accordion nav-main-flyout-accordion"
+                                            <ul class="toggle-list accordion nav-main-flyout-accordion"
                                                  id="accordion-container-{menuItem.data.uid}"
                                                  role="tablist"
                                             >
                                                 <f:render partial="Level2" arguments="{menuItems: menuItem.children, parentItem: menuItem}" />
-                                            </div>
+                                            </ul>
 
                                         </div>
                                     </div>

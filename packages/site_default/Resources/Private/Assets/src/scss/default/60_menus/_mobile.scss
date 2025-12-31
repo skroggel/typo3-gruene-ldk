@@ -3,87 +3,62 @@
 * ================================================== */
 .nav-mobile {
 
-    &-linkwrap {
-
-        // plus / minus
-        .toggle-icon {
-            font-size: rem-calc(18);
-        }
-    }
-
-    &-list {
-        @include list-reset;
-
-        &.level-2 {
-            margin-left: rem-calc($spacer);
+    .nav-mobile-toggle {
+        align-items: flex-start;
+        margin-top: rem-calc(2);
+        .icon {
+            font-size: rem-calc(32);
         }
 
-        // item with plus / minus-toggle
-        .toggle {
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
+        @include media-breakpoint-up(md) {
+            .icon {
+                font-size: rem-calc(20);
+            }
+        }
 
-            &:hover,
-            &[aria-expanded="true"] {
-                .nav-mobile-link {
-                    font-weight: $font-weight-bold;
-                }
+        @include media-breakpoint-up(xl) {
+            .icon {
+                font-size: rem-calc(24);
             }
         }
     }
 
-    &-item {
-        @include h4;
-
-        border-bottom: rem-calc(1) solid $color-white;
-        display: block;
-
-        &.level-2 {
-            border-bottom-style: none;
-
-            &:first-child {
-                padding-top: rem-calc(14);
-            }
-
-            &:last-child {
-                padding-bottom: rem-calc(20);
-            }
+    .slide-nav {
+        &-back,
+        &-back:link,
+        &-back:visited,
+        &-back:hover,
+        &-link,
+        &-link:link,
+        &-link:visited,
+        &-link:hover,{
+            color: map-get($color-map, 'grey-800');
+            @include accessibility-outline($color: $color-outline);
         }
-    }
 
-    &-link,
-    &-link:link,
-    &-link:visited,
-    &-link:hover {
-        color: $color-white;
-        text-decoration: none;
-        text-align: left;
-        display: inline-block;
-        width: 100%;
-        height: rem-calc(50);
-        padding: rem-calc($spacer) rem-calc(4);
-
-        &.level-2 {
-            height: rem-calc(30);
+        &-link.active {
+            font-weight: bold;
+            color: $color-text;
         }
-    }
 
-    &-link.active,
-    &-link:hover {
-        span {
-            font-family: $font-family-sans;
+        &-headline {
+            margin-bottom: rem-calc(map-get($spacers, 5));
+        }
+
+        &-back-label {
+            pointer-events: all;
+            @include text-marker();
+        }
+
+        &-back:hover {
+            .slide-nav-back-label:before {
+                width: 100%;
+            }
         }
     }
 
     .search-box {
         padding-top: rem-calc(map-get($spacers, 2));
         padding-bottom: rem-calc(map-get($spacers, 2));
-    }
-}
-
-.flyout-open {
-    .page-footer {
-        display: none;
     }
 }

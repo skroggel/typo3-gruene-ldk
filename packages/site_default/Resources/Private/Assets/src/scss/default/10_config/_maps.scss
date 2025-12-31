@@ -4,13 +4,13 @@
 @use 'sass:math';
 
 $page-padding: (
-    xs: $spacer,
-    sm: $spacer, // mobile
-    md: $spacer,
-    lg: $spacer, // tablet
-    xl: $spacer,
-    xxl: $spacer,
-    xxxl: $spacer
+    xs: 16px,
+    sm: 24px, // mobile
+    md: 24px,
+    lg: 24px, // tablet
+    xl: 40px,
+    xxl: 40px,
+    xxxl: 40px
 );
 
 $grid-breakpoints: (

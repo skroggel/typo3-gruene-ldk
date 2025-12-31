@@ -20,6 +20,10 @@
 				<source>Search</source>
 				<target>Suche</target>
 			</trans-unit>
+			<trans-unit id="menu.home">
+				<source>Home</source>
+				<target>Home</target>
+			</trans-unit>
 			<trans-unit id="menu.open">
 				<source>Opens the menu</source>
 				<target>Öffnet das Menü</target>

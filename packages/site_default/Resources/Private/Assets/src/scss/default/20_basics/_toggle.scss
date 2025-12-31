@@ -10,12 +10,19 @@
 .toggle {
     @include toggle(
         $icon-size: 20px,
-        $icon-color: $color-primary,
+        $icon-color: map-get($color-map, 'pine'),
         $icon-mappings: (
             "icon-hamburger": $icon-close,
             "icon-arrow-down": $icon-arrow-up
         )
     );
+
+    @include media-breakpoint-up(lg) {
+        .toggle-icon:not(:has(svg)),
+        .toggle-icon svg {
+            font-size: rem-calc(24);
+        }
+    }
 
     @include accessibility-outline($color: $color-outline);
 }

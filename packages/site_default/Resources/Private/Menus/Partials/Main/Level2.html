@@ -5,7 +5,7 @@
     <f:for each="{menuItems}" as="menuItem">
         <f:variable name="title">{f:if(condition: '{noHtml}', then: '{menuItem.data.title}', else: '{menuItem.title}')}</f:variable>
 
-        <div class="toggle-list-item accordion-item nav-main-item level-2{f:if(condition: '{menuItem.active}', then: ' active')}">
+        <li class="toggle-list-item accordion-item nav-main-item level-2{f:if(condition: '{menuItem.active}', then: ' active')}">
 
             <f:if condition="{menuItem.children}">
                 <f:then>
@@ -16,9 +16,9 @@
                             aria-expanded="{f:if(condition: '{menuItem.active}', then: 'true', else: 'false')}"
                             aria-controls="accordion-{menuItem.data.uid}"
                     >
-                    <span class="headline toggle-text"><span><f:format.html
-                        parseFuncTSPath="lib.parseFunc_Inline">{title}</f:format.html></span></span>
-                        <span class="toggle-icon icon-arrow-down icon"></span>
+                        <span class="headline toggle-list-text"><span><f:format.html
+                            parseFuncTSPath="lib.parseFunc_Inline">{title}</f:format.html></span></span>
+                            <span class="toggle-icon icon-arrow-down icon"></span>
                     </button>
 
                     <div class="collapse js-no-scroll {f:if(condition: '{menuItem.active}', then: 'show')}"
@@ -33,22 +33,22 @@
                     </div>
                 </f:then>
                 <f:else>
-                    <a class="toggle toggle-list-link accordion-toggle nav-main-link level-2"
+                    <a class="toggle toggle-list-link accordion-toggle nav-main-link level-2{f:if(condition:'{menuItem.active}', then:' active')}"
                        href="{f:if(condition:'{menuItem.data.tx_klarokratie_open_modal}', then:'#', else :'{menuItem.link}')}"
                        {f:if(condition:'{menuItem.data.tx_klarokratie_open_modal}', then:'onclick="javascript:klaro.show(undefined, true);return false;"')}
                        target="{menuItem.target}"
                        title="{menuItem.data.title}"
                        role="menuitem"
                     >
-                        <span class="headline toggle-text"><span><f:format.html
-                            parseFuncTSPath="lib.parseFunc_Inline">{title}</f:format.html></span></span>
-                        <span class="toggle-icon icon-arrow-right icon"></span>
+                        <span class="headline toggle-list-text"><span><f:format.html
+                            parseFuncTSPath="lib.parseFunc_Inline">{title}</f:format.html></span>
+                        </span>
                     </a>
                 </f:else>
             </f:if>
 
 
-        </div>
+        </li>
     </f:for>
 
 

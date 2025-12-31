@@ -36,7 +36,6 @@
         pointer-events: none;
     }
 
-    &.active::before,
     &.open::before,
     &:hover::before {
         width: 100%;

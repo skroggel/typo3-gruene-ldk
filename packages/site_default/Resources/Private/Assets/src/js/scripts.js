@@ -20,6 +20,18 @@ window.addEventListener('DOMContentLoaded', () => {
     document.querySelector('body').classList.remove('block-scroll-classes');
   });
 
+  document.querySelectorAll('.js-slide-nav-toggle').forEach((el) => {
+    new Madj2kSlideMenu(el, { menuItemsJson: slideNavItems});
+  });
+
+  document.addEventListener('madj2k-slidemenu-opening', () => {
+    document.querySelector('body').classList.add('block-scroll-classes');
+  });
+  document.addEventListener('madj2k-slidemenu-closed', () => {
+    document.querySelector('body').classList.remove('block-scroll-classes');
+  });
+
+
 
   // ==========================================================================
   // Menu

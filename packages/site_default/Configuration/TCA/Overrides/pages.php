@@ -55,7 +55,7 @@ call_user_func(
                     'label' => 'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_db.xlf:pages.tx_sitedefault_image_flyout',
                     'config' => [
                         'type' => 'file',
-                        'minitems' => 1,
+                        'minitems' => 0,
                         'maxitems' => 1,
                         'allowed' => ['jpeg','jpg','png','gif','svg','webp'],
                         'overrideChildTca' => [

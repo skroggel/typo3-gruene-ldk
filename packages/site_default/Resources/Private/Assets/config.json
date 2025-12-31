@@ -47,6 +47,7 @@
 				"vendor": [
 					"node_modules/@madj2k/fe-frontend-kit/tools/better-resize-event/better-resize-event.scss",
 					"node_modules/@madj2k/fe-frontend-kit/menus/flyout-menu/flyout-menu-2.0.scss",
+					"node_modules/@madj2k/fe-frontend-kit/menus/slide-menu/slide-menu-2.0.scss",
 					"node_modules/@madj2k/fe-frontend-kit/tools/scrolling/scrolling-2.0.scss",
 					"node_modules/@madj2k/fe-frontend-kit/tools/element-in-viewport/element-in-viewport-2.0.scss"
 				],
@@ -72,10 +73,10 @@
 					"node_modules/jquery/dist/jquery.js",
 					"node_modules/jquery.easing/jquery.easing.js",
 					"node_modules/bootstrap/dist/js/bootstrap.js",
-					"node_modules/lottie-web/build/player/lottie.js",
 					"node_modules/lenis/dist/lenis.min.js",
 					"node_modules/@madj2k/fe-frontend-kit/tools/better-resize-event/better-resize-event-2.0.js",
 					"node_modules/@madj2k/fe-frontend-kit/menus/flyout-menu/flyout-menu-2.0.js",
+					"node_modules/@madj2k/fe-frontend-kit/menus/slide-menu/slide-menu-2.0.js",
 					"node_modules/@madj2k/fe-frontend-kit/tools/scrolling/scrolling-2.0.js",
 					"node_modules/@madj2k/fe-frontend-kit/tools/element-in-viewport/element-in-viewport-2.0.js"
 				]

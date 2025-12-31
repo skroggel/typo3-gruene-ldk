@@ -27,15 +27,18 @@ $siteheader-height-mobile: 100px;
 
     &-inner {
         height: 100%;
-        padding: rem-calc(map-get($spacers, 3)); // 16
+        padding-top: rem-calc(map-get($spacers, 3)); // 16
+        padding-bottom: rem-calc(map-get($spacers, 3)); // 16
 
         @include media-breakpoint-up(sm) {
-            padding-left: rem-calc(map-get($spacers, 4)); // 24
-            padding-right: rem-calc(map-get($spacers, 4)); // 24
+          //  padding-left: rem-calc(map-get($spacers, 4)); // 24
+          //  padding-right: rem-calc(map-get($spacers, 4)); // 24
         }
 
         @include media-breakpoint-up($siteheader-breakpoint-variant) {
-            padding: rem-calc(map-get($spacers, 4)) rem-calc(map-get($spacers, 6)) rem-calc(map-get($spacers, 4)) rem-calc(map-get($spacers, 6)) ;
+            //padding: rem-calc(map-get($spacers, 4)) rem-calc(map-get($spacers, 6)) rem-calc(map-get($spacers, 4)) rem-calc(map-get($spacers, 6)) ;
+            padding-top: rem-calc(map-get($spacers, 3)); // 16
+            padding-bottom: rem-calc(map-get($spacers, 3)); // 16
         }
     }
 
@@ -48,7 +51,7 @@ $siteheader-height-mobile: 100px;
 
             &.variant-small {
                 padding: rem-calc(map-get($spacers, 1));
-                background-color: map-get($color-map, 'clover');
+                background-color: $color-primary;
 
                 @include media-breakpoint-up($siteheader-breakpoint-variant) {
                     display: none;
@@ -77,7 +80,7 @@ $siteheader-height-mobile: 100px;
 
     &-headline {
         @include h4;
-        color: map-get($color-map, 'clover');
+        color: $color-primary;
         @include media-breakpoint-down($siteheader-breakpoint-variant) {
             font-size: rem-calc(20);
         }
@@ -98,60 +101,34 @@ $siteheader-height-mobile: 100px;
         @include media-breakpoint-up(lg) {
             gap: rem-calc(map-get($spacers, 6));
         }
+    }
 
-        .nav-mobile-toggle,
-        .siteheader-toggle {
+    .siteheader-toggle {
+        align-items: center;
+        margin-top: rem-calc(2);
+        .icon {
+            font-size: rem-calc(22);
+
+            &.icon-hamburger {
+                font-size: rem-calc(30);
+            }
+        }
+
+        @include media-breakpoint-up(md) {
             align-items: flex-start;
-            margin-top: rem-calc(2);
+
             .icon {
-                // color: map-get($color-map, 'clover');
-                font-size: rem-calc(32);
+                font-size: rem-calc(20);
             }
+        }
 
-            @include media-breakpoint-up(md) {
-                .icon {
-                    font-size: rem-calc(20);
-                }
-            }
-
-            @include media-breakpoint-up(xl) {
-                .icon {
-                    font-size: rem-calc(24);
-                }
+        @include media-breakpoint-up(xl) {
+            .icon {
+                font-size: rem-calc(24);
             }
         }
     }
 }
-
-
-/*
-.siteheader {
-    height: rem-calc(60);
-
-    &-inner {
-        padding-top: rem-calc(map-get($spacers, 1));
-        padding-bottom: rem-calc(map-get($spacers, 1));
-    }
-
-    &-menu:first-child {
-        display: none;
-    }
-
-    &-menu-wrap {
-        justify-content: center;
-    }
-
-    &-brand-container {
-
-        &.variant-small {
-            padding: rem-calc(4);
-            display: block;
-        }
-        &.variant-big {
-            display: none;
-        }
-    }
-}*/
 
 
 

@@ -23,7 +23,7 @@
     &-link,
     &-link:link,
     &-link:visited,
-    &-link:hover{
+    &-link:hover {
         font-size: rem-calc(20);
         line-height: 100%;
         color: map-get($color-map, 'grey-800');
@@ -59,7 +59,6 @@
         }
     }
 
-
     &-list.level-3 {
         margin-left: rem-calc(map-get($spacers, 4));
         margin-top: rem-calc(map-get($spacers, 3));
@@ -82,6 +81,15 @@
         }
     }
 
+    /**  Override for toggle */
+    .toggle {
+        @include media-breakpoint-between(lg,xl) {
+            .toggle-icon:not(:has(svg)),
+            .toggle-icon svg {
+                font-size: rem-calc(20);
+            }
+        }
+    }
 
     /**  Hover-effects */
     &-link.level-1,
@@ -90,41 +98,9 @@
 
         &.active {
             font-weight: bold;
+            color: $color-text;
         }
     }
-
-    &-link.level-2 {
-        .toggle-text {
-            pointer-events: all;
-            @include text-marker();
-        }
-
-        &:hover {
-            .toggle-text:before {
-                width: 100%;
-            }
-        }
-        &.active {
-            .toggle-text {
-                font-weight: bold;
-            }
-        }
-    }
-
-
-    /** Accordion */
-    .toggle-list {
-        @include toggle-list(
-            $padding-y: $spacer,
-            $border-color: map-get($color-map, 'grey-800'),
-            $border-size: 1px,
-            $font-color: map-get($color-map, 'grey-800'),
-            $font-color-active: map-get($color-map, 'grey-800'),
-            $icon-size: 24px,
-            $icon-style: ''
-        );
-    }
-
 
     /** Flyout stuff */
     &-flyout {
@@ -161,7 +137,7 @@
 
             .icon {
                 font-size: rem-calc(48) !important;
-                color: $color-white !important;
+                color: map-get($color-map, 'grey-200') !important;
             }
         }
 
@@ -189,21 +165,6 @@
     }
 }
 
-
-/**
- * blur-effect
- */
-.background-blur {
-    position:fixed;
-    top:0;
-    left:0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(128, 128, 128, 0.7);
-    transition: opacity 0.5s ease-in-out;
-    opacity:0;
-    z-index:-1;
-}
 
 .flyout-open,
 .flyout-closing {

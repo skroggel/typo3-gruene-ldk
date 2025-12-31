@@ -58,8 +58,8 @@ $color-map: (
 // some basic variables
 $color-white: map-get($color-map, 'white');
 $color-black: map-get($color-map, 'black');
-$color-primary: map-get($color-map, 'clover');
-$color-secondary: map-get($color-map, 'pine');
+$color-primary: map-get($color-map, 'pine');
+$color-secondary: map-get($color-map, 'clover');
 $color-text: map-get($color-map, 'pine-900');
 $color-error: map-get($color-map, 'red');
-$color-outline: map-get($color-map, 'pine');
+$color-outline: map-get($color-map, 'clover');

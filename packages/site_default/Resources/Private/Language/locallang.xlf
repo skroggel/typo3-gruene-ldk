@@ -15,6 +15,9 @@
 			<trans-unit id="menu.search">
 				<source>Search</source>
 			</trans-unit>
+			<trans-unit id="menu.home">
+				<source>Home</source>
+			</trans-unit>
 			<trans-unit id="menu.open">
 				<source>Opens the menu</source>
 			</trans-unit>

@@ -38,7 +38,6 @@ $font-formats: (
             'letter-spacing': 0
         )
     ),
-
     'h2': (
         'mobile': (
             'font-family': $font-family-gruene,
@@ -62,7 +61,6 @@ $font-formats: (
             'letter-spacing': 0
         )
     ),
-
     'h3': (
         'mobile': (
             'font-family': $font-family-gruene,
@@ -86,7 +84,6 @@ $font-formats: (
             'letter-spacing': 0
         )
     ),
-
     'h4': (
         'mobile': (
             'font-family': $font-family-gruene,
@@ -107,6 +104,29 @@ $font-formats: (
             'font-weight': $font-weight-normal,
             'font-size': rem-calc(30),
             'line-height': 110%,
+            'letter-spacing': 0
+        )
+    ),
+    'toggle-list-text': (
+        'mobile': (
+            'font-family': $font-family-sans,
+            'font-weight': $font-weight-normal,
+            'font-size': rem-calc(18),
+            'line-height': 100%,
+            'letter-spacing': 0
+        ),
+        'tablet': (
+            'font-family': $font-family-sans,
+            'font-weight': $font-weight-normal,
+            'font-size': rem-calc(18),
+            'line-height': 100%,
+            'letter-spacing': 0
+        ),
+        'desktop': (
+            'font-family': $font-family-sans,
+            'font-weight': $font-weight-normal,
+            'font-size': rem-calc(25),
+            'line-height': 100%,
             'letter-spacing': 0
         )
     ),
@@ -133,7 +153,6 @@ $font-formats: (
             'letter-spacing': 0
         )
     ),
-
     'copy-small': (
         'mobile': (
             'font-family': $font-family-sans,
@@ -157,7 +176,36 @@ $font-formats: (
             'letter-spacing': 0
         )
     ),
-
+    'lead-menu': (
+        'mobile': (
+            'font-family': $font-family-gruene,
+            'font-weight': $font-weight-normal,
+            'font-size': rem-calc(40),
+            'line-height': 110%,
+            'letter-spacing': 0
+        ),
+        'tablet': (
+            'font-family': $font-family-gruene,
+            'font-weight': $font-weight-normal,
+            'font-size': rem-calc(40),
+            'line-height': 110%,
+            'letter-spacing': 0
+        ),
+        'desktop': (
+            'font-family': $font-family-gruene,
+            'font-weight': $font-weight-normal,
+            'font-size': rem-calc(40),
+            'line-height': 110%,
+            'letter-spacing': 0
+        ),
+        'xl': (
+            'font-family': $font-family-gruene,
+            'font-weight': $font-weight-normal,
+            'font-size': rem-calc(60),
+            'line-height': 110%,
+            'letter-spacing': 0
+        )
+    ),
     'lead': (
         'mobile': (
             'font-family': $font-family-sans,

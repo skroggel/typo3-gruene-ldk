@@ -108,6 +108,28 @@
     @include font-format($font-formats: $font-formats, $font-format: 'subheader-3', $tablet-breakpoint: sm, $desktop-breakpoint: lg);
 }
 
+/// Applies typographic styles for the toggle list text
+///
+/// @group Utilities
+///
+/// @author Steffen Kroggel <developer@steffenkroggel>
+/// @license GNU General Public License v3.0 https://www.gnu.org/licenses/gpl-3.0.en.html
+///
+@mixin toggle-list-text {
+    @include font-format($font-formats: $font-formats, $font-format: 'toggle-list-text', $tablet-breakpoint: sm, $desktop-breakpoint: lg);
+}
+
+/// Applies typographic styles for the lead menu
+///
+/// @group Utilities
+///
+/// @author Steffen Kroggel <developer@steffenkroggel>
+/// @license GNU General Public License v3.0 https://www.gnu.org/licenses/gpl-3.0.en.html
+///
+@mixin lead-menu {
+    @include font-format($font-formats: $font-formats, $font-format: 'lead-menu', $tablet-breakpoint: sm, $desktop-breakpoint: lg);
+}
+
 
 /// Applies typographic styles for the lead
 ///

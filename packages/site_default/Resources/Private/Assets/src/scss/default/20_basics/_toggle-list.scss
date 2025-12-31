@@ -4,24 +4,46 @@
 .toggle-list {
     @include toggle-list(
         $padding-y: $spacer,
-        $border-color: $color-primary,
+        $border-color: $color-secondary,
         $border-size: 1px,
-        $font-color: $color-primary,
-        $font-color-active: $color-primary,
-        $icon-size: 30px,
-        $icon-style: ''
+        $font-color: inherit,
+        $font-color-active: inherit,
+        $font-color-hover: inherit,
+        $icon-size: 20px,
+        $icon-style: '',
+        $icon-color: $color-primary,
+        $icon-color-active: $color-primary,
+        $icon-color-hover: $color-secondary
     );
 
     &-link {
-        @include h4;
-        line-height: 100%;
-    }
+        @include toggle-list-text;
 
-    .toggle-text {
-        position: relative;
-        top:3px;
+        .icon {
+            @include media-breakpoint-up(lg) {
+                font-size: rem-calc(30)
+            }
+        }
+
+        .toggle-list-text {
+            pointer-events: all;
+            @include text-marker();
+        }
+
+        &:hover {
+            .toggle-list-text:before {
+                width: 100%;
+            }
+        }
+
+        &.active {
+            .toggle-list-text {
+                font-weight: bold;
+            }
+        }
     }
 }
+
 /*
 [class^="bg-color-"]:not([class^="bg-color-light"]):not([class^="bg-color-none"]):not([class^="bg-color-white"]),
 [class*=" bg-color-"]:not([class*=" bg-color-light"]):not([class*=" bg-color-none"]):not([class*=" bg-color-white"])  {
