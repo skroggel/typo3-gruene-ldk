@@ -97,6 +97,13 @@ h4,
     margin-bottom: rem-calc(map-get($spacers, 1));
 }
 
+h5,
+.h5 {
+    @include h5;
+    color: $color-primary;
+    margin-bottom: rem-calc(map-get($spacers, 1));
+}
+
 /*
 [class^="bg-color-"]:not([class^="bg-color-light"]):not([class^="bg-color-none"]):not([class^="bg-color-white"]),
 [class*=" bg-color-"]:not([class*=" bg-color-light"]):not([class*=" bg-color-none"]):not([class*=" bg-color-white"])  {

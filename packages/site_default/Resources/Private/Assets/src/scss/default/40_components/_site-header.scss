@@ -3,10 +3,6 @@
 * ================================================== */
 @use 'sass:math';
 
-$siteheader-breakpoint-variant: xl;
-$siteheader-height-desktop: 180px;
-$siteheader-height-mobile: 100px;
-
 .siteheader {
 
     position: fixed;
@@ -21,25 +17,13 @@ $siteheader-height-mobile: 100px;
     max-width: 100vw;
     box-shadow: rem-calc(0) rem-calc(0) rem-calc(15) rem-calc(0) #63636340;
 
+    padding-top: rem-calc(map-get($spacers, 3)); // 16
+    padding-bottom: rem-calc(map-get($spacers, 3)); // 16
+
     @include media-breakpoint-up($siteheader-breakpoint-variant) {
         height: rem-calc($siteheader-height-desktop);
-    }
-
-    &-inner {
-        height: 100%;
         padding-top: rem-calc(map-get($spacers, 3)); // 16
         padding-bottom: rem-calc(map-get($spacers, 3)); // 16
-
-        @include media-breakpoint-up(sm) {
-          //  padding-left: rem-calc(map-get($spacers, 4)); // 24
-          //  padding-right: rem-calc(map-get($spacers, 4)); // 24
-        }
-
-        @include media-breakpoint-up($siteheader-breakpoint-variant) {
-            //padding: rem-calc(map-get($spacers, 4)) rem-calc(map-get($spacers, 6)) rem-calc(map-get($spacers, 4)) rem-calc(map-get($spacers, 6)) ;
-            padding-top: rem-calc(map-get($spacers, 3)); // 16
-            padding-bottom: rem-calc(map-get($spacers, 3)); // 16
-        }
     }
 
     &-brand {

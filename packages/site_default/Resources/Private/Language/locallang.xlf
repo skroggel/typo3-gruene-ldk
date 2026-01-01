@@ -3,7 +3,7 @@
 	<file source-language="en" datatype="plaintext" original="messages" date="2023-09-17UTC13:49:100">
 		<body>
 
- 			<trans-unit id="menu.mainmenu">
+			<trans-unit id="menu.mainmenu">
 				<source>Mainmenu</source>
 			</trans-unit>
 			<trans-unit id="menu.mobile">
@@ -36,23 +36,45 @@
 			<trans-unit id="menu.metanav">
 				<source>Meta Navigation</source>
 			</trans-unit>
-			<trans-unit id="menu.subnav">
-				<source>Sub-Navigation</source>
-			</trans-unit>
-			<trans-unit id="menu.languageSwitch">
-				<source>Language Switch</source>
-			</trans-unit>
-			<trans-unit id="menu.languageSwitch.current">
-				<source>Current Language:</source>
-			</trans-unit>
-
-
 			<trans-unit id="menu.jumpToNavigation">
 				<source>Jump to main menu</source>
 			</trans-unit>
 			<trans-unit id="menu.jumpToContent">
 				<source>Jump to main content</source>
 			</trans-unit>
+
+
+			<trans-unit id="contact.headline">
+				<source>Contact</source>
+			</trans-unit>
+			<trans-unit id="socialMedia.headline">
+				<source>Follow us</source>
+			</trans-unit>
+			<trans-unit id="socialMedia.facebook">
+				<source>Facebook</source>
+			</trans-unit>
+			<trans-unit id="socialMedia.instagram">
+				<source>Instagram</source>
+			</trans-unit>
+			<trans-unit id="socialMedia.tiktok">
+				<source>TikTok</source>
+			</trans-unit>
+			<trans-unit id="socialMedia.youtube">
+				<source>YouTube</source>
+			</trans-unit>
+			<trans-unit id="links.headline">
+				<source>Greens on the net</source>
+			</trans-unit>
+			<trans-unit id="links.bundesverband">
+				<source>Federal Association</source>
+			</trans-unit>
+			<trans-unit id="links.landesverband">
+				<source>State Association</source>
+			</trans-unit>
+			<trans-unit id="links.gruenejugend">
+				<source>Green Youth</source>
+			</trans-unit>
+
 
 
 			<trans-unit id="label.readMore">

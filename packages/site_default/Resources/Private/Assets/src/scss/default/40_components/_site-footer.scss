@@ -1,0 +1,44 @@
+/* ==================================================
+* Site-Footer
+* ================================================== */
+@use 'sass:math';
+
+.sitefooter {
+
+    position: relative;
+
+    .link,
+    .link:link,
+    .link:visited{
+        text-decoration: none;
+    }
+
+    .link:hover {
+        text-decoration: underline;
+    }
+
+    .socialmedia {
+
+        &-list {
+            display: flex;
+            gap: rem-calc(10);
+            margin-top: rem-calc(14);
+
+            .icon {
+                font-size: rem-calc(30);
+                @include media-breakpoint-up(lg) {
+                    font-size: rem-calc(40);
+                }
+            }
+        }
+    }
+
+    .links {
+        &-list {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+
+

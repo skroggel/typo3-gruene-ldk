@@ -18,7 +18,7 @@ lib.siteDefault {
                     10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
                     10 {
                         special = directory
-                        special.value = 35
+                        special.value = 17
 
                         levels = 1
                         entryLevel = 0

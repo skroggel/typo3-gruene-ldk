@@ -146,6 +146,12 @@
             left: calc(60vw);
             top:0;
             width: 40vw;
+            max-height: calc(100vh - $siteheader-height-mobile);
+            overflow: hidden;
+
+            @include media-breakpoint-up($siteheader-breakpoint-variant) {
+                max-height: calc(100vh - $siteheader-height-desktop);
+            }
 
             .img-inner {
                 display: flex;

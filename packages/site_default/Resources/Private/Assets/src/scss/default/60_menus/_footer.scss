@@ -2,27 +2,28 @@
 * Footer-Menu
 * ================================================== */
 @use 'sass:math';
-
 .nav-footer {
 
+    margin-top: rem-calc($spacer);
+    padding-top: rem-calc($spacer);
+    border-top: rem-calc(1) solid $color-white;
+
     &-list {
+        @include copy-small;
         flex-wrap: wrap;
         gap: rem-calc($spacer);
+
         @include media-breakpoint-up(lg) {
-            gap: rem-calc(70);
+            gap: rem-calc(40);
             row-gap: rem-calc($spacer);
         }
-    }
-
-    &-item {
-        margin-bottom: rem-calc(math.div(strip-unit($grid-gutter-width), 2));
     }
 
     &-link,
     &-link:link,
     &-link:visited,
     &-link:hover {
-        color: $color-secondary;
+        color: $color-white;
         text-decoration: none;
     }
 
@@ -31,23 +32,3 @@
     }
 }
 
-.nav-mobile {
-    .nav-footer {
-        padding-top: rem-calc(math.div(strip-unit($grid-gutter-width), 2));
-
-        &-list {
-            gap: rem-calc(math.div(strip-unit($grid-gutter-width), 2)) !important;
-        }
-
-        &-link,
-        &-link:link,
-        &-link:visited,
-        &-link:hover {
-            color: $color-white;
-        }
-
-        &-link:hover {
-           text-decoration: underline;
-        }
-    }
-}

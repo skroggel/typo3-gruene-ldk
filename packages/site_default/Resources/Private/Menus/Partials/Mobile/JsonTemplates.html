@@ -31,31 +31,12 @@
                                     </ul>
                                 </li>
 
-                                <f:if condition="{topMenuItems}">
-                                    <li class="slide-nav-item-footer" role="none">
-                                        <ul class="slide-nav-meta-list" role="none">
-                                            <f:for each="{topMenuItems}" as="menuItem" iteration="iterator">
-                                                <li class="slide-nav-meta-item level1{f:if(condition:'{menuItem.active}', then:' active')}" role="none">
-                                                    <a class="slide-nav-meta-link level1{f:if(condition:'{menuItem.active}', then:' active')}"
-                                                       href="{menuItem.link}"
-                                                       target="{menuItem.target}"
-                                                       title="{menuItem.data.title}"
-                                                       role="menuitem"
-                                                    >
-                                                        <span><f:format.html parseFuncTSPath="lib.parseFunc_Inline">{menuItem.title}</f:format.html></span>
-                                                    </a>
-                                                </li>
-                                            </f:for>
-                                        </ul>
-                                    </li>
-                                </f:if>
-
                                 <f:if condition="{footerMenuItems}">
                                     <li class="slide-nav-item-footer" role="none">
-                                        <ul class="slide-nav-meta-list" role="none">
+                                        <ul class="slide-nav-meta-list nav-inline-list" role="none">
                                             <f:for each="{footerMenuItems}" as="menuItem" iteration="iterator">
-                                                <li class="slide-nav-meta-item level1{f:if(condition:'{menuItem.active}', then:' active')}" role="none">
-                                                    <a class="slide-nav-meta-link level1{f:if(condition:'{menuItem.active}', then:' active')}"
+                                                <li class="slide-nav-meta-item nav-inline-item level1{f:if(condition:'{menuItem.active}', then:' active')}" role="none">
+                                                    <a class="slide-nav-meta-link nav-inline-link level1{f:if(condition:'{menuItem.active}', then:' active')}"
                                                        href="{menuItem.link}"
                                                        target="{menuItem.target}"
                                                        title="{menuItem.data.title}"

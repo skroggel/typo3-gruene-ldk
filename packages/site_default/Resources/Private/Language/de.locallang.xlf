@@ -48,20 +48,6 @@
 				<source>Meta Navigation</source>
 				<target>Meta-Navigation</target>
 			</trans-unit>
-			<trans-unit id="menu.subnav">
-				<source>Sub-Navigation</source>
-				<target>Sub-Navigation</target>
-			</trans-unit>
-			<trans-unit id="menu.languageSwitch">
-				<source>Language Switch</source>
-				<target>Sprachumschalter</target>
-			</trans-unit>
-			<trans-unit id="menu.languageSwitch.current">
-				<source>Current Language:</source>
-				<target>Aktuelle Sprache:</target>
-			</trans-unit>
-
-
 			<trans-unit id="menu.jumpToNavigation">
 				<source>Jump to main menu</source>
 				<target>Zur Haupt-Navigation springen</target>
@@ -70,6 +56,50 @@
 				<source>Jump to main content</source>
 				<target>Zum Haupt-Inhalt springen</target>
 			</trans-unit>
+
+
+			<trans-unit id="contact.headline">
+				<source>Contact</source>
+				<target>Kontakt</target>
+			</trans-unit>
+			<trans-unit id="socialMedia.headline">
+				<source>Follow us</source>
+				<target>Folge uns</target>
+			</trans-unit>
+			<trans-unit id="socialMedia.facebook">
+				<source>Facebook</source>
+				<target>Facebook</target>
+			</trans-unit>
+			<trans-unit id="socialMedia.instagram">
+				<source>Instagram</source>
+				<target>Instagram</target>
+			</trans-unit>
+			<trans-unit id="socialMedia.tiktok">
+				<source>TikTok</source>
+				<target>TikTok</target>
+			</trans-unit>
+			<trans-unit id="socialMedia.youtube">
+				<source>YouTube</source>
+				<target>YouTube</target>
+			</trans-unit>
+			<trans-unit id="links.headline">
+				<source>Greens on the net</source>
+				<target>GRÜNE im Netz</target>
+			</trans-unit>
+			<trans-unit id="links.bundesverband">
+				<source>Federal Association</source>
+				<target>Bundesverband</target>
+			</trans-unit>
+			<trans-unit id="links.landesverband">
+				<source>State Association</source>
+				<target>Landesverband</target>
+			</trans-unit>
+			<trans-unit id="links.gruenejugend">
+				<source>Green Youth</source>
+				<target>GRÜNE Jugend Lahn-Dill</target>
+			</trans-unit>
+
+
 
 
 			<trans-unit id="label.readMore">

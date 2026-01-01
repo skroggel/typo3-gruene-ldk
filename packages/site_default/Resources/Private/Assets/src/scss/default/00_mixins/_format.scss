@@ -42,6 +42,17 @@
     @include font-format($font-formats: $font-formats, $font-format: 'h4', $tablet-breakpoint: sm, $desktop-breakpoint: lg);
 }
 
+/// Typography style for `<h4>` elements.
+///
+/// @group Typography
+///
+/// @author Steffen Kroggel <developer@steffenkroggel>
+/// @license GNU General Public License v3.0 https://www.gnu.org/licenses/gpl-3.0.en.html
+///
+@mixin h5 {
+    @include font-format($font-formats: $font-formats, $font-format: 'h5', $tablet-breakpoint: sm, $desktop-breakpoint: lg);
+}
+
 /// Typography style for body copy text.
 ///
 /// @group Typography

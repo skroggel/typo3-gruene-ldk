@@ -107,6 +107,29 @@ $font-formats: (
             'letter-spacing': 0
         )
     ),
+    'h5': (
+        'mobile': (
+            'font-family': $font-family-gruene,
+            'font-weight': $font-weight-normal,
+            'font-size': rem-calc(18),
+            'line-height': 110%,
+            'letter-spacing': 0
+        ),
+        'tablet': (
+            'font-family': $font-family-gruene,
+            'font-weight': $font-weight-normal,
+            'font-size': rem-calc(24),
+            'line-height': 110%,
+            'letter-spacing': 0
+        ),
+        'desktop': (
+            'font-family': $font-family-gruene,
+            'font-weight': $font-weight-normal,
+            'font-size': rem-calc(24),
+            'line-height': 110%,
+            'letter-spacing': 0
+        )
+    ),
     'toggle-list-text': (
         'mobile': (
             'font-family': $font-family-sans,

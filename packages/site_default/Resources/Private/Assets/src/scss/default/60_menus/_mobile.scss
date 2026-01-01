@@ -55,10 +55,27 @@
                 width: 100%;
             }
         }
-    }
 
-    .search-box {
-        padding-top: rem-calc(map-get($spacers, 2));
-        padding-bottom: rem-calc(map-get($spacers, 2));
+        &-item-footer {
+            padding-top: rem-calc(map-get($spacers, 5));
+        }
+
+        &-meta {
+            &-list {
+                @include copy-small;
+
+                flex-wrap: wrap;
+                gap: rem-calc($spacer);
+            }
+
+            &-link,
+            &-link:link,
+            &-link:visited,
+            &-link:hover {
+                color: $color-primary;
+            }
+        }
+
+
     }
 }
