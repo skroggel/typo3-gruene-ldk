@@ -117,8 +117,9 @@
 
 
 /** Repositioning if scrolled down */
-.page-content {
+.page-main {
     position: relative;
+    z-index: 60;
     transition: top 0.5s ease-in-out;
 
     top: rem-calc($siteheader-height-mobile);
@@ -134,7 +135,7 @@
             top: rem-calc($siteheader-height-desktop * -1);
         }
     }
-     .page-content{
+     .page-main {
         top: 0;
     }
 }

@@ -189,7 +189,7 @@ page {
     includeCSSLibs {
         siteDefaultLayout = EXT:site_default/Resources/Public/Css/vendor.css
         # responsiveTables = EXT:site_default/Resources/Public/Libs/BasicTable/basictable.min.css
-        # owl = EXT:site_default/Resources/Public/Libs/Owl/owl.carousel.min.css
+        owl = EXT:site_default/Resources/Public/Libs/Owl/owl.carousel.min.css
     }
 
     includeJS {
@@ -206,7 +206,7 @@ page {
     includeJSFooterlibs {
         siteDefaultScripts = EXT:site_default/Resources/Public/JavaScript/vendor.js
         # responsiveTables = EXT:site_default/Resources/Public/Libs/BasicTable/jquery.basictable.min.js
-        # owl = EXT:site_default/Resources/Public/Libs/Owl/owl.carousel.min.js
+        owl = EXT:site_default/Resources/Public/Libs/Owl/owl.carousel.min.js
     }
 }
 

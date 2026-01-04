@@ -11,8 +11,8 @@
 				<target>Stage</target>
 			</trans-unit>
 			<trans-unit id="description">
-				<source>First element of the page</source>
-				<target>Erstes Element in der Seite</target>
+				<source>This element is a large teaser or hero module with an image background and a prominent headline. It is used to attract attention and introduce a main topic, article, or campaign. An optional call to action can be included to guide users to further content.</source>
+				<target>Dieses Element ist ein großflächiges Teaser- oder Hero-Element mit Bildhintergrund und prägnanter Headline. Es dient dazu, Aufmerksamkeit zu erzeugen und in ein zentrales Thema, einen Artikel oder eine Kampagne einzuführen. Optional kann ein Call-to-Action integriert werden, der zur Vertiefung oder Weiterleitung einlädt.</target>
 			</trans-unit>
 
 			<!-- tabs -->
@@ -28,7 +28,7 @@
 			</trans-unit>
 
 			<!-- fields -->
-			<trans-unit id="madj2k_stage_header.label">
+			<trans-unit id="madj2k_header.label">
 				<source>Header</source>
 				<target>Header</target>
 			</trans-unit>

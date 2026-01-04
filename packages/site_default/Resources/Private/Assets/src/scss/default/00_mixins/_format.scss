@@ -53,6 +53,42 @@
     @include font-format($font-formats: $font-formats, $font-format: 'h5', $tablet-breakpoint: sm, $desktop-breakpoint: lg);
 }
 
+/// Typography style for `<h1>` elements.
+///
+/// @group Typography
+///
+/// @author Steffen Kroggel <developer@steffenkroggel>
+/// @license GNU General Public License v3.0 https://www.gnu.org/licenses/gpl-3.0.en.html
+///
+@mixin hero {
+    @include font-format($font-formats: $font-formats, $font-format: 'hero', $tablet-breakpoint: sm, $desktop-breakpoint: lg);
+}
+
+
+/// Applies typographic styles for the hero menu
+///
+/// @group Utilities
+///
+/// @author Steffen Kroggel <developer@steffenkroggel>
+/// @license GNU General Public License v3.0 https://www.gnu.org/licenses/gpl-3.0.en.html
+///
+@mixin hero-menu {
+    @include font-format($font-formats: $font-formats, $font-format: 'hero-menu', $tablet-breakpoint: sm, $desktop-breakpoint: lg);
+}
+
+
+/// Applies typographic styles for the toggle list text
+///
+/// @group Utilities
+///
+/// @author Steffen Kroggel <developer@steffenkroggel>
+/// @license GNU General Public License v3.0 https://www.gnu.org/licenses/gpl-3.0.en.html
+///
+@mixin toggle-list-text {
+    @include font-format($font-formats: $font-formats, $font-format: 'toggle-list-text', $tablet-breakpoint: sm, $desktop-breakpoint: lg);
+}
+
+
 /// Typography style for body copy text.
 ///
 /// @group Typography
@@ -86,6 +122,7 @@
     @include font-format($font-formats: $font-formats, $font-format: 'link', $tablet-breakpoint: sm, $desktop-breakpoint: lg);
 }
 
+/*
 /// Typography style for subheaders.
 ///
 /// @group Typography
@@ -119,29 +156,8 @@
     @include font-format($font-formats: $font-formats, $font-format: 'subheader-3', $tablet-breakpoint: sm, $desktop-breakpoint: lg);
 }
 
-/// Applies typographic styles for the toggle list text
-///
-/// @group Utilities
-///
-/// @author Steffen Kroggel <developer@steffenkroggel>
-/// @license GNU General Public License v3.0 https://www.gnu.org/licenses/gpl-3.0.en.html
-///
-@mixin toggle-list-text {
-    @include font-format($font-formats: $font-formats, $font-format: 'toggle-list-text', $tablet-breakpoint: sm, $desktop-breakpoint: lg);
-}
 
-/// Applies typographic styles for the lead menu
-///
-/// @group Utilities
-///
-/// @author Steffen Kroggel <developer@steffenkroggel>
-/// @license GNU General Public License v3.0 https://www.gnu.org/licenses/gpl-3.0.en.html
-///
-@mixin lead-menu {
-    @include font-format($font-formats: $font-formats, $font-format: 'lead-menu', $tablet-breakpoint: sm, $desktop-breakpoint: lg);
-}
-
-
+/*
 /// Applies typographic styles for the lead
 ///
 /// @group Utilities
@@ -152,6 +168,7 @@
 @mixin lead {
     @include font-format($font-formats: $font-formats, $font-format: 'lead', $tablet-breakpoint: sm, $desktop-breakpoint: lg);
 }
+*/
 
 /// Applies typographic styles for the input
 ///

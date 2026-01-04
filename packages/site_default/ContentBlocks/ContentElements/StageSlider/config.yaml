@@ -1,0 +1,16 @@
+name: madj2k/stage-slider
+prefixType: vendor # prefixing with vendor for reuse of database fields
+fields:
+  - identifier: stage_items
+    type: Collection
+    minitems: 1
+    foreign_table: tt_content
+    allowedRecordTypes:
+      - madj2k_stage
+    appearance:
+      levelLinksPosition: both
+    overrideChildTca:
+      columns:
+        CType:
+          config:
+            default: madj2k_stage

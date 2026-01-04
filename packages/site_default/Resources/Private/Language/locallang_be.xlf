@@ -8,19 +8,13 @@
 			<trans-unit id="backend_layout.home">
 				<source>Home</source>
 			</trans-unit>
-			<trans-unit id="backend_layout.multiColumn">
-				<source>Multi-Column</source>
-			</trans-unit>
 
 
 			<trans-unit id="backend_layout.column.content">
 				<source>Content</source>
 			</trans-unit>
-			<trans-unit id="backend_layout.column.left">
-				<source>Left</source>
-			</trans-unit>
-			<trans-unit id="backend_layout.column.right">
-				<source>Right</source>
+			<trans-unit id="backend_layout.column.stage">
+				<source>Stage</source>
 			</trans-unit>
 		</body>
 	</file>

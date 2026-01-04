@@ -4,13 +4,13 @@
 .toggle-list {
     @include toggle-list(
         $padding-y: $spacer,
-        $border-color: $color-secondary,
+        $border-color: $color-primary,
         $border-size: 1px,
         $font-color: inherit,
         $font-color-active: inherit,
         $font-color-hover: inherit,
         $icon-size: 20px,
-        $icon-style: '',
+        $icon-style: $icon-arrow-right,
         $icon-color: $color-primary,
         $icon-color-active: $color-primary,
         $icon-color-hover: $color-secondary
@@ -44,35 +44,56 @@
     }
 }
 
-/*
-[class^="bg-color-"]:not([class^="bg-color-light"]):not([class^="bg-color-none"]):not([class^="bg-color-white"]),
-[class*=" bg-color-"]:not([class*=" bg-color-light"]):not([class*=" bg-color-none"]):not([class*=" bg-color-white"])  {
+
+[class^="bg-color-dark"],
+[class*=" bg-color-dark"]  {
     .toggle-list {
 
         &-item {
-            border-bottom: rem-calc(1) solid $color-white;
+            border-bottom: rem-calc(1) solid $white;
         }
 
         &-link {
-            &:link,
-            &:visited,
-            &:hover {
+            color: $color-white;
+
+            &::after,
+            .icon {
                 color: $color-white;
             }
 
-            &:hover,
             &.active,
             &[aria-expanded="true"] {
                 color: $color-white;
 
-                &::after {
-                    color: $color-white;
-                }
+                &::after,
                 .icon {
                     color: $color-white;
+                }
+            }
+
+            &:hover{
+                color: $color-white;
+
+                &::after,
+                .icon {
+                    color: $color-white;
+                    pointer-events: none;
+                }
+
+                .toggle-list-text {
+                    text-decoration: underline;
+                }
+            }
+
+            .toggle-list-text {
+                &:hover {
+                    text-decoration: underline;
+                }
+                &:before {
+                    display: none;
                 }
             }
         }
     }
 }
-*/
+

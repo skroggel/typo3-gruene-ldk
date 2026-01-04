@@ -1,0 +1,8 @@
+identifier: madj2k/hero2
+prefixType: vendor # prefixing with vendor for reuse of database fields
+fields:
+  - identifier: hero2
+    type: Textarea
+    enableRichtext: true
+    richtextConfiguration: Headlines
+    label: LLL:EXT:site_default/ContentBlocks/Basics/ContentElements/language/labels.xlf:hero2.label

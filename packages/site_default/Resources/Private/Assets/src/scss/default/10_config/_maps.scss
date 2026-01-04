@@ -7,7 +7,7 @@ $page-padding: (
     xs: 16px,
     sm: 24px, // mobile
     md: 24px,
-    lg: 24px, // tablet
+    lg: 40px, // tablet
     xl: 40px,
     xxl: 40px,
     xxxl: 40px
@@ -55,32 +55,32 @@ $content-spacers-blocks: (
 );
 $content-spacers: (
     'xs': (
-        'section': map-get($spacers, 6), // space between different sections
-        'block': map-get($spacers, 4), // space between content blocks
+        'section': map-get($spacers, 11), // space between different sections
+        'block': map-get($spacers, 7), // space between content blocks
     ),
     'sm': (
-        'section': map-get($spacers, 6), // space between different sections
-        'block': map-get($spacers, 4), // space between content blocks
+        'section': map-get($spacers, 11), // space between different sections
+        'block': map-get($spacers, 7), // space between content blocks
     ),
     'md': (
-        'section': map-get($spacers, 6), // space between different sections
-        'block': map-get($spacers, 4), // space between content blocks
+        'section': map-get($spacers, 11), // space between different sections
+        'block': map-get($spacers, 7), // space between content blocks
     ),
     'lg': (
-        'section': map-get($spacers, 7), // space between different sections
-        'block': map-get($spacers, 6), // space between content blocks
+        'section': map-get($spacers, 11), // space between different sections
+        'block': map-get($spacers, 7), // space between content blocks
     ),
     'xl': (
-        'section': map-get($spacers, 7), // space between different sections
-        'block': map-get($spacers, 6), // space between content blocks
+        'section': map-get($spacers, 12), // space between different sections
+        'block': map-get($spacers, 7), // space between content blocks
     ),
     'xxl': (
-        'section': map-get($spacers, 7), // space between different sections
-        'block': map-get($spacers, 6), // space between content blocks
+        'section': map-get($spacers, 12), // space between different sections
+        'block': map-get($spacers, 7), // space between content blocks
     ),
     'xxxl': (
-        'section': map-get($spacers, 7), // space between different sections
-        'block': map-get($spacers, 6), // space between content blocks
+        'section': map-get($spacers, 12), // space between different sections
+        'block': map-get($spacers, 7), // space between content blocks
     )
 );
 

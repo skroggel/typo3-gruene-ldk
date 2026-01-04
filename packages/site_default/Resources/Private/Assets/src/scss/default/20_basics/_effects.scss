@@ -1,26 +1,17 @@
 /* ==================================================
 * Effects
 * ================================================== */
-.effect-edge-cut {
-    mask-image: url('../Images/image-mask-edge.svg');
-    mask-repeat: no-repeat;
-    mask-size: auto 100%;
-    mask-position: left top;
-    height: 100%
-}
-
 
 .effect-skewed-text {
     display: inline-block;
-    background-color: $color-primary; // z. B. aus deiner Farb-Map
-    padding: rem-calc(8) rem-calc(24);
+    // background-color: $color-primary;
+    padding: rem-calc(map-get($spacers, 1)) rem-calc(map-get($spacers, 4));
     transform: skewX(-12deg);
 
     span {
         transform: skewX(12deg); // Gegenskew für Text
         display: inline-block;
-        color: $color-white;
-
+        // color: $color-white;
     }
 
     @include media-breakpoint-up(lg) {

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages">
+		<body>
+
+			<!-- @see https://docs.typo3.org/p/friendsoftypo3/content-blocks/main/en-us/API/AutomaticLanguageKeys/Index.html#api_automatic_language_keys -->
+
+			<!-- element -->
+			<trans-unit id="title">
+				<source>Link List Item</source>
+				<target>Link List Item</target>
+			</trans-unit>
+			<trans-unit id="description">
+				<source></source>
+				<target></target>
+			</trans-unit>
+
+
+			<!-- fields -->
+			<trans-unit id="link_url.label">
+				<source>Link</source>
+				<target>Link</target>
+			</trans-unit>
+			<trans-unit id="link_label.label">
+				<source>Label</source>
+				<target>Beschriftung</target>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

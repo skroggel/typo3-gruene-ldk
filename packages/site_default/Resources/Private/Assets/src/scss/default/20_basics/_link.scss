@@ -12,17 +12,20 @@ a {
 
     text-decoration: none;
     color: inherit;
+}
 
-    &:hover {
-        .cta {
+.link-wrap:hover {
+
+    text-decoration: none;
+    color: inherit;
+
+    .cta {
+        color: map-get($color-map, 'pine-900');
+        background-color: map-get($color-map, 'sun');
+
+        &-inverted {
+            background-color: map-get($color-map, 'pine');
             color: $color-white;
-            background-color: $color-secondary;
-
-            &.cta-default {
-                .cta-inner {
-                    border: rem-calc(1) solid $color-white;
-                }
-            }
         }
     }
 }

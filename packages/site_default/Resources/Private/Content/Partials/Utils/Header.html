@@ -7,7 +7,7 @@
             If "layout" and settings.header.defaultLayoutType are not set, settings.header.defaultHeaderType is used to add a css-class for the visual representation
             If you want "layout" only to affect the visual representation, but not the tag used, you can use settings.header.overrideHeaderType to override the tag.
         --></f:comment>
-    <f:if condition="{header}">
+    <f:if condition="{header} || {innerHtml}">
 
         <f:variable name="htmlLayout" value="{f:if(condition:'{settings.header.overrideHeaderType}', then: '{settings.header.overrideHeaderType}', else: '{layout}')}"/>
         <f:if condition="!{visualLayout}">

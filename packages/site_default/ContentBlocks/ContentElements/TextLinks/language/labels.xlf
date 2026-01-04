@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages">
+		<body>
+			<!-- @see https://docs.typo3.org/p/friendsoftypo3/content-blocks/main/en-us/API/AutomaticLanguageKeys/Index.html#api_automatic_language_keys -->
+
+			<!-- element -->
+			<trans-unit id="title">
+				<source>Text with Links</source>
+			</trans-unit>
+			<trans-unit id="description">
+				<source>This element is a content section with a headline, descriptive text, and an accompanying list of navigation or teaser links. It introduces a topic while offering direct access to related pages or subtopics. The element works well on overview pages or as an entry point to a thematic section.</source>
+			</trans-unit>
+
+			<!-- fields -->
+			<trans-unit id="link_lists.label">
+				<source>Links</source>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

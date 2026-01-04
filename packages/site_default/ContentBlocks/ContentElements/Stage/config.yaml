@@ -1,9 +1,9 @@
 name: madj2k/stage
 prefixType: vendor # prefixing with vendor for reuse of database fields
 fields:
-  - identifier: madj2k/header
+  - identifier: madj2k/palette-hero-required
     type: Basic
-  - identifier: madj2k/bodytext-reduced
+  - identifier: madj2k/palette-cta
     type: Basic
   - identifier: tab-media
     type: Tab

@@ -56,7 +56,7 @@ lib.siteDefault {
                 select {
                     includeRecordsWithoutDefaultTranslation = 1
                     orderBy = sorting
-                    where = {#colPos}={register:colPos}
+                    where = {#colPos}={register:colPos} AND foreign_table_parent_uid = 0
                     where.insertData = 1
                     pidInList.data = register:pageUid
                     pidInList.override.data = register:contentFromPid

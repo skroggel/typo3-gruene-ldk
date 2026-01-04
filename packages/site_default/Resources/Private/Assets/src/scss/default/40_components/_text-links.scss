@@ -1,0 +1,41 @@
+/* ==================================================
+* Text-Links
+* ================================================== */
+
+.text-links {
+
+    position: relative;
+    z-index: 20;
+    margin-top: rem-calc(map-get($spacers, 10) * -1);
+
+    &-content {
+        margin-top: rem-calc(map-get($spacers, 10));
+    }
+
+    &-list-wrap {
+        height: 100%;
+        position: relative;
+        background-color: var(--background-color);
+
+        @include media-breakpoint-up(lg) {
+
+            padding-top: rem-calc(map-get($spacers, 10));
+
+            &::after {
+                content: "";
+                position: absolute;
+                inset: 0; // top: 0; right: 0; bottom: 0; left: 0
+                width: 100vw;
+                left: 100%;
+                background-color: var(--background-color);
+                z-index: -1;
+            }
+        }
+
+        @include media-breakpoint-up(xl) {
+            background-color: transparent;
+            @include edge-cut-mask();
+        }
+    }
+
+}

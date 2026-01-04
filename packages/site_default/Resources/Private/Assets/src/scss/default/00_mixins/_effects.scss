@@ -1,6 +1,32 @@
-/* ==================================================
-* Text-Marker
-* ================================================== */
+/// Creates a slanted marker effect under inline text using multiple background gradients.
+/// Typically used for text highlighting in editorial or interactive UI elements.
+///
+/// Adds a colored underline marker that animates in on `:hover` or when the element has `.open`.
+/// The shape mimics a hand-drawn highlighter with skewed edges.
+///
+/// @group Effects
+///
+/// @param {Length} $mark-height - Height of the marker stroke (default: 0.6em)
+/// @param {Length} $mark-top - Vertical offset from the top (default: 0.1em)
+/// @param {Color} $mark-color - Color of the marker (default: map-get($color-map, 'sun'))
+/// @param {Length} $mark-skrew - Width of the skewed marker edges (default: 22.5% of $mark-height)
+/// @param {Length} $mark-overlap - Horizontal overlap of the marker beyond text edges (default: 0.3em)
+/// @param {Time} $transition-duration - Duration of the animation (default: 0.3s)
+/// @param {String} $transition-easing - Timing function of the animation (default: ease-out)
+///
+/// @example scss
+///   .marker-link {
+///     @include text-marker($mark-color: map-get($color-map, 'highlight'));
+///   }
+///
+/// @example html
+///   <a class="marker-link" href="#">Markierter Text</a>
+///
+/// @example behavior
+///   The underline animates on `:hover` or `.open` using a width transition.
+///
+/// @access public
+///
 @mixin text-marker (
     $mark-height: 0.6em,
     $mark-top: 0.1em,
@@ -47,3 +73,62 @@
     }
 }
 
+
+
+/// Creates a top mask effect with a slanted or custom shape using `mask-image` and `linear-gradient`,
+/// allowing for a seamless transition between masked and colored sections.
+///
+/// Applies:
+/// - A gradient-based background where color begins at `$cut-height`
+/// - A `::before` mask overlay with customizable SVG
+/// - Z-Index handling for content and mask layering
+///
+/// @group Components
+///
+/// @param {Number} $cut-height - Height of the mask area (default: 500px)
+/// @param {String} $mask-url - URL path to the SVG mask image
+/// @param {Color} $fallback-color - Fallback color if `--background-color` is not defined
+///
+/// @example scss
+///   .my-section {
+///     @include effect-edge-cut(500px, '../Images/mask.svg', #eee);
+///   }
+///
+/// @example css
+///   background-image: linear-gradient(to bottom, transparent 0, transparent 500px, var(--background-color, #eee) 500px, var(--background-color, #eee) 100%);
+///   &::before { mask-image: url('../Images/mask.svg'); background-color: var(--background-color, #eee); }
+///
+@mixin edge-cut-mask ($cut-height: 700px, $mask-url: '../Images/image-mask-edge.svg', $fallback-color: #f5f5f5) {
+    position: relative;
+    overflow: visible;
+
+    background-image: linear-gradient(
+            to bottom,
+            transparent 0,
+            transparent rem-calc($cut-height),
+            var(--background-color, #{$fallback-color}) rem-calc($cut-height),
+            var(--background-color, #{$fallback-color}) 100%
+    );
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        max-height: rem-calc($cut-height);
+        mask-image: url(#{$mask-url});
+        mask-repeat: no-repeat;
+        mask-size: auto 100%;
+        mask-position: left top;
+        z-index: 1;
+        pointer-events: none;
+        background-color: var(--background-color, #{$fallback-color});
+    }
+
+    > * {
+        position: relative;
+        z-index: 2;
+    }
+}

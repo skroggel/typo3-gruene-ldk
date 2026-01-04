@@ -13,6 +13,18 @@
     }
 }
 
+.bg-color-variable {
+    @include background-color-variable-classes($map: $color-map);
+
+    &-primary {
+        --background-color: $color-primary;
+    }
+
+    &-secondary {
+        --background-color: $color-secondary;
+    }
+}
+
 
 .font-color {
     @include font-color-classes($map: $color-map);
@@ -30,6 +42,27 @@
 
         & > * {
             color: $color-secondary !important;
+        }
+    }
+}
+
+.font-color-variable {
+    @include font-color-variable-classes($map: $color-map);
+
+
+    &-primary {
+        --color: $color-primary !important;
+
+        & > * {
+            --color: $color-primary !important;
+        }
+    }
+
+    &-secondary {
+        --color: $color-secondary !important;
+
+        & > * {
+            --color: $color-secondary !important;
         }
     }
 }

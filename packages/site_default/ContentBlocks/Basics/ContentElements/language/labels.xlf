@@ -15,6 +15,12 @@
 
 
 			<!-- fields -->
+			<trans-unit id="hero.label">
+				<source>Hero</source>
+			</trans-unit>
+			<trans-unit id="hero2.label">
+				<source>Hero (second line)</source>
+			</trans-unit>
 			<trans-unit id="header.label">
 				<source>Header</source>
 			</trans-unit>

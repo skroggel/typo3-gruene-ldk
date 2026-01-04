@@ -1,0 +1,25 @@
+/* ==================================================
+* Hero
+* ================================================== */
+.hero {
+
+    &-primary,
+    &-secondary {
+        @extend .effect-skewed-text;
+        background-color: map-get($color-map, 'sand');
+        color: $color-primary;
+        padding-top: rem-calc(12);
+        @include media-breakpoint-up(sm) {
+            padding-top: rem-calc(18);
+        }
+        @include media-breakpoint-up(lg) {
+            padding-top: rem-calc(24);
+        }
+
+    }
+
+    &-secondary {
+        margin-top: rem-calc(map-get($spacers, 1) * -1);
+        margin-left: rem-calc(map-get($spacers, 4))
+    }
+}

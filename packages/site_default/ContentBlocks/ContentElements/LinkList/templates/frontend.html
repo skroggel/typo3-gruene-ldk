@@ -1,0 +1,31 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true"
+>
+
+    <f:if condition="{data.rawRecord.foreign_table_parent_uid}">
+        <f:then>
+            <f:render section="Inner" arguments="{_all}" />
+        </f:then>
+
+        <f:else>
+            <f:variable name="classAddition" value=" fullwidth-inner" />
+            <section class="stage {f:if(condition:data.assets, then: 'has-image', else: 'has-no-image')} bg-color-white fullwidth-1" id="c{data.uid}">
+                <f:render section="Inner" arguments="{_all}" />
+            </section>
+        </f:else>
+
+    </f:if>
+
+    <f:comment><!-- ======================================================== --></f:comment>
+
+    <f:section name="Inner">
+
+        <ul class="toggle-list" id="c{data.uid}">
+            <f:for each="{data._grids.link_list_items}" as="item" iteration="i">
+                <f:comment><!-- {item.data} contains the Content Block data object. --></f:comment>
+                <f:format.raw>{item.content}</f:format.raw>
+            </f:for>
+        </ul>
+
+    </f:section>
+</html>

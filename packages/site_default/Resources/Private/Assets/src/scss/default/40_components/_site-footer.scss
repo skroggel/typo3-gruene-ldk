@@ -27,7 +27,7 @@
             .icon {
                 font-size: rem-calc(30);
                 @include media-breakpoint-up(lg) {
-                    font-size: rem-calc(40);
+                  //  font-size: rem-calc(40);
                 }
             }
         }

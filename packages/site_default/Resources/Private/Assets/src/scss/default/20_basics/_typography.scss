@@ -34,20 +34,8 @@ body {
     color: $color-text;
 }
 
-.copy-small {
-    @include copy-small;
-    color: $color-text;
-}
 
-.toggle-list-text {
-    @include toggle-list-text;
-}
-
-.lead-menu {
-    @include lead-menu;
-    color: $color-primary;
-}
-
+/*
 .subheader-1 {
     @include subheader-1;
     margin-bottom: rem-calc(12);
@@ -62,6 +50,7 @@ body {
     @include subheader-3;
     margin-bottom: rem-calc(12);
 }
+*/
 
 h1,
 .h1 {
@@ -102,6 +91,30 @@ h5,
     @include h5;
     color: $color-primary;
     margin-bottom: rem-calc(map-get($spacers, 1));
+}
+
+.hero {
+    @include hero;
+    color: $color-primary;
+}
+
+.hero-menu {
+    @include hero-menu;
+    color: $color-primary;
+}
+
+.toggle-list-text {
+    @include toggle-list-text;
+}
+
+.copy {
+    @include copy;
+    color: $color-text;
+}
+
+.copy-small {
+    @include copy-small;
+    color: $color-text;
 }
 
 /*

@@ -3,9 +3,9 @@ defined('TYPO3') or die('Access denied.');
 call_user_func(
 	function($extKey) {
 
-        // labels for list view in BE
-        // $GLOBALS['TCA']['tt_content']['ctrl']['label_alt'] = 'madj2k_header,madj2k_subheader,header,subheader,' .
-        //    'madj2k_overline,bodytext,list_type,CType';
+        // labels for list view in BE madj2k_header,
+        $GLOBALS['TCA']['tt_content']['ctrl']['label_alt'] = 'madj2k_hero,header,subheader,' .
+            'bodytext,list_type,CType';
 
 
         /**
@@ -65,9 +65,9 @@ call_user_func(
                         'desktop' => [
                             'title' => 'Desktop',
                             'allowedAspectRatios' => [
-                                '16/8' => [
-                                    'title' => 'Desktop (16:8)',
-                                    'value' => 16/8
+                                '16/9' => [
+                                    'title' => 'Desktop (16:9)',
+                                    'value' => 16/9
                                 ],
                                 /*'NaN' => [
                                     'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.free',
@@ -78,9 +78,9 @@ call_user_func(
                         'tablet' => [
                             'title' => 'Tablet',
                             'allowedAspectRatios' => [
-                                '8/5' => [
-                                    'title' => 'Tablet (8:5)',
-                                    'value' => 8/5
+                                '4/3' => [
+                                    'title' => 'Tablet (4:3)',
+                                    'value' => 4/3
                                 ],
                                 /*'NaN' => [
                                     'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.free',
@@ -91,9 +91,9 @@ call_user_func(
                         'mobile' => [
                             'title' => 'Mobile',
                             'allowedAspectRatios' => [
-                                '4/3' => [
-                                    'title' => 'Mobile (4:3)',
-                                    'value' => 4/3
+                                '9/16' => [
+                                    'title' => 'Mobile (9:16)',
+                                    'value' => 9/16
                                 ],
                                 /*'NaN' => [
                                     'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.free',

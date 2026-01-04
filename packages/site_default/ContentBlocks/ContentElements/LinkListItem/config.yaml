@@ -1,0 +1,7 @@
+name: madj2k/link-list-item
+prefixType: vendor # prefixing with vendor for reuse of database fields
+fields:
+  - identifier: link_url
+    type: Link
+  - identifier: link_label
+    type: Text

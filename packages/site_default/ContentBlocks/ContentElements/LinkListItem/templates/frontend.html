@@ -1,0 +1,21 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:default="http://typo3.org/ns/Madj2k/SiteDefault/ViewHelpers"
+      data-namespace-typo3-fluid="true"
+>
+
+    <f:variable name="pageTitle" value="{data.madj2k_link_label}" />
+    <f:if condition="!{pageTitle}">
+        <f:variable name="pageTitle" value="{default:pageTitleFromTypolink(typolink: data.madj2k_link_url)}" />
+    </f:if>
+
+    <li class="toggle-list-item">
+
+        <f:link.typolink
+            parameter="{data.madj2k_link_url}"
+            class="toggle-list-link"
+        >
+            <span class="toggle-list-text"><span><f:format.html parseFuncTSPath="lib.parseFunc_Inline">{pageTitle}</f:format.html></span></span>
+        </f:link.typolink>
+
+    </li>
+</html>

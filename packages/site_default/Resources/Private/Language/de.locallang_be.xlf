@@ -11,24 +11,17 @@
 				<source>Home</source>
 				<target>Home</target>
 			</trans-unit>
-			<trans-unit id="backend_layout.multiColumn">
-				<source>Multi-Column</source>
-				<target>Mehrspaltig</target>
-			</trans-unit>
 
 
 			<trans-unit id="backend_layout.column.content">
 				<source>Content</source>
 				<target>Inhalt</target>
 			</trans-unit>
-			<trans-unit id="backend_layout.column.left">
-				<source>Left</source>
-				<target>Links</target>
+			<trans-unit id="backend_layout.column.stage">
+				<source>Stage</source>
+				<target>Stage</target>
 			</trans-unit>
-			<trans-unit id="backend_layout.column.right">
-				<source>Right</source>
-				<target>Rechts</target>
-			</trans-unit>
+
 
 		</body>
 	</file>

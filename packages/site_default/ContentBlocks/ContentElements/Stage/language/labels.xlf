@@ -9,7 +9,7 @@
 				<source>Stage</source>
 			</trans-unit>
 			<trans-unit id="description">
-				<source>First element of the page</source>
+				<source>This element is a large teaser or hero module with an image background and a prominent headline. It is used to attract attention and introduce a main topic, article, or campaign. An optional call to action can be included to guide users to further content.</source>
 			</trans-unit>
 
 			<!-- tabs -->

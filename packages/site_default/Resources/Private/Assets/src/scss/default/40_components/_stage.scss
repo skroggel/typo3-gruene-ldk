@@ -1,46 +1,87 @@
 /* ==================================================
 * Stage / Stage-Slider
 * ================================================== */
-.stage-slider {
 
-    .stage-inner {
-        height: rem-calc(500);
-        @include media-breakpoint-up(xl) {
-            height: rem-calc(970);
+.stage {
+
+    height: calc(80svh - $siteheader-height-mobile);
+    @include media-breakpoint-up(sm) {
+        height: calc(100svh - $siteheader-height-mobile);
+    }
+
+    @include media-breakpoint-up($siteheader-breakpoint-variant) {
+        height: calc(100svh - $siteheader-height-desktop);
+    }
+
+    &-inner {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+    }
+
+    &-image {
+        height: 100%;
+        width: 100%;
+        max-width: $page-max-width;
+        margin: 0 auto;
+
+        img {
+            max-width: none;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
         }
     }
 
-    .owl-carousel .owl-item  {
-        height: 500px;
-        @include media-breakpoint-up(xl) {
-            height: rem-calc(970);
-        }
-    }
+    &-content {
+        position: relative;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
 
-    &:has(.owl-dots:not(.disabled)) {
-        .stage-inner-content {
-            @include media-breakpoint-down(xxxl) {
-                padding-bottom: rem-calc(map-get($spacers, 5)) !important;
+        .cta-wrap {
+            display: flex;
+            justify-content: center;
+        }
+
+        &-nav {
+            height: rem-calc(48);
+
+            @include media-breakpoint-up(lg) {
+                width: rem-calc(48);
+            }
+
+            &:first-child {
+                display: none;
+                @include media-breakpoint-up(lg) {
+                    display: flex
+
+                }
+
             }
         }
-    }
-}
 
-.stage-inner {
+        &-main {
+            padding-right: rem-calc(map-get($spacers, 5));
+            padding-left: rem-calc(map-get($spacers, 5));
 
-    height: rem-calc(450);
-    overflow: hidden;
-    @include media-breakpoint-up(xl) {
-        height: rem-calc(970);
-    }
+        }
 
-    .overline,
-    .subheader {
-        @include h4;
-    }
+        &-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            align-items: center;
 
-    .headline,
-    .subheader {
-        color: $color-white;
+            justify-content: center;
+            flex-direction: column;
+
+            @include media-breakpoint-up(lg) {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
     }
 }

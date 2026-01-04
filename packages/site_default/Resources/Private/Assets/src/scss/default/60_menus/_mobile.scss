@@ -23,6 +23,10 @@
         }
     }
 
+    .toggle-list-link:after {
+        display: none;
+    }
+
     .slide-nav {
         &-back,
         &-back:link,
@@ -32,7 +36,7 @@
         &-link:link,
         &-link:visited,
         &-link:hover,{
-            color: map-get($color-map, 'grey-800');
+            color: map-get($color-map, 'pine-900');
             @include accessibility-outline($color: $color-outline);
         }
 
@@ -72,7 +76,7 @@
             &-link:link,
             &-link:visited,
             &-link:hover {
-                color: $color-primary;
+                color: map-get($color-map, 'pine-900');
             }
         }
 

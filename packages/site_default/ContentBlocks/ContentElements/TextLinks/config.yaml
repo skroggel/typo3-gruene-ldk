@@ -1,0 +1,21 @@
+name: madj2k/text-links
+prefixType: vendor # prefixing with vendor for reuse of database fields
+fields:
+  - identifier: madj2k/palette-header-layout-required
+    type: Basic
+  - identifier: madj2k/bodytext-reduced-required
+    type: Basic
+  - identifier: link_lists
+    type: Collection
+    minitems: 1
+    maxitems: 1
+    foreign_table: tt_content
+    allowedRecordTypes:
+      - madj2k_linklist
+    appearance:
+      levelLinksPosition: both
+    overrideChildTca:
+      columns:
+        CType:
+          config:
+            default: madj2k_linklist
