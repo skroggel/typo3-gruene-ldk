@@ -10,31 +10,34 @@
             </div>
         </f:then>
         <f:else>
-            <section class="csp-section csp-not-last text-image js-appear-on-scroll" id="c{data.uid}">
-                <div class="container-content">
-                    <div class="row">
-                        <div class="col-12">
-                            <f:render section="Inner" arguments="{_all}" />
-                        </div>
-                    </div>
-                </div>
+            <section class="text-image csp-section csp-section-padding csp-not-last fullwidth-1 bg-color-{data.madj2k_background_color} js-appear-on-scroll" id="c{data.uid}">
+                <f:render section="Inner" arguments="{_all}" />
             </section>
         </f:else>
     </f:if>
 
     <f:comment><!-- ==================================== --></f:comment>
     <f:section name="Inner">
+        <div class="container-xxxl">
+            <div class="row">
 
-        <f:render partial="Utils/Header"
-                  arguments="{header: data.madj2k_header, wrapClass: 'text-image-headline',
-                                             layout: data.header_layout, settings: settings}" />
+                <div class="col-12 col-lg-8 col-xl-7 col-xxl-8 {f:if(condition: '{data.madj2k_image_orientation} == \'left\'', then: 'order-2 ps-lg-5', else:'pe-lg-5')}">
+                    <f:render partial="Utils/Header"
+                              arguments="{header: data.madj2k_header, wrapClass: 'text-image-headline',
+                                          layout: data.header_layout, settings: settings}" />
 
-        <f:render partial="Utils/Bodytext"
-                  arguments="{text: data.bodytext, wrapClass: 'text-image-text'}" />
+                    <f:render partial="Utils/Bodytext"
+                              arguments="{text: data.bodytext, wrapClass: 'text-image-text'}" />
 
-        <f:render partial="Utils/Media"
-                  arguments="{file: data.assets.0, wrapClass: 'mt-3 mt-sm-4 mt-lg-6 text-image-image parallax-img js-parallax-img', settings: settings}" />
-
+                </div>
+                <div class="col-12 col-lg-4 col-xl-5 col-xxl-4 {f:if(condition: '{data.madj2k_image_orientation} == \'left\'', then: 'order-1')}">
+                    <f:render partial="Utils/Media"
+                              arguments="{file: data.assets.0,
+                                          wrapClass: 'text-image-image effect-edge-cut-image {f:if(condition: \'{data.madj2k_image_orientation} == \"left\"\', then: \'variant-left\')}',
+                                          settings: settings}" />
+                </div>
+            </div>
+        </div>
     </f:section>
 
 </html>

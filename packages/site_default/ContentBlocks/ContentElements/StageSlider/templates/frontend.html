@@ -2,7 +2,7 @@
       data-namespace-typo3-fluid="true"
 >
     <section class="stage-slider fullwidth-1" id="c{data.uid}">
-        <div class="fullwidth-inner owl-carousel js-stage-slider js-autoplay">
+        <div class="fullwidth-inner owl-carousel js-stage-slider js-autoplay js-loop">
             <f:for each="{data._grids.stage_items}" as="item" iteration="i">
                 <f:comment><!-- {item.data} contains the Content Block data object. --></f:comment>
                 <f:format.raw>{item.content}</f:format.raw>

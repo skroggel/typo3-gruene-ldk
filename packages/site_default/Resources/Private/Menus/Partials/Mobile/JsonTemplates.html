@@ -31,6 +31,25 @@
                                     </ul>
                                 </li>
 
+                                <f:if condition="{top MenuItems}">
+                                    <li class="slide-nav-item-footer" role="none">
+                                        <ul class="slide-nav-meta-list nav-inline-list" role="none">
+                                            <f:for each="{topMenuItems}" as="menuItem" iteration="iterator">
+                                                <li class="slide-nav-meta-item nav-inline-item level1{f:if(condition:'{menuItem.active}', then:' active')}" role="none">
+                                                    <a class="cta cta-default level1{f:if(condition:'{menuItem.active}', then:' active')}"
+                                                       href="{menuItem.link}"
+                                                       target="{menuItem.target}"
+                                                       title="{menuItem.data.title}"
+                                                       role="menuitem"
+                                                    >
+                                                        <span class="cta-inner"><f:if condition="{icon}"><span class="icon-{icon} icon"></span></f:if><span><f:format.html parseFuncTSPath="lib.parseFunc_Inline">{menuItem.title}</f:format.html></span></span>
+                                                    </a>
+                                                </li>
+                                            </f:for>
+                                        </ul>
+                                    </li>
+                                </f:if>
+
                                 <f:if condition="{footerMenuItems}">
                                     <li class="slide-nav-item-footer" role="none">
                                         <ul class="slide-nav-meta-list nav-inline-list" role="none">

@@ -17,39 +17,28 @@
     max-width: 100vw;
     box-shadow: rem-calc(0) rem-calc(0) rem-calc(15) rem-calc(0) #63636340;
 
-    padding-top: rem-calc(map-get($spacers, 3)); // 16
-    padding-bottom: rem-calc(map-get($spacers, 3)); // 16
+    @include media-breakpoint-up($siteheader-breakpoint-tablet) {
+        height: rem-calc($siteheader-height-tablet);
+    }
 
-    @include media-breakpoint-up($siteheader-breakpoint-variant) {
+    @include media-breakpoint-up($siteheader-breakpoint-desktop) {
         height: rem-calc($siteheader-height-desktop);
-        padding-top: rem-calc(map-get($spacers, 3)); // 16
-        padding-bottom: rem-calc(map-get($spacers, 3)); // 16
     }
 
     &-brand {
+        position: absolute;
+        left: 0;
+        top: 0;
+
         display: flex;
+        flex-direction: row;
+        align-content: center;
         height: 100%;
 
-        &-container {
+        &-wrap {
             height: 100%;
-
-            &.variant-small {
-                padding: rem-calc(map-get($spacers, 1));
-                background-color: $color-primary;
-
-                @include media-breakpoint-up($siteheader-breakpoint-variant) {
-                    display: none;
-                }
-            }
-
-            &.variant-big {
-                height: calc(rem-calc($siteheader-height-desktop) - rem-calc(map-get($spacers, 4)) * 2);
-                display: none;
-
-                @include media-breakpoint-up($siteheader-breakpoint-variant) {
-                    display: block;
-                }
-            }
+            background-color: $color-primary;
+            padding: rem-calc(map-get($spacers, 3));
         }
 
         &-logo {
@@ -60,21 +49,51 @@
             display: inline-block;
             @include accessibility-outline($color: $color-outline);
         }
-    }
 
-    &-headline {
-        @include h4;
-        color: $color-primary;
-        @include media-breakpoint-down($siteheader-breakpoint-variant) {
-            font-size: rem-calc(20);
+        &-header {
+            font-family: $font-family-gruene;
+            font-weight: $font-weight-normal;
+            font-size: rem-calc(24);
+            color: $color-primary;
+
+            align-self: center;
+            padding-left: rem-calc(map-get($spacers, 3));
+            padding-top: rem-calc(5);
+
+            @include media-breakpoint-up($siteheader-breakpoint-tablet) {
+                padding-left: rem-calc(map-get($spacers, 4));
+
+            }
+
+            @include media-breakpoint-up($siteheader-breakpoint-desktop) {
+               font-size: rem-calc(30);
+               padding-top: 0;
+            }
         }
     }
 
     &-menu-wrap {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: center;
         height: 100%;
+
+        @include media-breakpoint-up($siteheader-breakpoint-tablet) {
+            justify-content: space-between;
+        }
+
+        padding-top: rem-calc(map-get($spacers, 3)); // 16
+        padding-bottom: rem-calc(map-get($spacers, 3)); // 16
+
+        @include media-breakpoint-up($siteheader-breakpoint-tablet) {
+            padding-top: rem-calc(map-get($spacers, 2)); // 12
+            padding-bottom: rem-calc(map-get($spacers, 2)); // 12
+        }
+
+        @include media-breakpoint-up($siteheader-breakpoint-desktop) {
+            padding-top: rem-calc(map-get($spacers, 3)); // 16
+            padding-bottom: rem-calc(map-get($spacers, 3)); // 16
+        }
     }
 
     &-menu {
@@ -89,7 +108,7 @@
 
     .siteheader-toggle {
         align-items: center;
-        margin-top: rem-calc(2);
+
         .icon {
             font-size: rem-calc(22);
 
@@ -98,7 +117,7 @@
             }
         }
 
-        @include media-breakpoint-up(md) {
+        @include media-breakpoint-up(lg) {
             align-items: flex-start;
 
             .icon {
@@ -123,7 +142,7 @@
     transition: top 0.5s ease-in-out;
 
     top: rem-calc($siteheader-height-mobile);
-    @include media-breakpoint-up($siteheader-breakpoint-variant) {
+    @include media-breakpoint-up($siteheader-breakpoint-desktop) {
         top: rem-calc($siteheader-height-desktop);
     }
 }
@@ -131,7 +150,7 @@
 .scroll-down {
     .siteheader {
         top: rem-calc($siteheader-height-mobile * -1);
-        @include media-breakpoint-up($siteheader-breakpoint-variant) {
+        @include media-breakpoint-up($siteheader-breakpoint-desktop) {
             top: rem-calc($siteheader-height-desktop * -1);
         }
     }

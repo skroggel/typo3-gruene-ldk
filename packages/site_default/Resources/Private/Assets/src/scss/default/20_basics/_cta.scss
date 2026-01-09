@@ -17,6 +17,7 @@
     &-inverted,
     &-icon-only {
         @include button;
+
         border: 0;
         border-radius: rem-calc(72);
         padding: rem-calc(12) rem-calc(20);

@@ -17,11 +17,11 @@
     @include background-color-variable-classes($map: $color-map);
 
     &-primary {
-        --background-color: $color-primary;
+        --background-color: #{$color-primary};
     }
 
     &-secondary {
-        --background-color: $color-secondary;
+        --background-color: #{$color-secondary};
     }
 }
 
@@ -49,20 +49,19 @@
 .font-color-variable {
     @include font-color-variable-classes($map: $color-map);
 
-
     &-primary {
-        --color: $color-primary !important;
+        --color: #{$color-primary};
 
         & > * {
-            --color: $color-primary !important;
+            --color: #{$color-primary};
         }
     }
 
     &-secondary {
-        --color: $color-secondary !important;
+        --color: #{$color-secondary};
 
         & > * {
-            --color: $color-secondary !important;
+            --color: #{$color-secondary};
         }
     }
 }

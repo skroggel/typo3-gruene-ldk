@@ -1,0 +1,14 @@
+identifier: madj2k/background-color
+prefixType: vendor # prefixing with vendor for reuse of database fields
+fields:
+  - identifier: background_color
+    type: Select
+    renderType: selectSingle
+    default: 'left'
+    label: LLL:EXT:site_default/ContentBlocks/Basics/ContentElements/language/labels.xlf:background_color.label
+    items:
+      - value: white
+        label: white
+      - value: sand
+        label: sand
+

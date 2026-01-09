@@ -14,7 +14,7 @@ tt_content.madj2k_textimage {
         media {
             image {
                 dimensions {
-                    maxWidth = 1300
+                    maxWidth = 600
                 }
             }
 		}

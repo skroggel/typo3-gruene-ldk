@@ -2,12 +2,12 @@
       data-namespace-typo3-fluid="true"
 >
 
-    <section class="text-links csp-section csp-not-last js-appear-on-scroll" id="c{data.uid}">
+    <section class="text-links csp-section csp-not-last js-appear-on-scroll fullwidth-1" id="c{data.uid}">
         <div class="container-xxxl">
             <div class="row">
-                <div class="col-12 col-lg-8 col-xl-7 col-xxl-8">
+                <div class="col-12 col-lg-7 col-xxl-8">
 
-                    <div class="text-links-content pt-11 pb-7 pb-lg-11 pt-xl-12 pb-xl-12 pe-lg-5">
+                    <div class="text-links-content pt-csp-section pb-csp-block pb-lg-csp-section pe-lg-5">
                         <f:render partial="Utils/Header"
                                   arguments="{header: data.madj2k_header, wrapClass: 'text-links-headline',
                                   layout: data.header_layout, settings: settings}" />
@@ -18,10 +18,10 @@
 
                 </div>
 
-                <div class="col-12 col-lg-4 col-xl-5 col-xxl-4">
+                <div class="col-12 col-lg-5 col-xxl-4">
 
-                    <div class="text-links-list-wrap bg-color-variable-clover bg-color-dark fullwidth-1 fullwidth-lg-0 h-100">
-                        <div class="text-links-list page-padding-full pt-5 pb-7 pt-lg-11 pe-lg-0 pt-xl-12 ps-xl-12">
+                    <div class="text-links-list-wrap bg-color-variable-primary bg-color-dark fullwidth-1 fullwidth-lg-0 h-100">
+                        <div class="text-links-list page-padding-full pt-5 pb-csp-block pt-lg-csp-section pe-lg-0 ps-lg-12">
 
                             <f:for each="{data._grids.link_lists}" as="item" iteration="i">
                                 <f:comment><!-- {item.data} contains the Content Block data object. --></f:comment>

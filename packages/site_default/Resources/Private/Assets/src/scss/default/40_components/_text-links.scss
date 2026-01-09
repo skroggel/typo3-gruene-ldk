@@ -5,6 +5,8 @@
 .text-links {
 
     position: relative;
+    overflow-x:hidden;
+
     z-index: 20;
     margin-top: rem-calc(map-get($spacers, 10) * -1);
 
@@ -20,6 +22,8 @@
         @include media-breakpoint-up(lg) {
 
             padding-top: rem-calc(map-get($spacers, 10));
+            background-color: transparent;
+            @include edge-cut-mask();
 
             &::after {
                 content: "";
@@ -30,11 +34,6 @@
                 background-color: var(--background-color);
                 z-index: -1;
             }
-        }
-
-        @include media-breakpoint-up(xl) {
-            background-color: transparent;
-            @include edge-cut-mask();
         }
     }
 

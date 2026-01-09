@@ -1,0 +1,36 @@
+// ############################################################################
+// Menus
+// ############################################################################
+lib.siteDefault {
+
+    navigation {
+
+		top = COA
+		top {
+
+			10  = FLUIDTEMPLATE
+			10 {
+
+				file = EXT:site_default/Resources/Private/Menus/Templates/Top.html
+				partialRootPaths.0 = EXT:site_default/Resources/Private/Menus/Partials/Top/
+				partialRootPaths.10 = EXT:site_default/Resources/Private/Content/Partials/
+
+				dataProcessing {
+                    10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+                    10 {
+                        special = directory
+                        special.value = 24
+
+                        levels = 1
+                        entryLevel = 0
+                        expandAll = 1
+                        includeSpacer = 0
+
+                        titleField = nav_title // title
+                        as = menuItems
+                    }
+                }
+			}
+		}
+    }
+}

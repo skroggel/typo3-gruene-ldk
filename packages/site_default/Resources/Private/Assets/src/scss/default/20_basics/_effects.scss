@@ -2,6 +2,21 @@
 * Effects
 * ================================================== */
 
+// for images only!
+.effect-edge-cut-image {
+    mask-image: url('../Images/image-mask-edge.svg');
+    mask-repeat: no-repeat;
+    mask-size: auto 100%;
+    mask-position: left top;
+    height: 100%;
+
+    &.variant-left {
+        mask-image: url('../Images/image-mask-edge-right.svg');
+        mask-position: right top;
+    }
+}
+
+
 .effect-skewed-text {
     display: inline-block;
     // background-color: $color-primary;

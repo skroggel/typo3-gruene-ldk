@@ -7,10 +7,10 @@
         @include list-reset();
         justify-content: center;
         width: 100%;
-        gap: rem-calc(map-get($spacers, 6));
+        gap: rem-calc(map-get($spacers, 5));
 
         @include media-breakpoint-up(xl) {
-            gap: rem-calc(map-get($spacers, 10));
+            gap: rem-calc(map-get($spacers, 8));
         }
     }
 
@@ -42,10 +42,10 @@
     &-link.level-1:hover {
 
         position: relative;
-        top: rem-calc(4);
+      //  top: rem-calc(4);
 
         @include media-breakpoint-up(xl) {
-            top: rem-calc(3);
+      //      top: rem-calc(3);
         }
 
         /** Fix for menu jumping on active/hover*/
@@ -153,7 +153,11 @@
             max-height: calc(100vh - $siteheader-height-mobile);
             overflow: hidden;
 
-            @include media-breakpoint-up($siteheader-breakpoint-variant) {
+            @include media-breakpoint-up($siteheader-breakpoint-tablet) {
+                max-height: calc(100vh - $siteheader-height-tablet);
+            }
+
+            @include media-breakpoint-up($siteheader-breakpoint-desktop) {
                 max-height: calc(100vh - $siteheader-height-desktop);
             }
 

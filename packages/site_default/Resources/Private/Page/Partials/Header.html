@@ -9,29 +9,26 @@
                 <div class="col-3 col-md-2 col-lg-3">
                     <div class="siteheader-brand">
                         <f:link.page pageUid="{settings.rootPid}" class="siteheader-brand-link">
-                            <div class="siteheader-brand-container variant-big">
-                                <img src="{f:uri.image(src:'EXT:site_default/Resources/Public/Images/logo-desktop.svg')}"
-                                         alt="Logo" class="siteheader-brand-logo"/>
-                            </div>
-                            <div class="siteheader-brand-container variant-small">
-                                <img src="{f:uri.image(src:'EXT:site_default/Resources/Public/Images/logo-mobile.svg')}"
-                                         alt="Logo" class="siteheader-brand-logo"/>
+                            <div class="siteheader-brand-wrap">
+                                <img src="{f:uri.image(src:'EXT:site_default/Resources/Public/Images/logo.svg')}"
+                                     alt="BÜNDNIS 90 / DIE GRÜNEN" title="BÜNDNIS 90 / DIE GRÜNEN" class="siteheader-brand-logo"/>
                             </div>
                         </f:link.page>
+                        <div class="siteheader-brand-header">
+                            GRÜNE Lahn-Dill
+                        </div>
                     </div>
                 </div>
 
                 <div class="col-9 col-md-10 col-lg-9">
                     <div class="siteheader-menu-wrap">
-                        <div class="siteheader-menu">
-                            <div class="siteheader-headline">
-                                Kreisverband Lahn-Dill
-                            </div>
+                        <div class="siteheader-menu d-none d-sm-flex">
+                            <f:cObject typoscriptObjectPath="lib.siteDefault.navigation.top"/>
                         </div>
 
                         <div class="siteheader-menu">
 
-                            <div class="d-none d-md-flex">
+                            <div class="d-none d-lg-flex">
                                 <f:cObject typoscriptObjectPath="lib.siteDefault.navigation.main"/>
                             </div>
 
@@ -42,7 +39,7 @@
                                 <span class="icon-search icon toggle-icon"></span>
                             </button>
 
-                            <div class="d-flex d-md-none">
+                            <div class="d-flex d-lg-none">
                                 <button href="#" class="toggle siteheader-toggle js-slide-nav-toggle"
                                         title="{f:translate(key:'menu.open', extensionName:'siteDefault')}"
                                         aria-label="{f:translate(key:'menu.open', extensionName:'siteDefault')}"

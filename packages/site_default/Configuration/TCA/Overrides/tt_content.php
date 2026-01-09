@@ -103,88 +103,19 @@ call_user_func(
                         ],
                     ],
                 ],
-                'madj2k_fadeslideritem' => [
+                'madj2k_textimage' => [
                     'assets' => [
-                        'desktop' => [
-                            'title' => 'Desktop',
-                            'allowedAspectRatios' => [
-                                '6/5' => [
-                                    'title' => 'Desktop (6:5)',
-                                    'value' => 6/5
-                                ],
-                                /*'NaN' => [
-                                    'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.free',
-                                    'value' => 0.0
-                                ],*/
-                            ],
-                        ],
-                        'tablet' => [
-                            'title' => 'Tablet',
-                            'allowedAspectRatios' => [
-                                '1/1' => [
-                                    'title' => 'Tablet (1:1)',
-                                    'value' => 1
-                                ],
-                                /*'NaN' => [
-                                    'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.free',
-                                    'value' => 0.0
-                                ],*/
-                            ],
-                        ],
-                        'mobile' => [
-                            'title' => 'Mobile',
-                            'allowedAspectRatios' => [
-                                '1/2' => [
-                                    'title' => 'Mobile (1:2)',
-                                    'value' => 1/2
-                                ],
-                                /*'NaN' => [
-                                    'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.free',
-                                    'value' => 0.0
-                                ],*/
-                            ],
-                        ],
-                    ],
-                ],
-                'madj2k_teasertextimage' => [
-                    'assets' => [
-                        'desktop' => [
-                            'title' => 'Desktop',
+                        'default' => [
+                            'title' => 'Default',
                             'allowedAspectRatios' => [
                                 '4/3' => [
-                                    'title' => 'Desktop (4:3)',
+                                    'title' => 'Default (4:3)',
                                     'value' => 4/3
                                 ],
-                                /*'NaN' => [
+                                'NaN' => [
                                     'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.free',
                                     'value' => 0.0
-                                ],*/
-                            ],
-                        ],
-                        'tablet' => [
-                            'title' => 'Tablet',
-                            'allowedAspectRatios' => [
-                                '4/3' => [
-                                    'title' => 'Tablet (4:3)',
-                                    'value' => 4/3
                                 ],
-                                /*'NaN' => [
-                                    'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.free',
-                                    'value' => 0.0
-                                ],*/
-                            ],
-                        ],
-                        'mobile' => [
-                            'title' => 'Mobile',
-                            'allowedAspectRatios' => [
-                                '4/3' => [
-                                    'title' => 'Mobile (4:3)',
-                                    'value' => 4/3
-                                ],
-                                /*'NaN' => [
-                                    'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.free',
-                                    'value' => 0.0
-                                ],*/
                             ],
                         ],
                     ],

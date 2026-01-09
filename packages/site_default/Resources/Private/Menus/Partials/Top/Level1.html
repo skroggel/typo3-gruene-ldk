@@ -15,7 +15,7 @@
                    title="{menuItem.data.title}"
                    rel="nofollow"
                    role="menuitem">
-                    <span><f:format.html parseFuncTSPath="lib.parseFunc_Inline">{title}</f:format.html></span>
+                    <f:if condition="{icon}"><span class="icon-{icon} icon"></span></f:if><span><f:format.html parseFuncTSPath="lib.parseFunc_Inline">{title}</f:format.html></span>
                 </a>
             </li>
         </f:for>

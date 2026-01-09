@@ -1,0 +1,30 @@
+/* ==================================================
+* Top-Menu
+* ================================================== */
+@use 'sass:math';
+.nav-top {
+
+    &-list {
+        line-height: 100%;
+    }
+
+    &-link,
+    &-link:link,
+    &-link:visited,
+    &-link:hover {
+        font-size: rem-calc(16);
+        line-height: 100%;
+        color: $color-primary;
+        text-transform: uppercase;
+        font-weight: bold;
+        text-decoration: none;
+
+        @include text-marker();
+
+        &.active {
+            font-weight: bold;
+            color: $color-text;
+        }
+    }
+}
+

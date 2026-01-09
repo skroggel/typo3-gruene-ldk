@@ -57,6 +57,10 @@
 				<source>Teaser</source>
 				<target>Teaser</target>
 			</trans-unit>
+			<trans-unit id="background_color.label">
+				<source>Background Color</source>
+				<target>Hintergrundfarbe</target>
+			</trans-unit>
 			<trans-unit id="image_orientation.label">
 				<source>Image Orientation</source>
 				<target>Bildausrichtung</target>

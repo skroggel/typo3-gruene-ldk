@@ -46,7 +46,9 @@ window.addEventListener('DOMContentLoaded', () => {
       nav: true,
       autoWidth: false,
       center: false,
+      autoplayHoverPause: true,
       autoplay: (!!owl.hasClass('js-autoplay')),
+      autoplayTimeout: 5000,
       loop: (!!owl.hasClass('js-loop')),
       autoHeight: true,
       onInitialized: function() {
@@ -98,6 +100,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // ==========================================================================
   const scrolling = new Madj2kScrolling({
     anchorScrolling: {
+      enabled: true,
       selector: ['a[href^="#"]', 'a[href*="#"]'],
       offsetSelector: null,
       disableSelector: '.js-no-scroll',
@@ -108,6 +111,7 @@ window.addEventListener('DOMContentLoaded', () => {
       threshold: 40
     },
     appearOnScroll: {
+      enabled: true,
       selector: ['.js-appear-on-scroll'],
       timeout: 500,
       threshold: 25

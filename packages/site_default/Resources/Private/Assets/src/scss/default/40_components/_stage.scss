@@ -9,7 +9,11 @@
         height: calc(100svh - $siteheader-height-mobile);
     }
 
-    @include media-breakpoint-up($siteheader-breakpoint-variant) {
+    @include media-breakpoint-up($siteheader-breakpoint-tablet) {
+        height: calc(100svh - $siteheader-height-tablet);
+    }
+
+    @include media-breakpoint-up($siteheader-breakpoint-desktop) {
         height: calc(100svh - $siteheader-height-desktop);
     }
 
