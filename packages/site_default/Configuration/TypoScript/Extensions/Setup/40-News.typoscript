@@ -38,6 +38,9 @@ plugin.tx_news {
 
                 topicSlider {
                     tx_smsresponsiveimages < lib.madj2kMediaUtils.responsiveImages
+		            tx_smsresponsiveimages {
+                        loading = eager
+                    }
 
                     header {
                         defaultHeaderType = 4
