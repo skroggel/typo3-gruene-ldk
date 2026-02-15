@@ -31,6 +31,13 @@ call_user_func(
 			],
 		];
 
+        $GLOBALS['TCA']['tx_news_domain_model_news']['columns']['externalurl']['config'] = [
+            'type' => 'link',
+            'allowedTypes' => ['page', 'url'],
+            'required' => false,
+            'size' => 30,
+        ];
+
         // remove unused types
         unset($GLOBALS['TCA']['tx_news_domain_model_news']['columns']['type']['config']['items'][1]);
         //unset($GLOBALS['TCA']['tx_news_domain_model_news']['columns']['type']['config']['items'][2]);
