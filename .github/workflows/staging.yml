@@ -99,21 +99,22 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
-          ssh-keyscan -H ${{ vars.SSH_HOST }} >> ~/.ssh/known_hosts
+          ssh-keyscan  -p ${{ vars.SSH_PORT }} -H ${{ vars.SSH_HOST }} >> ~/.ssh/known_hosts
 
       - name: Create release directory on server
-        run: ssh -o StrictHostKeyChecking=no ${{ vars.SSH_USER }}@${{ vars.SSH_HOST }} "mkdir -p ${{ vars.DEPLOY_PATH }}/releases/${{ needs.prepare.outputs.release_name }}"
+        run: ssh -p ${{ vars.SSH_PORT }} -o StrictHostKeyChecking=no ${{ vars.SSH_USER }}@${{ vars.SSH_HOST }} "mkdir -p ${{ vars.DEPLOY_PATH }}/releases/${{ needs.prepare.outputs.release_name }}"
 
       - name: Deploy via rsync
         run: |
           rsync -az --delete \
+            -e "ssh -p ${{ vars.SSH_PORT }}" \
             --exclude-from=$GITHUB_WORKSPACE/.deploy-exclude \
             ./ \
             ${{ vars.SSH_USER }}@${{ vars.SSH_HOST }}:${{ vars.DEPLOY_PATH }}/releases/${{ needs.prepare.outputs.release_name }}/
 
       - name: Create shared symlinks and create missing folders
         run: |
-          ssh -o StrictHostKeyChecking=no ${{ vars.SSH_USER }}@${{ vars.SSH_HOST }} "
+          ssh -p ${{ vars.SSH_PORT }} -o StrictHostKeyChecking=no ${{ vars.SSH_USER }}@${{ vars.SSH_HOST }} "
             set -e
             release_dir='${{ vars.DEPLOY_PATH }}/releases/${{ needs.prepare.outputs.release_name }}'
             shared_dir='${{ vars.DEPLOY_PATH }}/shared'
@@ -141,12 +142,12 @@ jobs:
 
       - name: Lock backend for editors
         run: |
-          ssh -o StrictHostKeyChecking=no ${{ vars.SSH_USER }}@${{ vars.SSH_HOST }} \
+          ssh -p ${{ vars.SSH_PORT }} -o StrictHostKeyChecking=no ${{ vars.SSH_USER }}@${{ vars.SSH_HOST }} \
             "cd ${{ vars.DEPLOY_PATH }}/current && ${{ vars.PHP_BINARY }} ./vendor/bin/typo3 backend:lockforeditors"
 
       - name: Update current symlink
         run: |
-          ssh -o StrictHostKeyChecking=no ${{ vars.SSH_USER }}@${{ vars.SSH_HOST }} \
+          ssh -p ${{ vars.SSH_PORT }} -o StrictHostKeyChecking=no ${{ vars.SSH_USER }}@${{ vars.SSH_HOST }} \
             "ln -sfn ${{ vars.DEPLOY_PATH }}/releases/${{ needs.prepare.outputs.release_name }} ${{ vars.DEPLOY_PATH }}/current"
 
   finalize:
@@ -159,24 +160,24 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
-          ssh-keyscan -H ${{ vars.SSH_HOST }} >> ~/.ssh/known_hosts
+          ssh-keyscan -p ${{ vars.SSH_PORT }} -H ${{ vars.SSH_HOST }} >> ~/.ssh/known_hosts
 
       - name: Set permissions on vendor/bin
         run: |
-          ssh -o StrictHostKeyChecking=no ${{ vars.SSH_USER }}@${{ vars.SSH_HOST }} \
+          ssh -p ${{ vars.SSH_PORT }} -o StrictHostKeyChecking=no ${{ vars.SSH_USER }}@${{ vars.SSH_HOST }} \
             "chmod -R 750 ${{ vars.DEPLOY_PATH }}/current/vendor/bin"
 
       - name: Warm up TYPO3 cache
         run: |
-          ssh -o StrictHostKeyChecking=no ${{ vars.SSH_USER }}@${{ vars.SSH_HOST }} \
+          ssh -p ${{ vars.SSH_PORT }} -o StrictHostKeyChecking=no ${{ vars.SSH_USER }}@${{ vars.SSH_HOST }} \
             "cd ${{ vars.DEPLOY_PATH }}/current && ${{ vars.PHP_BINARY }} ./vendor/bin/typo3 cache:warmup"
 
       - name: Run database migrations
         run: |
-          ssh -o StrictHostKeyChecking=no ${{ vars.SSH_USER }}@${{ vars.SSH_HOST }} \
+          ssh -p ${{ vars.SSH_PORT }} -o StrictHostKeyChecking=no ${{ vars.SSH_USER }}@${{ vars.SSH_HOST }} \
             "cd ${{ vars.DEPLOY_PATH }}/current && ${{ vars.PHP_BINARY }} ./vendor/bin/typo3 database:updateschema \"*.add,*.change\""
 
       - name: Unlock backend for editors
         run: |
-          ssh -o StrictHostKeyChecking=no ${{ vars.SSH_USER }}@${{ vars.SSH_HOST }} \
+          ssh -p ${{ vars.SSH_PORT }} -o StrictHostKeyChecking=no ${{ vars.SSH_USER }}@${{ vars.SSH_HOST }} \
             "cd ${{ vars.DEPLOY_PATH }}/current && ${{ vars.PHP_BINARY }} ./vendor/bin/typo3 backend:unlockforeditors"
