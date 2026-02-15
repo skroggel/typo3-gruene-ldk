@@ -1,2 +1,1 @@
-site.name = default
 @import 'EXT:site_default/Configuration/TypoScript/constants.typoscript'
