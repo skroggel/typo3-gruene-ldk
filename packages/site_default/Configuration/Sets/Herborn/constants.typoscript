@@ -1,6 +1,12 @@
-page.siteName = GRÜNE Herborn
-page.setName = herborn
-page.rootPid = 32
+page {
+    siteName = GRÜNE Herborn
+    setName = herborn
+    rootPid = 32
+    specialPages {
+        oldBrowserPid = 47
+        noScriptPid = 46
+    }
+}
 
 navigation.top.pid = 33
 navigation.footer.pid = 34
