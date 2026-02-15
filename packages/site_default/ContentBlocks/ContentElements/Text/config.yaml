@@ -5,5 +5,5 @@ fields:
     type: Basic
   - identifier: madj2k/palette-header
     type: Basic
-  - identifier: madj2k/bodytext-reduced-required
+  - identifier: madj2k/bodytext-required
     type: Basic

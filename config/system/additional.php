@@ -96,7 +96,7 @@ $GLOBALS['TYPO3_CONF_VARS'] = array_replace_recursive(
 
 switch (\TYPO3\CMS\Core\Core\Environment::getContext()) {
 
-    case 'Production\Production':
+    case 'Production':
         $GLOBALS['TYPO3_CONF_VARS'] = array_replace_recursive(
             $GLOBALS['TYPO3_CONF_VARS'],
             [

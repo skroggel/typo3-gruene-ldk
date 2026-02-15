@@ -33,7 +33,6 @@ vendor
 # =======================================================
 # Ignore locally used htaccess, test-files and assets
 # =======================================================
-/public/.htaccess
 /public/.htpasswd
 /public/ext_*.nginx
 /public/data*.txt
