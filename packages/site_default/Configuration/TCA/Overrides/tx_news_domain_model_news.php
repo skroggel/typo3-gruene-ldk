@@ -175,24 +175,15 @@ call_user_func(
 
 		$GLOBALS['TCA']['tx_news_domain_model_news']['columns']['tx_sitedefault_image_preview']['config']['overrideChildTca']['columns']['crop']['config'] = [
 			'cropVariants' => [
-				'preview-big' => [
-					'title' => 'Preview Big',
+				'default' => [
+					'title' => 'Default',
 					'allowedAspectRatios' => [
 						'preview' => [
-							'title' => 'Preview Big',
-							'value' => 436/ 300
+							'title' => 'Default',
+							'value' => 450/ 300
 						],
 					],
 				],
-                'preview-small' => [
-                    'title' => 'Preview Small',
-                    'allowedAspectRatios' => [
-                        'preview' => [
-                            'title' => 'Preview Small',
-                            'value' => 428/ 214
-                        ],
-                    ],
-                ],
 			],
 		];
 
