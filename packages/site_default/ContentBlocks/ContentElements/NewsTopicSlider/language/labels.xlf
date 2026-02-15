@@ -6,16 +6,16 @@
 
 			<!-- element -->
 			<trans-unit id="title">
-				<source>Stage Slider</source>
+				<source>News Topic Slider</source>
 			</trans-unit>
 			<trans-unit id="description">
-				<source>This element is a hero slider consisting of multiple large teaser slides displayed one after another. Each slide combines a strong visual with a main headline and can optionally include a call to action. It is suitable for highlighting several key topics, articles, or campaigns with equal prominence.</source>
+				<source>This element is a prominent topic card featuring an image, headline, short teaser text, and link. It highlights a key topic or “reason” and encourages users to explore further. The large image and concise message make it suitable for campaigns, topic hubs, or argument-driven pages.</source>
 			</trans-unit>
 
 
 			<!-- fields -->
 			<trans-unit id="plugin_news_slider.label">
-				<source>Stage</source>
+				<source>Plugin</source>
 			</trans-unit>
 		</body>
 	</file>
