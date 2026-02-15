@@ -31,61 +31,66 @@ call_user_func(
 			],
 		];
 
-		// remove globally unused fields
-//        $GLOBALS['TCA']['tx_news_domain_model_news']['types']['0'] = str_replace(
+        // remove unused types
+        unset($GLOBALS['TCA']['tx_news_domain_model_news']['columns']['type']['config']['items'][1]);
+        //unset($GLOBALS['TCA']['tx_news_domain_model_news']['columns']['type']['config']['items'][2]);
+
+
+        foreach ([0,2] as $type) {
+
+           // remove globally unused fields
+//        $GLOBALS['TCA']['tx_news_domain_model_news']['types'][$type] = str_replace(
 //            '--div--;LLL:EXT:news/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_news.content_elements,',
 //            '',
-//            $GLOBALS['TCA']['tx_news_domain_model_news']['types']['0']
+//            $GLOBALS['TCA']['tx_news_domain_model_news']['types'][$type]
 //        );
-//        $GLOBALS['TCA']['tx_news_domain_model_news']['types']['0'] = str_replace(
+//        $GLOBALS['TCA']['tx_news_domain_model_news']['types'][$type] = str_replace(
 //            'content_elements,',
 //            '',
-//            $GLOBALS['TCA']['tx_news_domain_model_news']['types']['0']
+//            $GLOBALS['TCA']['tx_news_domain_model_news']['types'][$type]
 //        );
-        $GLOBALS['TCA']['tx_news_domain_model_news']['types']['0'] = str_replace(
-            'related_links,tags,',
-            '',
-            $GLOBALS['TCA']['tx_news_domain_model_news']['types']['0']
-        );
-        $GLOBALS['TCA']['tx_news_domain_model_news']['types']['0'] = str_replace(
-            'related,related_from,',
-            '',
-            $GLOBALS['TCA']['tx_news_domain_model_news']['types']['0']
-        );
-		$GLOBALS['TCA']['tx_news_domain_model_news']['types'][0] = str_replace(
-			'fal_related_files,',
-			'',
-			$GLOBALS['TCA']['tx_news_domain_model_news']['types'][0]
-		);
-		$GLOBALS['TCA']['tx_news_domain_model_news']['types'][0] = str_replace(
-			'--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.metatags;metatags,',
-			'',
-			$GLOBALS['TCA']['tx_news_domain_model_news']['types'][0]
-		);
-        $GLOBALS['TCA']['tx_news_domain_model_news']['types'][0] = str_replace(
-            '--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.metatags;metatags,',
-            '',
-            $GLOBALS['TCA']['tx_news_domain_model_news']['types'][0]
-        );
-        $GLOBALS['TCA']['tx_news_domain_model_news']['types'][0] = str_replace(
-            '--palette--;;paletteCore,',
-            'type,',
-            $GLOBALS['TCA']['tx_news_domain_model_news']['types'][0]
-        );
-        $GLOBALS['TCA']['tx_news_domain_model_news']['types'][0] = str_replace(
-            'related_links',
-            '',
-            $GLOBALS['TCA']['tx_news_domain_model_news']['types'][0]
-        );
-        $GLOBALS['TCA']['tx_news_domain_model_news']['types'][0] = str_replace(
-            '--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.editorial;paletteAuthor',
-            '',
-            $GLOBALS['TCA']['tx_news_domain_model_news']['types'][0]
-        );
 
-		// remove unused types
-		unset($GLOBALS['TCA']['tx_news_domain_model_news']['columns']['type']['config']['items'][1]);
-		unset($GLOBALS['TCA']['tx_news_domain_model_news']['columns']['type']['config']['items'][2]);
+            $GLOBALS['TCA']['tx_news_domain_model_news']['types'][$type] = str_replace(
+                'related_links,tags,',
+                '',
+                $GLOBALS['TCA']['tx_news_domain_model_news']['types'][$type]
+            );
+            $GLOBALS['TCA']['tx_news_domain_model_news']['types'][$type] = str_replace(
+                'related,related_from,',
+                '',
+                $GLOBALS['TCA']['tx_news_domain_model_news']['types'][$type]
+            );
+            $GLOBALS['TCA']['tx_news_domain_model_news']['types'][$type] = str_replace(
+                'fal_related_files,',
+                '',
+                $GLOBALS['TCA']['tx_news_domain_model_news']['types'][$type]
+            );
+            $GLOBALS['TCA']['tx_news_domain_model_news']['types'][$type] = str_replace(
+                '--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.metatags;metatags,',
+                '',
+                $GLOBALS['TCA']['tx_news_domain_model_news']['types'][$type]
+            );
+            $GLOBALS['TCA']['tx_news_domain_model_news']['types'][$type] = str_replace(
+                '--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.metatags;metatags,',
+                '',
+                $GLOBALS['TCA']['tx_news_domain_model_news']['types'][$type]
+            );
+            $GLOBALS['TCA']['tx_news_domain_model_news']['types'][$type] = str_replace(
+                '--palette--;;paletteCore,',
+                'type,',
+                $GLOBALS['TCA']['tx_news_domain_model_news']['types'][$type]
+            );
+            $GLOBALS['TCA']['tx_news_domain_model_news']['types'][$type] = str_replace(
+                'related_links',
+                '',
+                $GLOBALS['TCA']['tx_news_domain_model_news']['types'][$type]
+            );
+            $GLOBALS['TCA']['tx_news_domain_model_news']['types'][$type] = str_replace(
+                '--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.editorial;paletteAuthor',
+                '',
+                $GLOBALS['TCA']['tx_news_domain_model_news']['types'][$type]
+            );
+        }
 
         $ll = 'LLL:EXT:site_default/Resources/Private/Language/locallang_db.xlf:';
 		\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tx_news_domain_model_news',

@@ -1,6 +1,5 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 
-
 	<f:if condition="{link}">
 		<f:then>
 			<f:if condition="{linkToNewsDetail}">
@@ -56,10 +55,8 @@
                                   arguments="{text: text, class: 'tile-text'}" />
                     </f:then>
                     <f:else>
-                        <f:format.crop maxCharacters="170" respectWordBoundaries="true" respectHtml="true">
-                            <f:render partial="Utils/Bodytext" section="Inline"
-                                      arguments="{text: text, class: 'tile-text'}" />
-                        </f:format.crop>
+                        <f:render partial="Utils/Bodytext" section="Inline"
+                                  arguments="{text: text, cropSize: 300, class: 'tile-text'}" />
                     </f:else>
                 </f:if>
             </div>

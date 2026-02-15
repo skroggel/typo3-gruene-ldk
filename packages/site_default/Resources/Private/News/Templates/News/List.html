@@ -11,29 +11,43 @@
 
                 <f:variable name="categories"
                             value="{f:render(partial: 'Category/ItemsImploded', arguments:'{categories: newsItem.categories, settings: settings.list._custom.topicSlider}')}" />
+
+                <f:if condition="{newsItem.externalurl}">
+                    <f:then>
+                        <f:variable name="linkToNewsDetail" value="0" />
+                        <f:variable name="link" value="{newsItem.externalurl}" />
+                    </f:then>
+                    <f:else>
+                        <f:variable name="linkToNewsDetail" value="{settings.detailPid}" />
+                        <f:variable name="link" value="{newsItem.uid}" />
+                    </f:else>
+                </f:if>
+
                 <f:render partial="Utils/Tile" arguments="{
                      image: newsItem.txSitedefaultImagePreview.0,
                      header: newsItem.title,
                      subline: categories,
                      text: newsItem.teaser,
                      wrapClass: 'swiper-slide tile-slider',
-                     linkToNewsDetail: settings.detailPid,
-                     link: newsItem.uid,
-                     settings: settings.list._custom.topicSlider,
+                     linkToNewsDetail: linkToNewsDetail,
+                     link: link,
+                     settings: settings.list._custom.topicSlider
                 }" />
             </f:for>
         </div>
 
         <!-- If we need navigation buttons -->
-        <div class="topic-slider-navigation mt-5 mb-2">
-            <f:render partial="Utils/Cta"
-                      arguments="{
-                            label: '{f:translate(key: \'label.nextTopic\', extensionName: \'SiteDefault\')}',
-                            type: 'inverted',
-                            class: 'topic-slider-cta',
-                            settings: settings
-                      }" />
-        </div>
+        <f:if condition="{pagination.paginator.paginatedItems -> f:count() > 1}">
+            <div class="topic-slider-navigation mt-5 mb-2">
+                <f:render partial="Utils/Cta"
+                          arguments="{
+                                label: '{f:translate(key: \'label.nextTopic\', extensionName: \'SiteDefault\')}',
+                                type: 'inverted',
+                                class: 'topic-slider-cta',
+                                settings: settings
+                          }" />
+            </div>
+        </f:if>
 
 
     </f:section>
