@@ -27,7 +27,10 @@
         text-decoration: none;
     }
 
+    &-link:link.active,
+    &-link:visited.active,
     &-link:hover {
+        color: $color-white;
         text-decoration: underline;
     }
 }

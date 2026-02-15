@@ -1,24 +1,26 @@
     <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
       data-namespace-typo3-fluid="true"
 >
-    <section class="stage-slider fullwidth-1" id="c{data.uid}">
-        <div class="fullwidth-inner swiper js-stage-slider js-autoplay js-loop"
-             data-prev-slide-message="{f:translate(key: 'label.previousSlide', extensionName: 'SiteDefault')}"
-             data-next-slide-message="{f:translate(key: 'label.nextSlide', extensionName: 'SiteDefault')}"
-        >
+    <f:if condition="{data._grids.stage_items}">
+        <section class="stage-slider fullwidth-1" id="c{data.uid}">
+            <div class="fullwidth-inner swiper js-stage-slider js-autoplay js-loop"
+                 data-prev-slide-message="{f:translate(key: 'label.previousSlide', extensionName: 'SiteDefault')}"
+                 data-next-slide-message="{f:translate(key: 'label.nextSlide', extensionName: 'SiteDefault')}"
+            >
 
-            <div class="swiper-wrapper">
-                <f:for each="{data._grids.stage_items}" as="item" iteration="i">
-                    <f:comment><!-- {item.data} contains the Content Block data object. --></f:comment>
-                    <f:format.raw>{item.content}</f:format.raw>
-                </f:for>
-            </div>
+                <div class="swiper-wrapper">
+                    <f:for each="{data._grids.stage_items}" as="item" iteration="i">
+                        <f:comment><!-- {item.data} contains the Content Block data object. --></f:comment>
+                        <f:format.raw>{item.content}</f:format.raw>
+                    </f:for>
+                </div>
 
-            <!-- If we need navigation buttons -->
-            <div class="swiper-navigation">
-                <div class="cta cta-icon-only cta-icon-only-white cta-prev"></div>
-                <div class="cta cta-icon-only cta-icon-only-white cta-next"></div>
+                <!-- If we need navigation buttons -->
+                <div class="swiper-navigation">
+                    <div class="cta cta-icon-only cta-icon-only-white cta-prev"></div>
+                    <div class="cta cta-icon-only cta-icon-only-white cta-next"></div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </f:if>
 </html>

@@ -7,17 +7,16 @@
         <div class="container-xxxl h-100 d-flex flex-column justify-content-between">
             <div class="row h-100">
                 <div class="col-9 col-sm-7 col-lg-4">
-                    <div class="siteheader-brand">
-                        <f:link.page pageUid="{settings.rootPid}" class="siteheader-brand-link">
-                            <div class="siteheader-brand-wrap">
-                                <img src="{f:uri.image(src:'EXT:site_default/Resources/Public/Images/logo.svg')}"
-                                     alt="BÜNDNIS 90 / DIE GRÜNEN" title="BÜNDNIS 90 / DIE GRÜNEN" class="siteheader-brand-logo"/>
-                            </div>
-                        </f:link.page>
+                    <f:link.page pageUid="{settings.rootPid}" class="siteheader-brand">
+                        <div class="siteheader-brand-wrap">
+                            <img src="{f:uri.image(src:'EXT:site_default/Resources/Public/Images/logo.svg')}"
+                                 alt="BÜNDNIS 90 / DIE GRÜNEN" title="BÜNDNIS 90 / DIE GRÜNEN" class="siteheader-brand-logo"/>
+                        </div>
                         <div class="siteheader-brand-header">
                             {settings.siteName}
                         </div>
-                    </div>
+                    </f:link.page>
+
                 </div>
 
                 <div class="col-3 col-sm-5 col-lg-8">
