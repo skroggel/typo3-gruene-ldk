@@ -25,15 +25,17 @@
         </div>
 
         <!-- If we need navigation buttons -->
-        <div class="topic-slider-navigation mt-5 mb-2">
-            <f:render partial="Utils/Cta"
-                      arguments="{
-                            label: '{f:translate(key: \'label.nextTopic\', extensionName: \'SiteDefault\')}',
-                            type: 'inverted',
-                            class: 'topic-slider-cta',
-                            settings: settings
-                      }" />
-        </div>
+        <f:if condition="{pagination.paginator.paginatedItems -> f:count() > 1}">
+            <div class="topic-slider-navigation mt-5 mb-2">
+                <f:render partial="Utils/Cta"
+                          arguments="{
+                                label: '{f:translate(key: \'label.nextTopic\', extensionName: \'SiteDefault\')}',
+                                type: 'inverted',
+                                class: 'topic-slider-cta',
+                                settings: settings
+                          }" />
+            </div>
+        </f:if>
 
 
     </f:section>
