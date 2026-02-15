@@ -11,15 +11,27 @@
 
                 <f:variable name="categories"
                             value="{f:render(partial: 'Category/ItemsImploded', arguments:'{categories: newsItem.categories, settings: settings.list._custom.topicSlider}')}" />
+
+                <f:if condition="{newsItem.externalurl}">
+                    <f:then>
+                        <f:variable name="linkToNewsDetail" value="0" />
+                        <f:variable name="link" value="{newsItem.externalurl}" />
+                    </f:then>
+                    <f:else>
+                        <f:variable name="linkToNewsDetail" value="{settings.detailPid}" />
+                        <f:variable name="link" value="{newsItem.uid}" />
+                    </f:else>
+                </f:if>
+
                 <f:render partial="Utils/Tile" arguments="{
                      image: newsItem.txSitedefaultImagePreview.0,
                      header: newsItem.title,
                      subline: categories,
                      text: newsItem.teaser,
                      wrapClass: 'swiper-slide tile-slider',
-                     linkToNewsDetail: settings.detailPid,
-                     link: newsItem.uid,
-                     settings: settings.list._custom.topicSlider,
+                     linkToNewsDetail: linkToNewsDetail,
+                     link: link,
+                     settings: settings.list._custom.topicSlider
                 }" />
             </f:for>
         </div>
