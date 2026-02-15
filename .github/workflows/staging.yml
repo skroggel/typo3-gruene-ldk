@@ -1,4 +1,4 @@
-name: Deploy TYPO3 v13 (v1.0.1)
+name: Deploy TYPO3 v13 (v1.0.2)
 
 on:
   workflow_dispatch:
@@ -140,10 +140,16 @@ jobs:
             done < \"\$deploy_file\"
           "
 
-      - name: Lock backend for editors
+      - name: Lock backend for editors (if current exists)
         run: |
-          ssh -p ${{ vars.SSH_PORT }} -o StrictHostKeyChecking=no ${{ vars.SSH_USER }}@${{ vars.SSH_HOST }} \
-            "cd ${{ vars.DEPLOY_PATH }}/current && ${{ vars.PHP_BINARY }} ./vendor/bin/typo3 backend:lockforeditors"
+          ssh -p ${{ vars.SSH_PORT }} -o StrictHostKeyChecking=no ${{ vars.SSH_USER }}@${{ vars.SSH_HOST }} "
+            if [ -d '${{ vars.DEPLOY_PATH }}/current' ]; then
+              cd '${{ vars.DEPLOY_PATH }}/current'
+              ${{ vars.PHP_BINARY }} ./vendor/bin/typo3 backend:lockforeditors
+            else
+              echo 'No current release yet — skipping backend lock.'
+            fi
+          "
 
       - name: Update current symlink
         run: |

@@ -6,39 +6,35 @@
 
     <f:section name="TopicSlider">
 
-        <div class="topic-slider-wrap swiper js-news-topic-slider js-loop"
-             data-prev-slide-message="{f:translate(key: 'label.previousSlide', extensionName: 'SiteDefault')}"
-             data-next-slide-message="{f:translate(key: 'label.nextSlide', extensionName: 'SiteDefault')}"
-        >
-            <div class="swiper-wrapper">
-                <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
+        <div class="swiper-wrapper">
+            <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
 
-                    <f:variable name="categories"
-                                value="{f:render(partial: 'Category/ItemsImploded', arguments:'{categories: newsItem.categories, settings: settings.list._custom.topicSlider}')}" />
-                    <f:render partial="Utils/Tile" arguments="{
-                         image: newsItem.txSitedefaultImagePreview.0,
-                         header: newsItem.title,
-                         subline: categories,
-                         text: newsItem.teaser,
-                         wrapClass: 'swiper-slide tile-slider',
-                         linkToNewsDetail: settings.detailPid,
-                         link: newsItem.uid,
-                         settings: settings.list._custom.topicSlider,
-                    }" />
-                </f:for>
-            </div>
-
-            <!-- If we need navigation buttons -->
-            <div class="topic-slider-navigation mt-5 mb-2">
-                <f:render partial="Utils/Cta"
-                          arguments="{
-                                label: '{f:translate(key: \'label.nextTopic\', extensionName: \'SiteDefault\')}',
-                                type: 'inverted',
-                                class: 'topic-slider-cta',
-                                settings: settings
-                          }" />
-            </div>
+                <f:variable name="categories"
+                            value="{f:render(partial: 'Category/ItemsImploded', arguments:'{categories: newsItem.categories, settings: settings.list._custom.topicSlider}')}" />
+                <f:render partial="Utils/Tile" arguments="{
+                     image: newsItem.txSitedefaultImagePreview.0,
+                     header: newsItem.title,
+                     subline: categories,
+                     text: newsItem.teaser,
+                     wrapClass: 'swiper-slide tile-slider',
+                     linkToNewsDetail: settings.detailPid,
+                     link: newsItem.uid,
+                     settings: settings.list._custom.topicSlider,
+                }" />
+            </f:for>
         </div>
+
+        <!-- If we need navigation buttons -->
+        <div class="topic-slider-navigation mt-5 mb-2">
+            <f:render partial="Utils/Cta"
+                      arguments="{
+                            label: '{f:translate(key: \'label.nextTopic\', extensionName: \'SiteDefault\')}',
+                            type: 'inverted',
+                            class: 'topic-slider-cta',
+                            settings: settings
+                      }" />
+        </div>
+
 
     </f:section>
 

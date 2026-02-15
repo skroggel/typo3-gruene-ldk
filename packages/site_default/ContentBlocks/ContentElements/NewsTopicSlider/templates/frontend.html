@@ -1,12 +1,24 @@
     <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
       data-namespace-typo3-fluid="true"
 >
-    <section class="stage-slider fullwidth-1" id="c{data.uid}">
-        <div class="fullwidth-inner owl-carousel js-stage-slider js-autoplay js-loop">
+    <section class="csp-section csp-not-last csp-section-padding news-topic-slider bg-color-{data.madj2k_background_color} js-appear-on-scroll" id="c{data.uid}">
+
+        <f:render partial="Utils/Header"
+                  arguments="{header: data.madj2k_header, wrapClass: 'news-topic-slider--headline',
+                              layout: headerLayout, settings: settings}" />
+
+        <f:render partial="Utils/Bodytext"
+                  arguments="{text: data.bodytext, wrapClass: 'news-topic-slider-text  mb-7'}" />
+
+        <div class="topic-slider-wrap swiper js-news-topic-slider js-loop"
+             data-prev-slide-message="{f:translate(key: 'label.previousSlide', extensionName: 'SiteDefault')}"
+             data-next-slide-message="{f:translate(key: 'label.nextSlide', extensionName: 'SiteDefault')}"
+        >
             <f:for each="{data._grids.stage_items}" as="item" iteration="i">
                 <f:comment><!-- {item.data} contains the Content Block data object. --></f:comment>
                 <f:format.raw>{item.content}</f:format.raw>
             </f:for>
         </div>
+
     </section>
 </html>

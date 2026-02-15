@@ -7,8 +7,8 @@
 
 			<!-- element -->
 			<trans-unit id="title">
-				<source>Feature Card</source>
-				<target>Feature Card</target>
+				<source>News Topic Slider</source>
+				<target>News Topic Slider</target>
 			</trans-unit>
 			<trans-unit id="description">
 				<source>This element is a prominent topic card featuring an image, headline, short teaser text, and link. It highlights a key topic or “reason” and encourages users to explore further. The large image and concise message make it suitable for campaigns, topic hubs, or argument-driven pages.</source>
@@ -18,8 +18,8 @@
 
 			<!-- fields -->
 			<trans-unit id="plugin_news_slider.label">
-				<source>Stage</source>
-				<target>Stage</target>
+				<source>Plugin</source>
+				<target>Plugin</target>
 			</trans-unit>
 		</body>
 	</file>
