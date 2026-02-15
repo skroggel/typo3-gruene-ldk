@@ -1,7 +1,7 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 
 	<f:comment><!-- No wrapping div around plugins and no headers--></f:comment>
-	<f:if condition="{data.CType} == 'shortcut' || {data.CType} == 'list' || {data.CType} == 'news_pi1' || {data.CType} == 'news_newsliststicky'">
+	<f:if condition="{data.CType} == 'shortcut' || {data.CType} == 'list' || {data.CType} == 'news_pi1' || {data.CType} == 'news_newsliststicky' || {data.CType} == 'greenscontact_slider' || {data.CType} == 'greenscontact_list' || {data.CType} == 'greenscontact_detail'">
 		<f:then>
 			<f:render section="Main" optional="true" />
 		</f:then>

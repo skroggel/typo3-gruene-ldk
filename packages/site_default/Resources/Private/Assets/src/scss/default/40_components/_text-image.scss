@@ -1,0 +1,32 @@
+/* ==================================================
+* Text-image
+* ================================================== */
+
+.text-image {
+
+    &-image {
+        img {
+            aspect-ratio: 4/3;
+        }
+    }
+}
+
+// only if not embedded in e.g. an accordion!
+.csp-section.text-image {
+    .text-image-image {
+
+        margin-left: rem-calc(map-get($page-padding, xs) * -1);
+        margin-right: rem-calc(map-get($page-padding, xs) * -1);
+        @include media-breakpoint-up(sm) {
+            margin-left: rem-calc(map-get($page-padding, sm) * -1);
+            margin-right: rem-calc(map-get($page-padding, sm) * -1);
+        }
+        @include media-breakpoint-up(md) {
+            margin-left: rem-calc(map-get($page-padding, md) * -1);
+            margin-right: rem-calc(map-get($page-padding, md) * -1);
+        }
+        @include media-breakpoint-up(lg) {
+            margin: 0;
+        }
+    }
+}

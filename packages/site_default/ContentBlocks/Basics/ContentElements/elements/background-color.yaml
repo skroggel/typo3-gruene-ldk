@@ -4,7 +4,7 @@ fields:
   - identifier: background_color
     type: Select
     renderType: selectSingle
-    default: 'left'
+    default: 'white'
     label: LLL:EXT:site_default/ContentBlocks/Basics/ContentElements/language/labels.xlf:background_color.label
     items:
       - value: white

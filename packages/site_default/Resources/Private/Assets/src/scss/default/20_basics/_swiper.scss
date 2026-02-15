@@ -1,0 +1,53 @@
+/******************************************
+ Swiper-Slider
+******************************************/
+@use 'sass:math';
+
+.swiper  {
+
+    position: relative;
+
+    .link-wrap {
+        &:focus-visible {
+            outline: rem-calc(2) solid $color-outline;
+            outline-style: solid;
+            outline-offset: rem-calc(-2);
+            outline-width: rem-calc(2);
+        }
+    }
+
+    .swiper-navigation {
+        position: absolute;
+        left: 50%;
+        bottom: 50%;
+
+        transform: translateX(-50%) translateY(-40%);
+        width: 100%;
+        max-width: rem-calc($page-max-inner-width);
+
+        z-index: 20;
+
+        display: flex;
+        justify-content: space-between;
+
+        @extend .page-padding-full;
+
+        .cta {
+            &-prev,
+            &-next {
+                position: relative;
+                @extend .icomoon;
+            }
+
+            &-prev   {
+                @extend .icon-arrow-left;
+            }
+
+            &-next {
+                @extend .icon-arrow-right;
+            }
+        }
+    }
+}
+
+

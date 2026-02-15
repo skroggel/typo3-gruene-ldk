@@ -4,7 +4,7 @@
 
     <f:if condition="{data.rawRecord.foreign_table_parent_uid}">
         <f:then>
-            <div class="stage {f:if(condition:data.assets, then: 'has-image', else: 'has-no-image')} bg-color-grey-300" id="c{data.uid}">
+            <div class="stage swiper-slide {f:if(condition:data.assets, then: 'has-image', else: 'has-no-image')} bg-color-grey-300" id="c{data.uid}">
                 <f:render section="Inner" arguments="{_all}" />
             </div>
         </f:then>

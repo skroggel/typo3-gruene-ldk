@@ -5,17 +5,8 @@
  */
 tt_content.madj2k_accordionitem {
     settings {
-    	header {
-    		defaultHeaderType = 5
-			// overrideHeaderType = 2
-			// defaultLayoutType = 2
-    	}
         media {
-            image {
-                dimensions {
-                    maxWidth = 1024
-                }
-            }
+
 		}
     }
 }

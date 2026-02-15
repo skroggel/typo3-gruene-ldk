@@ -1,0 +1,46 @@
+<T3DataStructure>
+	<meta>
+		<langDisable>1</langDisable>
+	</meta>
+	<sheets>
+		<sDEF>
+			<ROOT>
+				<sheetTitle>
+					LLL:EXT:greens_contact/Resources/Private/Language/locallang_be.xlf:plugin.tx_contacts_list.title
+				</sheetTitle>
+				<type>array</type>
+				<el>
+                    <settings.limit>
+                        <label>LLL:EXT:greens_contact/Resources/Private/Language/locallang_be.xlf:flexform.limit</label>
+                        <config>
+                            <type>number</type>
+                            <default>10</default>
+                        </config>
+                    </settings.limit>
+                    <settings.category>
+                        <label>LLL:EXT:greens_contact/Resources/Private/Language/locallang_be.xlf:flexform.category</label>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectTree</renderType>
+                            <foreign_table>sys_category</foreign_table>
+                            <foreign_table_where>
+                                ORDER BY sys_category.sorting
+                            </foreign_table_where>
+                            <minitems>0</minitems>
+                            <maxitems>1</maxitems>
+
+                            <treeConfig>
+                                <parentField>parent</parentField>
+                                <appearance>
+                                    <showHeader>true</showHeader>
+                                    <expandAll>false</expandAll>
+                                    <maxLevels>99</maxLevels>
+                                </appearance>
+                            </treeConfig>
+                        </config>
+                    </settings.category>
+				</el>
+			</ROOT>
+		</sDEF>
+	</sheets>
+</T3DataStructure>

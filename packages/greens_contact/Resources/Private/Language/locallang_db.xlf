@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xliff version="1.0" xmlns:t="x-gettext">
+	<file source-language="en" datatype="plaintext" original="messages" date="2025-10-07T00:00:00Z" product-name="greens_contact">
+		<header/>
+		<body>
+			<trans-unit id="tx_contact_domain_model_person.tab.meta" xml:space="preserve">
+				<source>More</source>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_person.tab.media" xml:space="preserve">
+				<source>Media</source>
+			</trans-unit>
+
+
+			<trans-unit id="tx_contact_domain_model_person.palette.detail_link" xml:space="preserve">
+				<source>Link</source>
+			</trans-unit>
+
+
+			<trans-unit id="tx_contact_domain_model_person" xml:space="preserve">
+				<source>Person</source>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_person.title" xml:space="preserve">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_person.salutation">
+				<source>Salutation</source>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_person.salutation.mr">
+				<source>Mr</source>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_person.salutation.ms">
+				<source>Ms</source>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_person.salutation.other">
+				<source>Diverse</source>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_person.first_name" xml:space="preserve">
+				<source>First Name</source>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_person.last_name" xml:space="preserve">
+				<source>Last Name</source>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_person.position" xml:space="preserve">
+				<source>Function</source>
+´			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_person.job" xml:space="preserve">
+				<source>Job</source>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_person.email">
+				<source>Email</source>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_person.phone">
+				<source>Phone</source>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_person.category" xml:space="preserve">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_person.vita" xml:space="preserve">
+				<source>Vita</source>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_person.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_person.show_detail">
+				<source>Show detail page</source>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_person.detail_link">
+				<source>Alternative detail link</source>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_person.detail_link_label">
+				<source>Label for alternative detail link</source>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_person.image_small" xml:space="preserve">
+				<source>Small image</source>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_person.image_big" xml:space="preserve">
+				<source>Big image</source>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_person.sorting">
+				<source>Manual Sorting</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

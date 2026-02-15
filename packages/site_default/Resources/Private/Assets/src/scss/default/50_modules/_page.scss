@@ -4,8 +4,9 @@
 
 @include page-padding(
     $page-padding: $page-padding,
-    $page-wrap-class: '.page',
+    $page-wrap-class: '.page-content',
     $wrap-class: '.fullwidth',
     $default-padding: $spacer,
+    $padding-class: '.page'
 );
 

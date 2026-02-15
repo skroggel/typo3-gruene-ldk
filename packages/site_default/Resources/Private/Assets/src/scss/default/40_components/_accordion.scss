@@ -1,0 +1,13 @@
+/* ==================================================
+* Accordion
+* ================================================== */
+
+.page-content {
+
+   .accordion {
+       .toggle-list-text {
+           @include h4;
+           color: $color-primary;
+       }
+   }
+}

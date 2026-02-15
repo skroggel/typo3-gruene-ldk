@@ -152,8 +152,13 @@ page {
             }
         }
         settings {
-            rootPid = TEXT
-            rootPid.value = {$page.rootPid}
+
+            rootPid = {$page.rootPid}
+            setName = {$page.setName}
+            siteName = {$page.siteName}
+
+            currentPid = TEXT
+            currentPid.data = TSFE:id
 
             schemaOrg = COA
             schemaOrg {
@@ -175,7 +180,7 @@ page {
                     sameAs = COA
                     sameAs  {
                         10 = TEXT
-                        10 = https://www.warteck-invest.ch
+                        10 = {$page.schemaOrg.sameAs}
                     }
                 }
             }
@@ -189,7 +194,6 @@ page {
     includeCSSLibs {
         siteDefaultLayout = EXT:site_default/Resources/Public/Css/vendor.css
         # responsiveTables = EXT:site_default/Resources/Public/Libs/BasicTable/basictable.min.css
-        owl = EXT:site_default/Resources/Public/Libs/Owl/owl.carousel.min.css
     }
 
     includeJS {
@@ -206,7 +210,6 @@ page {
     includeJSFooterlibs {
         siteDefaultScripts = EXT:site_default/Resources/Public/JavaScript/vendor.js
         # responsiveTables = EXT:site_default/Resources/Public/Libs/BasicTable/jquery.basictable.min.js
-        owl = EXT:site_default/Resources/Public/Libs/Owl/owl.carousel.min.js
     }
 }
 

@@ -5,25 +5,31 @@
     display:flex;
     gap: rem-calc(20);
     flex-wrap: wrap;
+
+    .tile {
+        width: auto;
+        flex-basis: 100%;
+        @include media-breakpoint-up(sm) {
+            @include flex-basis(2, rem-calc(20));
+        }
+
+        @include media-breakpoint-up(md) {
+            @include flex-basis(3, rem-calc(20));
+        }
+
+        @include media-breakpoint-up(xl) {
+            @include flex-basis(4, rem-calc(20));
+        }
+    }
 }
 
 .tile {
 
-    flex-basis: 100%;
-    @include media-breakpoint-up(sm) {
-        @include flex-basis(2, rem-calc(20));
-    }
-
-    @include media-breakpoint-up(md) {
-        @include flex-basis(3, rem-calc(20));
-    }
-
-    @include media-breakpoint-up(xl) {
-        @include flex-basis(4, rem-calc(20));
-    }
-
     &-inner {
-        height: 100%;
+        background-color: $color-white;
+       // height: rem-calc(500);
+        width: rem-calc(450);
+        max-width: 100%;
         display: flex;
         flex-direction: column;
         padding-bottom: rem-calc(24);
@@ -31,6 +37,7 @@
 
     &-image {
         width: 100%;
+        // height: rem-calc(300);
         overflow: hidden;
         margin: 0;
 
@@ -46,14 +53,16 @@
     }
 
     &-body {
-        padding-top: rem-calc(24);
         color: $color-text;
+        padding: rem-calc(map-get($spacers,3));
+        padding-top: rem-calc(map-get($spacers,5));
     }
 
     &-category {
         @include copy-small;
         display:block;
-        padding-bottom: rem-calc(6);
+        padding-bottom: rem-calc($spacer);
+        margin-top: rem-calc(map-get($spacers, 2) * -1);
     }
 
     &-header {
@@ -62,7 +71,7 @@
         }
     }
 
-    &-textwrap {
+    &-text {
         @include copy-small;
         color: $color-text;
     }

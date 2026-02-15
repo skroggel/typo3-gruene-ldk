@@ -1,12 +1,13 @@
 name: Default-Website
 type: typo3
 docroot: public
-php_version: "8.3"
+php_version: "8.4"
 webserver_type: nginx-fpm
 router_http_port: "8080"
 router_https_port: "8443"
 xdebug_enabled: false
-additional_hostnames: []
+additional_hostnames:
+  - gruene-herborn
 additional_fqdns: []
 database:
     type: mariadb

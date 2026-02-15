@@ -22,7 +22,7 @@ lib.siteDefault {
 
                 variables {
                     searchPid = TEXT
-                    searchPid.value = 6
+                    searchPid.value = {$navigation.mobile.searchPid}
                 }
 			}
 		}

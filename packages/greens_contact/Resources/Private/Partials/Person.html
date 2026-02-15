@@ -1,0 +1,222 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true"
+>
+
+    <f:section name="Slider">
+        <f:if condition="{person.detailLink} || {person.showDetail}">
+            <f:then>
+                <f:if condition="{person.detailLink}">
+                    <f:then>
+                        <f:link.typolink parameter="{person.detailLink}" class="swiper-slide contact-slider-item link-wrap">
+                            <f:render section="SliderInner" arguments="{_all}" />
+                        </f:link.typolink>
+                    </f:then>
+                    <f:else>
+
+                    </f:else>
+                </f:if>
+
+            </f:then>
+            <f:else>
+                <article class="swiper-slide contact-slider-item link-wrap">
+                    <f:render section="SliderInner" arguments="{_all}" />
+                </article>
+            </f:else>
+        </f:if>
+    </f:section>
+
+
+    <f:section name="SliderInner">
+        <f:render partial="Utils/Media"
+                  arguments="{
+                        file: person.imageSmall,
+                        wrapClass: 'contact-slider-image',
+                        settings: settings
+                  }" />
+
+        <div class="contact-slider-labels">
+            <f:render partial="Utils/Header"
+                      arguments="{header: person.combinedName, wrapClass: 'contact-slider-name',
+                                 settings: settings}" />
+
+            <f:render partial="Utils/Subheader"
+                      arguments="{subheader: person.position, wrapClass: 'contact-slider-function',
+                                 settings: settings}" />
+
+            <f:if condition="{person.detailLink}">
+
+                <f:variable name="label" value="{f:translate(key: 'label.details')}" />
+                <f:if condition="{person.detailLinkLabel}">
+                    <f:variable name="label" value="{person.detailLinkLabel}" />
+                </f:if>
+                <f:render partial="Utils/Cta"
+                          arguments="{
+                                label: label,
+                                wrapClass: 'mt-4',
+                                settings: settings
+                          }" />
+            </f:if>
+        </div>
+
+    </f:section>
+
+    <f:comment><!-- ==================================================== --></f:comment>
+
+    <f:section name="Detail">
+
+        <div class="modal fade contact-modal {f:if(condition: '{person.imageBig}', then: 'has-image')}"
+             id="person-{person.uid}-{identifier}"
+             tabindex="-1"
+             aria-hidden="true"
+        >
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <button class="toggle toggle-list-link modal-toggle"
+                            data-bs-dismiss="modal"
+                            title="{f:translate(key:'label.close', extensionName:'siteDefault')}"
+                            aria-label="{f:translate(key:'label.close', extensionName:'siteDefault')}"
+                    >
+                        <span class="toggle-inner">
+                            <span class="toggle-icon modal-toggle-icon icon">
+                                <svg class="toggle-icon-closed" aria-hidden="true" focusable="false">
+                                    <use href="{f:uri.image(src:'EXT:site_default/Resources/Public/Icons/sprite.svg')}#close"></use>
+                                </svg>
+                            </span>
+                        </span>
+                    </button>
+
+                    <div class="modal-body">
+                        <f:render partial="Utils/Media"
+                                  arguments="{
+                                    file: person.imageBig,
+                                    wrapClass: 'contact-modal-image mb-2 mb-lg-4',
+                                    settings: settings.default
+                              }" />
+
+                        <f:comment><!--- Name and function  ---></f:comment>
+                        <f:render partial="Utils/Header"
+                                  arguments="{header: person.combinedName, wrapClass: 'contact-modal-headline {f:if(condition: \'!{person.imageBig}\', then: \'mt-6 mt-md-0\')}',
+                                             settings: settings.default}" />
+
+                        <f:render partial="Utils/Subheader"
+                                  arguments="{subheader: person.position, wrapClass: 'subtitle-h3 contact-modal-subheader',
+                                             settings: settings.default}" />
+
+                        <f:if condition="{person.phone} || {person.email}">
+                            <p class="paragraph-3 mt-2 mt-lg-4">
+                                <f:if condition="{person.phone}">
+                                    <a class="link link-phone" href="tel:{person.phone}">
+                                        {person.phone}
+                                    </a><f:if condition="{person.email}"><br></f:if>
+                                </f:if>
+                                <f:if condition="{person.email}">
+                                    <f:link.email email="{person.email}" class="link link-email" />
+                                </f:if>
+                            </p>
+                        </f:if>
+
+                        <f:comment><!--- Qualifications  ---></f:comment>
+                        <f:if condition="{person.qualifications}">
+                            <f:render partial="Utils/Header"
+                                      arguments="{header: '{f:translate(key: \'label.qualifications\')}',
+                                                 wrapClass: 'mt-2 mt-lg-4 contact-modal-info-headline',
+                                                 settings: settings.info}" />
+
+                            <f:render partial="Utils/Bodytext"
+                                      arguments="{text: person.qualifications, wrapClass: 'paragraph-3 contact-modal-bodytext'}" />
+                        </f:if>
+
+                        <f:comment><!--- Vita  ---></f:comment>
+                        <f:if condition="{person.vita}">
+                            <f:render partial="Utils/Header"
+                                      arguments="{header: '{f:translate(key: \'label.vita\')}',
+                                                 wrapClass: 'mt-1_5 mt-lg-2 contact-modal-info-headline',
+                                                 settings: settings.info}" />
+
+                            <f:render partial="Utils/Bodytext"
+                                      arguments="{text: person.vita, wrapClass: 'paragraph-3 contact-modal-bodytext'}" />
+                        </f:if>
+
+                        <f:comment><!--- Tenure  ---></f:comment>
+                        <f:if condition="{person.tenure}">
+                            <f:render partial="Utils/Header"
+                                      arguments="{header: '{f:translate(key: \'label.tenure\')}',
+                                                 wrapClass: 'mt-1_5 mt-lg-2 contact-modal-info-headline',
+                                                 settings: settings.info}" />
+
+                            <f:render partial="Utils/Bodytext"
+                                      arguments="{text: person.tenure, wrapClass: 'paragraph-3 contact-modal-bodytext'}" />
+                        </f:if>
+
+                        <f:comment><!--
+                        <nav class="cta-nav modal-cta-nav">
+
+                            <f:variable name="indexMinus" value="{iterator.index - 1}" />
+                            <f:if condition="{persons.{indexMinus}.uid}">
+                                <f:then>
+                                <f:render partial="Utils/Cta"
+                                          arguments="{label: '{persons.{indexMinus}.combinedName}',
+                                                  type: 'default',
+                                                  iconType: 'sprite',
+                                                  icon: 'arrow-left',
+                                                  additionalAttributes: '{data-bs-toggle: \'modal\', data-bs-target: \'#person-{persons.{indexMinus}.uid}-{identifier}\'}',
+                                                  wrapClass: 'cta-nav-left contact-modal-cta'
+                                }" />
+                                </f:then>
+                                <f:else>
+                                    <f:variable name="lastPerson" value="{persons -> f:last()}" />
+                                    <f:if condition="{lastPerson}">
+                                        <f:render partial="Utils/Cta"
+                                                  arguments="{label: lastPerson.combinedName,
+                                                      type: 'default',
+                                                      iconType: 'sprite',
+                                                      icon: 'arrow-left',
+                                                      additionalAttributes: '{data-bs-toggle: \'modal\', data-bs-target: \'#person-{lastPerson.uid}-{identifier}\'}',
+                                                      wrapClass: 'cta-nav-left contact-modal-cta'
+                                       }" />
+                                    </f:if>
+                                </f:else>
+                            </f:if>
+
+                            <f:variable name="indexPlus" value="{iterator.index + 1}" />
+                            <f:if condition="{persons.{indexPlus}.uid}">
+                                <f:then>
+                                    <f:render partial="Utils/Cta"
+                                              arguments="{label: '{persons.{indexPlus}.combinedName}',
+                                                      type: 'default',
+                                                      iconType: 'sprite',
+                                                      icon: 'arrow-right',
+                                                      iconPosition: 'after',
+                                                      additionalAttributes: '{data-bs-toggle: \'modal\', data-bs-target: \'#person-{persons.{indexPlus}.uid}-{identifier}\'}',
+                                                      wrapClass: 'cta-nav-right contact-modal-cta'
+                                    }" />
+                                </f:then>
+                                <f:else>
+                                    <f:variable name="firstPerson" value="{persons -> f:first()}" />
+                                    <f:if condition="{firstPerson}">
+                                        <f:render partial="Utils/Cta"
+                                                  arguments="{label: firstPerson.combinedName,
+                                                      type: 'default',
+                                                      iconType: 'sprite',
+                                                      icon: 'arrow-right',
+                                                      iconPosition: 'after',
+                                                      additionalAttributes: '{data-bs-toggle: \'modal\', data-bs-target: \'#person-{firstPerson.uid}-{identifier}\'}',
+                                                      wrapClass: 'cta-nav-right contact-modal-cta'
+                                       }" />
+                                    </f:if>
+                                </f:else>
+                            </f:if>
+                        </nav>
+                        --></f:comment>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <script>window.addEventListener('DOMContentLoaded', () => {$('#person-{person.uid}-{identifier}').modal()})</script>
+    </f:section>
+</html>

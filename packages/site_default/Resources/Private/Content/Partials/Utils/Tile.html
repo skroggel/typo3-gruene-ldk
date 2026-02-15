@@ -5,7 +5,7 @@
 		<f:then>
 			<f:if condition="{linkToNewsDetail}">
 				<f:then>
-					<div class="tile">
+					<div class="tile {wrapClass}">
 						<f:link.action pageUid="{linkToNewsDetail}" action="detail" controller="News"
 									   extensionName="News" pluginName="Pi1"
 									   arguments="{news: link}" class="link-wrap">
@@ -14,7 +14,7 @@
 					</div>
 				</f:then>
 				<f:else>
-					<div class="tile">
+					<div class="tile {wrapClass}">
 						<f:link.typolink parameter="{link}" class="link-wrap">
 							<f:render section="Inner" arguments="{_all}" />
 						</f:link.typolink>
@@ -23,7 +23,7 @@
 			</f:if>
 		</f:then>
 		<f:else>
-			<div class="tile">
+			<div class="tile {wrapClass}">
 				<f:render section="Inner" arguments="{_all}" />
 			</div>
 		</f:else>
@@ -41,46 +41,38 @@
             </div>
 
 			<div class="tile-body">
-				<f:if condition="{subline -> f:format.trim()} || {newsCategories -> f:format.trim()}">
+				<f:if condition="{subline -> f:format.trim()}">
 					<span class="tile-category">
-						<f:if condition="{subline}">
-							<f:then>
-								{subline}
-							</f:then>
-							<f:else>
-								{newsCategories}
-							</f:else>
-						</f:if>
+                        {subline}
 					</span>
 				</f:if>
 
                 <f:render partial="Utils/Header"
-                          arguments="{header: header, layout: 4, wrapClass: 'tile-header'}"/>
+                          arguments="{header: header, wrapClass: 'tile-header', settings: settings}"/>
 
-                <div class="tile-textwrap">
-                    <f:if condition="{noCrop}">
-                        <f:then>
+                <f:if condition="{noCrop}">
+                    <f:then>
+                        <f:render partial="Utils/Bodytext" section="Inline"
+                                  arguments="{text: text, class: 'tile-text'}" />
+                    </f:then>
+                    <f:else>
+                        <f:format.crop maxCharacters="170" respectWordBoundaries="true" respectHtml="true">
                             <f:render partial="Utils/Bodytext" section="Inline"
                                       arguments="{text: text, class: 'tile-text'}" />
-                        </f:then>
-                        <f:else>
-                            <f:format.crop maxCharacters="170" respectWordBoundaries="true" respectHtml="true">
-                                <f:render partial="Utils/Bodytext" section="Inline"
-                                          arguments="{text: text, class: 'tile-text'}" />
-                            </f:format.crop>
-                        </f:else>
-                    </f:if>
-                </div>
+                        </f:format.crop>
+                    </f:else>
+                </f:if>
             </div>
 
-            <div class="tile-footer">
-                <f:if condition="{link}">
+            <f:if condition="{showCta}">
+                <div class="tile-footer">
                     <div class="tile-cta">
                         <f:render partial="Utils/Cta" arguments="{label: ctaLabel, type:'default'}" />
                     </div>
-                </f:if>
-            </div>
-		</div>
+                </div>
+            </f:if>
+
+        </div>
 	</f:section>
 </html>
 

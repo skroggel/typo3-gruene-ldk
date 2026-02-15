@@ -1,0 +1,183 @@
+name: Deploy TYPO3 v13 (v1.0.1)
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - 'main'
+      - 'staging'
+
+env:
+  NODE_VERSION: '24.0.2'
+  PHP_VERSION: '8.4'
+  TYPO3_CONTEXT: 'Production'
+
+jobs:
+
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      release_name: ${{ steps.set_release_name.outputs.release_name }}
+    environment: production
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set release name (ISO 8601)
+        id: set_release_name
+        run: echo "release_name=$(date -u +'%Y-%m-%dT%H-%M-%SZ')" >> $GITHUB_OUTPUT
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ env.PHP_VERSION }}
+
+      - name: Set context
+        run: echo "TYPO3_CONTEXT=${{ env.TYPO3_CONTEXT }}" > ./.env
+
+      - name: Install Composer dependencies
+        run: composer install --no-dev --no-interaction --optimize-autoloader
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Install npm dependencies
+        working-directory: ./packages/site_default/Resources/Private/Assets
+        run: npm ci
+
+      - name: Build assets (CSS/JS)
+        working-directory: ./packages/site_default/Resources/Private/Assets
+        run: npm run prod
+
+      - name: Show files before upload
+        run: |
+          echo "Listing root dir contents:"
+          ls -la ./
+          echo "Listing vendor dir contents:"
+          ls -la vendor/
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-artifacts
+          include-hidden-files: true
+          path: |
+            ./vendor/
+            ./packages/site_default/Resources/Public/
+            ./public/_assets/
+            ./composer.lock
+            ./.env
+
+  deploy:
+    needs: prepare
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: build-artifacts
+
+      - name: Replace placeholders in config
+        run: |
+          config_file=config/system/additional.php
+          sed -i "s|###DB_HOST###|${{ vars.DB_HOST }}|g" $config_file || true
+          sed -i "s|###DB_NAME###|${{ vars.DB_NAME }}|g" $config_file || true
+          sed -i "s|###DB_USER###|${{ vars.DB_USER }}|g" $config_file || true
+          sed -i "s|###DB_PASSWORD###|${{ secrets.DB_PASSWORD }}|g" $config_file || true
+          sed -i "s|###SMTP_USER###|${{ vars.SMTP_USER }}|g" $config_file || true
+          sed -i "s|###SMTP_HOST###|${{ vars.SMTP_HOST }}|g" $config_file || true
+          sed -i "s|###SMTP_PASSWORD###|${{ secrets.SMTP_PASSWORD }}|g" $config_file || true
+          sed -i "s|###ENCRYPTION_KEY##|${{ secrets.ENCRYPTION_KEY }}|g" $config_file || true
+
+      - name: Setup SSH access
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -H ${{ vars.SSH_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Create release directory on server
+        run: ssh -o StrictHostKeyChecking=no ${{ vars.SSH_USER }}@${{ vars.SSH_HOST }} "mkdir -p ${{ vars.DEPLOY_PATH }}/releases/${{ needs.prepare.outputs.release_name }}"
+
+      - name: Deploy via rsync
+        run: |
+          rsync -az --delete \
+            --exclude-from=$GITHUB_WORKSPACE/.deploy-exclude \
+            ./ \
+            ${{ vars.SSH_USER }}@${{ vars.SSH_HOST }}:${{ vars.DEPLOY_PATH }}/releases/${{ needs.prepare.outputs.release_name }}/
+
+      - name: Create shared symlinks and create missing folders
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ vars.SSH_USER }}@${{ vars.SSH_HOST }} "
+            set -e
+            release_dir='${{ vars.DEPLOY_PATH }}/releases/${{ needs.prepare.outputs.release_name }}'
+            shared_dir='${{ vars.DEPLOY_PATH }}/shared'
+            deploy_file=\"\$release_dir/.deploy-shared\"
+
+            if [[ ! -f \"\$deploy_file\" ]]; then
+              echo 'No .deploy-shared file found. Skipping symlinks.'
+              exit 0
+            fi
+
+            while IFS=',' read -r source target; do
+              source=\$(echo \"\$source\" | xargs)
+              target=\$(echo \"\$target\" | xargs)
+
+              target_path=\"\$release_dir/\$target\"
+              source_path=\"\$shared_dir/\$source\"
+
+              if [[ ! -f \"\$source_path\" ]]; then
+                mkdir -p \"\$source_path\"
+              fi
+              mkdir -p \$(dirname \"\$target_path\")
+              ln -sfn \"\$source_path\" \"\$target_path\"
+            done < \"\$deploy_file\"
+          "
+
+      - name: Lock backend for editors
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ vars.SSH_USER }}@${{ vars.SSH_HOST }} \
+            "cd ${{ vars.DEPLOY_PATH }}/current && ${{ vars.PHP_BINARY }} ./vendor/bin/typo3 backend:lockforeditors"
+
+      - name: Update current symlink
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ vars.SSH_USER }}@${{ vars.SSH_HOST }} \
+            "ln -sfn ${{ vars.DEPLOY_PATH }}/releases/${{ needs.prepare.outputs.release_name }} ${{ vars.DEPLOY_PATH }}/current"
+
+  finalize:
+    needs: deploy
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Setup SSH access
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -H ${{ vars.SSH_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Set permissions on vendor/bin
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ vars.SSH_USER }}@${{ vars.SSH_HOST }} \
+            "chmod -R 750 ${{ vars.DEPLOY_PATH }}/current/vendor/bin"
+
+      - name: Warm up TYPO3 cache
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ vars.SSH_USER }}@${{ vars.SSH_HOST }} \
+            "cd ${{ vars.DEPLOY_PATH }}/current && ${{ vars.PHP_BINARY }} ./vendor/bin/typo3 cache:warmup"
+
+      - name: Run database migrations
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ vars.SSH_USER }}@${{ vars.SSH_HOST }} \
+            "cd ${{ vars.DEPLOY_PATH }}/current && ${{ vars.PHP_BINARY }} ./vendor/bin/typo3 database:updateschema \"*.add,*.change\""
+
+      - name: Unlock backend for editors
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ vars.SSH_USER }}@${{ vars.SSH_HOST }} \
+            "cd ${{ vars.DEPLOY_PATH }}/current && ${{ vars.PHP_BINARY }} ./vendor/bin/typo3 backend:unlockforeditors"

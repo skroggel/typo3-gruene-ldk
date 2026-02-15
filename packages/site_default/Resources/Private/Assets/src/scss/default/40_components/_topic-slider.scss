@@ -1,0 +1,30 @@
+/* ==================================================
+* Topic Teaser
+* ================================================== */
+
+.topic-slider {
+
+    .swiper-slide {
+        opacity: 0;
+        padding-left: rem-calc(map-get($spacers, 3));
+        padding-right: rem-calc(map-get($spacers, 3));
+    }
+    .swiper-slide-prev,
+    .swiper-slide-next {
+        opacity: 0.5;
+    }
+    .swiper-slide-active {
+        opacity: 1;
+    }
+
+    &-navigation {
+        display:flex;
+        justify-content: center;
+    }
+
+    .tile-inner {
+        box-shadow: 0 0 rem-calc(6) rem-calc(6) #63636340;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

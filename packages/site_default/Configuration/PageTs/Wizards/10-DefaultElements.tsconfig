@@ -9,7 +9,7 @@
 mod.wizards.newContentElement.wizardItems {
 
 	// removing elements that are only used in a container
-	default.removeItems := addToList(madj2k_linklistitem, madj2k_linklist)
+	default.removeItems := addToList(madj2k_linklistitem, madj2k_linklist, madj2k_accordionitem)
 
     special.removeItems = div
 }

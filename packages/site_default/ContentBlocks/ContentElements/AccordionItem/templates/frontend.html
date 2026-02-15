@@ -1,0 +1,30 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true"
+>
+
+    <div class="toggle-list-item accordion-item">
+        <button class="toggle toggle-list-link accordion-toggle"
+                role="tab"
+                data-bs-toggle="collapse"
+                data-bs-target="#accordion-{data.uid}"
+                aria-expanded="false"
+                aria-controls="accordion-{data.uid}"
+        >
+            <span class="headline toggle-list-text"><span><f:format.html
+                parseFuncTSPath="lib.parseFunc_Inline">{data.madj2k_header}</f:format.html></span></span>
+            <span class="toggle-icon icon-arrow-down icon"></span>
+        </button>
+
+        <div class="collapse js-no-scroll"
+             id="accordion-{data.uid}"
+             data-bs-parent="#accordion-container-{data.tx_mask_content_parent_uid}"
+        >
+            <div class="accordion-content mt-5 mb-5">
+                <f:for each="{data._grids.accordion_item_items}" as="item" iteration="i">
+                    <f:comment><!-- {item.data} contains the Content Block data object. --></f:comment>
+                    <f:format.raw>{item.content}</f:format.raw>
+                </f:for>
+            </div>
+        </div>
+    </div>
+</html>

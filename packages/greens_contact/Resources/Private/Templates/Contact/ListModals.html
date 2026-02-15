@@ -1,0 +1,35 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:downloads="http://typo3.org/ns/WI/Downloads/ViewHelpers"
+      data-namespace-typo3-fluid="true"
+>
+
+    <f:if condition="{f:cObject(typoscriptObjectPath:'lib.tx_greenscontact.hasListPlugin')} && {persons}">
+
+        <f:comment><!-- default list of modals --></f:comment>
+        <f:for each="{persons}" as="person" iteration="iterator">
+            <f:render partial="Person"
+                      section="Modal"
+                      arguments="{persons: persons, person: person, identifier: '0',
+                                  data: data, iterator: iterator, settings: settings}" />
+        </f:for>
+
+        <f:comment><!-- filtered list of modals --></f:comment>
+        <f:for each="{personsFiltered}" as="person" iteration="iterator">
+            <f:render partial="Person"
+                      section="Modal"
+                      arguments="{persons: personsFiltered, person: person, identifier: identifier,
+                                  data: data, iterator: iterator, settings: settings}" />
+        </f:for>
+
+        <f:comment><!-- dynamically open modal --></f:comment>
+        <f:if condition="{openModalId}">
+            <script data-modal-id="#person-{openModalId}-{identifier}">
+                let currentScript = document.currentScript;
+                let modalId = currentScript.getAttribute('data-modal-id');
+                console.log(modalId);
+                window.addEventListener('DOMContentLoaded', () => {setTimeout(() => {openModal(modalId)}, 500)});
+            </script>
+        </f:if>
+    </f:if>
+
+</html>

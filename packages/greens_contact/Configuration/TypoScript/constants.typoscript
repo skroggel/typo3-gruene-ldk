@@ -1,0 +1,23 @@
+plugin.tx_greenscontact {
+
+	view {
+		# cat=plugin.tx_greenscontact/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:greens_contact/Resources/Private/Templates/
+
+		# cat=plugin.tx_greenscontact/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:greens_contact/Resources/Private/Partials/
+
+		# cat=plugin.tx_greenscontact/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:greens_contact/Resources/Private/Layouts/
+	}
+
+	persistence {
+		# cat=plugin.tx_greenscontact//a; type=string; label=Default storage PID
+		storagePid =
+	}
+
+	settings {
+
+
+	}
+}

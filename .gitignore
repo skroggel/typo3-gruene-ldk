@@ -17,6 +17,7 @@ vendor
 /.php-version
 /.phpunit.result.cache
 /.settings
+/rector.php
 
 # =======================================================
 # Files for development and deployment

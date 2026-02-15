@@ -18,6 +18,14 @@
 
     &-link {
         @include toggle-list-text;
+        align-items: end;
+
+        &::after {
+            //WTF? padding-bottom: rem-calc(xl);
+            @include media-breakpoint-up(lg) {
+                padding-bottom: rem-calc(4);
+            }
+        }
 
         .icon {
             @include media-breakpoint-up(lg) {

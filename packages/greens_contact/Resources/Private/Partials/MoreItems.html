@@ -1,0 +1,22 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true"
+>
+
+    <f:if condition="{pagination.nextPageNumber} > 1">
+        <f:form.button
+            property="page"
+            value="{search.page + 1}"
+            class="cta pagination"
+        >
+            <span class="cta-inner">
+                <span class="cta-icon icon">
+                     <svg aria-hidden="true" focusable="false">
+                        <use href="{f:uri.image(src:'EXT:site_default/Resources/Public/Icons/sprite.svg')}#rotate-cw"></use>
+                    </svg>
+                </span>
+                <span><f:translate key="label.loadMore" /></span>
+            </span>
+        </f:form.button>
+    </f:if>
+</html>
+

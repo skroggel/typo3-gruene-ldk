@@ -6,7 +6,7 @@
     <div class="siteheader page-padding" id="siteheader">
         <div class="container-xxxl h-100 d-flex flex-column justify-content-between">
             <div class="row h-100">
-                <div class="col-3 col-md-2 col-lg-3">
+                <div class="col-9 col-sm-7 col-lg-4">
                     <div class="siteheader-brand">
                         <f:link.page pageUid="{settings.rootPid}" class="siteheader-brand-link">
                             <div class="siteheader-brand-wrap">
@@ -15,12 +15,12 @@
                             </div>
                         </f:link.page>
                         <div class="siteheader-brand-header">
-                            GRÜNE Lahn-Dill
+                            {settings.siteName}
                         </div>
                     </div>
                 </div>
 
-                <div class="col-9 col-md-10 col-lg-9">
+                <div class="col-3 col-sm-5 col-lg-8">
                     <div class="siteheader-menu-wrap">
                         <div class="siteheader-menu d-none d-sm-flex">
                             <f:cObject typoscriptObjectPath="lib.siteDefault.navigation.top"/>
@@ -32,12 +32,14 @@
                                 <f:cObject typoscriptObjectPath="lib.siteDefault.navigation.main"/>
                             </div>
 
-                            <button class="toggle siteheader-toggle js-search-overlay-toggle"
-                                    aria-label="{f:translate(key:'menu.search', extensionName:'SiteDefault')}"
-                                    aria-controls="search-overlay"
-                                    aria-expanded="false">
-                                <span class="icon-search icon toggle-icon"></span>
-                            </button>
+                            <f:comment><!--
+                                <button class="toggle siteheader-toggle js-search-overlay-toggle"
+                                        aria-label="{f:translate(key:'menu.search', extensionName:'SiteDefault')}"
+                                        aria-controls="search-overlay"
+                                        aria-expanded="false">
+                                    <span class="icon-search icon toggle-icon"></span>
+                                </button>
+                            --></f:comment>
 
                             <div class="d-flex d-lg-none">
                                 <button href="#" class="toggle siteheader-toggle js-slide-nav-toggle"

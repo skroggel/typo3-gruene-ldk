@@ -6,38 +6,48 @@
     <f:if condition="{data.rawRecord.foreign_table_parent_uid}">
         <f:then>
             <div class="csp-block csp-not-last">
-                <f:render section="Inner" arguments="{_all}" />
+                <div class="container-fluid g-0">
+                    <div class="row g-0">
+                        <f:render section="Inner" arguments="{_all}" />
+                    </div>
+                </div>
             </div>
         </f:then>
         <f:else>
             <section class="text-image csp-section csp-section-padding csp-not-last fullwidth-1 bg-color-{data.madj2k_background_color} js-appear-on-scroll" id="c{data.uid}">
-                <f:render section="Inner" arguments="{_all}" />
+                <div class="container-xxxl">
+                    <div class="row">
+                        <div class="col-12">
+                            <f:render partial="Utils/Header"
+                                      arguments="{header: data.madj2k_header, wrapClass: 'text-image-headline',
+                                          layout: data.header_layout, settings: settings}" />
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <f:render section="Inner" arguments="{_all}" />
+                    </div>
+                </div>
             </section>
         </f:else>
     </f:if>
 
+
     <f:comment><!-- ==================================== --></f:comment>
     <f:section name="Inner">
-        <div class="container-xxxl">
-            <div class="row">
 
-                <div class="col-12 col-lg-8 col-xl-7 col-xxl-8 {f:if(condition: '{data.madj2k_image_orientation} == \'left\'', then: 'order-2 ps-lg-5', else:'pe-lg-5')}">
-                    <f:render partial="Utils/Header"
-                              arguments="{header: data.madj2k_header, wrapClass: 'text-image-headline',
-                                          layout: data.header_layout, settings: settings}" />
+        <div class="col-12 col-lg-6 col-xl-7 {f:if(condition: '{data.madj2k_image_orientation} == \'left\'', then: 'order-2 ps-lg-5 offset-xxl-1', else:'pe-lg-5')}">
+            <f:render partial="Utils/Bodytext"
+                      arguments="{text: data.bodytext, wrapClass: 'text-image-text'}" />
 
-                    <f:render partial="Utils/Bodytext"
-                              arguments="{text: data.bodytext, wrapClass: 'text-image-text'}" />
-
-                </div>
-                <div class="col-12 col-lg-4 col-xl-5 col-xxl-4 {f:if(condition: '{data.madj2k_image_orientation} == \'left\'', then: 'order-1')}">
-                    <f:render partial="Utils/Media"
-                              arguments="{file: data.assets.0,
-                                          wrapClass: 'text-image-image effect-edge-cut-image {f:if(condition: \'{data.madj2k_image_orientation} == \"left\"\', then: \'variant-left\')}',
-                                          settings: settings}" />
-                </div>
-            </div>
         </div>
+        <div class="col-12 col-lg-6 col-xl-5 col-xxl-4 {f:if(condition: '{data.madj2k_image_orientation} == \'left\'', then: 'order-1 mb-5 mb-lg-0', else:'mt-5 mt-lg-0 offset-xxl-1 ')}">
+            <f:render partial="Utils/Media"
+                      arguments="{file: data.assets.0,
+                                  wrapClass: 'text-image-image effect-edge-cut-image {f:if(condition: \'{data.madj2k_image_orientation} == \"left\"\', then: \'variant-left\')}',
+                                  settings: settings}" />
+        </div>
+
     </f:section>
 
 </html>

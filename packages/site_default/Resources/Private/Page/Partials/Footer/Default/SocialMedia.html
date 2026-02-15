@@ -1,0 +1,20 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true"
+>
+
+    <div class="socialmedia-list font-color-white">
+        <f:for each="{
+            facebook: 'https://www.facebook.com/GrueneLahnDillKreis/',
+            instagram: 'https://www.instagram.com/gruene_lahndill/',
+            youtube: 'https://www.youtube.com/watch?v=Gq9vS-UXwvs'
+            tiktok: '',
+        }" as="url" key="icon">
+            <a href="{url}"
+               title="{f:translate(key: 'socialMedia.{icon}', extensionName:'siteDefault')}"
+               target="_blank"
+               class="socialmedia-link link"
+               rel="nofollow"><span class="icon-{icon ->f:format.case(mode: 'lower')} icon"></span></a>
+        </f:for>
+    </div>
+
+</html>

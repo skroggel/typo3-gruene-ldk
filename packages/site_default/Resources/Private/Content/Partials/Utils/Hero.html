@@ -1,13 +1,16 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 
-    <f:variable name="innerHtml">
-        <span class="hero-primary"><span><f:format.html parseFuncTSPath="lib.parseFunc_Headline">{hero}</f:format.html></span></span>
-        <f:if condition="{hero2}">
-            <br><span class="hero-secondary"><span><f:format.html parseFuncTSPath="lib.parseFunc_Headline">{hero2}</f:format.html></span></span>
-        </f:if>
-    </f:variable>
+    <f:if condition="{hero}">
+        <f:variable name="innerHtml">
+            <span class="hero-primary"><span><f:format.html parseFuncTSPath="lib.parseFunc_Headline">{hero}</f:format.html></span></span>
+            <f:if condition="{hero2}">
+                <br><span class="hero-secondary"><span><f:format.html parseFuncTSPath="lib.parseFunc_Headline">{hero2}</f:format.html></span></span>
+            </f:if>
+        </f:variable>
 
-    <f:variable name="visualLayout" value="1000" />
-    <f:variable name="class" value="hero {class}" />
-    <f:render partial="Utils/Header" arguments="{_all}" />
+        <f:variable name="visualLayout" value="1000" />
+        <f:variable name="class" value="hero {class}" />
+        <f:render partial="Utils/Header" arguments="{_all}" />
+
+    </f:if>
 </html>

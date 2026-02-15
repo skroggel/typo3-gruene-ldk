@@ -3,15 +3,17 @@
 >
 
     <f:comment><!-- Check if element is used as standalone or as embedded element --></f:comment>
+    <f:variable name="headerLayout" value="{data.header_layout}" />
     <f:if condition="{data.rawRecord.foreign_table_parent_uid}">
         <f:then>
             <div class="csp-block csp-not-last">
+                <f:variable name="headerLayout" value="4" />
                 <f:render section="Inner" arguments="{_all}" />
             </div>
         </f:then>
         <f:else>
-            <section class="csp-section csp-not-last text js-appear-on-scroll" id="c{data.uid}">
-                <div class="container-content">
+            <section class="csp-section csp-not-last csp-section-padding text fullwidth-1 bg-color-{data.madj2k_background_color} js-appear-on-scroll" id="c{data.uid}">
+                <div class="container-xxxl">
                     <div class="row">
                         <div class="col-12">
                             <f:render section="Inner" arguments="{_all}" />
@@ -27,7 +29,7 @@
 
         <f:render partial="Utils/Header"
                   arguments="{header: data.madj2k_header, wrapClass: 'text-headline',
-                              layout: data.header_layout, settings: settings}" />
+                              layout: headerLayout, settings: settings}" />
 
         <f:render partial="Utils/Bodytext"
                   arguments="{text: data.bodytext, wrapClass: 'text-text'}" />

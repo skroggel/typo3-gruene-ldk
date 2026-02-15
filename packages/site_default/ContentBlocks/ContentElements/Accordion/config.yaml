@@ -1,6 +1,12 @@
 name: madj2k/accordion
 prefixType: vendor # prefixing with vendor for reuse of database fields
 fields:
+  - identifier: madj2k/background-color
+    type: Basic
+  - identifier: madj2k/palette-header
+    type: Basic
+  - identifier: madj2k/bodytext-reduced
+    type: Basic
   - identifier: accordion_items
     type: Collection
     minitems: 1

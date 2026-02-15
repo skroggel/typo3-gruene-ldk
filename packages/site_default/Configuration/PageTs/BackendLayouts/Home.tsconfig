@@ -11,29 +11,29 @@ mod {
                         colCount = 1
                         rowCount = 1
                         rows {
-                           1 {
-                               columns {
-                                   1 {
-                                     name = LLL:EXT:site_default/Resources/Private/Language/locallang_be.xlf:backend_layout.column.stage
-                                     colPos = 100
-                                     allowed  {
-                                       CType = madj2k_stageslider
-                                     }
+                            1 {
+                                columns {
+                                    1 {
+                                        name = LLL:EXT:site_default/Resources/Private/Language/locallang_be.xlf:backend_layout.column.stage
+                                        colPos = 100
+                                        allowed  {
+                                            CType = madj2k_stageslider
+                                        }
                                    }
                                }
-                           }
-                           2 {
+                            }
+                            2 {
 
-                               columns {
-                                   1 {
-                                     name = LLL:EXT:site_default/Resources/Private/Language/locallang_be.xlf:backend_layout.column.content
-                                     colPos = 0
-                                     disallowed {
-                                       CType = madj2k_stage,madj2k_stageslider
-                                     }
-                                   }
-                               }
-                           }
+                                columns {
+                                    1 {
+                                        name = LLL:EXT:site_default/Resources/Private/Language/locallang_be.xlf:backend_layout.column.content
+                                        colPos = 0
+                                        disallowed {
+                                            CType = madj2k_stage,madj2k_stageslider
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }

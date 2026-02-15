@@ -36,6 +36,26 @@ plugin.tx_news {
 
 	        _custom {
 
+                topicSlider {
+                    tx_smsresponsiveimages < lib.madj2kMediaUtils.responsiveImages
+
+                    header {
+                        defaultHeaderType = 4
+                        // overrideHeaderType = 2
+                        // defaultLayoutType = 2
+                    }
+
+                    media {
+                        image {
+                            fallback = EXT:site_default/Resources/Public/Images/DefaultImages/Tiles.png
+                            dimensions {
+                                width = 450
+                            }
+                        }
+                    }
+                }
+
+
                 listBox {
                     tx_smsresponsiveimages < lib.madj2kMediaUtils.responsiveImages
                     tx_smsresponsiveimages {
@@ -99,14 +119,6 @@ plugin.tx_news {
                     }
                 }
 
-                teaserSlider {
-                    tx_smsresponsiveimages < lib.madj2kMediaUtils.responsiveImages
-                    header {
-                        defaultHeaderType = 4
-                        // overrideHeaderType = 2
-                        // defaultLayoutType = 2
-                    }
-                }
 	        }
 	    }
 

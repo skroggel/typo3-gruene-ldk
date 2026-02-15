@@ -1,0 +1,35 @@
+routeEnhancers:
+  ContactsList:
+    type: Extbase
+    # namespace: 'greenscontact_list'
+    routes:
+      - routePath: '/contact-list'
+        _controller: 'Contact::list'
+      - routePath: '/contact-list/{identifier}/{category}'
+        _controller: 'Contact::list'
+        _arguments:
+          identifier: 'search/identifier'
+          category:   'search/category'
+    defaultController: 'Contact::list'
+    requirements:
+      identifier: '\d+'
+    aspects:
+      category:
+        type: PersistedAliasMapper
+        tableName: sys_category
+        routeFieldName: slug
+
+  ContactsDetail:
+    type: Extbase
+    # namespace: 'greenscontact_detail'
+    routes:
+      - routePath: '/detail/{person}'
+        _controller: 'Contact::detail'
+        _arguments:
+          person: person
+    defaultController: 'Contact::detail'
+    aspects:
+      person:
+        type: PersistedAliasMapper
+        tableName: tx_contact_domain_model_person
+        routeFieldName: slug

@@ -76,36 +76,37 @@
 			</trans-unit>
 
 
-
 			<trans-unit id="label.readMore">
 				<source>read more</source>
-				<target>weiterlesen</target>
 			</trans-unit>
 			<trans-unit id="label.learnMore">
 				<source>learn more</source>
-				<target>mehr erfahren</target>
 			</trans-unit>
 			<trans-unit id="label.showMore">
 				<source>show more</source>
-				<target>mehr anzeigen</target>
 			</trans-unit>
 			<trans-unit id="label.showLess">
 				<source>show less</source>
-				<target>weniger anzeigen</target>
 			</trans-unit>
 			<trans-unit id="label.searchPlaceholder">
 				<source>Search Keyword</source>
-				<target>Suchbegriff</target>
 			</trans-unit>
 			<trans-unit id="label.searchStart">
 				<source>Start Search</source>
-				<target>Suche starten</target>
+			</trans-unit>
+			<trans-unit id="label.previousSlide">
+				<source>Previous Slide</source>
+			</trans-unit>
+			<trans-unit id="label.nextSlide">
+				<source>Next Slide</source>
+			</trans-unit>
+			<trans-unit id="label.nextTopic">
+				<source>Another topic</source>
 			</trans-unit>
 
 
 			<trans-unit id="news.dateFormat">
 				<source>d-m-Y</source>
-				<target>d.m.Y</target>
 			</trans-unit>
 		</body>
 	</file>

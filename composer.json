@@ -47,12 +47,15 @@
 		"ichhabrecht/content-defender": "~3.5.0",
 		"dreistromland/typo3-hcaptcha": "2.3.0",
 		"friendsoftypo3/content-blocks": "~1.3.15",
+		"greens/contact": "@dev",
 		"madj2k/site-default": "@dev",
 		"madj2k/t3-accelerator": "~13.4.0",
 		"madj2k/t3-copyright-guardian": "~13.4.0",
 		"madj2k/t3-dr-serp": "~13.4.0",
 		"madj2k/t3-forminator": "~13.4.0",
 		"madj2k/t3-media-utils": "~13.4.0",
+		"madj2k/t3-klarokratie": "~13.4.0",
+		"madj2k/t3-typoscript-rendering": "~13.4.0",
 		"typo3/cms-backend": "^13.4.0",
 		"typo3/cms-belog": "^13.4.0",
 		"typo3/cms-beuser": "^13.4.0",
@@ -85,6 +88,7 @@
 	},
 	"require-dev": {
 		"typo3/testing-framework": "*",
-		"ichhabrecht/filefill": "~4.3.0"
+		"ichhabrecht/filefill": "~4.3.0",
+		"ssch/typo3-rector": "*"
 	}
 }

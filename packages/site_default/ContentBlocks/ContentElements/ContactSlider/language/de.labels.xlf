@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages">
+		<body>
+
+			<!-- @see https://docs.typo3.org/p/friendsoftypo3/content-blocks/main/en-us/API/AutomaticLanguageKeys/Index.html#api_automatic_language_keys -->
+
+			<!-- element -->
+			<trans-unit id="title">
+				<source>Contact Slider/source>
+				<target>Kontakt-Slider</target>
+			</trans-unit>
+			<trans-unit id="description">
+				<source>This element is a team or people slider. It displays several individuals with portrait images as well as name and role, and allows users to navigate through additional profiles using arrows. It is well suited for presenting teams, contacts, or key persons in a clear and approachable way, for example on “About us” pages.</source>
+				<target>Dieses Element ist ein Team- oder Personen-Slider. Es zeigt mehrere Personen mit Porträtfoto sowie Name und Funktion und kann über Pfeile durch weitere Profile blättern. Es eignet sich, um Teams, Ansprechpartner*innen oder Verantwortliche kompakt und persönlich vorzustellen, zum Beispiel auf „Über uns“- oder Bereichsseiten.</target>
+			</trans-unit>
+
+			<!-- fields -->
+			<trans-unit id="plugin_contact_slider.label">
+				<source>Plugin</source>
+				<target>Plugin</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

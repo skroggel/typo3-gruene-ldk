@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xliff version="1.0" xmlns:t="x-gettext">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2025-10-07T00:00:00Z" product-name="greens_contact">
+		<header/>
+		<body>
+
+			<trans-unit id="tx_contact_domain_model_person.tab.meta" xml:space="preserve">
+				<source>More</source>
+				<target>Mehr</target>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_person.tab.media" xml:space="preserve">
+				<source>Media</source>
+				<target>Medien</target>
+			</trans-unit>
+
+
+			<trans-unit id="tx_contact_domain_model_person.palette.detail_link" xml:space="preserve">
+				<source>Link</source>
+				<target>Verlinkung</target>
+			</trans-unit>
+
+
+			<trans-unit id="tx_contact_domain_model_person" xml:space="preserve">
+				<source>Person</source>
+				<target>Person</target>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_person.title" xml:space="preserve">
+				<source>Title</source>
+				<target>Titel</target>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_person.salutation">
+				<source>Salutation</source>
+				<target>Anrede</target>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_person.salutation.mr">
+				<source>Mr</source>
+				<target>Herr</target>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_person.salutation.ms">
+				<source>Ms</source>
+				<target>Frau</target>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_person.salutation.other">
+				<source>Diverse</source>
+				<target>Divers</target>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_person.first_name" xml:space="preserve">
+				<source>First Name</source>
+				<target>Vorname</target>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_person.last_name" xml:space="preserve">
+				<source>Last Name</source>
+				<target>Nachname</target>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_person.position" xml:space="preserve">
+				<source>Function</source>
+				<target>Funktion</target>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_person.job" xml:space="preserve">
+				<source>Job</source>
+				<target>Beruf</target>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_person.email">
+				<source>Email</source>
+				<target>E-Mail</target>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_person.phone">
+				<source>Phone</source>
+				<target>Telefon</target>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_person.category" xml:space="preserve">
+				<source>Category</source>
+				<target>Kategorie</target>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_person.vita" xml:space="preserve">
+				<source>Vita</source>
+				<target>Vita</target>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_person.description">
+				<source>Description</source>
+				<target>Beschreibung</target>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_person.show_detail">
+				<source>Show detail page</source>
+				<target>Detail-Seite anzeigen</target>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_person.detail_link">
+				<source>Alternative detail link</source>
+				<target>Alternativer Detail Link</target>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_person.detail_link_label">
+				<source>Label for alternative detail link</source>
+				<target>Beschriftung für alternativen Detail-Link</target>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_person.image_small" xml:space="preserve">
+				<source>Small image</source>
+				<target>Kleines Bild</target>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_person.image_big" xml:space="preserve">
+				<source>Big image</source>
+				<target>Großes Bild</target>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_person.sorting">
+				<source>Manual Sorting</source>
+				<target>Manuelle Sortierung</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

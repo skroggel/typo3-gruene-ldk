@@ -11,7 +11,7 @@ return [
     \Madj2k\SiteDefault\Domain\Model\News::class => [
         'tableName' => 'tx_news_domain_model_news',
         'subclasses' => [
-            0 => \Multivisio\SiteDefault\Domain\Model\News::class
+            0 => \Madj2k\SiteDefault\Domain\Model\News::class
         ],
         'recordType' => 0,
     ],

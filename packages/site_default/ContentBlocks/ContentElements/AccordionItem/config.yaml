@@ -1,0 +1,24 @@
+name: madj2k/accordion-item
+prefixType: vendor # prefixing with vendor for reuse of database fields
+fields:
+  - identifier: madj2k/header-required
+    type: Basic
+  - identifier: accordion_item_items
+    type: Collection
+    minitems: 1
+    foreign_table: tt_content
+    allowedRecordTypes:
+      - madj2k_text
+      - madj2k_textimage
+    appearance:
+      levelLinksPosition: both
+    overrideChildTca:
+      columns:
+        CType:
+          config:
+            default: madj2k_text
+        header_layout:
+          displayCond: 'FIELD:foreign_table_parent_uid:REQ:false' # no header field if used in accordion!
+        madj2k_background_color:
+          displayCond: 'FIELD:foreign_table_parent_uid:REQ:false' # no background field if used in accordion!
+

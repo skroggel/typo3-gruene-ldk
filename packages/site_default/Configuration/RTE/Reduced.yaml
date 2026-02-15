@@ -12,11 +12,10 @@ editor:
 
     # Styles in dropdown
     stylesSet:
-      - { name: "H2 as H1", element: "h2", attributes: { 'class': 'h1' } }
       - { name: "Paragraph Big", element: "p", attributes: { 'class': 'p-big' } }
 
     # formats in dropdown
-    format_tags: "p;h1;h2;h3;h4;h5;pre"
+    format_tags: "p;pre"
 
     toolbar:
       items:
@@ -53,5 +52,6 @@ editor:
       - image
 
     removeButtons:
+      - Format
       - Underline
       - Strike

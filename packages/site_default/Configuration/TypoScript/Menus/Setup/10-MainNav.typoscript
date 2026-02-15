@@ -43,15 +43,6 @@ lib.siteDefault {
                         }
                     }
                 }
-
-                variables {
-                    rootPid = TEXT
-                    rootPid.value = 1
-
-                    currentPid = TEXT
-                    currentPid.data = TSFE:id
-
-                }
 			}
 		}
     }

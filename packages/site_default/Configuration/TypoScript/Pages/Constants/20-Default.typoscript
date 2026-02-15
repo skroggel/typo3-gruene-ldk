@@ -16,6 +16,9 @@ page {
     }
 
     rootPid = 1
+    siteName = GRÜNE Lahn-Dill
+    setName = default
+
     specialPages {
         oldBrowserPid = 4
         noScriptPid = 5
@@ -37,8 +40,10 @@ page {
         }
 
         organization {
-            name = Example AG
+            name = GRÜNE Lahn-Dill
         }
+
+        sameAs = www.gruene-lahn-dill.de
     }
 }
 

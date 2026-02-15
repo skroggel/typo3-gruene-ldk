@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages">
+		<body>
+
+			<!-- @see https://docs.typo3.org/p/friendsoftypo3/content-blocks/main/en-us/API/AutomaticLanguageKeys/Index.html#api_automatic_language_keys -->
+
+			<!-- element -->
+			<trans-unit id="title">
+				<source>Feature Card</source>
+				<target>Feature Card</target>
+			</trans-unit>
+			<trans-unit id="description">
+				<source>This element is a prominent topic card featuring an image, headline, short teaser text, and link. It highlights a key topic or “reason” and encourages users to explore further. The large image and concise message make it suitable for campaigns, topic hubs, or argument-driven pages.</source>
+				<target>Das Element ist eine aufmerksamkeitsstarke Themenkarte mit Bild, Überschrift, kurzem Teasertext und Link. Es stellt einen inhaltlichen Schwerpunkt oder einen „Grund“ visuell in den Mittelpunkt und lädt zum Weiterlesen ein. Durch das großformatige Bild und die prägnante Aussage eignet es sich besonders für Kampagnen, Themenwelten oder Argumentationsseiten.</target>
+			</trans-unit>
+
+
+			<!-- fields -->
+			<trans-unit id="plugin_news_slider.label">
+				<source>Stage</source>
+				<target>Stage</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

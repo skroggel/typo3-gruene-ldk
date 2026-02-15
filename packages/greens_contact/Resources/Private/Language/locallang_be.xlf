@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en"  datatype="plaintext" original="messages" >
+        <body>
+
+			<!-- Content-Element-Wizard -->
+			<trans-unit id="contentElementWizard.header">
+				<source>Greens: Contacts</source>
+			</trans-unit>
+
+
+			<!-- Plugins -->
+			<trans-unit id="plugin.tx_greenscontact_list.title">
+				<source>Contacts: List</source>
+			</trans-unit>
+			<trans-unit id="plugin.tx_greenscontact_detail.title">
+				<source>Contacts: Detail</source>
+			</trans-unit>
+
+
+			<!-- Flexform -->
+			<trans-unit id="flexform.limit">
+				<source>Items per Page</source>
+			</trans-unit>
+			<trans-unit id="flexform.category">
+				<source>Category</source>
+			</trans-unit>
+        </body>
+    </file>
+</xliff>

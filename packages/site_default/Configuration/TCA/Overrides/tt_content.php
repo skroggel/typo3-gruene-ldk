@@ -4,7 +4,7 @@ call_user_func(
 	function($extKey) {
 
         // labels for list view in BE madj2k_header,
-        $GLOBALS['TCA']['tt_content']['ctrl']['label_alt'] = 'madj2k_hero,header,subheader,' .
+        $GLOBALS['TCA']['tt_content']['ctrl']['label_alt'] = 'madj2k_hero,madj2k_header,header,subheader,' .
             'bodytext,list_type,CType';
 
 

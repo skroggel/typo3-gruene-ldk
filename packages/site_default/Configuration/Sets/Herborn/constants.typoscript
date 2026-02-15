@@ -1,0 +1,7 @@
+page.siteName = GRÜNE Herborn
+page.setName = herborn
+page.rootPid = 32
+
+navigation.top.pid = 33
+navigation.footer.pid = 34
+navigation.mobile.searchPid = 6

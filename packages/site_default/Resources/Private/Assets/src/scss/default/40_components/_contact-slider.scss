@@ -1,0 +1,50 @@
+/* ==================================================
+* Contact-Slider
+* ================================================== */
+.contact-slider {
+
+    .owl-stage,
+    .owl-item {
+        height: 100%;
+        background-color: map-get($color-map, 'sand');
+    }
+
+    &-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: map-get($color-map, 'sand');
+
+        .headline {
+            margin-bottom: 0;
+        }
+    }
+
+    &-image {
+        display: flex !important;
+        justify-content: center;
+
+        background-color: map-get($color-map, 'white');
+        width: 100%;
+        flex: 0 0 auto;
+        padding-left: rem-calc(map-get($spacers, 5));
+        padding-right: rem-calc(map-get($spacers, 5));
+
+
+        .img-inner {
+            width: auto;
+        }
+
+        img {
+            max-width: rem-calc(360);
+            aspect-ratio: 4/5;
+        }
+    }
+
+    &-labels {
+        padding: rem-calc(map-get($spacers, 4));
+        flex: 1;
+        text-align: center;
+        width: 100%;
+    }
+}

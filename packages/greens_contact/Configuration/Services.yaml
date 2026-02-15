@@ -1,0 +1,17 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  Greens\Contact\:
+    resource: '../Classes/*'
+
+  cache.greenscontact_filteroptions:
+    class: TYPO3\CMS\Core\Cache\Frontend\FrontendInterface
+    factory: [ '@TYPO3\CMS\Core\Cache\CacheManager', 'getCache' ]
+    arguments: [ 'greenscontact_filteroptions' ]
+
+  Greens\Contact\Controller\ContactController:
+    arguments:
+      $cache: '@cache.greenscontact_filteroptions'

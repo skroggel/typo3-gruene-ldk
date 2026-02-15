@@ -126,6 +126,18 @@
 				<source>Start Search</source>
 				<target>Suche starten</target>
 			</trans-unit>
+			<trans-unit id="label.previousSlide">
+				<source>Previous Slide</source>
+				<target>Vorheriger Slide</target>
+			</trans-unit>
+			<trans-unit id="label.nextSlide">
+				<source>Next Slide</source>
+				<target>Nächster Slide</target>
+			</trans-unit>
+			<trans-unit id="label.nextTopic">
+				<source>Another topic</source>
+				<target>Noch ein Thema</target>
+			</trans-unit>
 
 
 			<trans-unit id="news.dateFormat">

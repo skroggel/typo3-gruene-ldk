@@ -11,5 +11,5 @@ fields:
     type: Tab
   - identifier: madj2k/image-orientation
     type: Basic
-  - identifier: madj2k/assets-single
+  - identifier: madj2k/assets-single-required
     type: Basic

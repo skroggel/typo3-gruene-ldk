@@ -9,26 +9,49 @@
     top:0;
     left:0;
     z-index: 99;
-    background-color: rgba(255, 255, 255, 1);
+    background:
+        linear-gradient(
+                to right,
+                transparent 50%,
+                $color-white 50%
+        );
+
     transition: top 0.5s ease-in-out;
 
     width: 100%;
-    height: rem-calc($siteheader-height-mobile);
     max-width: 100vw;
-    box-shadow: rem-calc(0) rem-calc(0) rem-calc(15) rem-calc(0) #63636340;
+
+    height: rem-calc($siteheader-height-mobile);
+    margin-bottom: rem-calc($siteheader-height-mobile * -1);
+    //box-shadow: rem-calc(0) rem-calc(0) rem-calc(15) rem-calc(0) #63636340;
 
     @include media-breakpoint-up($siteheader-breakpoint-tablet) {
         height: rem-calc($siteheader-height-tablet);
+        margin-bottom: rem-calc($siteheader-height-tablet * -1);
     }
 
     @include media-breakpoint-up($siteheader-breakpoint-desktop) {
         height: rem-calc($siteheader-height-desktop);
+        margin-bottom: rem-calc($siteheader-height-desktop * -1);
+    }
+
+    .container-xxxl {
+    background:
+        linear-gradient(
+            to right,
+            transparent 0,
+            transparent 50px,
+            $color-white 50px,
+            $color-white 100%
+        );
     }
 
     &-brand {
-        position: absolute;
-        left: 0;
-        top: 0;
+
+        @media (max-width: 1520px) {
+            position: absolute;
+            left: 0;
+        }
 
         display: flex;
         flex-direction: row;
@@ -43,6 +66,7 @@
 
         &-logo {
             height: 100%;
+
         }
 
         &-link {
@@ -62,7 +86,6 @@
 
             @include media-breakpoint-up($siteheader-breakpoint-tablet) {
                 padding-left: rem-calc(map-get($spacers, 4));
-
             }
 
             @include media-breakpoint-up($siteheader-breakpoint-desktop) {
@@ -135,7 +158,7 @@
 
 
 
-/** Repositioning if scrolled down */
+/** Repositioning if scrolled down
 .page-main {
     position: relative;
     z-index: 60;
@@ -146,6 +169,7 @@
         top: rem-calc($siteheader-height-desktop);
     }
 }
+*/
 
 .scroll-down {
     .siteheader {
@@ -154,9 +178,8 @@
             top: rem-calc($siteheader-height-desktop * -1);
         }
     }
-     .page-main {
+     /*.page-main {
         top: 0;
-    }
+    }*/
 }
-
 

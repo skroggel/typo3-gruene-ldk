@@ -1,0 +1,63 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true"
+>
+    <f:section name="Default">
+
+        <f:if condition="{filterOptions}">
+            <nav class="filter-option" aria-label="{ariaLabel}">
+                <ul class="filter-option-list" >
+                    <li class="filter-option-item">
+                        <f:form.button
+                            type="submit"
+                            property="{filterName}"
+                            value=""
+                            class="filter-option-button{f:if(condition: '!{search.{filterName}}', then: ' active')}"
+                            additionalAttributes="{
+                                    'aria-current': '{f:if(condition:\'!{search.{filterName}}\', then: \'true\', else: \'false\')}'
+                                }"
+                        >{f:translate(key: 'label.all')}</f:form.button>
+                    </li>
+                    <f:for each="{filterOptions}" as="filterOption">
+                        <li class="filter-option-item">
+                            <f:form.button
+                                type="submit"
+                                property="{filterName}"
+                                value="{filterOption.uid}"
+                                class="filter-option-button{f:if(condition: '{filterOption.uid} == {search.{filterName}.uid}', then: ' active')}"
+                                additionalAttributes="{
+                                    'aria-current': '{f:if(condition:\'{filterOption.uid} == {search.{filterName}.uid}\', then: \'true\', else: \'false\')}'
+                                }"
+                            >{filterOption.title}</f:form.button>
+                        </li>
+                    </f:for>
+                </ul>
+            </nav>
+        </f:if>
+    </f:section>
+
+    <f:comment><!-- ====================================== --></f:comment>
+
+    <f:section name="Mobile">
+
+        <f:if condition="{filterOptions}">
+            <div class="filter-option">
+                <div class="form-element form-element-select filter-option-select">
+                    <f:form.select
+                        prependOptionLabel="{f:translate(key: 'label.all')}"
+                        prependOptionValue=""
+                        property="{filterName}"
+                        options="{filterOptions}"
+                        optionLabelField="title"
+                        optionValueField="uid"
+                        class="form-select form-control js-select"
+                        onchange="ajaxSubmitForm(form);"
+                        additionalAttributes="{
+                            'lang': '{f:cObject(typoscriptObjectPath:\'lib.siteDefault.utilities.language\')}'
+                            'aria-label': '{ariaLabel}'
+                        }"
+                    />
+                </div>
+            </div>
+        </f:if>
+    </f:section>
+</html>

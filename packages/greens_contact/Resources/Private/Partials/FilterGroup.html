@@ -1,0 +1,40 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true"
+>
+    <f:if condition="{categories}">
+        <div class="filter-group">
+
+            <div class="container-fluid js-filter-desktop d-none d-md-block g-0">
+                <div class="row">
+                    <div class="col-auto">
+                        <div class="filter-group-label">
+                            {f:translate(key: 'label.filter')}
+                        </div>
+                    </div>
+
+                    <f:comment><!-- ps-2 would help on maximum viewport --></f:comment>
+                    <div class="offset-lg-1 col">
+
+                        <f:form.hidden property="identifier" value="{data.uid}" />
+                        <f:render partial="Filters/List"
+                                  section="Default"
+                                  arguments="{filterName: 'category', filterOptions: categories,
+                                              ariaLabel: '{f:translate(key: \'label.ariaFilterCategory\')}',
+                                              search: search, data: data, settings: settings}" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-md-none js-filter-mobile">
+                <f:comment><!-- mobile version --></f:comment>
+                <f:render partial="Filters/List"
+                          section="Mobile"
+                          arguments="{filterName: 'category', filterOptions: categories,
+                                      ariaLabel: '{f:translate(key: \'label.ariaFilterCategory\')}',
+                                      search: search, data: data, settings: settings}" />
+
+            </div>
+        </div>
+    </f:if>
+
+</html>

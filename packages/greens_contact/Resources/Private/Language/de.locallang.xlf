@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.0" xmlns:t3="http://typo3.org/schemas/xliff">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2025-10-04T00:00:00Z" product-name="Greens_Contacts">
+		<header/>
+		<body>
+
+			<trans-unit id="label.filter">
+				<source>Filter:</source>
+				<target>Filter:</target>
+			</trans-unit>
+			<trans-unit id="label.all">
+				<source>All</source>
+				<target>Alle</target>
+			</trans-unit>
+			<trans-unit id="label.ariaFilterCategory">
+				<source>Filter by category</source>
+				<target>Nach Kategorie filtern</target>
+			</trans-unit>
+			<trans-unit id="label.close">
+				<source>Close</source>
+				<target>Schließen</target>
+			</trans-unit>
+			<trans-unit id="label.qualifications">
+				<source>Qualifications</source>
+				<target>Personalien</target>
+			</trans-unit>
+			<trans-unit id="label.vita">
+				<source>Professional background/expertise</source>
+				<target>Beruflicher Hintergrund/Fachkompetenz</target>
+			</trans-unit>
+			<trans-unit id="label.description">
+				<source>Description</source>
+				<target>Beschreibung</target>
+			</trans-unit>
+			<trans-unit id="label.loadMore">
+				<source>Load more</source>
+				<target>Mehr laden</target>
+			</trans-unit>
+			<trans-unit id="label.details">
+				<source>Read more</source>
+				<target>Mehr erfahren</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

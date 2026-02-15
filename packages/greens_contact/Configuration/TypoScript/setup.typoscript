@@ -1,0 +1,94 @@
+plugin.tx_greenscontact {
+
+	view {
+		layoutRootPaths {
+			0 = EXT:greens_contact/Resources/Private/Layouts/
+			10 = {$plugin.tx_greenscontact.view.layoutRootPath}
+            20 = {$plugin.sitedefault.view.layoutRootPath}
+
+		}
+		templateRootPaths {
+			0 = EXT:greens_contact/Resources/Private/Templates/
+            10 = {$plugin.tx_greenscontact.view.templateRootPath}
+            20 = {$plugin.tx_sitedefault.view.templateRootPath}
+
+        }
+		partialRootPaths {
+			0 = EXT:greens_contact/Resources/Private/Partials/
+			10 = {$plugin.tx_greenscontact.view.partialRootPath}
+            20 = {$plugin.tx_sitedefault.view.partialRootPath}
+            1712245685 = {$plugin.tx_mediautils.view.partialRootPath}
+            1713688873 = EXT:site_default/Resources/Private/Content/Partials
+        }
+	}
+
+	persistence {
+		# storagePid = {$plugin.tx_greenscontact.persistence.storagePid}
+
+		# In order to make the manual selection in BE work, we need to completely remove this setting here
+		storagePid >
+	}
+
+	settings {
+        tx_smsresponsiveimages < lib.contentBlock.settings.tx_smsresponsiveimages
+	}
+}
+
+// ====================================================
+// Configure Plugins
+//=====================================================
+plugin.tx_greenscontact_slider < plugin.tx_greenscontact
+plugin.tx_greenscontact_slider {
+
+    view {
+        pluginNamespace = greenscontact_slider
+    }
+
+    settings {
+
+        header {
+            defaultHeaderType = 4
+            // overrideHeaderType = 2
+            // defaultLayoutType = 2
+        }
+
+        media {
+            image {
+                dimensions {
+                    maxWidth = 680
+                }
+            }
+        }
+
+        tx_smsresponsiveimages {
+            loading = eager
+        }
+    }
+}
+
+
+plugin.tx_greenscontact_detail < plugin.tx_greenscontact
+plugin.tx_greenscontact_detail {
+
+    view {
+        pluginNamespace = greenscontact_detail
+    }
+
+    settings {
+
+        tx_smsresponsiveimages < lib.contentBlock.settings.tx_smsresponsiveimages
+
+        header {
+            defaultHeaderType = 2
+            // overrideHeaderType = 2
+            // defaultLayoutType = 2
+        }
+        media {
+            image {
+                dimensions {
+                    maxWidth = 880
+                }
+            }
+        }
+    }
+}

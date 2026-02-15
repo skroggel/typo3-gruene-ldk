@@ -1,0 +1,4 @@
+name: madj2k/site-herborn
+label: 'Site Package (Herborn)'
+dependencies:
+  - madj2k/site-default

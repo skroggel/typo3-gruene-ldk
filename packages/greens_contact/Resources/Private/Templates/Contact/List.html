@@ -1,0 +1,32 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:typoscriptRendering="http://typo3.org/ns/Helhum/TyposcriptRendering/ViewHelpers"
+      data-namespace-typo3-fluid="true"
+>
+
+    <f:if condition="{paginator.paginatedItems} || {categories}">
+
+        <div class="contact-list" id="c{data.uid}">
+
+            <f:form
+                id="form-{data.uid}"
+                action="list"
+                method="POST"
+                class="form form-inline"
+                name="search"
+                object="{search}"
+                section="c{data.uid}"
+                data="{action: '{typoscriptRendering:uri.action(action: \'list\', controller: \'Contact\')}'}"
+            >
+                <f:form.hidden property="identifier" value="{data.uid}" />
+
+                <f:for each="{persons}" as="person">
+                    <f:render partial="Person"
+                              section="List"
+                              arguments="{person: person, search: search, data: data, settings: settings}" />
+                </f:for>
+
+            </f:form>
+        </div>
+    </f:if>
+
+</html>

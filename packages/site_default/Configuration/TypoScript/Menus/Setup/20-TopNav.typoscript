@@ -19,7 +19,7 @@ lib.siteDefault {
                     10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
                     10 {
                         special = directory
-                        special.value = 24
+                        special.value = {$navigation.top.pid}
 
                         levels = 1
                         entryLevel = 0

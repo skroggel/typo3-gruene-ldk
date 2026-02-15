@@ -1,0 +1,22 @@
+{
+    "name": "greens/contact",
+    "type": "typo3-cms-extension",
+    "description": "",
+    "homepage": "https://www.steffenkroggel.de",
+    "license": ["GPL-2.0-or-later"],
+    "keywords": ["TYPO3 CMS"],
+    "require": {
+        "typo3/cms-core": "~13.4"
+	},
+	"minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Greens\\Contact\\": "Classes/"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "greens_contact"
+        }
+    }
+}
