@@ -3,8 +3,10 @@ defined('TYPO3') or die('Access denied.');
 call_user_func(
 	function($extKey) {
 
-        // labels for list view in BE madj2k_header,
-        $GLOBALS['TCA']['tt_content']['ctrl']['label_alt'] = 'madj2k_hero,madj2k_header,header,subheader,' .
+
+        // labels for list view in BE madj2k_header
+        $GLOBALS['TCA']['tt_content']['ctrl']['label_alt_force'] = true;
+        $GLOBALS['TCA']['tt_content']['ctrl']['label_alt'] = 'madj2k_hero,madj2k_header,madj2k_link_label, subheader,' .
             'bodytext,list_type,CType';
 
 

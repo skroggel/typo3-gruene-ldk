@@ -1,9 +1,11 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 
+    <f:variable name="isLinked" value="false" />
 	<f:if condition="{link}">
 		<f:then>
 			<f:if condition="{linkToNewsDetail}">
 				<f:then>
+                    <f:variable name="isLinked" value="true" />
 					<div class="tile {wrapClass}">
 						<f:link.action pageUid="{linkToNewsDetail}" action="detail" controller="News"
 									   extensionName="News" pluginName="Pi1"
@@ -13,7 +15,8 @@
 					</div>
 				</f:then>
 				<f:else>
-					<div class="tile {wrapClass}">
+                    <f:variable name="isLinked" value="true" />
+                    <div class="tile {wrapClass}">
 						<f:link.typolink parameter="{link}" class="link-wrap">
 							<f:render section="Inner" arguments="{_all}" />
 						</f:link.typolink>
@@ -62,11 +65,20 @@
             </div>
 
             <f:if condition="{showCta}">
-                <div class="tile-footer">
-                    <div class="tile-cta">
-                        <f:render partial="Utils/Cta" arguments="{label: ctaLabel, type:'default'}" />
+                <f:then>
+                    <div class="tile-footer">
+                        <div class="tile-cta">
+                            <f:render partial="Utils/Cta" arguments="{label: ctaLabel, type:'default'}" />
+                        </div>
                     </div>
-                </div>
+                </f:then>
+                <f:else>
+                    <f:if condition="{isLinked}">
+                        <div class="tile-footer">
+                           <span class="link copy-small"><span class="icon icon-arrow-right"></span><span><f:translate key="label.learnMore" extensionName="siteDefault" /></span></span>
+                        </div>
+                    </f:if>
+                </f:else>
             </f:if>
 
         </div>
