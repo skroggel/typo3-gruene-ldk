@@ -1,0 +1,15 @@
+/*
+ * Important: image calculation with responsive images only takes into account the given width
+ * This is because the images adapt according to the viewport-width and thus a fixed height would
+ * result in strange results. If you need a fixed height, you have to ensure this by using a cropMask or CSS
+ */
+tt_content.madj2k_banner {
+
+    settings {
+    	header {
+    		defaultHeaderType = 2
+			// overrideHeaderType = 2
+			// defaultLayoutType = 2
+    	}
+    }
+}

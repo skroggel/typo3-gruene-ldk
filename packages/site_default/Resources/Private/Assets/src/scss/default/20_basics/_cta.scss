@@ -19,6 +19,7 @@
 
     &-default,
     &-inverted,
+    &-white,
     &-icon-only {
         @include button;
 
@@ -48,6 +49,16 @@
         &:hover:not(.disabled)  {
             background-color: map-get($color-map, 'pine');
             color: map-get($color-map, 'white');
+        }
+    }
+
+    &-white {
+        background-color: map-get($color-map, 'white');
+        color: map-get($color-map, 'pine-900');
+
+        &:hover:not(.disabled)  {
+            background-color: map-get($color-map, 'sun');
+            color: map-get($color-map, 'pine-900');
         }
     }
 

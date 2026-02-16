@@ -1,0 +1,28 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true"
+>
+    <section class="banner fullwidth-1 pt-5 pb-5 bg-color-{data.madj2k_background_color_extended} js-appear-on-scroll" id="c{data.uid}">
+        <div class="container-xxxl">
+            <div class="row">
+                <div class="col-12">
+
+                    <div class="banner-inner">
+                        <f:render partial="Utils/Header"
+                                  arguments="{header: data.madj2k_header, wrapClass: 'banner-headline',
+                                              layout: headerLayout, settings: settings}" />
+
+                        <f:render partial="Utils/Cta"
+                                  arguments="{
+                                    label: data.madj2k_cta_label,
+                                    link: data.madj2k_cta_link,
+                                    type: 'white',
+                                    class: 'banner-cta',
+                                    settings: settings
+                              }" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</html>
