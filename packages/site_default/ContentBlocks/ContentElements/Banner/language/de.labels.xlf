@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages">
+		<body>
+
+			<!-- @see https://docs.typo3.org/p/friendsoftypo3/content-blocks/main/en-us/API/AutomaticLanguageKeys/Index.html#api_automatic_language_keys -->
+
+			<!-- element -->
+			<trans-unit id="title">
+				<source>Banner</source>
+				<target>Banner</target>
+			</trans-unit>
+			<trans-unit id="description">
+				<source>This element is a high-impact banner section featuring a bold headline and a centrally placed call-to-action button. It appears at the top of the page and is used to highlight a key topic, campaign, or action. The headline communicates a clear core message, while the button leads directly to the next step (e.g. video, landing page, form). It is ideal for strong, campaign-driven page introductions.</source>
+				<target>Das Element ist ein aufmerksamkeitsstarker Banner-Bereich mit prägnanter Headline und einem zentral platzierten Call-to-Action-Button. Es steht am Seitenanfang und dient dazu, ein zentrales Thema, eine Kampagne oder eine Aktion prominent zu inszenieren. Die Headline formuliert eine klare Botschaft, der Button führt direkt zu einer weiterführenden Handlung (z. B. Video, Landingpage, Formular). Das Modul eignet sich besonders für Einstiege mit hoher Signalwirkung.</target>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,16 @@
+identifier: madj2k/background-color-extended
+prefixType: vendor # prefixing with vendor for reuse of database fields
+fields:
+  - identifier: background_color_extended
+    type: Select
+    renderType: selectSingle
+    default: 'magenta'
+    label: LLL:EXT:site_default/ContentBlocks/Basics/ContentElements/language/labels.xlf:background_color.label
+    items:
+      - value: magenta
+        label: magenta
+      - value: pine
+        label: pine
+      - value: dark-grey
+        label: dark-grey
+

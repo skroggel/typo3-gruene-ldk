@@ -5,7 +5,7 @@
     </f:if>
 
     <f:if condition="!{label}">
-        <f:variable name="label" value="{f:translate(id:'label.readMore', extensionName:'siteDefault')}" />
+        <f:variable name="label" value="{f:translate(id:'label.learnMore', extensionName:'siteDefault')}" />
     </f:if>
 
     <div class="cta-wrap {wrapClass}">
@@ -30,6 +30,11 @@
                     <span class="cta-inner"><f:if condition="{iconPosition} == 'before'"><f:render section="Icon" arguments="{_all}" /></f:if><span>{label}</span><f:if condition="{iconPosition} == 'after'"><f:render section="Icon" arguments="{_all}" /></f:if></span>
                 </f:link.typolink>
             </f:case>
+            <f:case value="white">
+                <f:link.typolink parameter="{link}" class="cta cta-{type} {class}" title="{label}">
+                    <span class="cta-inner"><f:if condition="{iconPosition} == 'before'"><f:render section="Icon" arguments="{_all}" /></f:if><span>{label}</span><f:if condition="{iconPosition} == 'after'"><f:render section="Icon" arguments="{_all}" /></f:if></span>
+                </f:link.typolink>
+            </f:case>
             <f:defaultCase>
                 <f:link.typolink parameter="{link}" class="cta cta-default {class}" title="{label}">
                     <span class="cta-inner"><f:if condition="{iconPosition} == 'before'"><f:render section="Icon" arguments="{_all}" /></f:if><span>{label}</span><f:if condition="{iconPosition} == 'after'"><f:render section="Icon" arguments="{_all}" /></f:if></span>
@@ -45,6 +50,11 @@
         <f:comment><!-- We use a switch here because this way we can also handle icons --></f:comment>
         <f:switch expression="{type}">
             <f:case value="inverted">
+                <button tabindex="-1" class="cta cta-{type} {class}" title="{label}">
+                    <span class="cta-inner"><f:if condition="{iconPosition} == 'before'"><f:render section="Icon" arguments="{_all}" /></f:if><span>{label}</span><f:if condition="{iconPosition} == 'after'"><f:render section="Icon" arguments="{_all}" /></f:if></span>
+                </button>
+            </f:case>
+            <f:case value="white">
                 <button tabindex="-1" class="cta cta-{type} {class}" title="{label}">
                     <span class="cta-inner"><f:if condition="{iconPosition} == 'before'"><f:render section="Icon" arguments="{_all}" /></f:if><span>{label}</span><f:if condition="{iconPosition} == 'after'"><f:render section="Icon" arguments="{_all}" /></f:if></span>
                 </button>
