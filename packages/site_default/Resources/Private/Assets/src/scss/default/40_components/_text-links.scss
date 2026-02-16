@@ -29,14 +29,14 @@
 
             padding-top: rem-calc(map-get($spacers, 10));
             background-color: transparent;
-            @include edge-cut-mask();
+            @include edge-cut-background();
 
             &::after {
                 content: "";
                 position: absolute;
                 inset: 0; // top: 0; right: 0; bottom: 0; left: 0
                 width: 100vw;
-                left: 100%;
+                left: 99%;
                 background-color: var(--background-color);
                 z-index: -1;
             }
