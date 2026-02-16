@@ -3,8 +3,10 @@
 * ================================================== */
 /** Fixes */
 [class^="icon-"], [class*=" icon-"] {
-    display: inline-block; // do not inherit text-decoration
-    pointer-events: none; // prevent JS-events
+    &:before {
+        display: inline-block; // do not inherit text-decoration
+        pointer-events: none; // prevent JS-events
+    }
 }
 
 /**

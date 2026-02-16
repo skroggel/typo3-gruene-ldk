@@ -109,12 +109,10 @@ h5,
 
 .copy {
     @include copy;
-    color: $color-text;
 }
 
 .copy-small {
     @include copy-small;
-    color: $color-text;
 }
 
 /*

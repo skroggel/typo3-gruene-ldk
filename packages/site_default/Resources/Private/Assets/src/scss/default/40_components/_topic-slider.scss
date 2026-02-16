@@ -27,4 +27,14 @@
         margin-left: auto;
         margin-right: auto;
     }
+
+
+    .tile:hover.swiper-slide-prev,
+    .tile:hover.swiper-slide-next {
+        .tile-image {
+            img {
+                transform: scale(1.0);
+            }
+        }
+    }
 }

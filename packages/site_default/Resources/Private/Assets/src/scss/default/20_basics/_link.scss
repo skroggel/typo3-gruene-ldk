@@ -28,6 +28,10 @@ a {
             color: $color-white;
         }
     }
+
+    .link {
+        text-decoration: underline;
+    }
 }
 
 /*
@@ -56,38 +60,16 @@ a {
 .link {
     @include link;
     color: $color-secondary;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .link,
 .link-headline {
-    position: relative;
     display: inline-block;
-    z-index: 50;
-    transition: all 0.5s;
 
-    &:before {
-        position: absolute;
-        z-index: -1;
-        content: '';
-        background: $color-primary;
-        height: 1em;
-        left: 0;
-        bottom: 0;
-        width: 0;
-        //opacity: 0.7;
-        transition: all 0.5s;
-    }
-
-    &:hover:before {
-        width: 100%;
-    }
-
-    /*
     &:hover {
-        background: rgba(253, 238, 25, 0.4);
-        box-shadow: 0 0 rem-calc(10) rem-calc(5) rgba(253, 238, 25, 0.4)
-    }*/
+        text-decoration: underline;
+    }
 
     &-fax,
     &-phone {
@@ -112,24 +94,6 @@ a {
 		}
 
 		&-phone {
-		}
-
-		&-arrow-right {
-			display: inline-block; // remove underline on hover for pseudo-element
-			&:after {
-				display: inline-block; // remove underline on hover for pseudo-element
-				content: $icon-arrow-big-right;
-				font-family: "icons" !important;
-				font-size: 0.9em;
-				speak: never;
-				font-style: normal;
-				font-weight: normal;
-				font-variant: normal;
-				text-transform: none;
-				-webkit-font-smoothing: antialiased;
-				padding-left: 10px;
-				text-decoration: none;
-			}
 		}
 	}*/
 }

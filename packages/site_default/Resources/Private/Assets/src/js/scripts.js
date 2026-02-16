@@ -133,7 +133,12 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const swiper3 = new Swiper('.swiper.js-news-topic-slider', {
       loop: slider3.classList.contains('js-loop'),
-      autoplay: slider3.classList.contains('js-autoplay'),
+      autoplay: slider3.classList.contains('js-autoplay')
+        ? {
+          delay: 3000,
+          pauseOnMouseEnter: true
+        }
+        : false,
       speed: 300,
 
       effect: 'coverflow',
