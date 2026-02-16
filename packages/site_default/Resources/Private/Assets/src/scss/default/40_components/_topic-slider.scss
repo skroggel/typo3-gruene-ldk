@@ -6,8 +6,7 @@
 
     .swiper-slide {
         opacity: 0;
-        padding-left: rem-calc(map-get($spacers, 3));
-        padding-right: rem-calc(map-get($spacers, 3));
+        padding: rem-calc(map-get($spacers, 3));
     }
     .swiper-slide-prev,
     .swiper-slide-next {
@@ -27,7 +26,6 @@
         margin-left: auto;
         margin-right: auto;
     }
-
 
     .tile:hover.swiper-slide-prev,
     .tile:hover.swiper-slide-next {
