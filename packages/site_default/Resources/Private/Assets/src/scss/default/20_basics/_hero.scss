@@ -23,3 +23,22 @@
         margin-left: rem-calc(map-get($spacers, 4))
     }
 }
+
+
+
+
+@supports (font: -apple-system-body) {
+    .hero {
+
+        &-primary,
+        &-secondary {
+            padding-top: rem-calc(6);
+            @include media-breakpoint-up(sm) {
+                padding-top: rem-calc(6);
+            }
+            @include media-breakpoint-up(lg) {
+                padding-top: rem-calc(10);
+            }
+        }
+    }
+}

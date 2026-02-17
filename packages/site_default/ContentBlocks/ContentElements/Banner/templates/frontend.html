@@ -11,6 +11,10 @@
                                   arguments="{header: data.madj2k_header, wrapClass: 'banner-headline',
                                               layout: headerLayout, settings: settings}" />
 
+                        <f:render partial="Utils/Subheader"
+                                  arguments="{subheader: data.madj2k_subheader, wrapClass: 'banner-subheader',
+                                              settings: settings}" />
+
                         <f:render partial="Utils/Cta"
                                   arguments="{
                                     label: data.madj2k_cta_label,
