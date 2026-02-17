@@ -3,7 +3,7 @@ prefixType: vendor # prefixing with vendor for reuse of database fields
 fields:
   - identifier: madj2k/background-color-extended
     type: Basic
-  - identifier: madj2k/palette-header
+  - identifier: madj2k/palette-header-subheader-layout
     type: Basic
   - identifier: madj2k/palette-cta
     type: Basic

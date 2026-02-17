@@ -15,7 +15,18 @@
         flex-direction: column;
     }
 
+    &-subheader {
+        margin-bottom: rem-calc(map-get($spacers, 3));
+    }
+
+    .subheader,
     .headline {
         color: $color-white;
+    }
+
+    &:has(.subheader) {
+        .headline {
+            margin-bottom: 0;
+        }
     }
 }

@@ -128,6 +128,7 @@ window.addEventListener('DOMContentLoaded', () => {
       },
     });
   }
+
   const slider3 = document.querySelector('.swiper.js-news-topic-slider');
   if (slider3) {
 
@@ -180,10 +181,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
       on: {
         navigationNext: function () {
-          swiper2.autoplay.stop();
+          swiper3.autoplay.stop();
         },
         navigationPrev: function () {
-          swiper2.autoplay.stop();
+          swiper3.autoplay.stop();
         },
       },
 
