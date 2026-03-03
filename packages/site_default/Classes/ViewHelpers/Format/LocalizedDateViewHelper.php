@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Madj2k\SiteDefault\ViewHelpers;
+namespace Madj2k\SiteDefault\ViewHelpers\Format;
 
 /*
  * This file is part of the TYPO3 CMS project.
@@ -16,7 +16,6 @@ namespace Madj2k\SiteDefault\ViewHelpers;
  * The TYPO3 project - inspiring people to share!
  */
 
-use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 /**

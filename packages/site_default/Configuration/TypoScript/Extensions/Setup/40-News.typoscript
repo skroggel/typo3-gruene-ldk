@@ -59,19 +59,19 @@ plugin.tx_news {
                 }
 
 
-                listBox {
+                groupedList {
                     tx_smsresponsiveimages < lib.madj2kMediaUtils.responsiveImages
                     tx_smsresponsiveimages {
 
                         breakpoints {
                             0 {
-                                cropVariant = preview-small
+                                cropVariant = list
                             }
                             1 {
-                                cropVariant = preview-small
+                                cropVariant = list
                             }
                             2 {
-                                cropVariant = preview-small
+                                cropVariant = list
                             }
                         }
                     }
@@ -89,39 +89,6 @@ plugin.tx_news {
                         }
                     }
                 }
-
-                teaserBox {
-                    tx_smsresponsiveimages < lib.madj2kMediaUtils.responsiveImages
-                    tx_smsresponsiveimages {
-
-                        breakpoints {
-                            0 {
-                                cropVariant = preview-big
-                            }
-                            1 {
-                                cropVariant = preview-big
-                            }
-                            2 {
-                                cropVariant = preview-big
-                            }
-                        }
-                    }
-
-                    header {
-                        defaultHeaderType = 3
-                        // overrideHeaderType = 2
-                        // defaultLayoutType = 2
-                    }
-                    media {
-                        image {
-                            fallback = EXT:site_default/Resources/Public/Images/DefaultImages/Tiles.png
-                            dimensions {
-                                width = 436
-                            }
-                        }
-                    }
-                }
-
 	        }
 	    }
 

@@ -6,7 +6,7 @@
 
 			<!-- element -->
 			<trans-unit id="title">
-				<source>Contact Slider</source>
+				<source>Contact Slider (Custom)</source>
 			</trans-unit>
 			<trans-unit id="description">
 				<source>This element is a team or people slider. It displays several individuals with portrait images as well as name and role, and allows users to navigate through additional profiles using arrows. It is well suited for presenting teams, contacts, or key persons in a clear and approachable way, for example on “About us” pages.</source>

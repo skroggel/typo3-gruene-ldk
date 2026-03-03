@@ -7,8 +7,8 @@
 
 			<!-- element -->
 			<trans-unit id="title">
-				<source>Text-Image</source>
-				<target>Text-Image</target>
+				<source>Text-Image (Custom)</source>
+				<target>Text-Image (Custom)</target>
 			</trans-unit>
 			<trans-unit id="description">
 				<source>This module is a simple text-image block. First, an editorial text area with a headline and body text is displayed, followed by an image below. The design is deliberately kept simple and is suitable for content where the text is in the foreground and the image serves as a supporting element.</source>

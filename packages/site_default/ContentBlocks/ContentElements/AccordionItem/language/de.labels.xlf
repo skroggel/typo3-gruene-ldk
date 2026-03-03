@@ -7,8 +7,8 @@
 
 			<!-- element -->
 			<trans-unit id="title">
-				<source>Accordion Item</source>
-				<target>Akkordeon Item</target>
+				<source>Accordion Item (Custom)</source>
+				<target>Akkordeon Item (Custom)</target>
 			</trans-unit>
 			<trans-unit id="description">
 				<source>Item for Accordion</source>

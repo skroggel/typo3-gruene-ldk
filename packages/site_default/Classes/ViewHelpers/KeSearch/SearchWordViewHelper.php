@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Madj2k\SiteDefault\ViewHelpers;
+namespace Madj2k\SiteDefault\ViewHelpers\KeSearch;
 
 /*
  * This file is part of the TYPO3 CMS project.
@@ -19,14 +19,14 @@ namespace Madj2k\SiteDefault\ViewHelpers;
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 
 /**
- * Class SearchPageViewHelper
+ * Class SearchWordViewHelper
  *
  * @author Steffen Kroggel <developer@steffenkroggel.de>
  * @copyright Steffen Kroggel <developer@steffenkroggel.de>
  * @package Madj2k_SiteDefault
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  */
-class SearchPageViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper
+class SearchWordViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper
 {
 
     /**
@@ -42,18 +42,18 @@ class SearchPageViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractVie
      * @param array $arguments
      * @param \Closure $renderChildrenClosure
      * @param \TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface $renderingContext
-     * @return int
+     * @return mixed
      */
     public static function renderStatic(
         array $arguments,
         \Closure $renderChildrenClosure,
         RenderingContextInterface $renderingContext
-    ): int {
+    ): string {
 
         /** @var \Psr\Http\Message\ServerRequestInterface $request */
         $request = $renderingContext->getRequest();
 
-        return (int) htmlspecialchars($request->getParsedBody()['tx_kesearch_pi1']['page'] ?? $request->getQueryParams()['tx_kesearch_pi1']['page'] ?? 1);
+        return htmlspecialchars($request->getParsedBody()['tx_kesearch_pi1']['sword'] ?? $request->getQueryParams()['tx_kesearch_pi1']['sword'] ?? '');
     }
 
 }

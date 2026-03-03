@@ -6,7 +6,7 @@
 
 			<!-- element -->
 			<trans-unit id="title">
-				<source>News Topic Slider</source>
+				<source>News Topic Slider (Custom)</source>
 			</trans-unit>
 			<trans-unit id="description">
 				<source>This element is a prominent topic card featuring an image, headline, short teaser text, and link. It highlights a key topic or “reason” and encourages users to explore further. The large image and concise message make it suitable for campaigns, topic hubs, or argument-driven pages.</source>

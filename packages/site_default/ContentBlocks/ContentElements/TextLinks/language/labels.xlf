@@ -6,7 +6,7 @@
 
 			<!-- element -->
 			<trans-unit id="title">
-				<source>Text with Links</source>
+				<source>Text with Links (Custom)</source>
 			</trans-unit>
 			<trans-unit id="description">
 				<source>This element is a content section with a headline, descriptive text, and an accompanying list of navigation or teaser links. It introduces a topic while offering direct access to related pages or subtopics. The element works well on overview pages or as an entry point to a thematic section.</source>

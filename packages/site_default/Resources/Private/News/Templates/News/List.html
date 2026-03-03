@@ -1,8 +1,9 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers" data-namespace-typo3-fluid="true">
+	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+      xmlns:siteDefault="http://typo3.org/ns/Madj2k/SiteDefault/ViewHelpers"
+      data-namespace-typo3-fluid="true">
 
 	<f:layout name="List" />
-
 
     <f:section name="TopicSlider">
 
@@ -10,7 +11,8 @@
             <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
 
                 <f:variable name="categories"
-                            value="{f:render(partial: 'Category/ItemsImploded', arguments:'{categories: newsItem.categories, settings: settings.list._custom.topicSlider}')}" />
+                            value="{f:render(partial: 'Category/ItemsImploded',
+                                    arguments:'{categories: newsItem.categories, settings: settings, customSettings: settings.list._custom.topicSlider}')}" />
 
                 <f:if condition="{newsItem.externalurl}">
                     <f:then>
@@ -45,7 +47,7 @@
                                 type: 'inverted',
                                 class: 'topic-slider-cta',
                                 icon: 'reload',
-                                settings: settings
+                                settings: settings.list._custom.topicSlider
                           }" />
             </div>
         </f:if>
@@ -55,62 +57,51 @@
 
     <f:comment><!-- ============================================================= --> </f:comment>
 
-
-
-	<!--
-		=====================
-			Templates/News/List.html
-	-->
-
-	<f:section name="TeaserBox">
-        <f:if condition="{news}">
-            <f:render partial="List/BoxItem"
-                      arguments="{newsItem: news.0, settings:settings, customSettings: settings.list._custom.teaserBox,
-                                 ctaLabel: '{f:translate(key: \'label.readMore\', extensionName: \'site_default\')}',
-                                 wrapClass: 'box-is-big'}" />
-        </f:if>
-
-	</f:section>
-
-    <f:comment><!-- ============================================================= --> </f:comment>
-
-
-
 	<f:section name="Default">
 
 		<!--TYPO3SEARCH_end-->
 		<f:if condition="{news}">
 			<f:then>
 				<div class="news-list">
-					<f:if condition="{settings.hidePagination}">
-						<f:then>
-							<f:for each="{news}" as="newsItem" iteration="iterator">
-                                <f:render partial="List/BoxItem"
-                                          arguments="{newsItem: newsItem, settings: settings, customSettings: settings.list._custom.listBox,
-                                                      ctaLabel: '{f:translate(key: \'label.learnMore\', extensionName: \'site_default\')}',
-                                                      iterator:iterator}" />
-							</f:for>
-						</f:then>
-						<f:else>
-							<f:if condition="{settings.list.paginate.insertAbove}">
-								<f:render partial="List/Pagination"
-									arguments="{pagination: pagination.pagination, paginator: pagination.paginator}" />
-							</f:if>
 
-                            <div class="box-wrap">
-                                <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
-                                    <f:render partial="List/BoxItem"
-                                              arguments="{newsItem: newsItem, settings: settings, customSettings: settings.list._custom.listBox,
-                                                          ctaLabel: '{f:translate(key: \'label.learnMore\', extensionName: \'site_default\')}',
-                                                          iterator:iterator}" />
-                                </f:for>
-                            </div>
-							<f:if condition="{settings.list.paginate.insertBelow}">
-								<f:render partial="List/Pagination"
-									arguments="{pagination: pagination.pagination, paginator: pagination.paginator}" />
-							</f:if>
-						</f:else>
-					</f:if>
+                    <f:if condition="{settings.list.paginate.insertAbove}">
+                        <f:render partial="List/Pagination"
+                                  arguments="{pagination: pagination.pagination, paginator: pagination.paginator,
+                                              settings: settings, customSettings: settings.list._custom.groupedList}" />
+                    </f:if>
+
+                    <f:for each="{siteDefault:news.groupByMonth(news:news, sortDirection:'asc')}" as="group" iteration="iterator">
+
+                        <f:if condition="{group.isFirstOfYear}">
+                            <f:then>
+                                <f:variable name="formatedDate" ><siteDefault:format.localizedDate
+                                    date="{group.date}"
+                                    format="{f:translate(key:'news.headerDateFormatFirstOfYear', extensionName:'siteDefault')}" /></f:variable>
+                            </f:then>
+                            <f:else>
+                                <f:variable name="formatedDate" ><siteDefault:format.localizedDate
+                                    date="{group.date}"
+                                    format="{f:translate(key:'news.headerDateFormat', extensionName:'siteDefault')}" /></f:variable>
+                            </f:else>
+                        </f:if>
+
+                        <div class="news-list-group{f:if(condition: iterator.isEven, then: ' is-even')}">
+                            <f:render partial="Utils/Header"
+                                      arguments="{header: formatedDate, wrapClass: 'news-list-header',
+                                                  settings: settings.list._custom.groupedList}" />
+
+                            <f:for each="{group.items}" as="newsItem">
+                                <f:render partial="List/ListItem"
+                                          arguments="{newsItem: newsItem, settings: settings, customSettings: settings.list._custom.groupedList}" />
+                            </f:for>
+                        </div>
+                    </f:for>
+
+                    <f:if condition="{settings.list.paginate.insertBelow}">
+                        <f:render partial="List/Pagination"
+                                  arguments="{pagination: pagination.pagination, paginator: pagination.paginator,
+                                              settings: settings, customSettings: settings.list._custom.groupedList}" />
+                    </f:if>
 				</div>
 			</f:then>
 			<f:else>

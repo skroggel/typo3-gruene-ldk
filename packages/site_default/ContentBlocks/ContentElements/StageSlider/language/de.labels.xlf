@@ -7,8 +7,8 @@
 
 			<!-- element -->
 			<trans-unit id="title">
-				<source>Stage Slider</source>
-				<target>Stage Slider</target>
+				<source>Stage Slider (Custom)</source>
+				<target>Stage Slider (Custom)</target>
 			</trans-unit>
 			<trans-unit id="description">
 				<source>This element is a hero slider consisting of multiple large teaser slides displayed one after another. Each slide combines a strong visual with a main headline and can optionally include a call to action. It is suitable for highlighting several key topics, articles, or campaigns with equal prominence.</source>

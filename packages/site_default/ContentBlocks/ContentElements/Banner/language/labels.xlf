@@ -6,7 +6,7 @@
 
 			<!-- element -->
 			<trans-unit id="title">
-				<source>Banner</source>
+				<source>Banner (Custom)</source>
 			</trans-unit>
 			<trans-unit id="description">
 				<source>This element is a high-impact banner section featuring a bold headline and a centrally placed call-to-action button. It appears at the top of the page and is used to highlight a key topic, campaign, or action. The headline communicates a clear core message, while the button leads directly to the next step (e.g. video, landing page, form). It is ideal for strong, campaign-driven page introductions.</source>

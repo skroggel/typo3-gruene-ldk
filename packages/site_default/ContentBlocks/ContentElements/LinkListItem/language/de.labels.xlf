@@ -7,8 +7,8 @@
 
 			<!-- element -->
 			<trans-unit id="title">
-				<source>Link List Item</source>
-				<target>Link List Item</target>
+				<source>Link List Item (Custom)</source>
+				<target>Link List Item (Custom)</target>
 			</trans-unit>
 			<trans-unit id="description">
 				<source></source>

@@ -108,6 +108,12 @@
 			<trans-unit id="news.dateFormat">
 				<source>d-m-Y</source>
 			</trans-unit>
+			<trans-unit id="news.headerDateFormat">
+				<source>F</source>
+			</trans-unit>
+			<trans-unit id="news.headerDateFormatFirstOfYear">
+				<source>F, Y</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
