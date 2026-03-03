@@ -18,7 +18,7 @@ $GLOBALS['TYPO3_CONF_VARS'] = array_replace_recursive(
             'sessionTimeout' => 28800,                  // set session timeout to 8 hours
             'versionNumberInFilename' => false,         // use filemtime appended to the query-string instead of timestamp
             'warning_email_addr' => '',                 // sent warnings on failed BE-logins and InstallTool-Logins
-            'requireMfa' => 0                           // Multi-Factor-Authentification
+            'requireMfa' => 1                           // Multi-Factor-Authentification
         ],
         'FE' => [
             'cookieDomain' => '',                       // uses [SYS][cookieDomain] if empty
