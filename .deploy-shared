@@ -1,4 +1,5 @@
 public/fileadmin,public/fileadmin
 public/uploads,public/uploads
 var/log,var/log
+var/labels,var/labels
 var/session,var/session
