@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace Madj2k\SiteDefault\ViewHelpers;
+namespace Madj2k\SiteDefault\ViewHelpers\KeSearch;
 
 /*
  * This file is part of the TYPO3 CMS project.

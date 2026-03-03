@@ -2,21 +2,21 @@
 
 ## Description: Fetch files from production and load it into current project via rsync
 ## Usage: fetch-production-files
-## Example: "ddev fetch-productio-nfiles"
+## Example: "ddev fetch-production-files"
 
 set -o errexit pipefail nounset
 #set -x
 
-SSH_TARGET="example@your-server.de"
-SSH_PATH=/var/www/example/public_html/current/shared/public
+SSH_TARGET="gruene-herborn.de@gruene-herborn.de"
+SSH_PATH=/var/www/gruene-herborn.de/typo3/shared/public
 
-echo "!!!!"
-echo "ATTENTION: This command is currently not configured"
-echo "!!!!"
-exit
+#echo "!!!!"
+#echo "ATTENTION: This command is currently not configured"
+#echo "!!!!"
+#exit
 
 DOCROOT_DIR=${DDEV_APPROOT}/${DDEV_DOCROOT}
 cd "${DOCROOT_DIR}"
 echo "Fetching files from ${SSH_TARGET} into ${DOCROOT_DIR}"
-rsync -rtlpu -e 'ssh -p22 ' ${SSH_TARGET}:${SSH_PATH}/fileadmin/ ./fileadmin
-rsync -rtlpu -e 'ssh -p22 ' ${SSH_TARGET}:${SSH_PATH}/uploads/ ./uploads
+rsync -rtlpu -e 'ssh -p2222 ' ${SSH_TARGET}:${SSH_PATH}/fileadmin/ ./fileadmin
+rsync -rtlpu -e 'ssh -p2222 ' ${SSH_TARGET}:${SSH_PATH}/uploads/ ./uploads

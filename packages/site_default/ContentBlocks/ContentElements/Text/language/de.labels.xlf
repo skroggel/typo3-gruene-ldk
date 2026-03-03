@@ -7,8 +7,8 @@
 
 			<!-- element -->
 			<trans-unit id="title">
-				<source>Text</source>
-				<target>Text</target>
+				<source>Text (Custom)</source>
+				<target>Text (Custom)</target>
 			</trans-unit>
 			<trans-unit id="description">
 				<source>The module is a pure text block. It contains only continuous text with an optional heading. It is suitable for short pieces of information or longer text passages that do not require images or other design elements.</source>

@@ -6,7 +6,7 @@
 
 			<!-- element -->
 			<trans-unit id="title">
-				<source>Link List</source>
+				<source>Link List (Custom)</source>
 			</trans-unit>
 			<trans-unit id="description">
 				<source>This element is a simple list of links with several equal items. Each item consists of a link and can optionally include a short label or descriptor. It is suitable for clearly structured navigation to related pages.</source>

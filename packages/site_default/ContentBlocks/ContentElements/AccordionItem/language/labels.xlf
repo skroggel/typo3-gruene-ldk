@@ -6,7 +6,7 @@
 
 			<!-- element -->
 			<trans-unit id="title">
-				<source>Accordion Item</source>
+				<source>Accordion Item (Custom)</source>
 			</trans-unit>
 			<trans-unit id="description">
 				<source>Item for Accordion</source>

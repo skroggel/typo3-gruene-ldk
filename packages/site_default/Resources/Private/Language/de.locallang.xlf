@@ -138,10 +138,17 @@
 				<target>Noch ein Thema</target>
 			</trans-unit>
 
-
 			<trans-unit id="news.dateFormat">
 				<source>d-m-Y</source>
-				<target>d.m.Y</target>
+				<target>d.m.Y.</target>
+			</trans-unit>
+			<trans-unit id="news.headerDateFormat">
+				<source>F</source>
+				<target>F</target>
+			</trans-unit>
+			<trans-unit id="news.headerDateFormatFirstOfYear">
+				<source>F, Y</source>
+				<target>F Y</target>
 			</trans-unit>
 
 		</body>

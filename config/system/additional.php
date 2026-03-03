@@ -132,6 +132,7 @@ switch (\TYPO3\CMS\Core\Core\Environment::getContext()) {
                 'BE' => [
                     'debug' => true,                            // If enabled, the login refresh is disabled and pageRenderer is set to debug mode. Furthermore the fieldname is appended to the label of fields.
                     //'lockSSL' => 0,                           // lock BE to SSL
+                    'requireMfa' => 0                           // Multi-Factor-Authentification
                 ],
                 'SYS' => [
                     'cookieDomain' => '',

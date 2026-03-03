@@ -6,7 +6,7 @@
 
 			<!-- element -->
 			<trans-unit id="title">
-				<source>Accordion</source>
+				<source>Accordion (Custom)</source>
 			</trans-unit>
 			<trans-unit id="description">
 				<source>The element is an accordion module. It presents multiple items with headlines that can be expanded to reveal additional content such as text or optionally images. It is useful for presenting complex topics in a structured and space-saving way, allowing users to open only the sections that interest them.</source>

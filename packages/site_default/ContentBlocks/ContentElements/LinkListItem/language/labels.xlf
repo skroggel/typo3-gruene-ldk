@@ -6,7 +6,7 @@
 
 			<!-- element -->
 			<trans-unit id="title">
-				<source>Link List Item</source>
+				<source>Link List Item (Custom)</source>
 			</trans-unit>
 			<trans-unit id="description">
 				<source></source>
