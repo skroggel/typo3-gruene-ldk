@@ -3,11 +3,13 @@
 * ================================================== */
 
 .text-links {
+    --text-links-color-background: var(--color-surface-inverted);
 
     position: relative;
-    overflow-x:hidden;
+    overflow-x: hidden;
 
     z-index: 20;
+
     @include media-breakpoint-up(lg) {
         &[data-appear-on-scroll="0"] {
             margin-top: rem-calc(map-get($spacers, 10) * -1);
@@ -23,24 +25,33 @@
     &-list-wrap {
         height: 100%;
         position: relative;
-        background-color: var(--background-color);
+        background-color: var(--text-links-color-background);
 
         @include media-breakpoint-up(lg) {
-
             padding-top: rem-calc(map-get($spacers, 10));
-            background-color: transparent;
-            @include edge-cut-background();
+            background-color: var(--text-links-color-background);
 
             &::after {
                 content: "";
                 position: absolute;
-                inset: 0; // top: 0; right: 0; bottom: 0; left: 0
+                inset: 0;
                 width: 100vw;
                 left: 99%;
-                background-color: var(--background-color);
+                background-color: var(--text-links-color-background);
                 z-index: -1;
             }
         }
     }
+}
 
+body:not(.no-effects) {
+    .text-links {
+        &-list-wrap {
+            background-color: transparent;
+
+            @include media-breakpoint-up(lg) {
+                @include edge-cut-background();
+            }
+        }
+    }
 }

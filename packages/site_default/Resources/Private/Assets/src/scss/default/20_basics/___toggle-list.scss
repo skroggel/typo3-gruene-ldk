@@ -14,10 +14,10 @@
 /// @group Navigation
 ///
 /// @param {Length} $padding-y - Vertical padding for list items. Defaults to `$spacer`.
-/// @param {Color} $border-color - Color of the item borders. Defaults to `$color-primary`.
+/// @param {Color} $border-color - Color of the item borders. Defaults to `var(--primary-color)`.
 /// @param {Length} $border-size - Thickness of the bottom border. Defaults to `1px`.
-/// @param {Color} $font-color - Default font color for links. Defaults to `$color-secondary`.
-/// @param {Color} $font-color-active - Font color for active items. Defaults to `$color-primary`.
+/// @param {Color} $font-color - Default font color for links. Defaults to `var(--secondary-color)`.
+/// @param {Color} $font-color-active - Font color for active items. Defaults to `var(--primary-color)`.
 /// @param {Length} $icon-size - Size of the icon element or pseudo-element. Defaults to `30px`.
 /// @param {String} $icon-style - Icon identifier or class (e.g., arrow icon). Defaults to `$icon-arrow-right`.
 ///
@@ -53,10 +53,10 @@
 ///   }
 @mixin toggle-list(
     $padding-y: $spacer,
-    $border-color: $color-primary,
+    $border-color: var(--primary-color),
     $border-size: 1px,
-    $font-color: $color-secondary,
-    $font-color-active: $color-primary,
+    $font-color: var(--secondary-color),
+    $font-color-active: var(--primary-color),
     $icon-size: 30px,
     $icon-style: $icon-arrow-right
 ) {

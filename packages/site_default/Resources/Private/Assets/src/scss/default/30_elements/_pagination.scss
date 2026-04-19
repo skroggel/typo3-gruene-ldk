@@ -1,79 +1,90 @@
-/* ==================================================
-* Pagination
-* ================================================== */
-@use 'sass:math';
-.pagination {
+    /* ==================================================
+    * Pagination
+    * ================================================== */
+    @use 'sass:math';
 
-    @include copy-small;
-    margin-top: map-get($spacers, 4);
-    margin-bottom: 0;
-    display:block;
+    .pagination {
+        --pagination-color-text: var(--color-text-default);
+        --pagination-color-background: var(--color-surface-default);
 
-    &-list {
-        @include list-reset;
-        display: flex;
-        justify-content: center;
-        gap: rem-calc(math.ceil(math.div($spacer,2)));
+        --pagination-color-text-hover: var(--color-text-default);
+        --pagination-color-background-hover: var(--color-surface-accent);
 
-        @include media-breakpoint-up(lg) {
-            gap: rem-calc($spacer);
-        }
-    }
+        --pagination-color-text-active: var(--color-text-inverted);
+        --pagination-color-background-active: var(--color-brand-primary);
 
+        --pagination-color-text-disabled: var(--color-text-subtle);
+        --pagination-color-background-disabled: var(--color-surface-default);
 
-    &-link,
-    &-link:link,
-    &-link:visited,
-    &-link:hover,
-    &-placeholder {
-        font-family: $font-family-sans;
-        padding: rem-calc(8) rem-calc(14) rem-calc(8) rem-calc(14);
-        text-decoration: none;
-        color: $color-white;
-        background-color: $color-secondary;
-
-        min-width: rem-calc(40);
+        @include copy-small;
+        margin-top: map-get($spacers, 4);
+        margin-bottom: 0;
         display: block;
-        text-align: center;
 
-        &.disabled {
-            opacity: 0.4;
+        &-list {
+            @include list-reset;
+            display: flex;
+            justify-content: center;
+            gap: rem-calc(math.ceil(math.div($spacer, 2)));
+
+            @include media-breakpoint-up(lg) {
+                gap: rem-calc($spacer);
+            }
         }
 
-    }
+        &-link,
+        &-link:link,
+        &-link:visited,
+        &-link:hover,
+        &-placeholder {
+            padding: rem-calc(8) rem-calc(14) rem-calc(8) rem-calc(14);
+            text-decoration: none;
+            color: var(--pagination-color-text);
+            background-color: var(--pagination-color-background);
 
-    &-link:hover,
-    &-link:active {
-        color: $color-white;
-        background-color: $color-primary;
-    }
+            min-width: rem-calc(40);
+            display: block;
+            text-align: center;
 
-    &-item.active {
-        & > .pagination-link {
-            color: $color-white;
-            background-color: $color-primary;
+            &.disabled {
+                color: var(--pagination-color-text-disabled);
+                background-color: var(--pagination-color-background-disabled);
+                opacity: 1;
+            }
+        }
+
+        &-link:hover,
+        &-link:active {
+            color: var(--pagination-color-text-hover);
+            background-color: var(--pagination-color-background-hover);
+        }
+
+        &-item.active {
+            > .pagination-link {
+                color: var(--pagination-color-text-active);
+                background-color: var(--pagination-color-background-active);
+            }
+        }
+
+        &-placeholder {
+            &::before {
+                content: '…';
+            }
+        }
+
+        &-prev,
+        &-next {
+            &::before {
+                @extend .icomoon;
+                content: $icon-arrow-right;
+                font-weight: bold;
+                font-size: rem-calc(16);
+            }
+        }
+
+        &-prev {
+            &::before {
+                content: $icon-arrow-left;
+            }
         }
     }
-
-    &-placeholder {
-        &::before {
-            content: '…';
-        }
-    }
-
-    &-prev,
-    &-next {
-        &::before {
-            @extend .icomoon;
-            content: $icon-arrow-right;
-            font-weight:bold;
-            font-size: rem-calc(16);
-        }
-    }
-
-    &-prev {
-        &::before {
-            content: $icon-arrow-left;
-        }
-    }
-}

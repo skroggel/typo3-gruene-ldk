@@ -1,0 +1,4 @@
+name: madj2k/site-politik-und-form
+label: 'Site Package (Politik & Form)'
+dependencies:
+  - madj2k/site-default

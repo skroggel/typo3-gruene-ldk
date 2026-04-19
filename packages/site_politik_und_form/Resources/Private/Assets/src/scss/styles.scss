@@ -1,0 +1,12 @@
+/**
+ * Main CSS-File
+ */
+// 1. Include base
+@import "../../../../../../site_default/Resources/Private/Assets/src/scss/styles.scss";
+
+// 2. Include any default variable overrides here
+@import "default/10_config/_base";
+@import "default/10_config/_colors";
+@import "default/10_config/_font";
+
+// 3. Add additional custom code here

@@ -4,29 +4,39 @@
 @use 'sass:math';
 
 .nav-block {
+    --nav-color-link: var(--color-brand-secondary);
+    --nav-color-link-active: var(--color-text-strong);
+
     @include nav-block(
-        $link-color: $color-secondary,
-        $active-color: $color-black
-    )
+        $link-color: var(--nav-color-link),
+        $active-color: var(--nav-color-link-active)
+    );
 }
 
 .nav-inline {
+    --nav-color-link: var(--color-brand-secondary);
+    --nav-color-link-active: var(--color-text-strong);
+
     @include nav-inline(
         $list-gap: $spacer,
-        $link-color: $color-secondary,
-        $link-active-color: $color-black
-    )
+        $link-color: var(--nav-color-link),
+        $link-active-color: var(--nav-color-link-active)
+    );
 }
 
 .nav-pulldown {
+    --nav-pulldown-color-background: var(--color-surface-inverted);
+    --nav-pulldown-color-text: var(--color-text-inverted);
+    --nav-pulldown-color-border: var(--color-border-default-inverted);
+
     @include nav-pulldown(
         $pad-x: $spacer,
         $pad-y: 0,
         $item-y: 10,
         $item-gap: 12,
-        $bg-color: $color-primary,
-        $text-color: $color-white,
-        $border-color: $color-white,
+        $bg-color: var(--nav-pulldown-color-background),
+        $text-color: var(--nav-pulldown-color-text),
+        $border-color: var(--nav-pulldown-color-border),
         $border-width: 1px
-    )
+    );
 }

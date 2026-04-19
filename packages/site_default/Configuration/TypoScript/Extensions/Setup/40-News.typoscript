@@ -3,6 +3,10 @@
 # ==============================================
 plugin.tx_news {
 
+	persistence {
+		storagePid = {$plugin.tx_news.persistence.storagePid}}
+	}
+
 	view {
 		templateRootPaths {
 			0 = EXT:news/Resources/Private/Templates/

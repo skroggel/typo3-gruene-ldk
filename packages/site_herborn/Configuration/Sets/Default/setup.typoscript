@@ -1,0 +1,16 @@
+#############################################################################
+# Config
+#############################################################################
+page {
+    includeCSS {
+        siteDefaultLayout = EXT:site_herborn/Resources/Public/Css/styles.css
+    }
+}
+
+// if critical css is rendered remove all redirects!
+pageCriticalCss < page
+pageCriticalCss {
+    typeNum = 1715339215
+    headerData.1000 >
+}
+

@@ -1,7 +1,14 @@
 /* ==================================================
 * Main-Menu
 * ================================================== */
+@use 'sass:math';
+
 .nav-main {
+    --main-menu-color-link: var(--color-text-default);
+    --main-menu-color-link-active: var(--color-text-default);
+
+    --main-menu-flyout-color-background: var(--color-surface-subtle);
+    --main-menu-flyout-color-close: var(--color-text-subtle);
 
     &-list {
         @include list-reset();
@@ -26,14 +33,13 @@
     &-link:hover {
         font-size: rem-calc(20);
         line-height: 100%;
-        color: map-get($color-map, 'pine-900');
+        color: var(--main-menu-color-link);
 
         @include media-breakpoint-up(xl) {
             font-size: rem-calc(25);
         }
 
-        // accessibility
-        @include accessibility-outline($color: $color-outline);
+        @include accessibility-outline($color: var(--color-outline-accessibility));
     }
 
     &-link.level-1,
@@ -44,7 +50,7 @@
         /** Fix for menu jumping on active/hover*/
         &::after {
             display: block;
-            content:attr(title);
+            content: attr(title);
             font-weight: bold;
             visibility: hidden;
             overflow: hidden;
@@ -74,9 +80,9 @@
         }
     }
 
-    /**  Override for toggle */
+    /** Override for toggle */
     .toggle {
-        @include media-breakpoint-between(lg,xl) {
+        @include media-breakpoint-between(lg, xl) {
             .toggle-icon:not(:has(svg)),
             .toggle-icon svg {
                 font-size: rem-calc(20);
@@ -88,14 +94,14 @@
         display: none;
     }
 
-    /**  Hover-effects */
+    /** Hover-effects */
     &-link.level-1,
     &-link.level-3 {
         @include text-marker();
 
         &.active {
             font-weight: bold;
-            color: $color-text;
+            color: var(--main-menu-color-link-active);
         }
     }
 
@@ -107,13 +113,13 @@
                 linear-gradient(
                         to right,
                         transparent 50%,
-                        map-get($color-map, 'sand') 50%
+                        var(--main-menu-flyout-color-background) 50%
                 );
         }
 
         &-wrap {
             position: relative;
-            left: rem-calc(map-get($spacers, 4) * - 1);
+            left: rem-calc(map-get($spacers, 6) * -1);
             max-width: rem-calc($page-max-inner-width);
             margin-left: auto;
             margin-right: auto;
@@ -123,19 +129,19 @@
             max-height: 100vh;
 
             box-shadow: rem-calc(-6) rem-calc(0) rem-calc(6) rem-calc(0) #63636340;
+
+            @media (min-width: 1521px) {
+                left: rem-calc(math.div($spacer, 2));
+            }
         }
 
         &-toggle-container {
             position: absolute;
             top: 0;
             left: 0;
-            // left: 50%;
-            // max-width: rem-calc($page-max-inner-width);
-            // transform: translateX(-50%);
             width: 100%;
             z-index: 10;
         }
-
 
         &-toggle-close {
             position: absolute;
@@ -143,19 +149,18 @@
             top: rem-calc(map-get($spacers, 5));
             pointer-events: all;
 
-            // accessibility
-            @include accessibility-outline($color: $color-outline);
+            @include accessibility-outline($color: var(--color-outline-accessibility));
 
             .icon {
                 font-size: rem-calc(48) !important;
-                color: map-get($color-map, 'grey-200') !important;
+                color: var(--main-menu-flyout-color-close) !important;
             }
         }
 
         &-image {
             position: absolute;
             left: calc(60vw);
-            top:0;
+            top: 0;
             width: 40vw;
             max-height: calc(100vh - $siteheader-height-mobile);
             overflow: hidden;
@@ -186,22 +191,21 @@
     }
 }
 
-
 .flyout-open,
 .flyout-closing {
     .background-blur {
-        z-index:90;
+        z-index: 90;
     }
 }
 
-.flyout-open{
+.flyout-open {
     .background-blur {
-        opacity:1;
+        opacity: 1;
     }
 }
 
 .flyout-open {
     .siteheader {
-       position:absolute;
+        position: absolute;
     }
 }

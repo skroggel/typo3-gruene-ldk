@@ -2,10 +2,14 @@
 * Main-menu
 * ================================================== */
 .nav-mobile {
+    --mobile-menu-color-link: var(--color-text-default);
+    --mobile-menu-color-link-active: var(--color-text-default);
+    --mobile-menu-color-meta-link: var(--color-text-default);
 
     .nav-mobile-toggle {
         align-items: flex-start;
         margin-top: rem-calc(2);
+
         .icon {
             font-size: rem-calc(32);
         }
@@ -35,14 +39,14 @@
         &-link,
         &-link:link,
         &-link:visited,
-        &-link:hover,{
-            color: map-get($color-map, 'pine-900');
-            @include accessibility-outline($color: $color-outline);
+        &-link:hover {
+            color: var(--mobile-menu-color-link);
+            @include accessibility-outline($color: var(--color-outline-accessibility));
         }
 
         &-link.active {
             font-weight: bold;
-            color: $color-text;
+            color: var(--mobile-menu-color-link-active);
         }
 
         &-headline {
@@ -67,7 +71,6 @@
         &-meta {
             &-list {
                 @include copy-small;
-
                 flex-wrap: wrap;
                 gap: rem-calc($spacer);
             }
@@ -76,10 +79,8 @@
             &-link:link,
             &-link:visited,
             &-link:hover {
-                color: map-get($color-map, 'pine-900');
+                color: var(--mobile-menu-color-meta-link);
             }
         }
-
-
     }
 }

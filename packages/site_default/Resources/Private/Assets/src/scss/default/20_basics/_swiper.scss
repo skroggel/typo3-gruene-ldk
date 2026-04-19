@@ -3,13 +3,12 @@
 ******************************************/
 @use 'sass:math';
 
-.swiper  {
-
+.swiper {
     position: relative;
 
     .link-wrap {
         &:focus-visible {
-            outline: rem-calc(2) solid $color-outline;
+            outline: rem-calc(2) solid var(--color-outline-accessibility);
             outline-style: solid;
             outline-offset: rem-calc(-2);
             outline-width: rem-calc(2);
@@ -39,7 +38,7 @@
                 @extend .icomoon;
             }
 
-            &-prev   {
+            &-prev {
                 @extend .icon-arrow-left;
             }
 
@@ -49,5 +48,3 @@
         }
     }
 }
-
-

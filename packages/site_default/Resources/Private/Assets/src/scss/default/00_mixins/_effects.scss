@@ -8,7 +8,7 @@
 ///
 /// @param {Length} $mark-height - Height of the marker stroke (default: 0.6em)
 /// @param {Length} $mark-top - Vertical offset from the top (default: 0.1em)
-/// @param {Color} $mark-color - Color of the marker (default: map-get($color-map, 'sun'))
+/// @param {Color} $mark-color - Color of the marker (default: var(--color-sun))
 /// @param {Length} $mark-skrew - Width of the skewed marker edges (default: 22.5% of $mark-height)
 /// @param {Length} $mark-overlap - Horizontal overlap of the marker beyond text edges (default: 0.3em)
 /// @param {Time} $transition-duration - Duration of the animation (default: 0.3s)
@@ -16,7 +16,7 @@
 ///
 /// @example scss
 ///   .marker-link {
-///     @include text-marker($mark-color: map-get($color-map, 'highlight'));
+///     @include text-marker($mark-color: var(--color-highlight));
 ///   }
 ///
 /// @example html
@@ -30,7 +30,7 @@
 @mixin text-marker (
     $mark-height: 0.6em,
     $mark-top: 0.1em,
-    $mark-color: map-get($color-map, 'sun'),
+    $mark-color: var(--color-surface-accent),
     $mark-skrew: calc($mark-height / 100 * 22.5),
     $mark-overlap: 0.3em,
     $transition-duration: 0.3s,
@@ -95,7 +95,7 @@
 ///   }
 ///
 
-@mixin edge-cut-background ($width: 85px, $height: 700px, $image-url: '../Images/image-edge.svg', $background-color: map-get($color-map, 'pine')) {
+@mixin edge-cut-background ($width: 85px, $height: 700px, $image-url: '../Images/image-edge.svg', $background-color: var(--primary-color)) {
     position: relative;
     overflow: visible;
     left: $width;

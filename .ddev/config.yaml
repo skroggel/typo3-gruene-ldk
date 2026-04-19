@@ -8,6 +8,7 @@ router_https_port: "8443"
 xdebug_enabled: false
 additional_hostnames:
     - gruene-herborn
+    - politik-und-form
 additional_fqdns: []
 database:
     type: mariadb
@@ -26,6 +27,11 @@ hooks:
         - exec: sudo npm install pm2 -g
         - exec: cd /var/www/html/packages/site_default/Resources/Private/Assets && if [[ ! -d 'node_modules' ]]; then npm install; fi;
         - exec: cd /var/www/html/packages/site_default/Resources/Private/Assets && pm2 start npm --name "site_default" -- run watch
+        - exec: cd /var/www/html/packages/site_herborn/Resources/Private/Assets && if [[ ! -d 'node_modules' ]]; then npm install; fi;
+        - exec: cd /var/www/html/packages/site_herborn/Resources/Private/Assets && pm2 start npm --name "site_herborn" -- run watch
+        - exec: cd /var/www/html/packages/site_politik_und_form/Resources/Private/Assets && if [[ ! -d 'node_modules' ]]; then npm install; fi;
+        - exec: cd /var/www/html/packages/site_politik_und_form/Resources/Private/Assets && pm2 start npm --name "site_politik_und_form" -- run watch
+
 webimage_extra_packages: [expect, cron]
 use_dns_when_possible: true
 composer_version: "2"

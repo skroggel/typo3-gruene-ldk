@@ -9,7 +9,7 @@
 
         <f:else>
             <f:variable name="classAddition" value=" fullwidth-inner" />
-            <section class="stage {f:if(condition:data.assets, then: 'has-image', else: 'has-no-image')} bg-color-white fullwidth-1" id="c{data.uid}">
+            <section class="stage {f:if(condition:data.assets, then: 'has-image', else: 'has-no-image')} bg-color-default fullwidth-1" id="c{data.uid}">
                 <f:render section="Inner" arguments="{_all}" />
             </section>
         </f:else>

@@ -9,7 +9,7 @@ mod {
                 config {
                     backend_layout {
                         colCount = 1
-                        rowCount = 1
+                        rowCount = 2
                         rows {
                             1 {
                                 columns {
@@ -17,7 +17,7 @@ mod {
                                         name = LLL:EXT:site_default/Resources/Private/Language/locallang_be.xlf:backend_layout.column.stage
                                         colPos = 100
                                         allowed  {
-                                            CType = madj2k_stage
+                                            CType = madj2k_stageslider, madj2k_stage
                                         }
                                    }
                                }
@@ -27,9 +27,9 @@ mod {
                                 columns {
                                     1 {
                                         name = LLL:EXT:site_default/Resources/Private/Language/locallang_be.xlf:backend_layout.column.content
-                                        colPos = 0
+                                        colPos = 200
                                         disallowed {
-                                            CType = madj2k_stage,madj2k_stageslider
+                                            CType = madj2k_stageslider, madj2k_stage
                                         }
                                     }
                                 }

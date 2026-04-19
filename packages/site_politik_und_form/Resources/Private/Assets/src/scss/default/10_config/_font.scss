@@ -1,0 +1,12 @@
+/* ==================================================
+* Font variables
+* ================================================== */
+// fonts
+
+:root {
+    --font-family: "PT Sans", "Verdana", "Arial", sans-serif;
+    --font-weight: #{$font-weight-normal};
+    --font-family-headline: "PT Sans", "Verdana", "Arial", sans-serif;
+    --font-weight-headline: #{$font-weight-bold};
+}
+

@@ -2,11 +2,14 @@
 * Footer-Menu
 * ================================================== */
 @use 'sass:math';
+
 .nav-footer {
+    --footer-menu-color-text: var(--color-text-inverted);
+    --footer-menu-color-border: var(--color-border-default-inverted);
 
     margin-top: rem-calc(map-get($spacers, 4));
     padding-top: rem-calc(map-get($spacers, 4));
-    border-top: rem-calc(1) solid $color-white;
+    border-top: rem-calc(1) solid var(--footer-menu-color-border);
 
     &-list {
         @include copy-small;
@@ -23,15 +26,14 @@
     &-link:link,
     &-link:visited,
     &-link:hover {
-        color: $color-white;
+        color: var(--footer-menu-color-text);
         text-decoration: none;
     }
 
     &-link:link.active,
     &-link:visited.active,
     &-link:hover {
-        color: $color-white;
+        color: var(--footer-menu-color-text);
         text-decoration: underline;
     }
 }
-

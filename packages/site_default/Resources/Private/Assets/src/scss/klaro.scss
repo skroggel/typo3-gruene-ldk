@@ -10,24 +10,34 @@
 @import "default/20_basics/_cta";
 
 body .klaro {
-    --green1: #{$color-primary};
-    --green2: #{$color-primary};
-    --green3: #{$color-primary};
-    --font-family: #{$font-family-sans-serif};
+    --klaro-color-brand: var(--color-brand-primary);
+
+    --klaro-color-context-background: var(--color-brand-secondary);
+    --klaro-color-context-border: var(--color-brand-secondary);
+
+    --klaro-color-button-text: var(--color-text-inverted);
+    --klaro-color-button-background: var(--color-brand-secondary);
+
+    --klaro-color-slider-background: #676767;
+
+    --green1: #{var(--klaro-color-brand)};
+    --green2: #{var(--klaro-color-brand)};
+    --green3: #{var(--klaro-color-brand)};
+    --font-family: #{var(--font-family-sans)};
 
     &.cm-as-context-notice {
-        padding:0;
+        padding: 0;
     }
 
     .context-notice {
         @include copy;
-        background-color: $color-secondary;
-        border-color: $color-secondary;
-        border-radius:0;
+        background-color: var(--klaro-color-context-background);
+        border-color: var(--klaro-color-context-border);
+        border-radius: 0;
     }
 
     label {
-        margin:0;
+        margin: 0;
     }
 
     .cookie-modal .cm-btn,
@@ -43,18 +53,18 @@ body .klaro {
     .cookie-modal .cm-btn.cm-btn-success-var,
     .cookie-modal .cm-btn.cm-btn-accept,
     .cookie-modal .cm-btn.cm-btn-decline {
-        color: $color-white;
-        background-color: $color-secondary;
+        color: var(--klaro-color-button-text);
+        background-color: var(--klaro-color-button-background);
 
         &:hover {
-            background-color: $color-secondary;
+            background-color: var(--klaro-color-button-background);
         }
     }
 
     .context-notice .cm-list-label .slider,
     .cookie-notice .cm-list-label .slider,
     .cookie-modal .cm-list-label .slider {
-        background-color: #676767;
+        background-color: var(--klaro-color-slider-background);
     }
 
     .cookie-modal .cm-caret,
@@ -62,8 +72,9 @@ body .klaro {
         @include copy-small;
     }
 
-    .cookie-modal .cm-header{
+    .cookie-modal .cm-header {
         @include copy;
+
         .title {
             @include h2;
         }
@@ -71,7 +82,7 @@ body .klaro {
 
     .cookie-modal .cm-list-title {
         @include h6;
-        margin-bottom: 0
+        margin-bottom: 0;
     }
 
     .cookie-modal .cm-footer-buttons {

@@ -28,7 +28,7 @@ errorHandling:
 klarokratie:
   klaro:
     enable: false
-    customCss: 'EXT:site_default/Resources/Public/Css/klaro.css'
+    customCss: 'EXT:site_herborn/Resources/Public/Css/klaro.css'
     config: EXT:klarokratie/Resources/Public/Config/KlaroConfigMinimal.js
     includes:
       - EXT:klarokratie/Resources/Public/Config/Includes/GoogleAnalytics.js

@@ -1,18 +1,38 @@
 /* ==================================================
-* Basic variables
+* Palette
 * ================================================== */
 $color-map: (
     'black': #000000,
     'white': #ffffff,
-    'clover': #008939, // klee
-    'pine': #005538, // tanne
-    'gras': #8ABD24, // grashalm
-    'sky': #0BA1DD, // himmel
-    'sand': #F5F1E9, // sand
-    'sun': #FFF17A, // sonne
-    'magenta': #E6007E, // magenta
-    'dark-grey': #2E2E3D, // dunkelgrau
+
+    'clover': #008939,
+    'pine': #005538,
+    'gras': #8ABD24,
+    'sky': #0BA1DD,
+    'sand': #F5F1E9,
+    'sun': #FFF17A,
+    'magenta': #E6007E,
+    'dark-grey': #2E2E3D,
     'red': #ad0000,
+
+    'sand-500': #F7F4ED,
+    'sand-700': #EFE8DB,
+
+    'sky-500': #3CB4E4,
+    'sky-700': #0981B1,
+
+    'gras-500': #A1CA50,
+    'gras-700': #6E971D,
+
+    'pine-50': #D5EEE6,
+    'pine-100': #BEDDD2,
+    'pine-200': #A6CCBF,
+    'pine-300': #8EBBAB,
+    'pine-400': #5F9885,
+    'pine-500': #2F765E,
+    'pine-700': #00432C,
+    'pine-800': #003221,
+    'pine-900': #002216,
 
     'clover-50': #E5F3EB,
     'clover-100': #CCE7D7,
@@ -25,16 +45,6 @@ $color-map: (
     'clover-900': #003717,
     'clover-950': #002911,
 
-    'pine-50': #D5EEE6,
-    'pine-100': #BEDDD2,
-    'pine-200': #A6CCBF,
-    'pine-300': #8EBBAB,
-    'pine-400': #5F9885,
-    'pine-500': #2F765E,
-    'pine-700': #00432C,
-    'pine-800': #003221,
-    'pine-900': #002216,
-
     'grey-50': #F9FAFB,
     'grey-100': #F3FAF6,
     'grey-200': #E6ECEA,
@@ -46,22 +56,53 @@ $color-map: (
     'grey-800': #1F2F37,
     'grey-900': #111E27,
     'grey-950': #031112,
+) !default;
 
-    'sand-500': #F7F4ED,
-    'sand-700': #EFE8DB,
+/* ==================================================
+* Global theme / foundation tokens
+* ================================================== */
+:root {
+    /* Brand */
+    --color-brand-primary: #{map-get($color-map, 'pine')};
+    --color-brand-secondary: #{map-get($color-map, 'clover')};
 
-    'sky-500': #3CB4E4,
-    'sky-700': #0981B1,
+    /* Text */
+    --color-text-default: #{map-get($color-map, 'pine-900')};
+    --color-text-subtle: #{map-get($color-map, 'grey-600')};
+    --color-text-strong: #{map-get($color-map, 'black')};
+    --color-text-inverted: #{map-get($color-map, 'white')};
 
-    'gras-500': #A1CA50,
-    'gras-700': #6E971D,
-);
+    /* Heading */
+    --color-heading-default: #{map-get($color-map, 'pine')};
+    --color-heading-inverted: #{map-get($color-map, 'white')};
 
-// some basic variables
-$color-white: map-get($color-map, 'white');
-$color-black: map-get($color-map, 'black');
-$color-primary: map-get($color-map, 'pine');
-$color-secondary: map-get($color-map, 'clover');
-$color-text: map-get($color-map, 'pine-900');
-$color-error: map-get($color-map, 'red');
-$color-outline: map-get($color-map, 'sky');
+    /* Surface */
+    --color-surface-default: #{map-get($color-map, 'white')};
+    --color-surface-inverted: #{map-get($color-map, 'pine')};
+    --color-surface-subtle: #{map-get($color-map, 'sand')};
+    --color-surface-accent: #{map-get($color-map, 'sun')};
+    --color-surface-strong: #{map-get($color-map, 'pink')};
+    --color-surface-dark: #{map-get($color-map, 'dark-grey')};
+    --color-surface-brand-primary: #{map-get($color-map, 'pine')};
+    --color-surface-brand-secondary: #{map-get($color-map, 'clover')};
+
+    /* Border */
+    --color-border-default: #{map-get($color-map, 'pine')};
+    --color-border-inverted: #{map-get($color-map, 'white')};
+    --color-border-subtle: #{map-get($color-map, 'clover-100')};
+    --color-border-strong: #{map-get($color-map, 'clover')};
+    --color-border-dark: #{map-get($color-map, 'dark-grey')};
+    --color-border-disabled: #{map-get($color-map, 'grey-300')};
+
+
+    /* Icon */
+    --color-icon-default: #{map-get($color-map, 'pine')};
+    --color-icon-inverted: #{map-get($color-map, 'white')};
+    --color-icon-strong: #{map-get($color-map, 'clover')};
+
+    /* Feedback */
+    --color-feedback-error: #{map-get($color-map, 'red')};
+
+    /* Accessibility */
+    --color-outline-accessibility: #{map-get($color-map, 'sky')};
+}

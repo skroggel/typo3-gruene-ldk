@@ -6,26 +6,26 @@
             <div class="row justify-content-between">
                 <div class="col-12 order-1 col-sm-7 col-lg-4">
                     <div class="contact">
-                        <div class="contact-headline headline h5 font-color-white" role="heading">
+                        <div class="contact-headline headline h5 text-color-inverted" role="heading">
                             <f:translate key="contact.headline" extensionName="siteDefault" />
                         </div>
-                        <f:render partial="Footer/{settings.setName -> f:format.case(mode:'capitalWords')}/Address" arguments="{_all}" />
+                        <f:render partial="Footer/Address" arguments="{_all}" />
                     </div>
                 </div>
                 <div class="col-12 order-3 col-lg-3 order-lg-2 pt-5 pt-lg-0">
                     <div class="socialmedia">
-                        <p class="socialmedia-headline headline h5 font-color-white" role="heading">
+                        <p class="socialmedia-headline headline h5 text-color-inverted" role="heading">
                             <f:translate key="socialMedia.headline" extensionName="siteDefault" />
                         </p>
-                        <f:render partial="Footer/{settings.setName -> f:format.case(mode:'capitalWords')}/SocialMedia" arguments="{_all}" />
+                        <f:render partial="Footer/SocialMedia" arguments="{_all}" />
                     </div>
                 </div>
                 <div class="col-12 order-2 col-sm-5 col-lg-3 order-lg-3 pt-5 pt-sm-0">
                     <div class="links">
-                        <p class="links-headline headline h5 font-color-white" role="heading">
+                        <p class="links-headline headline h5 text-color-inverted" role="heading">
                             <f:translate key="links.headline" extensionName="siteDefault" />
                         </p>
-                        <div class="links-list font-color-white copy-small">
+                        <div class="links-list text-color-inverted copy-small">
                             <f:for each="{
                                 bundesverband: 'https://www.gruene.de/',
                                 landesverband: 'https://www.gruene-hessen.de/',

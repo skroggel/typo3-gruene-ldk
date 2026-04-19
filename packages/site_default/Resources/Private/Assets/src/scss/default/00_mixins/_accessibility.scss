@@ -10,7 +10,7 @@
 ///
 /// @group Accessibility
 ///
-/// @param {Color} $color - Outline color for focused state. Defaults to `$color-outline`.
+/// @param {Color} $color - Outline color for focused state. Defaults to `var(--outline-color)`.
 /// @param {Length} $width - Outline width. Defaults to `3px`.
 /// @param {Selector} $selector - Optional sub-selector to apply the outline to. Defaults to `null`
 ///
