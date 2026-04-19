@@ -1,10 +1,11 @@
 /* ==================================================
 * Typography
 * ================================================== */
+
 @font-face {
     font-family: 'PT Sans';
     src: url('../Fonts/PtSans/ptsans-regular.woff2') format('woff2'),
-         url('../Fonts/PtSans/ptsans-regular.ttf') format('truetype');
+    url('../Fonts/PtSans/ptsans-regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -13,7 +14,7 @@
 @font-face {
     font-family: 'PT Sans';
     src: url('../Fonts/PtSans/ptsans-bold.woff2') format('woff2'),
-         url('../Fonts/PtSans/ptsans-bold.ttf') format('truetype');
+    url('../Fonts/PtSans/ptsans-bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -22,18 +23,22 @@
 @font-face {
     font-family: 'GrueneType Neue';
     src: url('../Fonts/GrueneType/gruenetype.woff2') format('woff2'),
-         url('../Fonts/GrueneType/gruenetype.ttf') format('truetype');
+    url('../Fonts/GrueneType/gruenetype.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 
-
 body {
-    @include copy;
-    color: $color-text;
-}
+    --text-content-color-text: var(--color-text-default);
+    --text-content-color-heading: var(--color-heading-default);
+    --text-content-color-list-marker: var(--color-brand-primary);
+    --text-content-color-rule: var(--color-border-strong);
+    --text-content-color-rule-accent: var(--color-brand-primary);
 
+    @include copy;
+    color: var(--text-content-color-text);
+}
 
 /*
 .subheader-1 {
@@ -55,8 +60,9 @@ body {
 h1,
 .h1 {
     @include h1;
-    color: $color-primary;
+    color: var(--text-content-color-heading);
     margin-bottom: rem-calc(map-get($spacers, 4));
+
     @include media-breakpoint-up(sm) {
         margin-bottom: rem-calc(map-get($spacers, 6));
     }
@@ -65,8 +71,9 @@ h1,
 h2,
 .h2 {
     @include h2;
-    color: $color-primary;
+    color: var(--text-content-color-heading);
     margin-bottom: rem-calc(map-get($spacers, 1));
+
     @include media-breakpoint-up(sm) {
         margin-bottom: rem-calc(map-get($spacers, 4));
     }
@@ -75,32 +82,32 @@ h2,
 h3,
 .h3 {
     @include h3;
-    color: $color-primary;
+    color: var(--text-content-color-heading);
     margin-bottom: rem-calc(map-get($spacers, 1));
 }
 
 h4,
 .h4 {
     @include h4;
-    color: $color-primary;
+    color: var(--text-content-color-heading);
     margin-bottom: rem-calc(map-get($spacers, 1));
 }
 
 h5,
 .h5 {
     @include h5;
-    color: $color-primary;
+    color: var(--text-content-color-heading);
     margin-bottom: rem-calc(map-get($spacers, 1));
 }
 
 .hero {
     @include hero;
-    color: $color-primary;
+    color: var(--hero-color-text);
 }
 
 .hero-menu {
     @include hero-menu;
-    color: $color-primary;
+    color: var(--hero-color-text);
 }
 
 .toggle-list-text {
@@ -122,10 +129,10 @@ h5,
     .overline,
     .subheader,
     .link {
-        color: $color-white;
+        color: var(--color-white);
     }
 
-    color: $color-white;
+    color: var(--color-white);
 }
 
 [class^="bg-color-light"],
@@ -134,7 +141,7 @@ h5,
     .overline,
     .subheader,
     .link {
-        color: $color-text;
+        color: var(--text-color);
     }
 }
 */
@@ -151,18 +158,19 @@ p {
 .ul {
     list-style: none;
     padding-left: rem-calc(22);
+
     @include media-breakpoint-up(sm) {
         padding-left: rem-calc(28);
     }
 
     li {
-
         @include copy;
         padding-left: 0;
         position: relative;
 
         + li {
             margin-top: 0;
+
             @include media-breakpoint-up(sm) {
                 margin-top: rem-calc(map-get($spacers, 1));
             }
@@ -170,7 +178,6 @@ p {
 
         &::before {
             content: '';
-
             position: absolute;
             left: -22px;
             display: inline-block;
@@ -182,34 +189,32 @@ p {
     }
 }
 
-
 .ol {
     counter-reset: my-counter;
+
     li {
         counter-increment: my-counter;
 
         &::before {
-            content:  counter(my-counter) ". ";
-            color: map-get($color-map, 'pine');
+            content: counter(my-counter) ". ";
+            color: var(--text-content-color-list-marker);
             font-weight: bold;
         }
     }
 }
 
-
 .ul {
     li {
         &::before {
-            background-color: map-get($color-map, 'pine');
+            background-color: var(--text-content-color-list-marker);
             top: rem-calc(6);
-
             width: rem-calc(12);
-            height:  rem-calc(12);
+            height: rem-calc(12);
 
             @include media-breakpoint-up(sm) {
                 top: rem-calc(7);
                 width: rem-calc(14);
-                height:  rem-calc(14);
+                height: rem-calc(14);
             }
         }
     }
@@ -227,6 +232,7 @@ p,
 
     + h1 {
         margin-top: rem-calc(map-get($spacers, 6));
+
         @include media-breakpoint-up(sm) {
             margin-top: rem-calc(map-get($spacers, 9));
         }
@@ -234,6 +240,7 @@ p,
 
     + h2 {
         margin-top: rem-calc(map-get($spacers, 6));
+
         @include media-breakpoint-up(sm) {
             margin-top: rem-calc(map-get($spacers, 9));
         }
@@ -241,6 +248,7 @@ p,
 
     + h3 {
         margin-top: rem-calc(map-get($spacers, 4));
+
         @include media-breakpoint-up(sm) {
             margin-top: rem-calc(map-get($spacers, 6));
         }
@@ -248,11 +256,11 @@ p,
 
     + h4 {
         margin-top: rem-calc(map-get($spacers, 4));
+
         @include media-breakpoint-up(sm) {
             margin-top: rem-calc(map-get($spacers, 6));
         }
     }
-
 }
 
 ul,
@@ -264,8 +272,8 @@ ol,
 }
 
 hr {
-    border-top: rem-calc(3) solid $color-secondary;
-    background-color: $color-primary;
+    border-top: rem-calc(3) solid var(--text-content-color-rule);
+    background-color: var(--text-content-color-rule-accent);
     margin-top: map-get($spacers, 3);
     margin-bottom: map-get($spacers, 3);
     opacity: 1;

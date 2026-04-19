@@ -1,0 +1,107 @@
+/* ==================================================
+* Basic variables
+* ================================================== */
+$color-map: (
+    'black': #000000,
+    'white': #ffffff,
+
+    'slate-teal': #3F6B6A,
+    'ink-blue': #243746,
+    'ochre': #B39A63,
+    'steel-blue': #4D89B3,
+    'paper': #F4F0E8,
+    'straw': #E9DDA8,
+    'plum': #8C5A72,
+    'charcoal': #2C3138,
+    'red': #A12A2A,
+
+    'paper-500': #F7F4EE,
+    'paper-700': #ECE4D7,
+
+    'steel-blue-500': #6C9FC2,
+    'steel-blue-700': #3D6F93,
+
+    'ochre-500': #C2AD7C,
+    'ochre-700': #8E7747,
+
+    'ink-blue-50': #E7EDF1,
+    'ink-blue-100': #D4DEE5,
+    'ink-blue-200': #BFCDD7,
+    'ink-blue-300': #AABCC8,
+    'ink-blue-400': #7F9AA8,
+    'ink-blue-500': #566F7D,
+    'ink-blue-700': #314652,
+    'ink-blue-800': #243746,
+    'ink-blue-900': #172630,
+
+    'slate-teal-50': #EAF1F0,
+    'slate-teal-100': #D7E4E1,
+    'slate-teal-200': #C2D6D2,
+    'slate-teal-300': #AEC8C3,
+    'slate-teal-400': #7FA9A0,
+    'slate-teal-500': #518A7D,
+    'slate-teal-700': #2F6558,
+    'slate-teal-800': #244D43,
+    'slate-teal-900': #18352F,
+    'slate-teal-950': #112723,
+
+    'charcoal-50': #F8F9FA,
+    'charcoal-100': #F1F4F5,
+    'charcoal-200': #E2E8EB,
+    'charcoal-300': #CDD7DC,
+    'charcoal-400': #99A8B0,
+    'charcoal-500': #697A84,
+    'charcoal-600': #4B5C66,
+    'charcoal-700': #384750,
+    'charcoal-800': #223039,
+    'charcoal-900': #141E26,
+    'charcoal-950': #091117,
+);
+
+
+/* CSS Variables */
+:root {
+    /* Brand */
+    --color-brand-primary: #{map-get($color-map, 'ink-blue')};
+    --color-brand-secondary: #{map-get($color-map, 'slate-teal')};
+
+    /* Text */
+    --color-text-default: #{map-get($color-map, 'charcoal')};
+    --color-text-subtle: #{map-get($color-map, 'charcoal-500')};
+    --color-text-strong: #{map-get($color-map, 'black')};
+    --color-text-inverted: #{map-get($color-map, 'white')};
+
+    /* Heading */
+    --color-heading-default: #{map-get($color-map, 'ink-blue')};
+    --color-heading-subtle: #{map-get($color-map, 'charcoal-500')};
+    --color-heading-strong: #{map-get($color-map, 'black')};
+    --color-heading-inverted: #{map-get($color-map, 'white')};
+
+    /* Surface */
+    --color-surface-default: #{map-get($color-map, 'paper')};
+    --color-surface-inverted: #{map-get($color-map, 'charcoal')};
+    --color-surface-subtle: #{map-get($color-map, 'paper-700')};
+    --color-surface-accent: #{map-get($color-map, 'straw')};
+    --color-surface-strong: #{map-get($color-map, 'plum')};
+    --color-surface-dark: #{map-get($color-map, 'charcoal')};
+
+    /* Border */
+    --color-border-default: #{map-get($color-map, 'ink-blue')};
+    --color-border-inverted: #{map-get($color-map, 'white')};
+
+    --color-border-subtle: #{map-get($color-map, 'charcoal-300')};
+    --color-border-strong: #{map-get($color-map, 'slate-teal')};
+    --color-border-disabled: #{map-get($color-map, 'charcoal-300')};
+
+    /* Icon */
+    --color-icon-default: #{map-get($color-map, 'ink-blue')};
+    --color-icon-subtle: #{map-get($color-map, 'charcoal-500')};
+    --color-icon-strong: #{map-get($color-map, 'slate-teal')};
+    --color-icon-inverted: #{map-get($color-map, 'white')};
+
+    /* Feedback */
+    --color-feedback-error: #{map-get($color-map, 'red')};
+
+    /* Accessibility */
+    --color-outline-accessibility: #{map-get($color-map, 'steel-blue')};
+}

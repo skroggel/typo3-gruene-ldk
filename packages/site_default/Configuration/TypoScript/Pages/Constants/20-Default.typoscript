@@ -17,7 +17,7 @@ page {
 
     rootPid = 1
     siteName = GRÜNE Lahn-Dill
-    setName = default
+    cssAdditions =
 
     specialPages {
         oldBrowserPid = 4

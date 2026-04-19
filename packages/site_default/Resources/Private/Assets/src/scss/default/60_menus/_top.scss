@@ -2,7 +2,10 @@
 * Top-Menu
 * ================================================== */
 @use 'sass:math';
+
 .nav-top {
+    --top-menu-color-link: var(--color-brand-primary);
+    --top-menu-color-link-active: var(--color-text-default);
 
     &-list {
         line-height: 100%;
@@ -14,18 +17,17 @@
     &-link:hover {
         font-size: rem-calc(16);
         line-height: 100%;
-        color: $color-primary;
+        color: var(--top-menu-color-link);
         text-transform: uppercase;
         font-weight: bold;
         text-decoration: none;
 
-        @include accessibility-outline($color: $color-outline);
+        @include accessibility-outline($color: var(--color-outline-accessibility));
         @include text-marker();
 
         &.active {
             font-weight: bold;
-            color: $color-text;
+            color: var(--top-menu-color-link-active);
         }
     }
 }
-

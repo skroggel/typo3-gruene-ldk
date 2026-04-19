@@ -1,3 +1,13 @@
+<If "%{HTTP_HOST} == 'test.gruene-lahn-dill.de'">
+	AuthType Basic
+	AuthName "STAGING"
+	#We rely on this rule only being applied on staging, as it will break everywhere else
+	AuthUserFile /var/www/gruene-herborn.de/typo3/current/.htpasswd
+	Require valid-user
+</If>
+
+
+
 #####
 #
 # Example .htaccess file for TYPO3 CMS - for use with Apache Webserver
@@ -292,8 +302,8 @@ AddDefaultCharset utf-8
 	RewriteEngine On
 
 	# Make sure we use the www-Subdomain
-	RewriteCond %{HTTP_HOST} !^example\.ddev\.site [NC]
-	RewriteCond %{HTTP_HOST} !^example\.test\.net [NC]
+	RewriteCond %{HTTP_HOST} !^gruene-ldk\.ddev\.site [NC]
+	RewriteCond %{HTTP_HOST} !^test\.gruene-lahn-dill\.de [NC]
 	RewriteCond %{HTTP_HOST} !^www\. [NC]
 	RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]
 
@@ -305,9 +315,9 @@ AddDefaultCharset utf-8
 	# ===============================================
 
 	# Make sure we use https!
-	RewriteCond %{SERVER_PORT} !^443$
+	# RewriteCond %{SERVER_PORT} !^443$
 	# RewriteCond %{SERVER_PORT} !^8443$
-	RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+	# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
 	# Store the current location in an environment variable CWD to use
 	# mod_rewrite in .htaccess files without knowing the RewriteBase
@@ -315,8 +325,8 @@ AddDefaultCharset utf-8
 	RewriteRule ^.*$ - [E=CWD:%2]
 
 	# Rules to set ApplicationContext based on hostname
-	RewriteCond %{HTTP_HOST} ^test\.gruene-lahn-dill\.de$
-	RewriteRule .? - [E=TYPO3_CONTEXT:Production/Staging]
+	# RewriteCond %{HTTP_HOST} ^test\.gruene-lahn-dill\.de$
+	# RewriteRule .? - [E=TYPO3_CONTEXT:Production/Staging]
 
     # remove trailing slash
 	RewriteCond %{REQUEST_METHOD} !POST

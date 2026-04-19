@@ -2,18 +2,20 @@
 * Contact-Slider
 * ================================================== */
 .contact-slider {
+    --contact-slider-color-background: var(--color-surface-subtle);
+    --contact-slider-color-image-background: var(--color-surface-default);
 
     .owl-stage,
     .owl-item {
         height: 100%;
-        background-color: map-get($color-map, 'sand');
+        background-color: var(--contact-slider-color-background);
     }
 
     &-item {
         display: flex;
         flex-direction: column;
         align-items: center;
-        background-color: map-get($color-map, 'sand');
+        background-color: var(--contact-slider-color-background);
 
         .headline {
             margin-bottom: 0;
@@ -24,12 +26,11 @@
         display: flex !important;
         justify-content: center;
 
-        background-color: map-get($color-map, 'white');
+        background-color: var(--contact-slider-color-image-background);
         width: 100%;
         flex: 0 0 auto;
         padding-left: rem-calc(map-get($spacers, 5));
         padding-right: rem-calc(map-get($spacers, 5));
-
 
         .img-inner {
             width: auto;

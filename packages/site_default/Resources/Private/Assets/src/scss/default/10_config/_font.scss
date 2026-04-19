@@ -2,8 +2,6 @@
 * Font variables
 * ================================================== */
 // fonts
-$font-family-sans: "PT Sans", "Verdana", "Arial", sans-serif;
-$font-family-gruene: "GrueneType Neue", "Verdana", "Arial", sans-serif;
 
 $font-weight-lighter:         lighter !default;
 $font-weight-light:           300 !default;
@@ -14,25 +12,32 @@ $font-weight-bold:            700 !default;
 $font-weight-bolder:          bolder !default;
 
 
+:root {
+    --font-family: "PT Sans", "Verdana", "Arial", sans-serif;
+    --font-weight: #{$font-weight-normal};
+    --font-family-headline: "GrueneType Neue", "Verdana", "Arial", sans-serif;
+    --font-weight-headline: #{$font-weight-normal};
+}
+
 $font-formats: (
     'h1': (
         'mobile': (
-            'font-family': $font-family-gruene,
-            'font-weight': $font-weight-normal,
+            'font-family': var(--font-family-headline),
+            'font-weight': var(--font-weight-headline),
             'font-size': rem-calc(60),
             'line-height': 110%,
             'letter-spacing': 0
         ),
         'tablet': (
-            'font-family': $font-family-gruene,
-            'font-weight': $font-weight-normal,
+            'font-family': var(--font-family-headline),
+            'font-weight': var(--font-weight-headline),
             'font-size': rem-calc(80),
             'line-height': 110%,
             'letter-spacing': 0
         ),
         'desktop': (
-            'font-family': $font-family-gruene,
-            'font-weight': $font-weight-normal,
+            'font-family': var(--font-family-headline),
+            'font-weight': var(--font-weight-headline),
             'font-size': rem-calc(80),
             'line-height': 110%,
             'letter-spacing': 0
@@ -40,22 +45,22 @@ $font-formats: (
     ),
     'h2': (
         'mobile': (
-            'font-family': $font-family-gruene,
-            'font-weight': $font-weight-normal,
+            'font-family': var(--font-family-headline),
+            'font-weight': var(--font-weight-headline),
             'font-size': rem-calc(40),
             'line-height': 110%,
             'letter-spacing': 0
         ),
         'tablet': (
-            'font-family': $font-family-gruene,
-            'font-weight': $font-weight-normal,
+            'font-family': var(--font-family-headline),
+            'font-weight': var(--font-weight-headline),
             'font-size': rem-calc(60),
             'line-height': 110%,
             'letter-spacing': 0
         ),
         'desktop': (
-            'font-family': $font-family-gruene,
-            'font-weight': $font-weight-normal,
+            'font-family': var(--font-family-headline),
+            'font-weight': var(--font-weight-headline),
             'font-size': rem-calc(60),
             'line-height': 110%,
             'letter-spacing': 0
@@ -63,22 +68,22 @@ $font-formats: (
     ),
     'h3': (
         'mobile': (
-            'font-family': $font-family-gruene,
-            'font-weight': $font-weight-normal,
+            'font-family': var(--font-family-headline),
+            'font-weight': var(--font-weight-headline),
             'font-size': rem-calc(30),
             'line-height': 110%,
             'letter-spacing': 0
         ),
         'tablet': (
-            'font-family': $font-family-gruene,
-            'font-weight': $font-weight-normal,
+            'font-family': var(--font-family-headline),
+            'font-weight': var(--font-weight-headline),
             'font-size': rem-calc(40),
             'line-height': 110%,
             'letter-spacing': 0
         ),
         'desktop': (
-            'font-family': $font-family-gruene,
-            'font-weight': $font-weight-normal,
+            'font-family': var(--font-family-headline),
+            'font-weight': var(--font-weight-headline),
             'font-size': rem-calc(40),
             'line-height': 110%,
             'letter-spacing': 0
@@ -86,22 +91,22 @@ $font-formats: (
     ),
     'h4': (
         'mobile': (
-            'font-family': $font-family-gruene,
-            'font-weight': $font-weight-normal,
+            'font-family': var(--font-family-headline),
+            'font-weight': var(--font-weight-headline),
             'font-size': rem-calc(20),
             'line-height': 110%,
             'letter-spacing': 0
         ),
         'tablet': (
-            'font-family': $font-family-gruene,
-            'font-weight': $font-weight-normal,
+            'font-family': var(--font-family-headline),
+            'font-weight': var(--font-weight-headline),
             'font-size': rem-calc(30),
             'line-height': 110%,
             'letter-spacing': 0
         ),
         'desktop': (
-            'font-family': $font-family-gruene,
-            'font-weight': $font-weight-normal,
+            'font-family': var(--font-family-headline),
+            'font-weight': var(--font-weight-headline),
             'font-size': rem-calc(30),
             'line-height': 110%,
             'letter-spacing': 0
@@ -109,22 +114,22 @@ $font-formats: (
     ),
     'h5': (
         'mobile': (
-            'font-family': $font-family-gruene,
-            'font-weight': $font-weight-normal,
+            'font-family': var(--font-family-headline),
+            'font-weight': var(--font-weight-headline),
             'font-size': rem-calc(18),
             'line-height': 110%,
             'letter-spacing': 0
         ),
         'tablet': (
-            'font-family': $font-family-gruene,
-            'font-weight': $font-weight-normal,
+            'font-family': var(--font-family-headline),
+            'font-weight': var(--font-weight-headline),
             'font-size': rem-calc(24),
             'line-height': 110%,
             'letter-spacing': 0
         ),
         'desktop': (
-            'font-family': $font-family-gruene,
-            'font-weight': $font-weight-normal,
+            'font-family': var(--font-family-headline),
+            'font-weight': var(--font-weight-headline),
             'font-size': rem-calc(24),
             'line-height': 110%,
             'letter-spacing': 0
@@ -132,22 +137,22 @@ $font-formats: (
     ),
     'hero': (
         'mobile': (
-            'font-family': $font-family-gruene,
-            'font-weight': $font-weight-normal,
+            'font-family': var(--font-family-headline),
+            'font-weight': var(---font-weight-headline),
             'font-size': rem-calc(40),
             'line-height': 110%,
             'letter-spacing': 0
         ),
         'tablet': (
-            'font-family': $font-family-gruene,
-            'font-weight': $font-weight-normal,
+            'font-family': var(--font-family-headline),
+            'font-weight': var(--font-weight-headline),
             'font-size': rem-calc(60),
             'line-height': 110%,
             'letter-spacing': 0
         ),
         'desktop': (
-            'font-family': $font-family-gruene,
-            'font-weight': $font-weight-normal,
+            'font-family': var(--font-family-headline),
+            'font-weight': var(--font-weight-headline),
             'font-size': rem-calc(80),
             'line-height': 110%,
             'letter-spacing': 0
@@ -155,29 +160,29 @@ $font-formats: (
     ),
     'hero-menu': (
         'mobile': (
-            'font-family': $font-family-gruene,
-            'font-weight': $font-weight-normal,
+            'font-family': var(--font-family-headline),
+            'font-weight': var(--font-weight-headline),
             'font-size': rem-calc(40),
             'line-height': 110%,
             'letter-spacing': 0
         ),
         'tablet': (
-            'font-family': $font-family-gruene,
-            'font-weight': $font-weight-normal,
+            'font-family': var(--font-family-headline),
+            'font-weight': var(--font-weight-headline),
             'font-size': rem-calc(40),
             'line-height': 110%,
             'letter-spacing': 0
         ),
         'desktop': (
-            'font-family': $font-family-gruene,
-            'font-weight': $font-weight-normal,
+            'font-family': var(--font-family-headline),
+            'font-weight': var(--font-weight-headline),
             'font-size': rem-calc(40),
             'line-height': 110%,
             'letter-spacing': 0
         ),
         'xl': (
-            'font-family': $font-family-gruene,
-            'font-weight': $font-weight-normal,
+            'font-family': var(--font-family-headline),
+            'font-weight': var(--font-weight-headline),
             'font-size': rem-calc(60),
             'line-height': 110%,
             'letter-spacing': 0
@@ -185,22 +190,22 @@ $font-formats: (
     ),
     'toggle-list-text': (
         'mobile': (
-            'font-family': $font-family-sans,
-            'font-weight': $font-weight-normal,
+            'font-family': var(--font-family),
+            'font-weight': var(--font-weight),
             'font-size': rem-calc(18),
             'line-height': 110%,
             'letter-spacing': 0
         ),
         'tablet': (
-            'font-family': $font-family-sans,
-            'font-weight': $font-weight-normal,
+            'font-family': var(--font-family),
+            'font-weight': var(--font-weight),
             'font-size': rem-calc(18),
             'line-height': 110%,
             'letter-spacing': 0
         ),
         'desktop': (
-            'font-family': $font-family-sans,
-            'font-weight': $font-weight-normal,
+            'font-family': var(--font-family),
+            'font-weight': var(--font-weight),
             'font-size': rem-calc(25),
             'line-height': 110%,
             'letter-spacing': 0
@@ -208,22 +213,22 @@ $font-formats: (
     ),
     'copy': (
         'mobile': (
-            'font-family': $font-family-sans,
-            'font-weight': $font-weight-normal,
+            'font-family': var(--font-family),
+            'font-weight': var(--font-weight),
             'font-size': rem-calc(16),
             'line-height': 150%,
             'letter-spacing': 0
         ),
         'tablet': (
-            'font-family': $font-family-sans,
-            'font-weight': $font-weight-normal,
+            'font-family': var(--font-family),
+            'font-weight': var(--font-weight),
             'font-size': rem-calc(18),
             'line-height': 155%,
             'letter-spacing': 0
         ),
         'desktop': (
-            'font-family': $font-family-sans,
-            'font-weight': $font-weight-normal,
+            'font-family': var(--font-family),
+            'font-weight': var(--font-weight),
             'font-size': rem-calc(20),
             'line-height': 155%,
             'letter-spacing': 0
@@ -231,22 +236,22 @@ $font-formats: (
     ),
     'copy-small': (
         'mobile': (
-            'font-family': $font-family-sans,
-            'font-weight': $font-weight-normal,
+            'font-family': var(--font-family),
+            'font-weight': var(--font-weight),
             'font-size': rem-calc(13),
             'line-height': 160%,
             'letter-spacing': 0
         ),
         'tablet': (
-            'font-family': $font-family-sans,
-            'font-weight': $font-weight-normal,
+            'font-family': var(--font-family),
+            'font-weight': var(--font-weight),
             'font-size': rem-calc(16),
             'line-height': 150%,
             'letter-spacing': 0
         ),
         'desktop': (
-            'font-family': $font-family-sans,
-            'font-weight': $font-weight-normal,
+            'font-family': var(--font-family),
+            'font-weight': var(--font-weight),
             'font-size': rem-calc(16),
             'line-height': 150%,
             'letter-spacing': 0
@@ -254,35 +259,31 @@ $font-formats: (
     ),
     'button': (
         'default': (
-            'font-family': $font-family-sans,
+            'font-family': var(--font-family),
             'font-weight': $font-weight-bold,
             'font-size': rem-calc(16),
             'line-height': 130%,
             'letter-spacing': 0,
         )
     ),
-
-
-
-
     'lead': (
         'mobile': (
-            'font-family': $font-family-sans,
-            'font-weight': $font-weight-normal,
+            'font-family': var(--font-family),
+            'font-weight': var(--font-weight),
             'font-size': rem-calc(20),
             'line-height': 175%,
             'letter-spacing': 0
         ),
         'tablet': (
-            'font-family': $font-family-sans,
-            'font-weight': $font-weight-normal,
+            'font-family': var(--font-family),
+            'font-weight': var(--font-weight),
             'font-size': rem-calc(25),
             'line-height':134%,
             'letter-spacing': 0
         ),
         'desktop': (
-            'font-family': $font-family-sans,
-            'font-weight': $font-weight-normal,
+            'font-family': var(--font-family),
+            'font-weight': var(--font-weight),
             'font-size': rem-calc(25),
             'line-height':134%,
             'letter-spacing': 0
@@ -290,21 +291,21 @@ $font-formats: (
     ),
     'subheader-1': (
         'mobile': (
-            'font-family': $font-family-sans,
+            'font-family': var(--font-family),
             'font-weight': $font-weight-bold,
             'font-size': rem-calc(20),
             'line-height': 130%,
             'letter-spacing': 0,
         ),
         'tablet': (
-            'font-family': $font-family-sans,
+            'font-family': var(--font-family),
             'font-weight': $font-weight-bold,
             'font-size': rem-calc(25),
             'line-height': 130%,
             'letter-spacing': 0,
         ),
         'desktop': (
-            'font-family': $font-family-sans,
+            'font-family': var(--font-family),
             'font-weight': $font-weight-bold,
             'font-size': rem-calc(25),
             'line-height': 130%,
@@ -313,21 +314,21 @@ $font-formats: (
     ),
     'subheader-2': (
         'mobile': (
-            'font-family': $font-family-sans,
+            'font-family': var(--font-family),
             'font-weight': $font-weight-bold,
             'font-size': rem-calc(18),
             'line-height': 130%,
             'letter-spacing': 0,
         ),
         'tablet': (
-            'font-family': $font-family-sans,
+            'font-family': var(--font-family),
             'font-weight': $font-weight-bold,
             'font-size': rem-calc(20),
             'line-height': 130%,
             'letter-spacing': 0,
         ),
         'desktop': (
-            'font-family': $font-family-sans,
+            'font-family': var(--font-family),
             'font-weight': $font-weight-bold,
             'font-size': rem-calc(20),
             'line-height': 130%,
@@ -336,21 +337,21 @@ $font-formats: (
     ),
     'subheader-3': (
         'mobile': (
-            'font-family': $font-family-sans,
+            'font-family': var(--font-family),
             'font-weight': $font-weight-bold,
             'font-size': rem-calc(16),
             'line-height': 130%,
             'letter-spacing': 0,
         ),
         'tablet': (
-            'font-family': $font-family-sans,
+            'font-family': var(--font-family),
             'font-weight': $font-weight-bold,
             'font-size': rem-calc(18),
             'line-height': 130%,
             'letter-spacing': 0,
         ),
         'desktop': (
-            'font-family': $font-family-sans,
+            'font-family': var(--font-family),
             'font-weight': $font-weight-bold,
             'font-size': rem-calc(18),
             'line-height': 130%,
@@ -361,8 +362,8 @@ $font-formats: (
 
     'input': (
         'default': (
-            'font-family': $font-family-sans,
-            'font-weight': $font-weight-normal,
+            'font-family': var(--font-family),
+            'font-weight': var(--font-weight),
             'font-size': rem-calc(16),
             'line-height': 120%,
             'letter-spacing': 0,
@@ -370,8 +371,8 @@ $font-formats: (
     ),
     'label': (
         'default': (
-            'font-family': $font-family-sans,
-            'font-weight': $font-weight-normal,
+            'font-family': var(--font-family),
+            'font-weight': var(--font-weight),
             'font-size': rem-calc(16),
             'line-height': 130%,
             'letter-spacing': 0,
@@ -379,8 +380,8 @@ $font-formats: (
     ),
     'link': (
         'default': (
-            'font-family': $font-family-sans,
+            'font-family': var(--font-family),
         )
     )
-);
+) !default;
 

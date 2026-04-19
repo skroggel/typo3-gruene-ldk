@@ -154,8 +154,8 @@ page {
         settings {
 
             rootPid = {$page.rootPid}
-            setName = {$page.setName}
             siteName = {$page.siteName}
+            cssAdditions = {$page.cssAdditions}
 
             currentPid = TEXT
             currentPid.data = TSFE:id

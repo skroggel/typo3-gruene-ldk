@@ -3,11 +3,12 @@
 * ================================================== */
 
 .page-content {
+    .accordion {
+        --accordion-color-toggle: var(--color-brand-primary);
 
-   .accordion {
-       .toggle-list-text {
-           @include h4;
-           color: $color-primary;
-       }
-   }
+        .toggle-list-text {
+            @include h4;
+            color: var(--accordion-color-toggle);
+        }
+    }
 }

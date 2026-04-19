@@ -4,13 +4,15 @@
 .toggle-group {
     @include toggle-group(
         $gap: $spacer
-    )
+    );
 }
 
 .toggle {
+    --toggle-color-icon: var(--color-icon-default);
+
     @include toggle(
         $icon-size: 20px,
-        $icon-color: $color-primary,
+        $icon-color: var(--toggle-color-icon),
         $icon-mappings: (
             "icon-hamburger": $icon-close,
             "icon-arrow-down": $icon-arrow-up
@@ -24,5 +26,5 @@
         }
     }
 
-    @include accessibility-outline($color: $color-outline);
+    @include accessibility-outline($color: var(--color-outline-accessibility));
 }

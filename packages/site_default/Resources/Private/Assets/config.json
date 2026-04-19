@@ -86,8 +86,12 @@
 			"dest": "../../Public/JavaScript/"
 		},
 		"watch": {
-			"styles": "./src/scss/**/*.{css,less,scss}",
-			"scripts": "./src/js/**/*.js"
+			"styles": [
+				"./src/scss/**/*.{css,less,scss}"
+			],
+			"scripts": [
+				"./src/js/**/*.js"
+			]
 		}
 	},
 	"run": {

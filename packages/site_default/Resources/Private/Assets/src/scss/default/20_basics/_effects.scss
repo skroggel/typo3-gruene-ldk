@@ -2,35 +2,36 @@
 * Effects
 * ================================================== */
 
-// for images only!
-@include media-breakpoint-up(lg) {
-    .effect-edge-cut-image {
-        mask-image: url('../Images/image-mask-edge.svg');
-        mask-repeat: no-repeat;
-        mask-size: auto 100%;
-        mask-position: left top;
-        height: 100%;
+body:not(.no-effects) {
 
-        &.variant-left {
-            mask-image: url('../Images/image-mask-edge-right.svg');
-            mask-position: right top;
+    // for images only!
+    @include media-breakpoint-up(lg) {
+        .effect-edge-cut-image {
+            mask-image: url('../Images/image-mask-edge.svg');
+            mask-repeat: no-repeat;
+            mask-size: auto 100%;
+            mask-position: left top;
+            height: 100%;
+
+            &.variant-left {
+                mask-image: url('../Images/image-mask-edge-right.svg');
+                mask-position: right top;
+            }
         }
     }
-}
 
-.effect-skewed-text {
-    display: inline-block;
-    // background-color: $color-primary;
-    padding: rem-calc(map-get($spacers, 1)) rem-calc(map-get($spacers, 4));
-    transform: skewX(-12deg);
-
-    span {
-        transform: skewX(12deg); // Gegenskew für Text
+    .effect-skewed-text {
         display: inline-block;
-        // color: $color-white;
-    }
+        padding: rem-calc(map-get($spacers, 1)) rem-calc(map-get($spacers, 4));
+        transform: skewX(-12deg);
 
-    @include media-breakpoint-up(lg) {
-        padding: rem-calc(12) rem-calc(32);
+        span {
+            transform: skewX(12deg); // Gegenskew für Text
+            display: inline-block;
+        }
+
+        @include media-breakpoint-up(lg) {
+            padding: rem-calc(12) rem-calc(32);
+        }
     }
 }

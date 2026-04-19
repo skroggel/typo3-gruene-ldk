@@ -9,8 +9,7 @@
                 <div class="col-9 col-sm-7 col-lg-4">
                     <f:link.page pageUid="{settings.rootPid}" class="siteheader-brand">
                         <div class="siteheader-brand-wrap">
-                            <img src="{f:uri.image(src:'EXT:site_default/Resources/Public/Images/logo.svg')}"
-                                 alt="BÜNDNIS 90 / DIE GRÜNEN" title="BÜNDNIS 90 / DIE GRÜNEN" class="siteheader-brand-logo"/>
+                           <f:render partial="Header/Logo" arguments="{_all}" />
                         </div>
                         <div class="siteheader-brand-header">
                             {settings.siteName}

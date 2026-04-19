@@ -2,12 +2,13 @@
 * Screenreader links
 * ================================================== */
 .keyboard-shortcuts {
+    --keyboard-shortcuts-color-background: var(--color-surface-default);
 
     position: fixed;
     top: 0;
     left: 0;
     z-index: 9999;
-    background: #fff;
+    background: var(--keyboard-shortcuts-color-background);
 
     @include media-breakpoint-down(lg) {
         display: none;
@@ -20,9 +21,9 @@
         z-index: 99999 !important;
         padding: 10px !important;
         display: block;
-        background-color: #fff;
+        background-color: var(--keyboard-shortcuts-color-background);
         white-space: nowrap !important;
 
-        @include accessibility-outline($color: $color-outline);
+        @include accessibility-outline($color: var(--color-outline-accessibility));
     }
 }

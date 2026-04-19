@@ -2,30 +2,38 @@
 	Links
 ******************************************/
 a {
-    @include accessibility-outline();
+    @include accessibility-outline(var(--color-outline-accessibility));
 }
+
+.link-wrap,
+.link-headline,
+.link {
+    --link-color-text: var(--color-brand-secondary);
+    --link-color-text-hover: var(--color-brand-secondary);
+    --link-color-text-wrap: inherit;
+    --link-color-text-headline: inherit;
+}
+
 
 .link-wrap,
 .link-wrap:link,
 .link-wrap:visited,
 .link-wrap:hover {
-
     text-decoration: none;
-    color: inherit;
+    color: var(--link-color-text-wrap);
 }
 
 .link-wrap:hover {
-
     text-decoration: none;
-    color: inherit;
+    color: var(--link-color-text-wrap);
 
     .cta {
-        color: map-get($color-map, 'pine-900');
-        background-color: map-get($color-map, 'sun');
+        color: var(--cta-color-text-hover);
+        background-color: var(--cta-color-background-hover);
 
         &-inverted {
-            background-color: map-get($color-map, 'pine');
-            color: $color-white;
+            color: var(--cta-color-text-hover-inverted);
+            background-color: var(--cta-color-background-hover-inverted);
         }
     }
 
@@ -34,32 +42,9 @@ a {
     }
 }
 
-/*
-[class^="bg-color-"]:not([class^="bg-color-light"]):not([class^="bg-color-none"]):not([class^="bg-color-white"]),
-[class*=" bg-color-"]:not([class*=" bg-color-light"]):not([class*=" bg-color-none"]):not([class*=" bg-color-white"])  {
-    .link-wrap,
-    .link-wrap:link,
-    .link-wrap:visited,
-    .link-wrap:hover {
-        &:hover {
-            .cta {
-                color: $color-secondary;
-                background-color: $color-white;
-
-                &.cta-default {
-                    .cta-inner {
-                        border: rem-calc(1) solid $color-white;
-                    }
-                }
-            }
-        }
-    }
-}*/
-
-
 .link {
     @include link;
-    color: $color-secondary;
+    color: var(--link-color-text);
     text-decoration: none;
 }
 
@@ -74,46 +59,10 @@ a {
     &-fax,
     &-phone {
         color: inherit;
-        // pointer-events: none;
-        // cursor: default;
     }
-
-    // used by BE-Editor (RichTextEditor)
-    /*
-	&-rte {
-		&-internal {
-		}
-
-		&-external {
-		}
-
-		&-download {
-		}
-
-		&-email {
-		}
-
-		&-phone {
-		}
-	}*/
 }
 
 .link-headline {
-    color: inherit;
+    color: var(--link-color-text-headline);
     text-decoration: none;
 }
-
-/*
-[class^="bg-color-"]:not([class^="bg-color-light"]):not([class^="bg-color-none"]):not([class^="bg-color-white"]),
-[class*=" bg-color-"]:not([class*=" bg-color-light"]):not([class*=" bg-color-none"]):not([class*=" bg-color-white"])  {
-    .link,
-    .link-headline {
-        text-decoration:none;
-        &:hover {
-            text-decoration: underline;
-        }
-        &:before {
-            width: 0;
-        }
-    }
-}*/

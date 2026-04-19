@@ -28,3 +28,8 @@ $icon-arrow-down: unquote('"\\e90b"');
 $icon-arrow-up: unquote('"\\e90c"');
 $icon-arrow-right: unquote('"\\e905"');
 $icon-arrow-left: unquote('"\\e906"');
+
+
+:root {
+    --cta-border-radius: #{rem-calc(72)};
+}

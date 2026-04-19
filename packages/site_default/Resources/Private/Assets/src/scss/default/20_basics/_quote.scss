@@ -2,9 +2,10 @@
 * Quote
 * ================================================== */
 .quote {
+    --quote-color-text: var(--color-brand-secondary);
 
     @include h2;
-    color: $color-secondary;
+    color: var(--quote-color-text);
 
     @include media-breakpoint-up(xxl) {
         font-size: rem-calc(52);
@@ -17,9 +18,11 @@
         ::before {
             content: "“";
         }
+
         ::after {
-            content:"”"
+            content: "”";
         }
+
         p {
             display: inline;
         }
@@ -34,6 +37,5 @@
         @include media-breakpoint-up(xxl) {
             @include h4;
         }
-
     }
 }

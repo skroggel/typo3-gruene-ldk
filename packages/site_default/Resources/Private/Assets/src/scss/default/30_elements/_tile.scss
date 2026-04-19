@@ -2,13 +2,14 @@
 * Tile
 * ================================================== */
 .tile-wrap {
-    display:flex;
+    display: flex;
     gap: rem-calc(20);
     flex-wrap: wrap;
 
     .tile {
         width: auto;
         flex-basis: 100%;
+
         @include media-breakpoint-up(sm) {
             @include flex-basis(2, rem-calc(20));
         }
@@ -24,6 +25,8 @@
 }
 
 .tile {
+    --tile-color-background: var(--color-surface-default);
+    --tile-color-text: var(--color-text-default);
 
     &:hover {
         .tile-image {
@@ -34,7 +37,7 @@
     }
 
     &-inner {
-        background-color: $color-white;
+        background-color: var(--tile-color-background);
         width: rem-calc(450);
         max-width: 100%;
         display: flex;
@@ -44,12 +47,10 @@
 
     &-image {
         width: 100%;
-        // height: rem-calc(300);
         overflow: hidden;
         margin: 0;
 
         img {
-          //  aspect-ratio: 1/1;
             object-fit: cover;
             width: 100%;
             transition: transform 0.5s ease-in-out;
@@ -61,14 +62,14 @@
     }
 
     &-body {
-        color: $color-text;
-        padding: rem-calc(map-get($spacers,3));
-        padding-top: rem-calc(map-get($spacers,5));
+        color: var(--tile-color-text);
+        padding: rem-calc(map-get($spacers, 3));
+        padding-top: rem-calc(map-get($spacers, 5));
     }
 
     &-category {
         @include copy-small;
-        display:block;
+        display: block;
         padding-bottom: rem-calc($spacer);
         margin-top: rem-calc(map-get($spacers, 2) * -1);
     }
@@ -81,11 +82,11 @@
 
     &-text {
         @include copy-small;
-        color: $color-text;
+        color: var(--tile-color-text);
     }
 
     &-footer {
         padding: 0 rem-calc(map-get($spacers, 3)) 0;
-        color: $color-text;
+        color: var(--tile-color-text);
     }
 }

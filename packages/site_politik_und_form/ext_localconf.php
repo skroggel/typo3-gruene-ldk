@@ -1,0 +1,14 @@
+<?php
+defined('TYPO3') or die('Access denied.');
+
+call_user_func(
+	function($extKey)
+	{
+
+
+
+    },
+	'site_politik_und_form'
+);
+
+

@@ -2,30 +2,30 @@
 * Hero
 * ================================================== */
 .hero {
+    --hero-color-background: var(--color-surface-subtle);
+    --hero-color-text: var(--color-heading-default);
 
     &-primary,
     &-secondary {
         @extend .effect-skewed-text;
-        background-color: map-get($color-map, 'sand');
-        color: $color-primary;
-        padding-top: rem-calc(12);
+        background-color: var(--hero-color-background);
+        color: var(--hero-color-text);
+        padding: rem-calc(map-get($spacers, 1)) rem-calc(map-get($spacers, 4));
+
         @include media-breakpoint-up(sm) {
             padding-top: rem-calc(18);
         }
-        @include media-breakpoint-up(lg) {
-            padding-top: rem-calc(24);
-        }
 
+        @include media-breakpoint-up(lg) {
+            padding: rem-calc(12) rem-calc(32);
+        }
     }
 
     &-secondary {
         margin-top: rem-calc(map-get($spacers, 1) * -1);
-        margin-left: rem-calc(map-get($spacers, 4))
+        margin-left: rem-calc(map-get($spacers, 4));
     }
 }
-
-
-
 
 @supports (font: -apple-system-body) {
     .hero {
@@ -33,9 +33,11 @@
         &-primary,
         &-secondary {
             padding-top: rem-calc(6);
+
             @include media-breakpoint-up(sm) {
                 padding-top: rem-calc(6);
             }
+
             @include media-breakpoint-up(lg) {
                 padding-top: rem-calc(10);
             }

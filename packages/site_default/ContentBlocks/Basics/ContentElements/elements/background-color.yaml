@@ -7,8 +7,8 @@ fields:
     default: 'white'
     label: LLL:EXT:site_default/ContentBlocks/Basics/ContentElements/language/labels.xlf:background_color.label
     items:
-      - value: white
-        label: white
-      - value: sand
-        label: sand
+      - value: default
+        label: default
+      - value: subtle
+        label: subtle
 

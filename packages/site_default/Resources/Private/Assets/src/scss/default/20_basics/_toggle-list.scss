@@ -2,18 +2,37 @@
 * Toggle list
 * ================================================== */
 .toggle-list {
+    --toggle-list-color-border: var(--color-border-default);
+    --toggle-list-color-border-inverted: var(--color-border-default-inverted);
+
+    --toggle-list-color-text: inherit;
+    --toggle-list-color-text-active: inherit;
+    --toggle-list-color-text-hover: inherit;
+
+    --toggle-list-color-text-inverted: var(--color-text-inverted);
+    --toggle-list-color-text-active-inverted: var(--color-text-inverted);
+    --toggle-list-color-text-hover-inverted: var(--color-text-inverted);
+
+    --toggle-list-color-icon: var(--color-icon-default);
+    --toggle-list-color-icon-active: var(--color-icon-default);
+    --toggle-list-color-icon-hover: var(--color-icon-strong);
+
+    --toggle-list-color-icon-inverted: var(--color-icon-inverted);
+    --toggle-list-color-icon-active-inverted: var(--color-icon-inverted);
+    --toggle-list-color-icon-hover-inverted: var(--color-icon-inverted);
+
     @include toggle-list(
         $padding-y: $spacer,
-        $border-color: $color-primary,
+        $border-color: var(--toggle-list-color-border),
         $border-size: 1px,
-        $font-color: inherit,
-        $font-color-active: inherit,
-        $font-color-hover: inherit,
+        $font-color: var(--toggle-list-color-text),
+        $font-color-active: var(--toggle-list-color-text-active),
+        $font-color-hover: var(--toggle-list-color-text-hover),
         $icon-size: 20px,
         $icon-style: $icon-arrow-right,
-        $icon-color: $color-primary,
-        $icon-color-active: $color-primary,
-        $icon-color-hover: $color-secondary
+        $icon-color: var(--toggle-list-color-icon),
+        $icon-color-active: var(--toggle-list-color-icon-active),
+        $icon-color-hover: var(--toggle-list-color-icon-hover)
     );
 
     &-link {
@@ -21,7 +40,6 @@
         align-items: end;
 
         &::after {
-            //WTF? padding-bottom: rem-calc(xl);
             @include media-breakpoint-up(lg) {
                 padding-bottom: rem-calc(4);
             }
@@ -29,7 +47,7 @@
 
         .icon {
             @include media-breakpoint-up(lg) {
-                font-size: rem-calc(30)
+                font-size: rem-calc(30);
             }
         }
 
@@ -52,39 +70,46 @@
     }
 }
 
-
 [class^="bg-color-dark"],
-[class*=" bg-color-dark"]  {
+[class*=" bg-color-dark"] {
     .toggle-list {
+        --toggle-list-color-border: var(--toggle-list-color-border-inverted);
+        --toggle-list-color-text: var(--toggle-list-color-text-inverted);
+        --toggle-list-color-text-active: var(--toggle-list-color-text-active-inverted);
+        --toggle-list-color-text-hover: var(--toggle-list-color-text-hover-inverted);
+
+        --toggle-list-color-icon: var(--toggle-list-color-icon-inverted);
+        --toggle-list-color-icon-active: var(--toggle-list-color-icon-active-inverted);
+        --toggle-list-color-icon-hover: var(--toggle-list-color-icon-hover-inverted);
 
         &-item {
-            border-bottom: rem-calc(1) solid $white;
+            border-bottom: rem-calc(1) solid var(--toggle-list-color-border);
         }
 
         &-link {
-            color: $color-white;
+            color: var(--toggle-list-color-text);
 
             &::after,
             .icon {
-                color: $color-white;
+                color: var(--toggle-list-color-icon);
             }
 
             &.active,
             &[aria-expanded="true"] {
-                color: $color-white;
+                color: var(--toggle-list-color-text-active);
 
                 &::after,
                 .icon {
-                    color: $color-white;
+                    color: var(--toggle-list-color-icon-active);
                 }
             }
 
-            &:hover{
-                color: $color-white;
+            &:hover {
+                color: var(--toggle-list-color-text-hover);
 
                 &::after,
                 .icon {
-                    color: $color-white;
+                    color: var(--toggle-list-color-icon-hover);
                     pointer-events: none;
                 }
 
@@ -97,6 +122,7 @@
                 &:hover {
                     text-decoration: underline;
                 }
+
                 &:before {
                     display: none;
                 }
@@ -104,4 +130,3 @@
         }
     }
 }
-

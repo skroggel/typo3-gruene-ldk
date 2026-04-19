@@ -2,15 +2,46 @@
 	Button
 ******************************************/
 .cta {
-    color: $color-white;
-    background-color: map-get($color-map, 'pine');
-    transition: background-color 0.5s, color 0.5s;
-    border:0;
+    --cta-color-text: var(--color-text-inverted);
+    --cta-color-background: var(--color-brand-primary);
+    --cta-color-border: transparent;
+
+    --cta-color-text-hover: var(--color-text-default);
+    --cta-color-background-hover: var(--color-surface-accent);
+    --cta-color-border-hover: transparent;
+
+    --cta-color-text-inverted: var(--color-text-default);
+    --cta-color-background-inverted: var(--color-surface-accent);
+    --cta-color-border-inverted: transparent;
+
+    --cta-color-text-hover-inverted: var(--color-text-inverted);
+    --cta-color-background-hover-inverted: var(--color-brand-primary);
+    --cta-color-border-hover-inverted: transparent;
+
+    --cta-color-text-white: var(--color-text-default);
+    --cta-color-background-white: var(--color-surface-default);
+    --cta-color-border-white: transparent;
+
+    --cta-color-text-hover-white: var(--color-text-default);
+    --cta-color-background-hover-white: var(--color-surface-accent);
+    --cta-color-border-hover-white: transparent;
+
+    --cta-color-text-disabled: var(--color-text-inverted);
+    --cta-color-background-disabled: var(--color-border-disabled);
+    --cta-color-border-disabled: var(--color-border-disabled);
+
+    --cta-color-border-icon: transparent;
+    --cta-color-border-icon-hover: var(--color-border-inverted);
+
+    color: var(--cta-color-text);
+    background-color: var(--cta-color-background);
+    transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+    border: 0;
     display: inline-block;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
 
     span {
-        pointer-events: none; // prevent JS-events
+        pointer-events: none;
     }
 
     .icon {
@@ -20,45 +51,50 @@
     &-default,
     &-inverted,
     &-white,
-    &-icon-only {
+    &-icon-only,
+    &-icon-only-white {
         @include button;
-
-        @include accessibility-outline($color-outline);
+        @include accessibility-outline($color: var(--color-outline-accessibility));
 
         border: 0;
-        border-radius: rem-calc(72);
+        border-radius: var(--cta-border-radius);
         padding: rem-calc(12) rem-calc(20);
         text-decoration: none;
 
         &.disabled {
-            background-color: map-get($color-map, 'grey-300') !important; // needed for OWL
-            color: map-get($color-map, 'white');
+            background-color: var(--cta-color-background-disabled) !important;
+            color: var(--cta-color-text-disabled);
+            border-color: var(--cta-color-border-disabled);
         }
     }
 
     &:hover:not(.disabled) {
-        color: map-get($color-map, 'pine-900');
-        background-color: map-get($color-map, 'sun');
+        color: var(--cta-color-text-hover);
+        background-color: var(--cta-color-background-hover);
         text-decoration: none;
     }
 
     &-inverted {
-        background-color: map-get($color-map, 'sun');
-        color: map-get($color-map, 'pine-900');
+        color: var(--cta-color-text-inverted);
+        background-color: var(--cta-color-background-inverted);
+        border-color: var(--cta-color-border-inverted);
 
-        &:hover:not(.disabled)  {
-            background-color: map-get($color-map, 'pine');
-            color: map-get($color-map, 'white');
+        &:hover:not(.disabled) {
+            color: var(--cta-color-text-hover-inverted);
+            background-color: var(--cta-color-background-hover-inverted);
+            border-color: var(--cta-color-border-hover-inverted);
         }
     }
 
     &-white {
-        background-color: map-get($color-map, 'white');
-        color: map-get($color-map, 'pine-900');
+        color: var(--cta-color-text-white);
+        background-color: var(--cta-color-background-white);
+        border-color: var(--cta-color-border-white);
 
-        &:hover:not(.disabled)  {
-            background-color: map-get($color-map, 'sun');
-            color: map-get($color-map, 'pine-900');
+        &:hover:not(.disabled) {
+            color: var(--cta-color-text-hover-white);
+            background-color: var(--cta-color-background-hover-white);
+            border-color: var(--cta-color-border-hover-white);
         }
     }
 
@@ -76,51 +112,42 @@
             height: rem-calc(48);
         }
 
-        color: $color-white;
-        background-color: map-get($color-map, 'pine');
-        border: rem-calc(1) solid transparent;
+        color: var(--cta-color-text);
+        background-color: var(--cta-color-background);
+        border: rem-calc(1) solid var(--cta-color-border-icon);
         padding: 0;
 
-        &:hover:not(.disabled){
-            color: map-get($color-map, 'pine-900');
-            background-color: map-get($color-map, 'sun');
-            border: rem-calc(1) solid map-get($color-map, 'grey-300');
+        &:hover:not(.disabled) {
+            color: var(--cta-color-text-hover);
+            background-color: var(--cta-color-background-hover);
+            border: rem-calc(1) solid var(--cta-color-border-icon-hover);
         }
     }
 
     &-icon-only-white {
-        color: map-get($color-map, 'pine-900');
-        background-color: $color-white;
-        border: rem-calc(1) solid transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: inherit;
+
+        width: rem-calc(36);
+        height: rem-calc(36);
+
+        @include media-breakpoint-up(sm) {
+            width: rem-calc(48);
+            height: rem-calc(48);
+        }
+
+        color: var(--cta-color-text-white);
+        background-color: var(--cta-color-background-white);
+        border: rem-calc(1) solid var(--cta-color-border-icon);
+
+        padding: 0;
 
         &:hover:not(.disabled) {
-            background-color: map-get($color-map, 'sun');
+            color: var(--cta-color-text-hover-white);
+            background-color: var(--cta-color-background-hover-white);
+            border: rem-calc(1) solid var(--cta-color-border-icon-hover);
         }
     }
 }
-
-[class^="bg-color-dark"],
-[class*=" bg-color-dark"]  {
-
-
-
-}
-/*
-[class^="bg-color-"]:not([class^="bg-color-light"]):not([class^="bg-color-none"]):not([class^="bg-color-white"]),
-[class*=" bg-color-"]:not([class*=" bg-color-light"]):not([class*=" bg-color-none"]):not([class*=" bg-color-white"])  {
-    .cta {
-        &:hover {
-            color: $color-secondary;
-            background-color: $color-white;
-
-            &.cta-default {
-                .cta-inner {
-                    border: rem-calc(1) solid $color-secondary;
-                }
-            }
-        }
-    }
-}
-*/
-
-

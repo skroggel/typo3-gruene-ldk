@@ -1,0 +1,20 @@
+page {
+    siteName = Politik & Form
+    rootPid = 93
+    specialPages {
+        oldBrowserPid = 47
+        noScriptPid = 46
+    }
+
+    cssAdditions = no-effects
+
+    fluidtemplate {
+        layoutRootPath = EXT:site_politik_und_form/Resources/Private/Page/Layouts
+        templateRootPath = EXT:site_politik_und_form/Resources/Private/Page/Templates
+        partialRootPath = EXT:site_politik_und_form/Resources/Private/Page/Partials
+    }
+}
+
+navigation.top.pid = 33
+navigation.footer.pid = 34
+navigation.mobile.searchPid = 6

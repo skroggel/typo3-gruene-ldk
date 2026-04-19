@@ -4,16 +4,19 @@
 @use 'sass:math';
 
 .siteheader {
+    --siteheader-color-background: var(--color-surface-default);
+    --siteheader-color-brand-background: var(--color-brand-primary);
+    --siteheader-color-brand-text: var(--color-brand-primary);
 
     position: fixed;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
     z-index: 99;
     background:
         linear-gradient(
                 to right,
                 transparent 50%,
-                $color-white 50%
+                var(--siteheader-color-background) 50%
         );
 
     transition: top 0.5s ease-in-out;
@@ -23,7 +26,6 @@
 
     height: rem-calc($siteheader-height-mobile);
     margin-bottom: rem-calc($siteheader-height-mobile * -1);
-    //box-shadow: rem-calc(0) rem-calc(0) rem-calc(15) rem-calc(0) #63636340;
 
     @include media-breakpoint-up($siteheader-breakpoint-tablet) {
         height: rem-calc($siteheader-height-tablet);
@@ -36,19 +38,18 @@
     }
 
     .container-xxxl {
-    background:
-        linear-gradient(
-            to right,
-            transparent 0,
-            transparent 50px,
-            $color-white 50px,
-            $color-white 100%
-        );
+        background:
+            linear-gradient(
+                    to right,
+                    transparent 0,
+                    transparent 50px,
+                    var(--siteheader-color-background) 50px,
+                    var(--siteheader-color-background) 100%
+            );
     }
 
     &-brand {
-
-        @include accessibility-outline($color: $color-outline);
+        @include accessibility-outline($color: var(--color-outline-accessibility));
 
         @media (max-width: 1520px) {
             position: absolute;
@@ -62,14 +63,25 @@
 
         &:link,
         &:visited,
-        &:hover{
+        &:hover {
             text-decoration: none;
         }
 
         &-wrap {
             height: 100%;
-            background-color: $color-primary;
+            background-color: var(--siteheader-color-brand-background);
             padding: rem-calc(map-get($spacers, 3));
+
+
+            img {
+                max-height: calc(rem-calc($siteheader-height-mobile) - rem-calc(map-get($spacers, 3) * 2));
+                @include media-breakpoint-up($siteheader-breakpoint-tablet) {
+                    max-height: calc(rem-calc($siteheader-height-tablet) - rem-calc(map-get($spacers, 3) * 2));
+                }
+                @include media-breakpoint-up($siteheader-breakpoint-desktop) {
+                    max-height: calc(rem-calc($siteheader-height-desktop) - rem-calc(map-get($spacers, 3) * 2));
+                }
+            }
         }
 
         &-logo {
@@ -77,10 +89,10 @@
         }
 
         &-header {
-            font-family: $font-family-gruene;
+            font-family: var(--font-family-headline);
             font-weight: $font-weight-normal;
             font-size: rem-calc(24);
-            color: $color-primary;
+            color: var(--siteheader-color-brand-text);
 
             align-self: center;
             padding-left: rem-calc(map-get($spacers, 3));
@@ -91,8 +103,8 @@
             }
 
             @include media-breakpoint-up($siteheader-breakpoint-desktop) {
-               font-size: rem-calc(30);
-               padding-top: 0;
+                font-size: rem-calc(30);
+                padding-top: 0;
             }
         }
     }
@@ -107,17 +119,17 @@
             justify-content: space-between;
         }
 
-        padding-top: rem-calc(map-get($spacers, 3)); // 16
-        padding-bottom: rem-calc(map-get($spacers, 3)); // 16
+        padding-top: rem-calc(map-get($spacers, 3));
+        padding-bottom: rem-calc(map-get($spacers, 3));
 
         @include media-breakpoint-up($siteheader-breakpoint-tablet) {
-            padding-top: rem-calc(map-get($spacers, 2)); // 12
-            padding-bottom: rem-calc(map-get($spacers, 2)); // 12
+            padding-top: rem-calc(map-get($spacers, 2));
+            padding-bottom: rem-calc(map-get($spacers, 2));
         }
 
         @include media-breakpoint-up($siteheader-breakpoint-desktop) {
-            padding-top: rem-calc(map-get($spacers, 3)); // 16
-            padding-bottom: rem-calc(map-get($spacers, 3)); // 16
+            padding-top: rem-calc(map-get($spacers, 3));
+            padding-bottom: rem-calc(map-get($spacers, 3));
         }
     }
 
@@ -158,8 +170,6 @@
     }
 }
 
-
-
 /** Repositioning if scrolled down
 .page-main {
     position: relative;
@@ -176,12 +186,13 @@
 .scroll-down {
     .siteheader {
         top: rem-calc($siteheader-height-mobile * -1);
+
         @include media-breakpoint-up($siteheader-breakpoint-desktop) {
             top: rem-calc($siteheader-height-desktop * -1);
         }
     }
-     /*.page-main {
+
+    /*.page-main {
         top: 0;
     }*/
 }
-

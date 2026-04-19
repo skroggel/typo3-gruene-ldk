@@ -10,16 +10,21 @@ $('.table-responsive table:has(thead)').basictable({
  */
 
 .table {
+    --table-color-text: var(--color-brand-secondary);
+    --table-color-border: var(--color-border-subtle);
+    --table-color-header-background: var(--color-border-subtle);
+    --table-color-axis-background: var(--color-border-subtle);
+
     @include copy-small;
-    margin-bottom:0;
+    margin-bottom: 0;
 
     width: 100%;
     vertical-align: top;
-    color: $color-secondary;
+    color: var(--table-color-text);
     border: 0;
 
     tr {
-        border-bottom: 1px solid map-get($color-map, 'secondary-100');
+        border-bottom: 1px solid var(--table-color-border);
 
         &:last-child {
             border-bottom: 0;
@@ -28,21 +33,20 @@ $('.table-responsive table:has(thead)').basictable({
 
     th,
     td {
-        color: $color-secondary;
+        color: var(--table-color-text);
         padding: rem-calc(16);
         border: 0;
     }
 
     thead {
-
         tr {
-            border:0;
+            border: 0;
         }
 
-        td, th {
-            background-color: map-get($color-map, 'secondary-100');
+        td,
+        th {
+            background-color: var(--table-color-header-background);
             // font-weight: $font-weight-bold;
-            font-family: $font-family-sans;
         }
 
         th:first-child,
@@ -58,15 +62,13 @@ $('.table-responsive table:has(thead)').basictable({
 
     tbody {
         tr {
-            border-color: map-get($color-map, 'secondary-100');
+            border-color: var(--table-color-border);
         }
     }
 
     // table with no thead have to be made responsive manually
     @include media-breakpoint-down(md) {
-
         &:not(:has(thead)) {
-
             /** no border between table-blocks */
             tr {
                 border: 0;
@@ -75,7 +77,6 @@ $('.table-responsive table:has(thead)').basictable({
             }
 
             tbody {
-
                 display: block;
 
                 /** build visual table block */
@@ -83,10 +84,10 @@ $('.table-responsive table:has(thead)').basictable({
                     margin-top: map-get($spacers, 3);
                 }
 
-                td, th {
-
+                td,
+                th {
                     /** border between visual rows */
-                    border-bottom: 1px solid map-get($color-map, 'secondary-100');
+                    border-bottom: 1px solid var(--table-color-border);
 
                     &:last-child {
                         border-bottom: 0;
@@ -95,7 +96,8 @@ $('.table-responsive table:has(thead)').basictable({
             }
 
             tbody tr:first-of-type {
-                td, th {
+                td,
+                th {
                     margin-top: 0;
                 }
             }
@@ -104,18 +106,15 @@ $('.table-responsive table:has(thead)').basictable({
 
     // JS based responsive table
     @include media-breakpoint-down(md) {
-
         &.bt {
-
             /** no border between table-blocks */
             tr {
                 border: 0;
             }
 
             tbody td {
-
                 /** border between visual rows */
-                border-bottom: 1px solid map-get($color-map, 'secondary-100');
+                border-bottom: 1px solid var(--table-color-border);
 
                 &:last-child {
                     border-bottom: 0;
@@ -142,19 +141,15 @@ $('.table-responsive table:has(thead)').basictable({
     }
 }
 
-
 /** Table with two axes */
 .table.two-axes {
-
     /* second axis */
     tr td:first-of-type {
         // font-weight: $font-weight-bold;
-        font-family: $font-family-sans;
     }
 
     // JS-based responsive table
     @include media-breakpoint-down(md) {
-
         &.bt {
             /** additional label of first axis  */
             tbody td:first-of-type {
@@ -165,9 +160,8 @@ $('.table-responsive table:has(thead)').basictable({
 
             /* first row with header - first axis */
             tr td:first-of-type {
-                background-color: map-get($color-map, 'secondary-100');
+                background-color: var(--table-color-axis-background);
                 // font-weight: $font-weight-bold;
-                font-family: $font-family-sans;
                 border-top-left-radius: rem-calc(8);
                 border-top-right-radius: rem-calc(8);
                 margin-top: map-get($spacers, 2);

@@ -1,0 +1,109 @@
+{
+	"critical": {
+		"baseUrl": "https://example.ddev.site:8443",
+		"suffix": "_critical.min.css",
+		"dimensions": [
+			{
+				"width": 390,
+				"height": 844
+			},
+			{
+				"width": 576,
+				"height": 800
+			},
+			{
+				"width": 768,
+				"height": 1024
+			},
+			{
+				"width": 1024,
+				"height": 1400
+			},
+			{
+				"width": 1400,
+				"height": 1024
+			},
+			{
+				"width": 1920,
+				"height": 1024
+			}
+		],
+		"pages": [
+			{
+				"url": "/",
+				"template": "home"
+			}
+		],
+		"dest": "../../Public/CriticalCss/"
+	},
+	"paths": {
+		"assets": {
+			"base": "../../../../site_default/Resources/Public/",
+			"folders": [
+				"Icons",
+				"Fonts",
+				"Images"
+			],
+			"watch": "**/*",
+			"dest": "../../Public/"
+		},
+		"styles": {
+			"source": {
+				"default": [
+					"src/scss/styles.scss"
+				],
+				"vendor": [
+
+				],
+				"plugins": [
+					"src/scss/plugins/**/*.scss"
+				]
+			},
+			"dest": "../../Public/Css/"
+		},
+		"scripts": {
+			"source": {
+				"default": [
+					"src/js/scripts.js",
+					"!src/js/**/_*.js",
+					"!src/js/plugin/*",
+					"!src/js/plugin/*"
+				],
+				"plugins": [
+					"src/js/plugins/**/*.js",
+					"src/js/modules/**/*.js"
+				],
+				"vendor": [
+
+				]
+			},
+			"dest": "../../Public/JavaScript/"
+		},
+		"watch": {
+			"styles": [
+				"./src/scss/**/*.{css,less,scss}",
+				"../../../../site_default/Resources/Private/Assets/src/scss/**/*.{css,less,scss}"
+			],
+			"scripts": [
+				"./src/js/**/*.js"
+			],
+			"assets": [
+				"../../../../site_default/Resources/Public/Icons/**/*",
+				"../../../../site_default/Resources/Public/Fonts/**/*",
+				"../../../../site_default/Resources/Public/Images/**/*"
+			]
+		}
+	},
+	"run": {
+		"development": {
+			"uglify": true,
+			"cleancss": false,
+			"autoprefixer": true
+		},
+		"production": {
+			"uglify": true,
+			"cleancss": true,
+			"autoprefixer": true
+		}
+	}
+}

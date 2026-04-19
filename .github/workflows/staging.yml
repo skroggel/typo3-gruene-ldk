@@ -50,6 +50,22 @@ jobs:
         working-directory: ./packages/site_default/Resources/Private/Assets
         run: npm run prod
 
+      - name: Install npm dependencies
+        working-directory: ./packages/site_herborn/Resources/Private/Assets
+        run: npm ci
+
+      - name: Build assets (CSS/JS)
+        working-directory: ./packages/site_herborn/Resources/Private/Assets
+        run: npm run prod
+
+      - name: Install npm dependencies
+        working-directory: ./packages/site_politik_und_form/Resources/Private/Assets
+        run: npm ci
+
+      - name: Build assets (CSS/JS)
+        working-directory: ./packages/site_politik_und_form/Resources/Private/Assets
+        run: npm run prod
+
       - name: Show files before upload
         run: |
           echo "Listing root dir contents:"
@@ -65,6 +81,8 @@ jobs:
           path: |
             ./vendor/
             ./packages/site_default/Resources/Public/
+            ./packages/site_herborn/Resources/Public/
+            ./packages/site_politik_und_form/Resources/Public/
             ./public/_assets/
             ./composer.lock
             ./.env
