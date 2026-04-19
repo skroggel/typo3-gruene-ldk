@@ -27,7 +27,7 @@
 .nav-pulldown {
     --nav-pulldown-color-background: var(--color-surface-inverted);
     --nav-pulldown-color-text: var(--color-text-inverted);
-    --nav-pulldown-color-border: var(--color-border-default-inverted);
+    --nav-pulldown-color-border: var(--color-border-inverted);
 
     @include nav-pulldown(
         $pad-x: $spacer,

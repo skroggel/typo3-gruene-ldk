@@ -50,7 +50,7 @@ body:not(.no-effects) {
             background-color: transparent;
 
             @include media-breakpoint-up(lg) {
-                @include edge-cut-background();
+                @include edge-cut-background($background-color: var(--text-links-color-background));
             }
         }
     }

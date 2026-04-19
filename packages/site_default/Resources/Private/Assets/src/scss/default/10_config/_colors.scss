@@ -81,7 +81,7 @@ $color-map: (
     --color-surface-inverted: #{map-get($color-map, 'pine')};
     --color-surface-subtle: #{map-get($color-map, 'sand')};
     --color-surface-accent: #{map-get($color-map, 'sun')};
-    --color-surface-strong: #{map-get($color-map, 'pink')};
+    --color-surface-strong: #{map-get($color-map, 'magenta')};
     --color-surface-dark: #{map-get($color-map, 'dark-grey')};
     --color-surface-brand-primary: #{map-get($color-map, 'pine')};
     --color-surface-brand-secondary: #{map-get($color-map, 'clover')};
