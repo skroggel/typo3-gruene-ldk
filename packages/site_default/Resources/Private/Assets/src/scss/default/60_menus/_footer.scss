@@ -5,7 +5,7 @@
 
 .nav-footer {
     --footer-menu-color-text: var(--color-text-inverted);
-    --footer-menu-color-border: var(--color-border-default-inverted);
+    --footer-menu-color-border: var(--color-border-inverted);
 
     margin-top: rem-calc(map-get($spacers, 4));
     padding-top: rem-calc(map-get($spacers, 4));

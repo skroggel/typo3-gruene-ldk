@@ -95,7 +95,7 @@
 ///   }
 ///
 
-@mixin edge-cut-background ($width: 85px, $height: 700px, $image-url: '../Images/image-edge.svg', $background-color: var(--primary-color)) {
+@mixin edge-cut-background ($width: 85px, $height: 700px, $image-url: '../Images/image-edge.svg', $background-color: var(--color-brand-primary)) {
     position: relative;
     overflow: visible;
     left: $width;
