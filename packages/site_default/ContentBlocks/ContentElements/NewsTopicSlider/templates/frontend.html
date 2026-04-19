@@ -15,15 +15,18 @@
                               arguments="{text: data.bodytext, wrapClass: 'news-topic-slider-text  mb-7'}" />
 
                     <f:if condition="{data._grids.plugin_news_slider}">
-                        <div class="topic-slider-wrap swiper js-news-topic-slider js-loop js-autoplay"
-                             data-prev-slide-message="{f:translate(key: 'label.previousSlide', extensionName: 'SiteDefault')}"
-                             data-next-slide-message="{f:translate(key: 'label.nextSlide', extensionName: 'SiteDefault')}"
-                        >
-                            <f:for each="{data._grids.plugin_news_slider}" as="item" iteration="i">
-                                <f:comment><!-- {item.data} contains the Content Block data object. --></f:comment>
-                                <f:format.raw>{item.content}</f:format.raw>
-                            </f:for>
-                        </div>
+                        <f:if condition="{data._grids.plugin_news_slider.0.content -> f:format.trim()}">
+                            <div class="topic-slider-wrap swiper js-news-topic-slider js-loop js-autoplay"
+                                 data-prev-slide-message="{f:translate(key: 'label.previousSlide', extensionName: 'SiteDefault')}"
+                                 data-next-slide-message="{f:translate(key: 'label.nextSlide', extensionName: 'SiteDefault')}"
+                            >
+                                <f:for each="{data._grids.plugin_news_slider}" as="item" iteration="i">
+                                    <f:comment><!-- {item.data} contains the Content Block data object. --></f:comment>
+                                    <f:format.raw>{item.content}</f:format.raw>
+
+                                </f:for>
+                            </div>
+                        </f:if>
                     </f:if>
                 </div>
             </div>

@@ -1,0 +1,126 @@
+categories:
+  sitePolitikUndForm:
+    label: 'Site Politik & Form'
+
+  sitePolitikUndForm.page:
+    label: 'Page'
+    parent: sitePolitikUndForm
+
+  sitePolitikUndForm.navigation:
+    label: 'Navigation'
+    parent: sitePolitikUndForm
+
+  sitePolitikUndForm.schemaOrg:
+    label: 'Schema.org'
+    parent: sitePolitikUndForm
+
+  sitePolitikUndForm.news:
+    label: 'News'
+    parent: sitePolitikUndForm
+
+  sitePolitikUndForm.greensContact:
+    label: 'Greens Contact'
+    parent: sitePolitikUndForm
+
+settings:
+  site.page.fluid.layoutRootPath:
+    label: 'Page Fluid Layout Root Path'
+    category: sitePolitikUndForm.page
+    type: string
+    default: 'EXT:site_politik_und_form/Resources/Private/Page/Layouts/'
+
+  site.page.fluid.partialRootPath:
+    label: 'Page Fluid Partial Root Path'
+    category: sitePolitikUndForm.page
+    type: string
+    default: 'EXT:site_politik_und_form/Resources/Private/Page/Partials/'
+
+  site.page.fluid.templateRootPath:
+    label: 'Page Fluid Template Root Path'
+    category: sitePolitikUndForm.page
+    type: string
+    default: 'EXT:site_politik_und_form/Resources/Private/Page/Templates/'
+
+  site.page.rootPid:
+    label: 'Root PID'
+    category: sitePolitikUndForm.page
+    type: int
+    default: 63
+
+  site.page.siteName:
+    label: 'Site Name'
+    category: sitePolitikUndForm.page
+    type: string
+    default: 'Politik & Form'
+
+  site.page.cssAdditions:
+    label: 'Additional CSS Classes'
+    category: sitePolitikUndForm.page
+    type: string
+    default: 'no-effects'
+
+  site.page.specialPages.oldBrowserPid:
+    label: 'Old Browser Page PID'
+    category: sitePolitikUndForm.page
+    type: int
+    default: 71
+
+  site.page.specialPages.noScriptPid:
+    label: 'NoScript Page PID'
+    category: sitePolitikUndForm.page
+    type: int
+    default: 70
+
+  site.navigation.topPid:
+    label: 'Top Navigation PID'
+    category: sitePolitikUndForm.navigation
+    type: int
+    default: 64
+
+  site.navigation.footerPid:
+    label: 'Footer Navigation PID'
+    category: sitePolitikUndForm.navigation
+    type: int
+    default: 65
+
+  site.navigation.mobileSearchPid:
+    label: 'Mobile Search PID'
+    category: sitePolitikUndForm.navigation
+    type: int
+    default: 6
+
+  site.schemaOrg.teaserImage.width:
+    label: 'Teaser image width'
+    category: sitePolitikUndForm.schemaOrg
+    type: string
+    default: '600c'
+
+  site.schemaOrg.teaserImage.height:
+    label: 'Teaser image height'
+    category: sitePolitikUndForm.schemaOrg
+    type: string
+    default: '600c'
+
+  site.schemaOrg.organization.name:
+    label: 'Organization Name'
+    category: sitePolitikUndForm.schemaOrg
+    type: string
+    default: 'Politik & Form'
+
+  site.schemaOrg.sameAs:
+    label: 'Schema.org sameAs URL'
+    category: sitePolitikUndForm.schemaOrg
+    type: string
+    default: 'www.politik-und-form.de'
+
+  site.news.startingpoint:
+    label: 'Startingpoint'
+    category: sitePolitikUndForm.news
+    type: string
+    default: '68'
+
+  site.greensContact.pages:
+    label: 'Pages'
+    category: sitePolitikUndForm.greensContact
+    type: string
+    default: '69'

@@ -1,0 +1,127 @@
+categories:
+  siteDefault:
+    label: 'Site Default'
+
+  siteDefault.page:
+    label: 'Page'
+    parent: siteDefault
+
+  siteDefault.navigation:
+    label: 'Navigation'
+    parent: siteDefault
+
+  siteDefault.schemaOrg:
+    label: 'Schema.org'
+    parent: siteDefault
+
+  siteDefault.news:
+    label: 'News'
+    parent: siteDefault
+
+  siteDefault.greensContact:
+    label: 'Greens Contact'
+    parent: siteDefault
+
+settings:
+
+  site.page.fluid.layoutRootPath:
+    label: 'Page Fluid Layout Root Path'
+    category: siteDefault.page
+    type: string
+    default: 'EXT:site_default/Resources/Private/Page/Layouts/'
+
+  site.page.fluid.partialRootPath:
+    label: 'Page Fluid Partial Root Path'
+    category: siteDefault.page
+    type: string
+    default: 'EXT:site_default/Resources/Private/Page/Partials/'
+
+  site.page.fluid.templateRootPath:
+    label: 'Page Fluid Template Root Path'
+    category: siteDefault.page
+    type: string
+    default: 'EXT:site_default/Resources/Private/Page/Templates/'
+
+  site.page.rootPid:
+    label: 'Root PID'
+    category: siteDefault.page
+    type: int
+    default: 1
+
+  site.page.siteName:
+    label: 'Site Name'
+    category: siteDefault.page
+    type: string
+    default: 'GRÜNE Lahn-Dill'
+
+  site.page.cssAdditions:
+    label: 'Additional CSS Classes'
+    category: siteDefault.page
+    type: string
+    default: ''
+
+  site.page.specialPages.oldBrowserPid:
+    label: 'Old Browser Page PID'
+    category: siteDefault.page
+    type: int
+    default: 4
+
+  site.page.specialPages.noScriptPid:
+    label: 'NoScript Page PID'
+    category: siteDefault.page
+    type: int
+    default: 5
+
+  site.navigation.topPid:
+    label: 'Top Navigation PID'
+    category: siteDefault.navigation
+    type: int
+    default: 24
+
+  site.navigation.footerPid:
+    label: 'Footer Navigation PID'
+    category: siteDefault.navigation
+    type: int
+    default: 17
+
+  site.navigation.mobileSearchPid:
+    label: 'Mobile Search PID'
+    category: siteDefault.navigation
+    type: int
+    default: 6
+
+  site.schemaOrg.teaserImage.width:
+    label: 'Teaser image width'
+    category: siteDefault.schemaOrg
+    type: string
+    default: '600c'
+
+  site.schemaOrg.teaserImage.height:
+    label: 'Teaser image height'
+    category: siteDefault.schemaOrg
+    type: string
+    default: '600c'
+
+  site.schemaOrg.organization.name:
+    label: 'Organization Name'
+    category: siteDefault.schemaOrg
+    type: string
+    default: 'GRÜNE Lahn-Dill'
+
+  site.schemaOrg.sameAs:
+    label: 'Schema.org sameAs URL'
+    category: siteDefault.schemaOrg
+    type: string
+    default: 'www.gruene-lahn-dill.de'
+
+  site.news.startingpoint:
+    label: 'Startingpoint'
+    category: siteDefault.news
+    type: string
+    default: '31'
+
+  site.greensContact.pages:
+    label: 'Pages'
+    category: siteDefault.greensContact
+    type: string
+    default: '30'

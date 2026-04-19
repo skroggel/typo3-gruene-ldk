@@ -1,18 +1,3 @@
 page {
-    siteName = GRÜNE Herborn
-    rootPid = 32
-    specialPages {
-        oldBrowserPid = 47
-        noScriptPid = 46
-    }
 
-    fluidtemplate {
-        layoutRootPath = EXT:site_herborn/Resources/Private/Page/Layouts
-        templateRootPath = EXT:site_herborn/Resources/Private/Page/Templates
-        partialRootPath = EXT:site_herborn/Resources/Private/Page/Partials
-    }
 }
-
-navigation.top.pid = 33
-navigation.footer.pid = 34
-navigation.mobile.searchPid = 6

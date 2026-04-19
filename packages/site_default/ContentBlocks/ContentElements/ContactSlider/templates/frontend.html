@@ -13,21 +13,23 @@
                               arguments="{text: data.bodytext, wrapClass: 'contact-slider-text mb-11'}" />
 
                     <f:if condition="{data._grids.plugin_contact_slider}">
-                        <div class="swiper js-contact-slider js-autoplay bg-color-subtle"
-                             data-prev-slide-message="{f:translate(key: 'label.previousSlide', extensionName: 'SiteDefault')}"
-                             data-next-slide-message="{f:translate(key: 'label.nextSlide', extensionName: 'SiteDefault')}"
-                        >
-                            <f:for each="{data._grids.plugin_contact_slider}" as="item" iteration="i">
-                                <f:comment><!-- {item.data} contains the Content Block data object. --></f:comment>
-                                <f:format.raw>{item.content}</f:format.raw>
-                            </f:for>
+                        <f:if condition="{data._grids.plugin_contact_slider.0.content -> f:format.trim()}">
+                            <div class="swiper js-contact-slider js-autoplay bg-color-subtle"
+                                 data-prev-slide-message="{f:translate(key: 'label.previousSlide', extensionName: 'SiteDefault')}"
+                                 data-next-slide-message="{f:translate(key: 'label.nextSlide', extensionName: 'SiteDefault')}"
+                            >
+                                <f:for each="{data._grids.plugin_contact_slider}" as="item" iteration="i">
+                                    <f:comment><!-- {item.data} contains the Content Block data object. --></f:comment>
+                                    <f:format.raw>{item.content}</f:format.raw>
+                                </f:for>
 
-                            <!-- If we need navigation buttons -->
-                            <div class="swiper-navigation">
-                                <div class="cta cta-icon-only cta-prev"></div>
-                                <div class="cta cta-icon-only cta-next"></div>
+                                <!-- If we need navigation buttons -->
+                                <div class="swiper-navigation">
+                                    <div class="cta cta-icon-only cta-prev"></div>
+                                    <div class="cta cta-icon-only cta-next"></div>
+                                </div>
                             </div>
-                        </div>
+                        </f:if>
                     </f:if>
                 </div>
             </div>
