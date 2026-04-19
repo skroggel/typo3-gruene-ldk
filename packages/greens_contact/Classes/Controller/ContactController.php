@@ -109,7 +109,7 @@ final class ContactController extends  \TYPO3\CMS\Extbase\Mvc\Controller\ActionC
         }
 
         // check if pages are set
-        $pages = [];
+        $pages = GeneralUtility::trimExplode(',', $this->settings['pages'] ?? '', true) ;
         if (!empty($this->currentContentObject->data['pages'])) {
             $pages = GeneralUtility::trimExplode(',', $this->currentContentObject->data['pages'], true);
         }

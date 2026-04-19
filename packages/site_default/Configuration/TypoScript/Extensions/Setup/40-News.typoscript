@@ -2,11 +2,6 @@
 # FE-Plugin configuration for EXT:news
 # ==============================================
 plugin.tx_news {
-
-	persistence {
-		storagePid = {$plugin.tx_news.persistence.storagePid}}
-	}
-
 	view {
 		templateRootPaths {
 			0 = EXT:news/Resources/Private/Templates/
@@ -28,7 +23,12 @@ plugin.tx_news {
 			10 = EXT:site_default/Resources/Private/News/Layouts/
 		}
 	}
+
 	settings {
+
+        startingpoint = {$site.news.startingpoint}
+        recursive = 0
+        overrideFlexformSettingsIfEmpty := addToList(startingpoint,recursive)
 
 	    list {
 

@@ -16,12 +16,12 @@ page {
             10 {
                 wrap = <noscript><meta http-equiv="refresh" content = "0;url=|"></noscript>
                 typolink {
-                    parameter = {$page.specialPages.noScriptPid}
+                    parameter = {$site.page.specialPages.noScriptPid}
                     forceAbsoluteUrl = 1
                     returnLast = url
                 }
                 if {
-                    value = {$page.specialPages.noScriptPid}
+                    value = {$site.page.specialPages.noScriptPid}
                     equals.data = TSFE:id
                     negate = 1
                 }
@@ -41,7 +41,7 @@ page {
                 20 = TEXT
                 20.wrap = window.location.href = "|";
                 20.typolink {
-                    parameter = {$page.specialPages.oldBrowserPid}
+                    parameter = {$site.page.specialPages.oldBrowserPid}
                     forceAbsoluteUrl = 1
                     returnLast = url
                 }
@@ -53,7 +53,7 @@ page {
                 )
 
                 if {
-                    value = {$page.specialPages.oldBrowserPid}
+                    value = {$site.page.specialPages.oldBrowserPid}
                     equals.data = TSFE:id
                     negate = 1
                 }
@@ -134,16 +134,16 @@ page {
         }
         templateRootPaths {
             0 = EXT:site_default/Resources/Private/Page/Templates/
-            1 = {$page.fluidtemplate.templateRootPath}
+            1 = {$site.page.fluid.templateRootPath}
         }
         partialRootPaths {
             0 = EXT:site_default/Resources/Private/Page/Partials/
             1 = EXT:site_default/Resources/Private/Content/Partials
-            2 = {$page.fluidtemplate.partialRootPath}
+            2 = {$site.page.fluid.partialRootPath}
         }
         layoutRootPaths {
             0 = EXT:site_default/Resources/Private/Page/Layouts/
-            1 = {$page.fluidtemplate.layoutRootPath}
+            1 = {$site.page.fluid.layoutRootPath}
         }
         dataProcessing {
         10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
@@ -153,9 +153,9 @@ page {
         }
         settings {
 
-            rootPid = {$page.rootPid}
-            siteName = {$page.siteName}
-            cssAdditions = {$page.cssAdditions}
+            rootPid = {$site.page.rootPid}
+            siteName = {$site.page.siteName}
+            cssAdditions = {$site.page..cssAdditions}
 
             currentPid = TEXT
             currentPid.data = TSFE:id
@@ -166,21 +166,21 @@ page {
                 teaserImage = COA
                 teaserImage {
                     width = TEXT
-                    width.value = {$page.schemaOrg.teaserImage.width}
+                    width.value = {$site.schemaOrg.teaserImage.width}
 
                     height = TEXT
-                    height.value = {$page.schemaOrg.teaserImage.height}
+                    height.value = {$site.schemaOrg.teaserImage.height}
                 }
 
                 organization = COA
                 organization{
                     name = TEXT
-                    name = {$page.schemaOrg.organization.name}
+                    name = {$site.schemaOrg.organization.name}
 
                     sameAs = COA
                     sameAs  {
                         10 = TEXT
-                        10 = {$page.schemaOrg.sameAs}
+                        10 = {$site.schemaOrg.sameAs}
                     }
                 }
             }

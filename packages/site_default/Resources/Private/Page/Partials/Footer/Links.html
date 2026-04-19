@@ -1,0 +1,23 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true"
+>
+    <div class="links">
+        <p class="links-headline headline h5 text-color-inverted" role="heading">
+            <f:translate key="links.headline" extensionName="siteDefault" />
+        </p>
+        <div class="links-list text-color-inverted copy-small">
+            <f:for each="{
+                                    bundesverband: 'https://www.gruene.de/',
+                                    landesverband: 'https://www.gruene-hessen.de/',
+                                    gruenejugend: 'https://www.gruene-lahn-dill.de/gruene-jugend/'
+                                }" as="url" key="name">
+                <a href="{url}"
+                   title="{f:translate(key: 'links.{name}', extensionName:'siteDefault')}"
+                   target="_blank"
+                   class="links-link link"
+                   rel="nofollow">{f:translate(key: 'links.{name}', extensionName:'siteDefault')}</a>
+            </f:for>
+        </div>
+    </div>
+
+</html>

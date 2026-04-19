@@ -2,18 +2,22 @@
       data-namespace-typo3-fluid="true"
 >
 
-    <div class="socialmedia-list text-color-inverted">
-        <f:for each="{
+    <div class="socialmedia">
+        <p class="socialmedia-headline headline h5 text-color-inverted" role="heading">
+            <f:translate key="socialMedia.headline" extensionName="siteDefault" />
+        </p>
+        <div class="socialmedia-list text-color-inverted">
+            <f:for each="{
             facebook: 'https://www.facebook.com/GrueneLahnDillKreis/',
             instagram: 'https://www.instagram.com/gruene_lahndill/',
             youtube: 'https://www.youtube.com/watch?v=Gq9vS-UXwvs',
         }" as="url" key="icon">
-            <a href="{url}"
-               title="{f:translate(key: 'socialMedia.{icon}', extensionName:'siteDefault')}"
-               target="_blank"
-               class="socialmedia-link link"
-               rel="nofollow"><span class="icon-{icon ->f:format.case(mode: 'lower')} icon"></span></a>
-        </f:for>
+                <a href="{url}"
+                   title="{f:translate(key: 'socialMedia.{icon}', extensionName:'siteDefault')}"
+                   target="_blank"
+                   class="socialmedia-link link"
+                   rel="nofollow"><span class="icon-{icon ->f:format.case(mode: 'lower')} icon"></span></a>
+            </f:for>
+        </div>
     </div>
-
 </html>

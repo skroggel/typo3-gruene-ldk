@@ -94,6 +94,10 @@
 				<source>State Association</source>
 				<target>Landesverband</target>
 			</trans-unit>
+			<trans-unit id="links.kreisverband">
+				<source>County Association</source>
+				<target>Kreisverband</target>
+			</trans-unit>
 			<trans-unit id="links.gruenejugend">
 				<source>Green Youth</source>
 				<target>GRÜNE Jugend Lahn-Dill</target>
