@@ -2,7 +2,7 @@
 * Effects
 * ================================================== */
 
-body:not(.no-effects) {
+.page:not(.no-effects) {
 
     // for images only!
     @include media-breakpoint-up(lg) {

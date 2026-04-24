@@ -12,15 +12,8 @@
     top: 0;
     left: 0;
     z-index: 99;
-    background:
-        linear-gradient(
-                to right,
-                transparent 50%,
-                var(--siteheader-color-background) 50%
-        );
 
     transition: top 0.5s ease-in-out;
-
     width: 100%;
     max-width: 100vw;
 
@@ -37,23 +30,38 @@
         margin-bottom: rem-calc($siteheader-height-desktop * -1);
     }
 
-    .container-xxxl {
-        background:
-            linear-gradient(
-                    to right,
-                    transparent 0,
-                    transparent 50px,
-                    var(--siteheader-color-background) 50px,
-                    var(--siteheader-color-background) 100%
-            );
+    &-container {
+        position: relative;
+        filter: drop-shadow(0 4px 4px rgba(0,0,0,0.35));
+
+        .row {
+            margin-left: rem-calc(var(--bs-gutter-x));
+            background-color: var(--siteheader-color-background);
+
+            & > *:first-child {
+                padding-left: 0;
+            }
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 100%;
+            width: 100%;
+            height: 100%;
+            background-color: var(--siteheader-color-background);
+        }
     }
 
     &-brand {
         @include accessibility-outline($color: var(--color-outline-accessibility));
 
+
         @media (max-width: 1520px) {
-            position: absolute;
-            left: 0;
+        //    position: absolute;
+           // left: 0;
+           // margin-left: -16px;
         }
 
         display: flex;
@@ -71,7 +79,6 @@
             height: 100%;
             background-color: var(--siteheader-color-brand-background);
             padding: rem-calc(map-get($spacers, 3));
-
 
             img {
                 max-height: calc(rem-calc($siteheader-height-mobile) - rem-calc(map-get($spacers, 3) * 2));
@@ -173,7 +180,6 @@
 /** Repositioning if scrolled down
 .page-main {
     position: relative;
-    z-index: 60;
     transition: top 0.5s ease-in-out;
 
     top: rem-calc($siteheader-height-mobile);
@@ -185,14 +191,15 @@
 
 .scroll-down {
     .siteheader {
-        top: rem-calc($siteheader-height-mobile * -1);
+        top: rem-calc(($siteheader-height-mobile + 20px) * -1);
 
         @include media-breakpoint-up($siteheader-breakpoint-desktop) {
-            top: rem-calc($siteheader-height-desktop * -1);
+            top: rem-calc(($siteheader-height-desktop + 20px) * -1);
         }
     }
 
-    /*.page-main {
+    /*
+    .page-main {
         top: 0;
     }*/
 }

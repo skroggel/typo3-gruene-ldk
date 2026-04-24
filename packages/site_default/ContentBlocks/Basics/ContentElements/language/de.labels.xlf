@@ -73,6 +73,22 @@
 				<source>Right</source>
 				<target>Rechts</target>
 			</trans-unit>
+			<trans-unit id="text_orientation.label">
+				<source>Orientation</source>
+				<target>Ausrichtung</target>
+			</trans-unit>
+			<trans-unit id="text_orientation.items.center.label">
+				<source>Center</source>
+				<target>Zentriert</target>
+			</trans-unit>
+			<trans-unit id="text_orientation.items.left.label">
+				<source>Left</source>
+				<target>Links</target>
+			</trans-unit>
+			<trans-unit id="text_orientation.items.right.label">
+				<source>Right</source>
+				<target>Rechts</target>
+			</trans-unit>
 
 		</body>
 	</file>

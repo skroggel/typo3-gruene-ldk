@@ -57,6 +57,18 @@
 			<trans-unit id="image_orientation.items.right.label">
 				<source>Right</source>
 			</trans-unit>
+			<trans-unit id="text_orientation.label">
+				<source>Orientation</source>
+			</trans-unit>
+			<trans-unit id="text_orientation.items.center.label">
+				<source>Center</source>
+			</trans-unit>
+			<trans-unit id="text_orientation.items.left.label">
+				<source>Left</source>
+			</trans-unit>
+			<trans-unit id="text_orientation.items.right.label">
+				<source>Right</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

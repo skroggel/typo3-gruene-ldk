@@ -44,7 +44,7 @@
     }
 }
 
-body:not(.no-effects) {
+.page:not(.no-effects) {
     .text-links {
         &-list-wrap {
             background-color: transparent;
