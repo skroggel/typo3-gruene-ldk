@@ -155,7 +155,7 @@ page {
 
             rootPid = {$site.page.rootPid}
             siteName = {$site.page.siteName}
-            cssAdditions = {$site.page..cssAdditions}
+            cssAdditions = {$site.page.cssAdditions}
 
             currentPid = TEXT
             currentPid.data = TSFE:id

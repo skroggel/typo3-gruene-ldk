@@ -10,3 +10,6 @@ fields:
       - type: Linebreak
       - identifier: madj2k/hero2
         type: Basic
+      - type: Linebreak
+      - identifier: madj2k/text-orientation
+        type: Basic

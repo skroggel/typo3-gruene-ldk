@@ -139,14 +139,14 @@ $font-formats: (
         'mobile': (
             'font-family': var(--font-family-headline),
             'font-weight': var(---font-weight-headline),
-            'font-size': rem-calc(40),
+            'font-size': rem-calc(32),
             'line-height': 110%,
             'letter-spacing': 0
         ),
         'tablet': (
             'font-family': var(--font-family-headline),
             'font-weight': var(--font-weight-headline),
-            'font-size': rem-calc(60),
+            'font-size': rem-calc(45),
             'line-height': 110%,
             'letter-spacing': 0
         ),

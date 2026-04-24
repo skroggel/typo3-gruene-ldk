@@ -42,7 +42,8 @@
 			"folders": [
 				"Icons",
 				"Fonts",
-				"Images"
+				"Images/BackendLayouts",
+				"Images/DefaultImages"
 			],
 			"watch": "**/*",
 			"dest": "../../Public/"

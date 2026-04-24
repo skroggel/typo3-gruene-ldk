@@ -48,7 +48,7 @@
 				<source>Contact</source>
 			</trans-unit>
 			<trans-unit id="socialMedia.headline">
-				<source>Follow us</source>
+				<source>Follow</source>
 			</trans-unit>
 			<trans-unit id="socialMedia.facebook">
 				<source>Facebook</source>
@@ -63,7 +63,7 @@
 				<source>YouTube</source>
 			</trans-unit>
 			<trans-unit id="links.headline">
-				<source>Greens on the net</source>
+				<source>Links</source>
 			</trans-unit>
 			<trans-unit id="links.bundesverband">
 				<source>Federal Association</source>

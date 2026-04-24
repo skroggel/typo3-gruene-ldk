@@ -1,0 +1,16 @@
+identifier: madj2k/text-orientation
+prefixType: vendor # prefixing with vendor for reuse of database fields
+fields:
+  - identifier: text_orientation
+    type: Select
+    renderType: selectSingle
+    default: 'center'
+    label: LLL:EXT:site_default/ContentBlocks/Basics/ContentElements/language/labels.xlf:text_orientation.label
+    items:
+      - value: center
+        label: center
+      - value: left
+        label: Left
+      - value: right
+        label: Right
+

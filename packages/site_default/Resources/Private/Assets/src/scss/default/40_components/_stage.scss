@@ -1,28 +1,28 @@
 /* ==================================================
 * Stage / Stage-Slider
 * ================================================== */
-
 .stage {
+    position: relative;
+    box-shadow:
+        inset 0 -8px 10px -8px rgba(0,0,0,0.6);
 
-    /*
-    height: calc(80svh - $siteheader-height-mobile);
+    &:has(.stage-image) {
+        height: calc(100svh);
 
-    @include media-breakpoint-up($siteheader-breakpoint-tablet) {
-        height: calc(100svh - $siteheader-height-tablet);
+        .stage-content {
+            position: absolute;
+            margin-top: 0;
+        }
     }
 
-    @include media-breakpoint-up($siteheader-breakpoint-desktop) {
-        height: calc(100svh - $siteheader-height-desktop);
-    }*/
+    .headline {
+        margin-top: rem-calc(map-get($spacers, 4));
+        margin-bottom: rem-calc(map-get($spacers, 4));
 
-    height: calc(80svh);
-
-    @include media-breakpoint-up($siteheader-breakpoint-tablet) {
-        height: calc(100svh);
-    }
-
-    @include media-breakpoint-up($siteheader-breakpoint-desktop) {
-        height: calc(100svh);
+        @include media-breakpoint-up(sm) {
+            margin-top: rem-calc(map-get($spacers, 6));
+            margin-bottom: rem-calc(map-get($spacers, 6));
+        }
     }
 
     &-inner {
@@ -47,15 +47,22 @@
     }
 
     &-content {
-        position: absolute;
+        position: relative;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
+        display: flex;
+        justify-content: center;
+        transition: margin-top 0.5s ease-in-out;
 
-        .cta-wrap {
-            display: flex;
-            justify-content: center;
+        margin-top: rem-calc($siteheader-height-mobile);
+        @include media-breakpoint-up($siteheader-breakpoint-tablet) {
+            margin-top: rem-calc($siteheader-height-tablet);
+        }
+
+        @include media-breakpoint-up($siteheader-breakpoint-desktop) {
+            margin-top: rem-calc($siteheader-height-desktop);
         }
 
         &-nav {
@@ -69,40 +76,53 @@
                 display: none;
                 @include media-breakpoint-up(lg) {
                     display: flex
-
                 }
-
             }
         }
 
         &-main {
             padding-right: rem-calc(map-get($spacers, 5));
             padding-left: rem-calc(map-get($spacers, 5));
-            padding-top: rem-calc($siteheader-height-mobile);
-
-            @include media-breakpoint-up($siteheader-breakpoint-tablet) {
-                padding-top: rem-calc($siteheader-height-tablet);
-            }
-
-            @include media-breakpoint-up($siteheader-breakpoint-desktop) {
-                padding-top: rem-calc($siteheader-height-desktop);
-            }
-
         }
 
         &-inner {
             display: flex;
             width: 100%;
             height: 100%;
+            max-width: rem-calc($page-max-inner-width);
             align-items: center;
-
             justify-content: center;
             flex-direction: column;
+
+            .cta-wrap {
+                display: flex;
+                justify-content: center;
+            }
+
+            &.orientation-left {
+                align-items: flex-start;
+            }
+
+            &.orientation-right {
+                align-items: flex-end;
+            }
 
             @include media-breakpoint-up(lg) {
                 flex-direction: row;
                 justify-content: space-between;
+
+                &.orientation-left {
+                    align-items: center;
+                    justify-content: flex-start;
+                }
+
+                &.orientation-right {
+                    align-items: center;
+                    justify-content: flex-end;
+                }
             }
+
+
         }
     }
 
@@ -126,5 +146,14 @@
                 }
             }
         }
+    }
+}
+
+
+
+.scroll-down {
+
+    .stage-content {
+        margin-top: 0;
     }
 }
