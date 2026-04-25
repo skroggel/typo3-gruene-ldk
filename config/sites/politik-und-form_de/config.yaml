@@ -27,15 +27,16 @@ errorHandling:
     errorContentSource: 't3://page?uid=48'
 klarokratie:
   klaro:
-    enable: false
+    enable: true
     customCss: 'EXT:site_politik_und_form/Resources/Public/Css/klaro.css'
     config: EXT:klarokratie/Resources/Public/Config/KlaroConfigMinimal.js
     includes:
       - EXT:klarokratie/Resources/Public/Config/Includes/GoogleAnalytics.js
+      - EXT:klarokratie/Resources/Public/Config/Includes/YouTube.js
   googleAnalytics:
-    enable: 0
+    enable: 1
     useTagManager: 0
-    tagId: '012345'
+    tagId: 'G-K6PZWNFDJG'
 languages:
   -
     title: Deutsch

@@ -83,8 +83,6 @@ $color-map: (
     --color-surface-accent: #{map-get($color-map, 'sun')};
     --color-surface-strong: #{map-get($color-map, 'magenta')};
     --color-surface-dark: #{map-get($color-map, 'dark-grey')};
-    --color-surface-brand-primary: #{map-get($color-map, 'pine')};
-    --color-surface-brand-secondary: #{map-get($color-map, 'clover')};
 
     /* Border */
     --color-border-default: #{map-get($color-map, 'pine')};
@@ -93,7 +91,6 @@ $color-map: (
     --color-border-strong: #{map-get($color-map, 'clover')};
     --color-border-dark: #{map-get($color-map, 'dark-grey')};
     --color-border-disabled: #{map-get($color-map, 'grey-300')};
-
 
     /* Icon */
     --color-icon-default: #{map-get($color-map, 'pine')};
