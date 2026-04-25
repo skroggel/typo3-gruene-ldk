@@ -35,7 +35,7 @@
         filter: drop-shadow(0 4px 4px rgba(0,0,0,0.35));
 
         .row {
-            margin-left: rem-calc(var(--bs-gutter-x));
+            margin-left: var(--bs-gutter-x);
             background-color: var(--siteheader-color-background);
 
             & > *:first-child {

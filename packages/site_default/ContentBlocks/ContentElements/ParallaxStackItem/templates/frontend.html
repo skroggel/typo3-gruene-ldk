@@ -1,0 +1,25 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true"
+>
+    <div class="parallax-stack-item variant-{data.madj2k_text_orientation} {f:if(condition: '!{data.assets}', then: ' variant-text-only')}">
+
+        <f:render partial="Utils/Media"
+                  arguments="{file: data.assets.0,
+                              wrapClass: 'parallax-stack-image',
+                              settings: settings}" />
+
+        <div class="parallax-stack-content">
+            <div class="parallax-stack-card bg-color-{data.madj2k_background_color}">
+
+                <f:render partial="Utils/Header"
+                          arguments="{header: data.madj2k_header, wrapClass: 'parallax-stack-headline',
+                                   layout: data.header_layout, settings: settings}" />
+
+                <f:render partial="Utils/Bodytext"
+                          arguments="{text: data.bodytext, wrapClass: 'parallax-stack-text'}" />
+            </div>
+        </div>
+    </div>
+</html>
+
+

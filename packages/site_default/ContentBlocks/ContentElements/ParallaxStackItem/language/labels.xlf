@@ -6,17 +6,17 @@
 
 			<!-- element -->
 			<trans-unit id="title">
-				<source>Link List (Custom)</source>
+				<source>Text-Image (Custom)</source>
 			</trans-unit>
 			<trans-unit id="description">
-				<source>This element is a simple list of links with several equal items. Each item consists of a link and can optionally include a short label or descriptor. It is suitable for clearly structured navigation to related pages.</source>
+				<source>This module is a simple text-image block. First, an editorial text area with a headline and body text is displayed, followed by an image below. The design is deliberately kept simple and is suitable for content where the text is in the foreground and the image serves as a supporting element.</source>
 			</trans-unit>
 
-
-			<!-- fields -->
-			<trans-unit id="link_list_items.label">
-				<source>Links</source>
+			<!-- tabs -->
+			<trans-unit id="tabs.tab-media">
+				<source>Media</source>
 			</trans-unit>
+
 		</body>
 	</file>
 </xliff>

@@ -17,7 +17,7 @@ mod {
                                         name = LLL:EXT:site_default/Resources/Private/Language/locallang_be.xlf:backend_layout.column.stage
                                         colPos = 100
                                         allowed  {
-                                            CType = madj2k_stageslider, madj2k_stage
+                                            CType = madj2k_stageslider, madj2k_stage, madj2k_parallaxstack
                                         }
                                    }
                                }

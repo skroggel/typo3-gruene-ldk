@@ -6,16 +6,16 @@
 
 			<!-- element -->
 			<trans-unit id="title">
-				<source>Link List (Custom)</source>
+				<source>Parallax-Stack (Custom)</source>
 			</trans-unit>
 			<trans-unit id="description">
-				<source>This element is a simple list of links with several equal items. Each item consists of a link and can optionally include a short label or descriptor. It is suitable for clearly structured navigation to related pages.</source>
+				<source>This element is an image-based scroll section with a text card layered on top. While scrolling, the background image remains fixed in view and the text card moves across it, allowing for short or longer content blocks. It is well suited for storytelling layouts where topics are presented in clearly separated visual sections.</source>
 			</trans-unit>
 
 
 			<!-- fields -->
-			<trans-unit id="link_list_items.label">
-				<source>Links</source>
+			<trans-unit id="parallax_stack_items.label">
+				<source>Items</source>
 			</trans-unit>
 		</body>
 	</file>

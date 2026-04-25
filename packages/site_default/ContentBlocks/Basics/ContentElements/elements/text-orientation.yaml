@@ -8,7 +8,7 @@ fields:
     label: LLL:EXT:site_default/ContentBlocks/Basics/ContentElements/language/labels.xlf:text_orientation.label
     items:
       - value: center
-        label: center
+        label: Center
       - value: left
         label: Left
       - value: right

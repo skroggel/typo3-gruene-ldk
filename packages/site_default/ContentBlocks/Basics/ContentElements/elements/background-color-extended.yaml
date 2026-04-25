@@ -7,6 +7,10 @@ fields:
     default: 'magenta'
     label: LLL:EXT:site_default/ContentBlocks/Basics/ContentElements/language/labels.xlf:background_color.label
     items:
+      - value: default
+        label: default
+      - value: subtle
+        label: subtle
       - value: strong
         label: strong
       - value: primary
