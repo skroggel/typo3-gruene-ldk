@@ -261,6 +261,14 @@ p,
             margin-top: rem-calc(map-get($spacers, 6));
         }
     }
+
+    + h5 {
+        margin-top: rem-calc(map-get($spacers, 4));
+
+        @include media-breakpoint-up(sm) {
+            margin-top: rem-calc(map-get($spacers, 6));
+        }
+    }
 }
 
 ul,
