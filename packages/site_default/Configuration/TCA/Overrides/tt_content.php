@@ -6,7 +6,7 @@ call_user_func(
 
         // labels for list view in BE madj2k_header
         $GLOBALS['TCA']['tt_content']['ctrl']['label_alt_force'] = true;
-        $GLOBALS['TCA']['tt_content']['ctrl']['label_alt'] = 'madj2k_hero,madj2k_header,madj2k_link_label, subheader,' .
+        $GLOBALS['TCA']['tt_content']['ctrl']['label_alt'] = 'madj2k_hero,madj2k_header,madj2k_quote,madj2k_link_label, subheader,' .
             'bodytext,list_type,CType';
 
 

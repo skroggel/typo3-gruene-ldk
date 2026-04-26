@@ -6,7 +6,7 @@
 tt_content.madj2k_parallaxstackitem {
     settings {
     	header {
-    		defaultHeaderType = 1
+    		defaultHeaderType = 2
 			// overrideHeaderType = 2
 			// defaultLayoutType = 2
     	}
