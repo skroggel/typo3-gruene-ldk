@@ -1,0 +1,15 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true"
+>
+    <div class="parallax-stack-item variant-{data.madj2k_text_orientation}">
+        <div class="parallax-stack-item-content">
+            <div class="parallax-stack-item-card bg-color-{data.madj2k_background_color}">
+
+                <f:render partial="Utils/Quote"
+                          arguments="{text: data.madj2k_quote, author: data.madj2k_cite, wrapClass: 'parallax-stack-item-quote'}" />
+            </div>
+        </div>
+    </div>
+</html>
+
+

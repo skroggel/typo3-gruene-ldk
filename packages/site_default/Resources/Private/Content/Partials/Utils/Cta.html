@@ -1,12 +1,20 @@
-    <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true"
+>
+
+
+    <f:if condition="!{type}">
+        <f:variable name="type" value="default" />
+    </f:if>
 
     <f:if condition="!{iconPosition}">
         <f:variable name="iconPosition" value="before" />
     </f:if>
 
-    <f:if condition="!{label}">
+    <f:if condition="!{label} && !({type} == 'icon-only' || {type} == 'icon-only-white')">
         <f:variable name="label" value="{f:translate(id:'label.learnMore', extensionName:'siteDefault')}" />
     </f:if>
+
 
     <div class="cta-wrap {wrapClass}">
         <f:if condition="{link}">
@@ -25,18 +33,8 @@
 
         <f:comment><!-- We use a switch here because this way we can also handle icons --></f:comment>
         <f:switch expression="{type}">
-            <f:case value="inverted">
-                <f:link.typolink parameter="{link}" class="cta cta-{type} {class}" title="{label}">
-                    <span class="cta-inner"><f:if condition="{iconPosition} == 'before'"><f:render section="Icon" arguments="{_all}" /></f:if><span>{label}</span><f:if condition="{iconPosition} == 'after'"><f:render section="Icon" arguments="{_all}" /></f:if></span>
-                </f:link.typolink>
-            </f:case>
-            <f:case value="white">
-                <f:link.typolink parameter="{link}" class="cta cta-{type} {class}" title="{label}">
-                    <span class="cta-inner"><f:if condition="{iconPosition} == 'before'"><f:render section="Icon" arguments="{_all}" /></f:if><span>{label}</span><f:if condition="{iconPosition} == 'after'"><f:render section="Icon" arguments="{_all}" /></f:if></span>
-                </f:link.typolink>
-            </f:case>
             <f:defaultCase>
-                <f:link.typolink parameter="{link}" class="cta cta-default {class}" title="{label}">
+                <f:link.typolink parameter="{link}" class="cta cta-{type} {class}" title="{label}">
                     <span class="cta-inner"><f:if condition="{iconPosition} == 'before'"><f:render section="Icon" arguments="{_all}" /></f:if><span>{label}</span><f:if condition="{iconPosition} == 'after'"><f:render section="Icon" arguments="{_all}" /></f:if></span>
                 </f:link.typolink>
             </f:defaultCase>
@@ -49,18 +47,8 @@
 
         <f:comment><!-- We use a switch here because this way we can also handle icons --></f:comment>
         <f:switch expression="{type}">
-            <f:case value="inverted">
-                <button tabindex="-1" class="cta cta-{type} {class}" title="{label}">
-                    <span class="cta-inner"><f:if condition="{iconPosition} == 'before'"><f:render section="Icon" arguments="{_all}" /></f:if><span>{label}</span><f:if condition="{iconPosition} == 'after'"><f:render section="Icon" arguments="{_all}" /></f:if></span>
-                </button>
-            </f:case>
-            <f:case value="white">
-                <button tabindex="-1" class="cta cta-{type} {class}" title="{label}">
-                    <span class="cta-inner"><f:if condition="{iconPosition} == 'before'"><f:render section="Icon" arguments="{_all}" /></f:if><span>{label}</span><f:if condition="{iconPosition} == 'after'"><f:render section="Icon" arguments="{_all}" /></f:if></span>
-                </button>
-            </f:case>
             <f:defaultCase>
-                <button tabindex="-1" class="cta cta-default {class}" title="{label}">
+                <button tabindex="-1" class="cta cta-{type} {class}" title="{label}">
                     <span class="cta-inner"><f:if condition="{iconPosition} == 'before'"><f:render section="Icon" arguments="{_all}" /></f:if><span>{label}</span><f:if condition="{iconPosition} == 'after'"><f:render section="Icon" arguments="{_all}" /></f:if></span>
                 </button>
             </f:defaultCase>

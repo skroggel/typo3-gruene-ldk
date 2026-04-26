@@ -1,7 +1,6 @@
 /* ==================================================
 * Parallax Stack
 * ================================================== */
-
 .parallax-stack {
 
     --parallax-stack-color-text: var(--color-text-default);
@@ -9,6 +8,10 @@
     --parallax-stack-card-width: #{rem-calc(730)};
     --parallax-stack-card-padding: #{rem-calc(map-get($page-padding, xs))};
     --parallax-stack-content-padding: #{rem-calc(map-get($page-padding, xs))};
+
+    --parallax-stack-icon-color: var(color-icon-default);
+    --parallax-stack-icon-background: var(--color-surface-subtle);
+    --parallax-stack-icon-border-radius: var(--cta-border-radius);
 
     @include media-breakpoint-up(sm) {
         --parallax-stack-card-padding: #{rem-calc(map-get($page-padding, sm))};
@@ -38,80 +41,102 @@
 
     position: relative;
 
+    &-arrow {
+        position: sticky;
+        top: calc(100vh - 55px);
+        font-size: 40px;
+        margin-bottom: -40px;
+        left: 100%;
+        text-align: center;
+        z-index: 3;
+        animation: icon-bounce 1s ease-in-out infinite;
+
+        @include media-breakpoint-up(lg) {
+            top: calc(100vh - 75px);
+            font-size: 60px;
+            margin-bottom: -60px;
+        }
+
+        .icon {
+            background-color: var(--parallax-stack-icon-background);
+            color: var(--parallax-stack-icon-color);
+            border-radius: var(--parallax-stack-icon-border-radius);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+        }
+    }
+
     &-item {
         position: relative;
         display: grid;
         grid-template-columns: 1fr;
         min-height: 100vh;
-    }
 
-    &-item + &-item {
-        margin-top: 0;
-    }
-
-    &-image {
-        position: sticky;
-        top: 0;
-        z-index: 1;
-        grid-area: 1 / 1;
-        height: 100vh;
-        overflow: hidden;
-    }
-
-    &-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    &-content {
-        position: relative;
-        z-index: 2;
-        grid-area: 1 / 1;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        pointer-events: none;
-
-        min-height: 100vh;
-        max-width: $page-max-inner-width;
-        margin-left: auto;
-        margin-right: auto;
-
-        padding: var(--parallax-stack-content-padding);
-        padding-top: calc(var(--parallax-stack-content-padding) + rem-calc($siteheader-height-mobile));
-        padding-bottom: calc(var(--parallax-stack-content-padding) + 100vh); // add 100vh so the image stands while the text scrolls
-
-        @include media-breakpoint-up($siteheader-breakpoint-tablet) {
-            padding-top: calc(var(--parallax-stack-content-padding) + rem-calc($siteheader-height-tablet));
+        & + & {
+            margin-top: 0;
         }
 
-        @include media-breakpoint-up($siteheader-breakpoint-desktop) {
-            padding-top: calc(var(--parallax-stack-content-padding) + rem-calc($siteheader-height-desktop));
+        &-image {
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            grid-area: 1 / 1;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        &-content {
+            position: relative;
+            z-index: 2;
+            grid-area: 1 / 1;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+
+            min-height: 100vh;
+            max-width: $page-max-inner-width;
+            margin-left: auto;
+            margin-right: auto;
+
+            padding: var(--parallax-stack-content-padding);
+            padding-bottom: calc(var(--parallax-stack-content-padding) + 100vh); // add 100vh so the image stands while the text scrolls
+
+        }
+
+        &-card {
+            width: min(100%, var(--parallax-stack-card-width));
+            padding: var(--parallax-stack-card-padding);
+            box-shadow: var(--parallax-stack-shadow);
+            backdrop-filter: blur(0.5rem);
+            pointer-events: auto;
+
+            &:has(.parallax-stack-item-quote) {
+                width: 100%;
+            }
         }
     }
 
-    &-card {
-        width: min(100%, var(--parallax-stack-card-width));
-        padding: var(--parallax-stack-card-padding);
-        box-shadow: var(--parallax-stack-shadow);
-        backdrop-filter: blur(0.5rem);
-        pointer-events: auto;
-    }
 
     /*
      * Text-only block
     */
-    &-item.variant-text-only {
+    &-item:not(:has(.parallax-stack-item-image)) {
         min-height: auto;
 
-        .parallax-stack-content {
+        .parallax-stack-item-content {
             min-height: auto;
             padding-bottom: var(--parallax-stack-content-padding);
         }
 
-        .parallax-stack-card {
+        .parallax-stack-item-card {
             box-shadow: none;
             backdrop-filter: none;
         }
@@ -120,11 +145,11 @@
     /*
      * Orientation
      */
-    .variant-left &-content {
+    .variant-left &-item-content {
         justify-content: flex-start;
     }
 
-    .variant-right &-content {
+    .variant-right &-item-content {
         justify-content: flex-end;
     }
 
@@ -132,31 +157,45 @@
      * Mobile Fallback
      */
     @include media-breakpoint-down(md) {
-        &-item:not(.variant-text-only) {
+        &-item:has(.parallax-stack-item-image) {
             display: block;
             min-height: auto;
 
-            .parallax-stack-image {
+            .parallax-stack-item-image {
                 position: relative;
                 height: 65vh;
             }
 
-            .parallax-stack-content {
+            .parallax-stack-item-content {
                 display: block;
                 min-height: auto;
                 padding-bottom: var(--parallax-stack-content-padding);
                 padding-top: var(--parallax-stack-content-padding);
             }
 
-            .parallax-stack-card {
+            .parallax-stack-item-card {
                 margin-top: -5rem;
                 position: relative;
             }
         }
 
-        .variant-left &-content,
-        .variant-right &-content {
+        .variant-left &-item--content,
+        .variant-right &-item-content {
             justify-content: initial;
         }
+    }
+}
+
+
+/** Add header to padding-top if it is the first element */
+.page-content > .parallax-stack:first-child .parallax-stack-item:first-child > .parallax-stack-item-content {
+    padding-top: calc(var(--parallax-stack-content-padding) + rem-calc($siteheader-height-mobile));
+
+    @include media-breakpoint-up($siteheader-breakpoint-tablet) {
+        padding-top: calc(var(--parallax-stack-content-padding) + rem-calc($siteheader-height-tablet));
+    }
+
+    @include media-breakpoint-up($siteheader-breakpoint-desktop) {
+        padding-top: calc(var(--parallax-stack-content-padding) + rem-calc($siteheader-height-desktop));
     }
 }

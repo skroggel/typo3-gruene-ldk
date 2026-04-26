@@ -1,0 +1,9 @@
+identifier: madj2k/quote-required
+prefixType: vendor # prefixing with vendor for reuse of database fields
+fields:
+  - identifier: quote
+    type: Textarea
+    enableRichtext: true
+    richtextConfiguration: Reduced
+    required: true
+    label: LLL:EXT:site_default/ContentBlocks/Basics/ContentElements/language/labels.xlf:quote.label

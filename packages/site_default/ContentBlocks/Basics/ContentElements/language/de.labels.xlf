@@ -89,7 +89,14 @@
 				<source>Right</source>
 				<target>Rechts</target>
 			</trans-unit>
-
+			<trans-unit id="quote.label">
+				<source>Quote</source>
+				<target>Zitat</target>
+			</trans-unit>
+			<trans-unit id="cite.label">
+				<source>Cite</source>
+				<target>Urheber</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
