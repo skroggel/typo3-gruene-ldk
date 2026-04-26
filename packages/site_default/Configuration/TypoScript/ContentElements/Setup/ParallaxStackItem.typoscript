@@ -14,21 +14,21 @@ tt_content.madj2k_parallaxstackitem {
             desktop {
                  image {
                     dimensions {
-                        maxWidth = 1920
+                        maxWidth = 2500
                     }
                 }
             }
             tablet {
                  image {
                     dimensions {
-                        maxWidth = 1024
+                        maxWidth = 1400
                     }
                 }
             }
             mobile {
                 image {
                    dimensions {
-                       maxWidth = 576
+                       maxWidth = 860
                    }
                }
             }
