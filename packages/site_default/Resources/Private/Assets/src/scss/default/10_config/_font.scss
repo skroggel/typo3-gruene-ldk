@@ -188,6 +188,52 @@ $font-formats: (
             'letter-spacing': 0
         )
     ),
+    'quote-text': (
+        'mobile': (
+            'font-family': var(--font-family-headline),
+            'font-weight': var(--font-weight-headline),
+            'font-size': rem-calc(32),
+            'line-height': 110%,
+            'letter-spacing': 0
+        ),
+        'tablet': (
+            'font-family': var(--font-family-headline),
+            'font-weight': var(--font-weight-headline),
+            'font-size': rem-calc(40),
+            'line-height': 110%,
+            'letter-spacing': 0
+        ),
+        'desktop': (
+            'font-family': var(--font-family-headline),
+            'font-weight': var(--font-weight-headline),
+            'font-size': rem-calc(60),
+            'line-height': 110%,
+            'letter-spacing': 0
+        )
+    ),
+    'quote-cite': (
+        'mobile': (
+            'font-family': var(--font-family-headline),
+            'font-weight': var(--font-weight-headline),
+            'font-size': rem-calc(18),
+            'line-height': 110%,
+            'letter-spacing': 0
+        ),
+        'tablet': (
+            'font-family': var(--font-family-headline),
+            'font-weight': var(--font-weight-headline),
+            'font-size': rem-calc(20),
+            'line-height': 110%,
+            'letter-spacing': 0
+        ),
+        'desktop': (
+            'font-family': var(--font-family-headline),
+            'font-weight': var(--font-weight-headline),
+            'font-size': rem-calc(30),
+            'line-height': 110%,
+            'letter-spacing': 0
+        )
+    ),
     'toggle-list-text': (
         'mobile': (
             'font-family': var(--font-family),

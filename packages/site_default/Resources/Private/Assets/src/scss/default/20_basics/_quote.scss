@@ -6,14 +6,14 @@
     --quote-color-text-before: var(--color-surface-strong);
     --quote-color-text-cite: var(--color-text-subtle);
 
-    @include h2;
+    @include quote-text;
     position: relative;
     margin: 0;
-    padding-left: rem-calc(50);
+    padding-left: rem-calc(40);
     color: var(--quote-color-text);
 
     @include media-breakpoint-up(md) {
-        padding-left: rem-calc(80);
+        padding-left: rem-calc(60);
     }
 
     @include media-breakpoint-up(lg) {
@@ -28,17 +28,17 @@
             position: absolute;
             top: rem-calc(20);
             left: 0;
-            font-size: rem-calc(80);
+            font-size: rem-calc(60);
             color: var(--quote-color-text-before);
 
             @include media-breakpoint-up(md) {
-                top: rem-calc(40);
-                font-size: rem-calc(150);
+                top: rem-calc(30);
+                font-size: rem-calc(100);
             }
 
             @include media-breakpoint-up(lg) {
                 top: rem-calc(40);
-                font-size: rem-calc(150);
+                font-size: rem-calc(140);
             }
         }
 
@@ -48,7 +48,7 @@
     }
 
     &-cite {
-        @include h4;
+        @include quote-cite;
         color: var(--quote-color-text-cite);
         font-style: normal;
         display: inline;

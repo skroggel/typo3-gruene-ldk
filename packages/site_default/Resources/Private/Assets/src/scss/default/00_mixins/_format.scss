@@ -76,6 +76,27 @@
     @include font-format($font-formats: $font-formats, $font-format: 'hero-menu', $tablet-breakpoint: md, $desktop-breakpoint: lg);
 }
 
+/// Typography style for `<h4>` elements.
+///
+/// @group Typography
+///
+/// @author Steffen Kroggel <developer@steffenkroggel>
+/// @license GNU General Public License v3.0 https://www.gnu.org/licenses/gpl-3.0.en.html
+///
+@mixin quote-text {
+    @include font-format($font-formats: $font-formats, $font-format: 'quote-text', $tablet-breakpoint: md, $desktop-breakpoint: lg);
+}
+
+/// Typography style for `<h4>` elements.
+///
+/// @group Typography
+///
+/// @author Steffen Kroggel <developer@steffenkroggel>
+/// @license GNU General Public License v3.0 https://www.gnu.org/licenses/gpl-3.0.en.html
+///
+@mixin quote-cite {
+    @include font-format($font-formats: $font-formats, $font-format: 'quote-cite', $tablet-breakpoint: md, $desktop-breakpoint: lg);
+}
 
 /// Applies typographic styles for the toggle list text
 ///
