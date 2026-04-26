@@ -40,7 +40,6 @@
 		"assets": {
 			"base": "../../../../site_default/Resources/Public/",
 			"folders": [
-				"Icons",
 				"Fonts",
 				"Images/BackendLayouts",
 				"Images/DefaultImages"

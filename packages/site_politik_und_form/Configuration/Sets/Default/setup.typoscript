@@ -5,6 +5,40 @@ page {
     includeCSS {
         siteDefaultLayout = EXT:site_politik_und_form/Resources/Public/Css/styles.css
     }
+
+    headerData {
+
+
+        2000 = TEXT
+        2000 {
+            value (
+                <link rel="apple-touch-icon" type="image/png" href="{path:EXT:site_politik_und_form/Resources/Public/Icons/favicon-24px.png}">
+                <link rel="apple-touch-icon" type="image/png" sizes="32x32" href="{path:EXT:site_politik_und_form/Resources/Public/Icons/favicon-32px.png}">
+                <link rel="apple-touch-icon" type="image/png" sizes="57x57" href="{path:EXT:site_politik_und_form/Resources/Public/Icons/favicon-57px.png}">
+                <link rel="apple-touch-icon" type="image/png" sizes="72x72" href="{path:EXT:site_politik_und_form/Resources/Public/Icons/favicon-72px.png}">
+                <link rel="apple-touch-icon" type="image/png" sizes="96x96" href="{path:EXT:site_politik_und_form/Resources/Public/Icons/favicon-96px.png}">
+                <link rel="apple-touch-icon" type="image/png" sizes="114x114" href="{path:EXT:site_politik_und_form/Resources/Public/Icons/favicon-114px.png}">
+                <link rel="apple-touch-icon" type="image/png" sizes="128x128" href="{path:EXT:site_politik_und_form/Resources/Public/Icons/favicon-128px.png}">
+                <link rel="apple-touch-icon" type="image/png" sizes="167x167" href="{path:EXT:site_politik_und_form/Resources/Public/Icons/favicon-167px.png}">
+                <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="{path:EXT:site_politik_und_form/Resources/Public/Icons/favicon-180px.png}">
+                <link rel="apple-touch-icon" type="image/png" sizes="192x192" href="{path:EXT:site_politik_und_form/Resources/Public/Icons/favicon-192px.png}">
+                <link rel="apple-touch-icon" type="image/png" sizes="195x195" href="{path:EXT:site_politik_und_form/Resources/Public/Icons/favicon-194px.png}">
+
+                <link rel="icon" type="image/png" href="{path:EXT:site_politik_und_form/Resources/Public/Icons/favicon-24px.png}">
+                <link rel="icon" type="image/png" sizes="32x32" href="{path:EXT:site_politik_und_form/Resources/Public/Icons/favicon-32px.png}">
+                <link rel="icon" type="image/png" sizes="57x57" href="{path:EXT:site_politik_und_form/Resources/Public/Icons/favicon-57px.png}">
+                <link rel="icon" type="image/png" sizes="72x72" href="{path:EXT:site_politik_und_form/Resources/Public/Icons/favicon-72px.png}">
+                <link rel="icon" type="image/png" sizes="96x96" href="{path:EXT:site_politik_und_form/Resources/Public/Icons/favicon-96px.png}">
+                <link rel="icon" type="image/png" sizes="114x114" href="{path:EXT:site_politik_und_form/Resources/Public/Icons/favicon-114px.png}">
+                <link rel="icon" type="image/png" sizes="128x128" href="{path:EXT:site_politik_und_form/Resources/Public/Icons/favicon-128px.png}">
+                <link rel="icon" type="image/png" sizes="167x167" href="{path:EXT:site_politik_und_form/Resources/Public/Icons/favicon-167px.png}">
+                <link rel="icon" type="image/png" sizes="180x180" href="{path:EXT:site_politik_und_form/Resources/Public/Icons/favicon-180px.png}">
+                <link rel="icon" type="image/png" sizes="192x192" href="{path:EXT:site_politik_und_form/Resources/Public/Icons/favicon-192px.png}">
+                <link rel="icon" type="image/png" sizes="195x195" href="{path:EXT:site_politik_und_form/Resources/Public/Icons/favicon-194px.png}">
+            )
+            insertData = 1
+        }
+    }
 }
 
 // if critical css is rendered remove all redirects!
