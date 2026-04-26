@@ -5,13 +5,13 @@ fields:
     type: Basic
   - identifier: madj2k/bodytext-reduced-required
     type: Basic
+  - identifier: tab-media
+    type: Tab
+  - identifier: madj2k/assets-single
+    type: Basic
   - identifier: tab-style
     type: Tab
   - identifier: madj2k/text-orientation
     type: Basic
   - identifier: madj2k/background-color
-    type: Basic
-  - identifier: tab-media
-    type: Tab
-  - identifier: madj2k/assets-single
     type: Basic
