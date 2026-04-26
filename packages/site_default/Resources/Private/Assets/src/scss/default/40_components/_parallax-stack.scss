@@ -107,7 +107,7 @@
             margin-right: auto;
 
             padding: var(--parallax-stack-content-padding);
-            padding-bottom: calc(var(--parallax-stack-content-padding) + 100vh); // add 100vh so the image stands while the text scrolls
+            padding-bottom: calc(var(--parallax-stack-content-padding) + 100vh); // add vh so the image stands while the text scrolls
 
         }
 
