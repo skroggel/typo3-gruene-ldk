@@ -12,6 +12,7 @@ fields:
       - madj2k_parallaxstackitemquote
     appearance:
       levelLinksPosition: both
+      expandSingle: true
     overrideChildTca:
       columns:
         CType:

@@ -1,7 +1,7 @@
 identifier: madj2k/palette-header-subheader-layout
 prefixType: vendor # prefixing with vendor for reuse of database fields
 fields:
-  - identifier: palette_header
+  - identifier: palette_header_subheader
     type: Palette
     label: LLL:EXT:site_default/ContentBlocks/Basics/ContentElements/language/labels.xlf:palettes.palette_header.label
     fields:
