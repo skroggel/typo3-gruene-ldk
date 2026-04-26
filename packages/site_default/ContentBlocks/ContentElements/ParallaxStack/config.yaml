@@ -9,6 +9,7 @@ fields:
     foreign_table: tt_content
     allowedRecordTypes:
       - madj2k_parallaxstackitem
+      - madj2k_parallaxstackitemquote
     appearance:
       levelLinksPosition: both
     overrideChildTca:

@@ -121,7 +121,50 @@ call_user_func(
                             ],
                         ],
                     ],
-                ]
+                ],
+                'madj2k_parallaxstackitem' => [
+                    'assets' => [
+                        'desktop' => [
+                            'title' => 'Desktop',
+                            'allowedAspectRatios' => [
+                                '16/9' => [
+                                    'title' => 'Desktop (16:9)',
+                                    'value' => 16/9
+                                ],
+                                /*'NaN' => [
+                                    'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.free',
+                                    'value' => 0.0
+                                ],*/
+                            ],
+                        ],
+                        'tablet' => [
+                            'title' => 'Tablet',
+                            'allowedAspectRatios' => [
+                                '4/3' => [
+                                    'title' => 'Tablet (4:3)',
+                                    'value' => 4/3
+                                ],
+                                /*'NaN' => [
+                                    'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.free',
+                                    'value' => 0.0
+                                ],*/
+                            ],
+                        ],
+                        'mobile' => [
+                            'title' => 'Mobile',
+                            'allowedAspectRatios' => [
+                                '9/16' => [
+                                    'title' => 'Mobile (9:16)',
+                                    'value' => 9/16
+                                ],
+                                /*'NaN' => [
+                                    'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.free',
+                                    'value' => 0.0
+                                ],*/
+                            ],
+                        ],
+                    ],
+                ],
             ]
         ];
 

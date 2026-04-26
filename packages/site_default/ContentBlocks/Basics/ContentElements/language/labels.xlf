@@ -69,6 +69,12 @@
 			<trans-unit id="text_orientation.items.right.label">
 				<source>Right</source>
 			</trans-unit>
+			<trans-unit id="quote.label">
+				<source>Quote</source>
+			</trans-unit>
+			<trans-unit id="cite.label">
+				<source>Cite</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

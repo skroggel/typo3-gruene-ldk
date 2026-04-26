@@ -1,17 +1,13 @@
-name: madj2k/parallax-stack-item
+name: madj2k/parallax-stack-item-quote
 prefixType: vendor # prefixing with vendor for reuse of database fields
 fields:
-  - identifier: madj2k/palette-header
+  - identifier: madj2k/quote-required
     type: Basic
-  - identifier: madj2k/bodytext-reduced-required
+  - identifier: madj2k/cite
     type: Basic
   - identifier: tab-style
     type: Tab
   - identifier: madj2k/text-orientation
     type: Basic
   - identifier: madj2k/background-color
-    type: Basic
-  - identifier: tab-media
-    type: Tab
-  - identifier: madj2k/assets-single
     type: Basic

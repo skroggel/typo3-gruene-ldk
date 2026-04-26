@@ -6,7 +6,7 @@
 
 			<!-- element -->
 			<trans-unit id="title">
-				<source>Parallax Stack Item (Custom)</source>
+				<source>Parallax Stack Item Quote (Custom)</source>
 			</trans-unit>
 			<trans-unit id="description">
 				<source></source>
@@ -20,6 +20,11 @@
 				<source>Style</source>
 			</trans-unit>
 
+
+			<!-- fields -->
+			<trans-unit id="parallax_stack_item_type.label">
+				<source>Sub-Type</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

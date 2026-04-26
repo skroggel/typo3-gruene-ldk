@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages">
 		<body>
+
 			<!-- @see https://docs.typo3.org/p/friendsoftypo3/content-blocks/main/en-us/API/AutomaticLanguageKeys/Index.html#api_automatic_language_keys -->
 
 			<!-- element -->
 			<trans-unit id="title">
-				<source>Parallax Stack Item (Custom)</source>
+				<source>Parallax Stack Item Quote (Custom)</source>
+				<target>Parallax Stack  Quote (Custom)</target>
 			</trans-unit>
 			<trans-unit id="description">
 				<source></source>
+				<target></target>
 			</trans-unit>
 
 			<!-- tabs -->
-			<trans-unit id="tabs.tab-media">
-				<source>Media</source>
-			</trans-unit>
 			<trans-unit id="tabs.tab-style">
 				<source>Style</source>
+				<target>Erscheinungsbild</target>
 			</trans-unit>
 
 		</body>

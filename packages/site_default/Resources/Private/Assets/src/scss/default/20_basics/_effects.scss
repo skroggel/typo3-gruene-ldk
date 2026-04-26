@@ -35,3 +35,13 @@
         }
     }
 }
+
+
+@keyframes icon-bounce {
+    0%, 100% {
+        transform: translateY(rem-calc(10));
+    }
+    50% {
+        transform: translateY(rem-calc(0));
+    }
+}

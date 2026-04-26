@@ -2,13 +2,16 @@
       data-namespace-typo3-fluid="true"
 >
 
-    <section class="parallax-stack csp-section csp-not-last fullwidth-1 bg-color-{data.madj2k_background_color_extended} js-appear-on-scroll" id="c{data.uid}">
-       <div class="fullwidth-inner overflow-visible">
+    <section style="position: relative;" class="parallax-stack csp-section csp-not-last fullwidth-1 bg-color-{data.madj2k_background_color_extended} js-appear-on-scroll" id="c{data.uid}">
+        <div class="parallax-stack-arrow"><span class="icon-arrow-down icon"></span></div>
+
+        <div class="fullwidth-inner overflow-visible">
             <f:for each="{data._grids.parallax_stack_items}" as="item" iteration="i">
                 <f:comment><!-- {item.data} contains the Content Block data object. --></f:comment>
                 <f:format.raw>{item.content}</f:format.raw>
             </f:for>
        </div>
+
     </section>
 
 </html>
