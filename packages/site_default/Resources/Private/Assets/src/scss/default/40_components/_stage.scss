@@ -65,24 +65,13 @@
             margin-top: rem-calc($siteheader-height-desktop);
         }
 
-        &-nav {
-            height: rem-calc(48);
-
-            @include media-breakpoint-up(lg) {
-                width: rem-calc(48);
-            }
-
-            &:first-child {
-                display: none;
-                @include media-breakpoint-up(lg) {
-                    display: flex
-                }
-            }
-        }
-
         &-main {
             padding-right: rem-calc(map-get($spacers, 5));
             padding-left: rem-calc(map-get($spacers, 5));
+        }
+
+        &-nav {
+            display: none;
         }
 
         &-inner {
@@ -121,12 +110,29 @@
                     justify-content: flex-end;
                 }
             }
-
-
         }
     }
 
     &-slider {
+
+        &:has(.swiper-navigation) {
+            .stage-content-nav {
+                display: flex;
+                height: rem-calc(48);
+
+                @include media-breakpoint-up(lg) {
+                    width: rem-calc(48);
+                }
+
+                &:first-child {
+                    display: none;
+                    @include media-breakpoint-up(lg) {
+                        display: flex
+                    }
+                }
+            }
+        }
+
 
         .swiper {
             .swiper-navigation {
