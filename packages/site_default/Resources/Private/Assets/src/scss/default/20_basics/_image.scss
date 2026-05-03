@@ -4,6 +4,8 @@
 figcaption {
     @include copy-small;
     margin-top: 1em;
+    padding-left: rem-calc($spacer);
+    padding-right: rem-calc($spacer);
 }
 
 .img {
