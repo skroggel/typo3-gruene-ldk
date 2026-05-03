@@ -308,11 +308,6 @@ AddDefaultCharset utf-8
 	RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]
 
 	# ===============================================
-	# Redirects
-	# ===============================================
-	RewriteRule ^wahlprogramm-2026$ / [R=301,L]
-
-	# ===============================================
 
 	# Make sure we use https!
 	# RewriteCond %{SERVER_PORT} !^443$
