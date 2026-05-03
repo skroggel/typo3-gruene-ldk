@@ -72,6 +72,9 @@
 
         &-nav {
             display: none;
+            @include media-breakpoint-up(lg) {
+                display: flex
+            }
         }
 
         &-inner {
