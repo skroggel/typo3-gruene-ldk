@@ -1,0 +1,14 @@
+    <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true"
+>
+    <section class="news-detail csp-section  js-appear-on-scroll" id="c{data.uid}">
+        <f:if condition="{data._grids.plugin_news_detail}">
+            <f:if condition="{data._grids.plugin_news_detail.0.content -> f:format.trim()}">
+                <f:for each="{data._grids.plugin_news_detail}" as="item" iteration="i">
+                    <f:comment><!-- {item.data} contains the Content Block data object. --></f:comment>
+                    <f:format.raw>{item.content}</f:format.raw>
+                </f:for>
+            </f:if>
+        </f:if>
+    </section>
+</html>

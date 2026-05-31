@@ -1,111 +1,110 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
 	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
 	  xmlns:rx="http://typo3.org/ns/Reelworx/RxShariff/ViewHelper"
-	  data-namespace-typo3-fluid="true">
+	  data-namespace-typo3-fluid="true"
+>
 
-<f:layout name="Detail" />
+    <f:layout name="Detail" />
 
-<!--
-	=====================
-		News/Detail.html
--->
+    <!--
+        =====================
+            News/Detail.html
+    -->
 
-<f:section name="content">
-	<f:if condition="{newsItem}">
-        <n:format.nothing>
-            <n:excludeDisplayedNews newsItem="{newsItem}" />
-            <f:if condition="{settings.detail.showMetaTags}">
-                <f:render partial="Detail/Opengraph" arguments="{newsItem: newsItem, settings:settings}" />
-            </f:if>
-            <f:if condition="{newsItem.alternativeTitle}">
-                <f:then>
-                    <n:titleTag>
-                        <f:format.htmlentitiesDecode>{newsItem.alternativeTitle}</f:format.htmlentitiesDecode>
-                    </n:titleTag>
-                </f:then>
-                <f:else>
-                    <n:titleTag>
-                        <f:format.htmlentitiesDecode>{newsItem.title}</f:format.htmlentitiesDecode>
-                    </n:titleTag>
-                </f:else>
-            </f:if>
-        </n:format.nothing>
+    <f:section name="content">
+        <f:if condition="{newsItem}">
+            <n:format.nothing>
+                <n:excludeDisplayedNews newsItem="{newsItem}" />
+                <f:if condition="{settings.detail.showMetaTags}">
+                    <f:render partial="Detail/Opengraph" arguments="{newsItem: newsItem, settings:settings}" />
+                </f:if>
+                <f:if condition="{newsItem.alternativeTitle}">
+                    <f:then>
+                        <n:titleTag>
+                            <f:format.htmlentitiesDecode>{newsItem.alternativeTitle}</f:format.htmlentitiesDecode>
+                        </n:titleTag>
+                    </f:then>
+                    <f:else>
+                        <n:titleTag>
+                            <f:format.htmlentitiesDecode>{newsItem.title}</f:format.htmlentitiesDecode>
+                        </n:titleTag>
+                    </f:else>
+                </f:if>
+            </n:format.nothing>
 
 
-        <f:comment><!-- Header  --></f:comment>
-        <f:render partial="Detail/Stage" arguments="{newsItem: newsItem, settings: settings}" />
+            <f:comment><!-- Header  --></f:comment>
+            <f:render partial="Detail/Stage" arguments="{newsItem: newsItem, settings: settings}" />
 
-        <f:comment><!-- Tags --></f:comment>
-        <f:render partial="Detail/Tags" arguments="{newsItem: newsItem, settings: settings}" />
+            <f:comment><!-- Tags --></f:comment>
+            <f:render partial="Detail/Tags" arguments="{newsItem: newsItem, settings: settings}" />
 
-        <div itemprop="articleBody">
+            <div itemprop="articleBody">
 
-            <f:comment><!-- maintext --></f:comment>
-            <f:if condition="{newsItem.bodytext}">
-                <div class="csp-block csp-not-last pt-8"
-                     aria-labelledby="news-detail-headline">
+                <f:comment><!-- maintext --></f:comment>
+                <f:if condition="{newsItem.bodytext}">
+                    <div class="csp-block csp-not-last pt-8"
+                         aria-labelledby="news-detail-headline">
+                        <div class="container-xxxl">
+                            <div class="row">
+                                <div class="col-12 col-xl-10">
+                                    <f:format.html parseFuncTSPath="lib.parseFunc_RTE">{newsItem.bodytext}</f:format.html>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </f:if>
+
+                <f:comment><!-- content-elements --></f:comment>
+                <f:if condition="{newsItem.contentElements}">
+                    <f:cObject typoscriptObjectPath="lib.tx_news.contentElementRendering">{newsItem.contentElementIdList}</f:cObject>
+                </f:if>
+                </div>
+
+            <f:comment><!-- back-link --></f:comment>
+            <f:if condition="{settings.backPid}">
+                <div class="news-detail-cta-wrap fullwidth-1 bg-color-default">
                     <div class="container-xxxl">
                         <div class="row">
-                            <div class="col-12 col-xl-10">
-                                <f:format.html parseFuncTSPath="lib.parseFunc_RTE">{newsItem.bodytext}</f:format.html>
+                            <div class="col-12">
+                                <f:render partial="Utils/Cta"
+                                          arguments="{
+                                            type: 'inverted',
+                                            icon: 'arrow-left',
+                                            link: '{f:uri.page(pageUid: settings.backPid)}',
+                                            label: '{f:translate(key:\'label.backToList\', extensionName:\'site_default\')}',
+                                            wrapClass: 'news-detail-cta', settings: customSettings}" />
                             </div>
                         </div>
                     </div>
                 </div>
             </f:if>
 
-            <f:comment><!-- content-elements --></f:comment>
-            <f:if condition="{newsItem.contentElements}">
-                <f:cObject typoscriptObjectPath="lib.tx_news.contentElementRendering">{newsItem.contentElementIdList}</f:cObject>
+            <f:comment><!--
+            <f:if condition="{settings.detail.showPrevNext}">
+                <n:simplePrevNext pidList="{newsItem.pid}" news="{newsItem}" as="paginated" sortField="datetime">
+                    <f:if condition="{paginated}">
+                        <ul class="pager">
+                            <f:if condition="{paginated.prev}">
+                                <li class="previous">
+                                    <n:link newsItem="{paginated.prev}" settings="{settings}">
+                                        <span aria-hidden="true">&larr; </span>{paginated.prev.title}
+                                    </n:link>
+                                </li>
+                            </f:if>
+                            <f:if condition="{paginated.next}">
+                                <li class="next">
+                                    <n:link newsItem="{paginated.next}" settings="{settings}" class="next">
+                                        {paginated.next.title} <span aria-hidden="true"> &rarr;</span>
+                                    </n:link>
+                                </li>
+                            </f:if>
+                        </ul>
+                    </f:if>
+                </n:simplePrevNext>
             </f:if>
+            --></f:comment>
 
-        </div>
-
-        <f:comment><!-- back-link --></f:comment>
-        <f:if condition="{settings.backPid}">
-            <div class="news-detail-cta-wrap fullwidth-1 bg-color-default">
-                <div class="container-xxxl">
-                    <div class="row">
-                        <div class="col-12">
-                            <f:render partial="Utils/Cta"
-                                      arguments="{
-                                        type: 'inverted',
-                                        icon: 'arrow-left',
-                                        link: '{f:uri.page(pageUid: settings.backPid)}',
-                                        label: '{f:translate(key:\'label.backToList\', extensionName:\'site_default\')}',
-                                        wrapClass: 'news-detail-cta', settings: customSettings}" />
-                        </div>
-                    </div>
-                </div>
-            </div>
         </f:if>
-
-        <f:comment><!--
-        <f:if condition="{settings.detail.showPrevNext}">
-            <n:simplePrevNext pidList="{newsItem.pid}" news="{newsItem}" as="paginated" sortField="datetime">
-                <f:if condition="{paginated}">
-                    <ul class="pager">
-                        <f:if condition="{paginated.prev}">
-                            <li class="previous">
-                                <n:link newsItem="{paginated.prev}" settings="{settings}">
-                                    <span aria-hidden="true">&larr; </span>{paginated.prev.title}
-                                </n:link>
-                            </li>
-                        </f:if>
-                        <f:if condition="{paginated.next}">
-                            <li class="next">
-                                <n:link newsItem="{paginated.next}" settings="{settings}" class="next">
-                                    {paginated.next.title} <span aria-hidden="true"> &rarr;</span>
-                                </n:link>
-                            </li>
-                        </f:if>
-                    </ul>
-                </f:if>
-            </n:simplePrevNext>
-        </f:if>
-        --></f:comment>
-
-
-	</f:if>
-</f:section>
+    </f:section>
 </html>

@@ -1,0 +1,17 @@
+name: madj2k/news-detail
+prefixType: vendor # prefixing with vendor for reuse of database fields
+fields:
+  - identifier: plugin_news_detail
+    type: Collection
+    minitems: 1
+    maxitems: 1
+    foreign_table: tt_content
+    allowedRecordTypes:
+      - news_newsdetail
+    appearance:
+      levelLinksPosition: both
+    overrideChildTca:
+      columns:
+        CType:
+          config:
+            default: news_newsdetail

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages">
+		<body>
+
+			<!-- @see https://docs.typo3.org/p/friendsoftypo3/content-blocks/main/en-us/API/AutomaticLanguageKeys/Index.html#api_automatic_language_keys -->
+
+			<!-- element -->
+			<trans-unit id="title">
+				<source>News Detail (Custom)</source>
+			</trans-unit>
+			<trans-unit id="description">
+				<source>This element is a detail page for a news item or event. It presents the full content of an entry, usually with a title, date, optional image, intro text, and detailed body copy. In addition to regular text, standard content elements such can be used to structure the page in a more varied and accessible way.</source>
+			</trans-unit>
+
+
+			<!-- fields -->
+			<trans-unit id="plugin_news_detail.label">
+				<source>Plugin</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
