@@ -25,14 +25,13 @@
  */
 @include flex-icon(
     $selectors-map: (
-        a: ':not(.link-wrap)',
+        a: ':not(.link-wrap):not(.cta)',
         p: '',
         span: '',
         button: ''
     ),
-    $margin: 5
+    $margin: 16
 );
-
 
 
 @font-face {

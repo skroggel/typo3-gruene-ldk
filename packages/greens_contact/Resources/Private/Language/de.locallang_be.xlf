@@ -26,9 +26,13 @@
 				<source>Items per Page</source>
 				<target>Elemente je Seite</target>
 			</trans-unit>
-			<trans-unit id="flexform.category">
-				<source>Category</source>
-				<target>Kategorie</target>
+			<trans-unit id="flexform.persons">
+				<source>Persons</source>
+				<target>Personen</target>
+			</trans-unit>
+			<trans-unit id="flexform.categories">
+				<source>Categories</source>
+				<target>Kategorien</target>
 			</trans-unit>
         </body>
     </file>

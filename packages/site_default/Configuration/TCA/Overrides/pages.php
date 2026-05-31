@@ -4,6 +4,19 @@ call_user_func(
 	function($extKey)
 	{
 
+        //===========================================================================
+        // Add selective TsConfig
+        //===========================================================================
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::registerPageTSConfigFile(
+            $extKey,
+            'Configuration/PageTs/_Selective/10-ttNewsCTypeRemoval.tsconfig',
+            'EXT:site_default :: tt_news - CTypeRemoval'
+        );
+
+        //===========================================================================
+        // Add fields
+        //===========================================================================
+
 		$GLOBALS['TCA']['pages']['columns']['categories']['config']['behaviour']['allowLanguageSynchronization']= true;
 
         // set title-field with editor
@@ -16,9 +29,7 @@ call_user_func(
             'richtextConfiguration' => 'ShyOnly'
         ] ;
 
-        //===========================================================================
-		// Add fields
-		//===========================================================================
+
 		\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('pages',
 			[
                 'tx_sitedefault_image_teaser' => [

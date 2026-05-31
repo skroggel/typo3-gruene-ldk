@@ -4,7 +4,7 @@ fields:
   - identifier: image_orientation
     type: Select
     renderType: selectSingle
-    default: 'left'
+    default: 'right'
     label: LLL:EXT:site_default/ContentBlocks/Basics/ContentElements/language/labels.xlf:image_orientation.label
     items:
       - value: left

@@ -121,6 +121,10 @@
 				<source>show less</source>
 				<target>weniger anzeigen</target>
 			</trans-unit>
+			<trans-unit id="label.backToList">
+				<source>back to list</source>
+				<target>zurück zur Liste</target>
+			</trans-unit>
 			<trans-unit id="label.searchPlaceholder">
 				<source>Search Keyword</source>
 				<target>Suchbegriff</target>
@@ -144,7 +148,11 @@
 
 			<trans-unit id="news.dateFormat">
 				<source>d-m-Y</source>
-				<target>d.m.Y.</target>
+				<target>d.m.Y</target>
+			</trans-unit>
+			<trans-unit id="news.timeFormat">
+				<source>h:i A</source>
+				<target>H:i \U\h\r</target>
 			</trans-unit>
 			<trans-unit id="news.headerDateFormat">
 				<source>F</source>

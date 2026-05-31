@@ -1,0 +1,42 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+    <div class="stage fullwidth-1 {f:if(condition:newsItem.falMedia, then: 'has-image', else: 'has-no-image')} bg-color-subtle">
+        <f:render section="Inner" arguments="{_all}" />
+    </div>
+
+    <f:comment><!-- ======================================================== --></f:comment>
+
+    <f:section name="Inner">
+
+        <div class="stage-inner fullwidth-inner">
+            <f:render partial="Utils/Media"
+                      arguments="{file: newsItem.falMedia.0, wrapClass: 'stage-image', settings: settings}" />
+        </div>
+
+        <div class="stage-content">
+            <f:render section="SubInner" arguments="{_all}" />
+        </div>
+
+    </f:section>
+
+    <f:comment><!-- ======================================================== --></f:comment>
+
+    <f:section name="SubInner">
+
+        <div class="stage-content-inner page-padding-full">
+            <div class="stage-content-main" itemprop="headline">
+
+                <f:render partial="Utils/Hero"
+                          arguments="{hero: newsItem.title,
+                                     hero2: data.madj2k_hero2,
+                                     additionalAttributes: 'id=\"news-detail-headline\"',
+                                     wrapClass: 'stage-headline',
+                                     layout: 1,
+                                     settings: settings}" />
+            </div>
+        </div>
+
+    </f:section>
+</html>

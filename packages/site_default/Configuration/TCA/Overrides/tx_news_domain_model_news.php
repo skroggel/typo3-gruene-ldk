@@ -38,6 +38,16 @@ call_user_func(
             'size' => 30,
         ];
 
+        $GLOBALS['TCA']['tx_news_domain_model_news']['columns']['content_elements']['config']['overrideChildTca'] = [
+            'columns' => [
+                'CType' => [
+                    'config' => [
+                        'default' => 'madj2k_text'
+                    ]
+                ]
+            ]
+        ];
+
         // remove unused types
         unset($GLOBALS['TCA']['tx_news_domain_model_news']['columns']['type']['config']['items'][1]);
         //unset($GLOBALS['TCA']['tx_news_domain_model_news']['columns']['type']['config']['items'][2]);
@@ -129,7 +139,7 @@ call_user_func(
                         'eval' => 'trim',
                     ]
                 ],
-                'tx_sitedefault_introduction' => [
+                /*'tx_sitedefault_introduction' => [
                     'exclude' => 0,
                     'label' =>  $ll  . 'tx_news_domain_model_news.tx_sitedefault_introduction',
                     'config' => [
@@ -140,7 +150,7 @@ call_user_func(
                         'enableRichtext' => true,
                         'richtextConfiguration' => 'Reduced'
                     ]
-                ],
+                ],*/
                 'tx_sitedefault_image_preview' => [
 					'exclude' => 0,
 					'label' => $ll . 'tx_news_domain_model_news.tx_sitedefault_image_preview',
@@ -176,22 +186,22 @@ call_user_func(
             'tx_news_domain_model_news',
             'tx_sitedefault_location',
             '',
-            'before:teaser'
+            'after:teaser'
         );
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
+        /*\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
             'tx_news_domain_model_news',
             'tx_sitedefault_introduction',
             '',
             'before:bodytext'
-        );
+        );*/
 
 		$GLOBALS['TCA']['tx_news_domain_model_news']['columns']['tx_sitedefault_image_preview']['config']['overrideChildTca']['columns']['crop']['config'] = [
 			'cropVariants' => [
-				'default' => [
-					'title' => 'Default',
+				'desktop' => [
+					'title' => 'Desktop',
 					'allowedAspectRatios' => [
 						'preview' => [
-							'title' => 'Default',
+							'title' => 'Desktop',
 							'value' => 450/ 300
 						],
 					],

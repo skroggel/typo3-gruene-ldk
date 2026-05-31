@@ -1,0 +1,18 @@
+identifier: madj2k/text-color
+prefixType: vendor # prefixing with vendor for reuse of database fields
+fields:
+  - identifier: text_color
+    type: Select
+    renderType: selectSingle
+    default: 'default'
+    label: LLL:EXT:site_default/ContentBlocks/Basics/ContentElements/language/labels.xlf:text_color.label
+    items:
+      - value: default
+        label: default
+      - value: subtle
+        label: subtle
+      - value: strong
+        label: strong
+      - value: inverted
+        label: inverted
+

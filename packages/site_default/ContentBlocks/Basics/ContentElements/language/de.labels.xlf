@@ -57,6 +57,10 @@
 				<source>Teaser</source>
 				<target>Teaser</target>
 			</trans-unit>
+			<trans-unit id="text_color.label">
+				<source>Text Color</source>
+				<target>Textfarbe</target>
+			</trans-unit>
 			<trans-unit id="background_color.label">
 				<source>Background Color</source>
 				<target>Hintergrundfarbe</target>

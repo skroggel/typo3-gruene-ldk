@@ -17,8 +17,18 @@
                             <default>10</default>
                         </config>
                     </settings.limit>
-                    <settings.category>
-                        <label>LLL:EXT:greens_contact/Resources/Private/Language/locallang_be.xlf:flexform.category</label>
+                    <settings.persons>
+                        <label>LLL:EXT:greens_contact/Resources/Private/Language/locallang_be.xlf:flexform.persons</label>
+                        <config>
+                            <type>group</type>
+                            <allowed>tx_contact_domain_model_person</allowed>
+                            <size>10</size>
+                            <maxitems>999</maxitems>
+                            <minitems>0</minitems>
+                        </config>
+                    </settings.persons>
+                    <settings.categories>
+                        <label>LLL:EXT:greens_contact/Resources/Private/Language/locallang_be.xlf:flexform.categories</label>
                         <config>
                             <type>select</type>
                             <renderType>selectTree</renderType>
@@ -27,8 +37,7 @@
                                 ORDER BY sys_category.sorting
                             </foreign_table_where>
                             <minitems>0</minitems>
-                            <maxitems>1</maxitems>
-
+                            <maxitems>999</maxitems>
                             <treeConfig>
                                 <parentField>parent</parentField>
                                 <appearance>
@@ -38,7 +47,7 @@
                                 </appearance>
                             </treeConfig>
                         </config>
-                    </settings.category>
+                    </settings.categories>
 				</el>
 			</ROOT>
 		</sDEF>

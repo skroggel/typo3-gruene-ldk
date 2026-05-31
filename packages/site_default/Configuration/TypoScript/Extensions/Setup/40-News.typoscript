@@ -26,6 +26,7 @@ plugin.tx_news {
 
 	settings {
 
+        cssFile >
         startingpoint = {$site.news.startingpoint}
         recursive = 0
         overrideFlexformSettingsIfEmpty := addToList(startingpoint,recursive)
@@ -62,28 +63,37 @@ plugin.tx_news {
                     }
                 }
 
+                listGrouped {
+                    tx_smsresponsiveimages < lib.madj2kMediaUtils.responsiveImages
+                    header {
+                        defaultHeaderType = 3
+                        // overrideHeaderType = 2
+                        defaultLayoutType = 2
+                    }
+                }
 
-                groupedList {
+                listItem {
                     tx_smsresponsiveimages < lib.madj2kMediaUtils.responsiveImages
                     tx_smsresponsiveimages {
 
                         breakpoints {
                             0 {
-                                cropVariant = list
+                                cropVariant = desktop
                             }
                             1 {
-                                cropVariant = list
+                                cropVariant = tablet
                             }
                             2 {
-                                cropVariant = list
+                                cropVariant = mobile
                             }
                         }
                     }
                     header {
                         defaultHeaderType = 3
                         // overrideHeaderType = 2
-                        // defaultLayoutType = 2
+                        //defaultLayoutType = 2
                     }
+
                     media {
                         image {
                             fallback = EXT:site_default/Resources/Public/Images/DefaultImages/Tiles.png
@@ -109,3 +119,18 @@ plugin.tx_news {
 	}
 }
 
+#===========================================================================================================
+# Override contentElementRendering in order to get the elements as content-blocks and not as sections!
+# This way we have tx_news_related_news=1 to check for usage in news
+#===========================================================================================================
+lib.tx_news.contentElementRendering >
+lib.tx_news.contentElementRendering = CONTENT
+lib.tx_news.contentElementRendering {
+ 	table = tt_content
+ 	select {
+ 		pidInList = 0
+ 		uidInList.current = 1
+ 		orderBy = sorting
+ 		languageField = sys_language_uid
+ 	}
+}
