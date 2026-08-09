@@ -83,6 +83,14 @@
         }
     }
 
+    &-strong {
+        color: var(--color-text-strong) !important;
+
+        & > * {
+            color: var(--color-text-strong) !important;
+        }
+    }
+
     &-inverted {
         color: var(--color-text-inverted) !important;
 

@@ -158,7 +158,7 @@ switch (\TYPO3\CMS\Core\Core\Environment::getContext()) {
 
             // deactivate cache completely
             foreach ($GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations'] as $cacheName => $cacheConfiguration) {
-                $GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations'][$cacheName]['backend'] = \TYPO3\CMS\Core\Cache\Backend\NullBackend::class;
+           //     $GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations'][$cacheName]['backend'] = \TYPO3\CMS\Core\Cache\Backend\NullBackend::class;
             }
 
             $GLOBALS['TYPO3_CONF_VARS'] = array_replace_recursive(

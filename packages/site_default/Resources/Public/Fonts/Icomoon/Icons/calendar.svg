@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calendar" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 60.2 53.32">
+  <!-- Generator: Adobe Illustrator 30.5.1, SVG Export Plug-In . SVG Version: 2.1.4 Build 3)  -->
+  <g>
+    <rect x="9.16" y="38.5" width="10.56" height="3.59"/>
+    <rect x="9.16" y="30.24" width="10.56" height="3.59"/>
+    <rect x="9.16" y="21.97" width="10.56" height="3.59"/>
+  </g>
+  <g>
+    <rect x="40.43" y="38.5" width="10.56" height="3.59"/>
+    <rect x="40.43" y="30.24" width="10.56" height="3.59"/>
+    <rect x="40.43" y="21.97" width="10.56" height="3.59"/>
+  </g>
+  <g>
+    <rect x="24.8" y="38.5" width="10.56" height="3.59"/>
+    <rect x="24.8" y="30.24" width="10.56" height="3.59"/>
+    <rect x="24.8" y="21.97" width="10.56" height="3.59"/>
+  </g>
+  <g>
+    <rect x="34.8" y="5.75" width="15.09" height="3.59" transform="translate(34.8 49.9) rotate(-90)"/>
+    <rect x="10.23" y="5.75" width="15.09" height="3.59" transform="translate(10.23 25.32) rotate(-90)"/>
+  </g>
+  <g>
+    <polygon points="38.56 10.49 38.56 5.58 21.57 5.58 21.57 10.5 25.44 10.5 38.56 10.49"/>
+    <polygon points="46.15 5.58 46.15 10.49 55.25 10.48 55.27 29.48 55.25 48.41 34.76 48.39 4.95 48.41 4.93 29.42 4.95 10.48 13.98 10.49 13.98 5.58 0 5.58 0 53.32 60.2 53.32 60.2 5.58 46.15 5.58"/>
+  </g>
+</svg>

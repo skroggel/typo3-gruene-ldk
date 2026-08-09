@@ -1,0 +1,38 @@
+/* ==================================================
+* Tags
+* ================================================== */
+.tag-box {
+    --tag-box-color-text: var(--color-text-strong);
+    padding: rem-calc(map-get($spacers, 3));
+
+    .tag-list {
+        --tag-list-color-text: var(--tag-box-color-text);
+        margin-bottom: 0;
+    }
+}
+
+.tag-list {
+
+    --tag-list-color-text: var(--color-brand-primary);
+
+    display: flex;
+    gap: 0;
+    color: var(--tag-list-color);
+    margin-bottom: rem-calc(map-get($spacers, 2));
+
+    .tag,
+    .tag:link,
+    .tag:visited,
+    .tag:hover  {
+        @include copy-small;
+        color: var(--tag-list-color-text);
+
+        &:not(:last-child) {
+            &:after {
+                content: '|';
+                padding-left: rem-calc(map-get($spacers, 3));
+                padding-right: rem-calc(map-get($spacers, 3));
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+/**
+* Inherit global settings to all relevant extensions!
+*/
+plugin.tx_news {
+
+    txMediaUtils.responsiveImages < lib.txMediaUtils.responsiveImages
+
+    settings._custom {
+        _global.settings.txMediaUtils.responsiveImages < lib.txMediaUtils.responsiveImages
+    }
+}
+
+plugin.tx_kesearch_pi2 {
+    settings._custom {
+        _global.settings.txMediaUtils.responsiveImages < lib.txMediaUtils.responsiveImages
+    }
+}

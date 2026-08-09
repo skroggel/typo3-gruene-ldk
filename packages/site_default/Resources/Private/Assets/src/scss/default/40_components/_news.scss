@@ -1,16 +1,78 @@
 /* ==================================================
-* Topic Teaser
+* News
 * ================================================== */
+.news-items {
 
-.news {
+    --news-items-group-color-surface-default: var(--color-surface-default);
+    --news-items-group-color-surface-subtile: var(--color-surface-subtle);
 
-    &-list {
-        display: flex;
-        flex-direction: column;
+    display: flex;
+    flex-direction: column;
+
+    .headline {
+        margin-bottom: 0;
     }
 
+    &-group {
+        padding-top: map-get($spacers, 10);
+        background-color: var(--news-items-group-color-surface-subtile);
 
-    &-item {
+        &.is-even {
+            background-color: var(--news-items-group-color-surface-default);
+        }
+    }
+}
 
+/** ==================================
+    News item in list
+ ================================== */
+
+.news-item {
+    --news-item-color-border: var(--color-brand-primary);
+
+    border-bottom: rem-calc(2) solid var(--news-item-color-border);
+
+    &:last-child {
+        border-bottom: 0;
+    }
+
+    .headline {
+        margin-bottom: 0;
+    }
+
+    &-inner {
+        display: flex;
+    }
+
+    &-header{
+        margin-bottom: rem-calc(map-get($spacers, 2));
+    }
+
+    &-image {
+        overflow:hidden;
+
+        img {
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &-cta {
+        margin-top: rem-calc(map-get($spacers, 5));
+    }
+}
+
+/** ==================================
+    Detail
+ ================================== */
+.news-detail {
+
+    &-cta-wrap {
+        position: relative;
+        z-index: 4;
+    }
+
+    &-cta{
+        margin-top: rem-calc(map-get($spacers, 8));
     }
 }

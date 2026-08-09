@@ -29,7 +29,7 @@ lib.siteDefault {
                 pageTitle.data = page:title
             }
 
-            settings.tx_smsresponsiveimages < lib.madj2kMediaUtils.responsiveImages
+            settings.tx_smsresponsiveimages < lib.txMediaUtils.responsiveImages
             settings.tx_smsresponsiveimages {
 
                 loading = eager

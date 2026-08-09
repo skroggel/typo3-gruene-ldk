@@ -1,0 +1,13 @@
+identifier: madj2k/variant
+prefixType: vendor # prefixing with vendor for reuse of database fields
+fields:
+  - identifier: variant
+    type: Select
+    renderType: selectSingle
+    default: 'default'
+    label: LLL:EXT:site_default/ContentBlocks/Basics/ContentElements/language/labels.xlf:variant.label
+    items:
+      - value: default
+        label: default
+      - value: big
+        label: big

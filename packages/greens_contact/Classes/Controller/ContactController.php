@@ -96,6 +96,7 @@ final class ContactController extends  \TYPO3\CMS\Extbase\Mvc\Controller\ActionC
      * @return \Psr\Http\Message\ResponseInterface
      * @throws \Doctrine\DBAL\Exception
      * @throws \TYPO3\CMS\Extbase\Persistence\Generic\Exception
+     * @throws \TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException
      */
     public function listAction(?Search $search = null): ResponseInterface
     {
@@ -108,24 +109,40 @@ final class ContactController extends  \TYPO3\CMS\Extbase\Mvc\Controller\ActionC
             $search = GeneralUtility::makeInstance(Search::class);
         }
 
-        // check if pages are set
+        // check if pages, persons or categories are set in plugin
         $pages = GeneralUtility::trimExplode(',', $this->settings['pages'] ?? '', true) ;
         if (!empty($this->currentContentObject->data['pages'])) {
             $pages = GeneralUtility::trimExplode(',', $this->currentContentObject->data['pages'], true);
         }
 
-        if (
-            ($search->getCategory() > 0)
-            || (! empty($this->settings['category']))
-        ){
-            $persons = $this->personRepository->findByCategoryIdSorted(
-                categoryId: (int) $this->settings['category'] ?? $search->getCategory()->getUid(),
-                pages: $pages
+        $persons = GeneralUtility::trimExplode(',', $this->settings['persons'] ?? '', true) ;
+        if (!empty($this->currentContentObject->data['persons'])) {
+            $persons = GeneralUtility::trimExplode(',', $this->currentContentObject->data['persons'], true);
+        }
+
+        $categories = GeneralUtility::trimExplode(',', $this->settings['categories'] ?? '', true) ;
+        if (!empty($this->currentContentObject->data['categories'])) {
+            $categories = GeneralUtility::trimExplode(',', $this->currentContentObject->data['categories'], true);
+        }
+
+        // get category from search - this overrides everything
+        if ($search->getCategory()) {
+            $categories = [(int)$search->getCategory()->getUid()];
+        }
+
+        if (! empty($categories)){
+            $persons = $this->personRepository->findByCategoryUidsSortedByPerson(
+                categoryUids: $categories,
+                personUids: $persons,
+                pageUids: $pages,
             );
 
         } else {
             //$persons = $this->personRepository->findAllSortedByCategoryAndPerson(pages: $pages);
-            $persons = $this->personRepository->findAllSortedByPerson(pages: $pages);
+            $persons = $this->personRepository->findAllSortedByPerson(
+                personUids: $persons,
+                pageUids: $pages
+            );
         }
 
         // items per page - since we only load more, we always start at the first page

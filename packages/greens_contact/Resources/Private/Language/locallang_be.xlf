@@ -22,8 +22,11 @@
 			<trans-unit id="flexform.limit">
 				<source>Items per Page</source>
 			</trans-unit>
-			<trans-unit id="flexform.category">
-				<source>Category</source>
+			<trans-unit id="flexform.persons">
+				<source>Persons</source>
+			</trans-unit>
+			<trans-unit id="flexform.categories">
+				<source>Categories</source>
 			</trans-unit>
         </body>
     </file>

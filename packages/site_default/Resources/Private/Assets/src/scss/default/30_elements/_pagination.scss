@@ -5,7 +5,7 @@
 
     .pagination {
         --pagination-color-text: var(--color-text-default);
-        --pagination-color-background: var(--color-surface-default);
+        --pagination-color-background: var(--color-surface-subtle);
 
         --pagination-color-text-hover: var(--color-text-default);
         --pagination-color-background-hover: var(--color-surface-accent);
@@ -39,12 +39,14 @@
         &-placeholder {
             padding: rem-calc(8) rem-calc(14) rem-calc(8) rem-calc(14);
             text-decoration: none;
+            font-weight: bold;
             color: var(--pagination-color-text);
             background-color: var(--pagination-color-background);
 
             min-width: rem-calc(40);
             display: block;
             text-align: center;
+            height: 100%;
 
             &.disabled {
                 color: var(--pagination-color-text-disabled);
@@ -77,8 +79,10 @@
             &::before {
                 @extend .icomoon;
                 content: $icon-arrow-right;
-                font-weight: bold;
-                font-size: rem-calc(16);
+                font-size: rem-calc(18);
+
+                position: relative;
+                top: rem-calc(2);
             }
         }
 

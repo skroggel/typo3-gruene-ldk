@@ -45,8 +45,61 @@
                               arguments="{
                                     label: '{f:translate(key: \'label.nextTopic\', extensionName: \'SiteDefault\')}',
                                     type: 'inverted',
-                                    class: 'topic-slider-cta',
+                                    class: 'topic-slider-cta js-topic-slider-cta',
                                     icon: 'reload',
+                                    settings: settings.list._custom.topicSlider
+                              }" />
+                </div>
+            </f:if>
+        </f:if>
+
+    </f:section>
+
+    <f:comment><!-- ============================================================= --> </f:comment>
+
+    <f:section name="NewsSlider">
+        <f:if condition="{pagination.paginator.paginatedItems}">
+            <div class="swiper-wrapper">
+                <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
+
+                    <f:variable name="categories"
+                                value="{f:render(partial: 'Category/ItemsImploded',
+                                        arguments:'{categories: newsItem.categories, settings: settings, customSettings: settings.list._custom.topicSlider}')}" />
+
+                    <f:if condition="{newsItem.externalurl}">
+                        <f:then>
+                            <f:variable name="linkToNewsDetail" value="0" />
+                            <f:variable name="link" value="{newsItem.externalurl}" />
+                        </f:then>
+                        <f:else>
+                            <f:variable name="linkToNewsDetail" value="{settings.detailPid}" />
+                            <f:variable name="link" value="{newsItem.uid}" />
+                        </f:else>
+                    </f:if>
+
+                    <f:render partial="Utils/Tile" arguments="{
+                         image: newsItem.txSitedefaultImagePreview.0,
+                         header: newsItem.title,
+                         subline: categories,
+                         text: newsItem.teaser,
+                         wrapClass: 'swiper-slide tile-slider',
+                         linkToNewsDetail: linkToNewsDetail,
+                         link: link,
+                         settings: settings.list._custom.topicSlider
+                    }" />
+                </f:for>
+            </div>
+
+            <!-- If we need navigation buttons -->
+            <f:if condition="{settings.listPid}">
+                <div class="topic-slider-navigation mt-5 mb-2">
+                    <f:render partial="Utils/Cta"
+                              arguments="{
+                                    link: '{f:uri.page(pageUid: settings.listPid)}',
+                                    label: '{f:translate(key: \'label.showAll\', extensionName: \'SiteDefault\')}',
+                                    type: 'inverted',
+                                    icon: 'news',
+                                    class: 'topic-slider-cta',
                                     settings: settings.list._custom.topicSlider
                               }" />
                 </div>
@@ -61,54 +114,56 @@
 
 		<!--TYPO3SEARCH_end-->
 		<f:if condition="{news}">
-			<f:then>
-				<div class="news-list">
+            <div class="news-items">
+                <f:if condition="{settings.list.paginate.insertAbove}">
+                    <f:render partial="List/Pagination"
+                              arguments="{pagination: pagination.pagination, paginator: pagination.paginator,
+                                          settings: settings, customSettings: settings.list._custom.listGrouped}" />
+                </f:if>
 
-                    <f:if condition="{settings.list.paginate.insertAbove}">
-                        <f:render partial="List/Pagination"
-                                  arguments="{pagination: pagination.pagination, paginator: pagination.paginator,
-                                              settings: settings, customSettings: settings.list._custom.groupedList}" />
+                <f:for each="{siteDefault:news.groupByMonth(news:pagination.paginator.paginatedItems, sortDirection: settings.orderDirection)}"
+                       as="group"
+                       iteration="iterator"
+                >
+
+                    <f:if condition="{group.isFirstOfYear}">
+                        <f:then>
+                            <f:variable name="formatedDate" ><siteDefault:format.localizedDate
+                                date="{group.date}"
+                                format="{f:translate(key:'news.headerDateFormatFirstOfYear', extensionName:'siteDefault')}" /></f:variable>
+                        </f:then>
+                        <f:else>
+                            <f:variable name="formatedDate" ><siteDefault:format.localizedDate
+                                date="{group.date}"
+                                format="{f:translate(key:'news.headerDateFormat', extensionName:'siteDefault')}" /></f:variable>
+                        </f:else>
                     </f:if>
 
-                    <f:for each="{siteDefault:news.groupByMonth(news:news, sortDirection:'asc')}" as="group" iteration="iterator">
+                    <div class="page-padding news-items-group{f:if(condition: iterator.isEven, then: ' is-even', else: ' is-odd')}">
+                        <div class="container-xxxl">
+                            <div class="row">
+                                <div class="col-12">
+                                    <f:render partial="Utils/Header"
+                                              arguments="{header: formatedDate, wrapClass: 'news-items-header',
+                                              settings: settings.list._custom.listGrouped}" />
 
-                        <f:if condition="{group.isFirstOfYear}">
-                            <f:then>
-                                <f:variable name="formatedDate" ><siteDefault:format.localizedDate
-                                    date="{group.date}"
-                                    format="{f:translate(key:'news.headerDateFormatFirstOfYear', extensionName:'siteDefault')}" /></f:variable>
-                            </f:then>
-                            <f:else>
-                                <f:variable name="formatedDate" ><siteDefault:format.localizedDate
-                                    date="{group.date}"
-                                    format="{f:translate(key:'news.headerDateFormat', extensionName:'siteDefault')}" /></f:variable>
-                            </f:else>
-                        </f:if>
-
-                        <div class="news-list-group{f:if(condition: iterator.isEven, then: ' is-even')}">
-                            <f:render partial="Utils/Header"
-                                      arguments="{header: formatedDate, wrapClass: 'news-list-header',
-                                                  settings: settings.list._custom.groupedList}" />
-
-                            <f:for each="{group.items}" as="newsItem">
-                                <f:render partial="List/ListItem"
-                                          arguments="{newsItem: newsItem, settings: settings, customSettings: settings.list._custom.groupedList}" />
-                            </f:for>
+                                    <f:for each="{group.items}" as="newsItem">
+                                        <f:render partial="List/ListItem"
+                                                  arguments="{newsItem: newsItem, settings: settings, customSettings: settings.list._custom.listItem}" />
+                                    </f:for>
+                                </div>
+                            </div>
                         </div>
-                    </f:for>
 
-                    <f:if condition="{settings.list.paginate.insertBelow}">
-                        <f:render partial="List/Pagination"
-                                  arguments="{pagination: pagination.pagination, paginator: pagination.paginator,
-                                              settings: settings, customSettings: settings.list._custom.groupedList}" />
-                    </f:if>
-				</div>
-			</f:then>
-			<f:else>
-				<div class="no-news-found">
-					<f:translate key="list_nonewsfound" />
-				</div>
-			</f:else>
+                    </div>
+                </f:for>
+
+                <f:if condition="{settings.list.paginate.insertBelow}">
+                    <f:render partial="List/Pagination"
+                              arguments="{pagination: pagination.pagination, paginator: pagination.paginator,
+                                          settings: settings, customSettings: settings.list._custom.listGrouped}" />
+                </f:if>
+            </div>
 		</f:if>
 		<!--TYPO3SEARCH_begin-->
 	</f:section>

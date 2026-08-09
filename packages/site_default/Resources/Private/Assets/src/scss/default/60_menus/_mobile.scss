@@ -6,6 +6,8 @@
     --mobile-menu-color-link-active: var(--color-text-default);
     --mobile-menu-color-meta-link: var(--color-text-default);
 
+    left:rem-calc($spacer * -1);
+
     .nav-mobile-toggle {
         align-items: flex-start;
         margin-top: rem-calc(2);
@@ -32,6 +34,7 @@
     }
 
     .slide-nav {
+
         &-back,
         &-back:link,
         &-back:visited,

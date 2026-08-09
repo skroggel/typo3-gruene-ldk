@@ -15,10 +15,6 @@
         flex-direction: column;
     }
 
-    &-subheader {
-        margin-bottom: rem-calc(map-get($spacers, 3));
-    }
-
     .subheader,
     .headline {
         color: var(--banner-color-text);
@@ -27,6 +23,12 @@
     &:has(.subheader) {
         .headline {
             margin-bottom: 0;
+        }
+    }
+
+    &:has(.cta) {
+        .subheader {
+            margin-bottom: rem-calc(map-get($spacers, 3));
         }
     }
 }

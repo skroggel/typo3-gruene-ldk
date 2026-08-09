@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages">
+		<body>
+<!-- @see https://docs.typo3.org/p/friendsoftypo3/content-blocks/main/en-us/API/AutomaticLanguageKeys/Index.html#api_automatic_language_keys -->
+
+			<!-- element -->
+			<trans-unit id="title">
+				<source>News List (Custom)</source>
+			</trans-unit>
+			<trans-unit id="description">
+				<source>This element is an event overview with an introductory title and short description. Events are grouped chronologically under a month heading and include date, time, location, title, teaser text, and a button for more information. An optional image can be added to highlight selected events more prominently.</source>
+			</trans-unit>
+
+
+			<!-- fields -->
+			<trans-unit id="plugin_news_list.label">
+				<source>Plugin</source>
+				<target>Plugin</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

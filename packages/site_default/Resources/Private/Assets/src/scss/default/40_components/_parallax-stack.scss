@@ -50,6 +50,11 @@
         text-align: center;
         z-index: 3;
         animation: icon-bounce 1s ease-in-out infinite;
+        display: none;
+
+        @include media-breakpoint-up(md) {
+            display: block;
+        }
 
         @include media-breakpoint-up(lg) {
             top: calc(100vh - 75px);
@@ -182,6 +187,10 @@
         .variant-left &-item--content,
         .variant-right &-item-content {
             justify-content: initial;
+        }
+
+        .img-source {
+            margin-bottom: 4rem;
         }
     }
 }

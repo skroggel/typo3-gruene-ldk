@@ -14,11 +14,21 @@
         @include list-reset();
         justify-content: center;
         width: 100%;
+    }
+
+    &-list.level-1 {
         gap: rem-calc(map-get($spacers, 5));
 
         @include media-breakpoint-up($siteheader-breakpoint-desktop) {
             gap: rem-calc(map-get($spacers, 7));
         }
+    }
+
+    &-columns.level-2 {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 3rem;
+        align-items: start;
     }
 
     &-item {
@@ -108,31 +118,24 @@
     /** Flyout stuff */
     &-flyout {
 
+        width: 100%;
+
         &-container {
-            background:
-                linear-gradient(
-                        to right,
-                        transparent 50%,
-                        var(--main-menu-flyout-color-background) 50%
-                );
+            background:none;
         }
 
         &-wrap {
             position: relative;
-            left: rem-calc(map-get($spacers, 6) * -1);
-            max-width: rem-calc($page-max-inner-width);
+            left: rem-calc(math.div($spacer, 2));
+            // max-width: rem-calc($page-max-inner-width);
             margin-left: auto;
             margin-right: auto;
 
-            height: 100%;
+            height: max-content;
             min-height: rem-calc(450);
-            max-height: 100vh;
+            // max-height: 100vh;
 
             box-shadow: rem-calc(-6) rem-calc(0) rem-calc(6) rem-calc(0) #63636340;
-
-            @media (min-width: 1521px) {
-                left: rem-calc(math.div($spacer, 2));
-            }
         }
 
         &-toggle-container {
@@ -157,20 +160,25 @@
             }
         }
 
+        &-inner {
+            max-height: 100vh;
+        }
+
         &-image {
             position: absolute;
             left: calc(60vw);
             top: 0;
             width: 40vw;
-            max-height: calc(100vh - $siteheader-height-mobile);
+            //max-height: calc(100vh - $siteheader-height-mobile);
+            height: 100%;
             overflow: hidden;
 
             @include media-breakpoint-up($siteheader-breakpoint-tablet) {
-                max-height: calc(100vh - $siteheader-height-tablet);
+                //max-height: calc(100vh - $siteheader-height-tablet);
             }
 
             @include media-breakpoint-up($siteheader-breakpoint-desktop) {
-                max-height: calc(100vh - $siteheader-height-desktop);
+               // max-height: calc(100vh - $siteheader-height-desktop);
             }
 
             .img-inner {
@@ -183,13 +191,10 @@
                 width: auto;
             }
         }
-
-        &-content {
-            width: 60vw;
-            max-width: rem-calc(800);
-        }
     }
 }
+
+
 
 .flyout-open,
 .flyout-closing {
@@ -206,6 +211,7 @@
 
 .flyout-open {
     .siteheader {
-        position: absolute;
+       // position: absolute;
+       // overflow-x: clip;
     }
 }

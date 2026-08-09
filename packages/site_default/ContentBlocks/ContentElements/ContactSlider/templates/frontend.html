@@ -3,15 +3,16 @@
 >
     <section class="contact-slider csp-section csp-section-padding bg-color-{data.madj2k_background_color} fullwidth-1 js-appear-on-scroll" id="c{data.uid}">
         <div class="container-xxxl">
-            <div class="row">
-                <div class="col-12">
+            <div class="row justify-content-center">
+                <div class="col-12 col-xxl-10">
                     <f:render partial="Utils/Header"
                               arguments="{header: data.madj2k_header, wrapClass: 'contact-slider-headline',
                                           layout: data.header_layout, settings: settings}" />
 
                     <f:render partial="Utils/Bodytext"
                               arguments="{text: data.bodytext, wrapClass: 'contact-slider-text mb-11'}" />
-
+                </div>
+                <div class="col-12">
                     <f:if condition="{data._grids.plugin_contact_slider}">
                         <f:if condition="{data._grids.plugin_contact_slider.0.content -> f:format.trim()}">
                             <div class="swiper js-contact-slider js-autoplay bg-color-subtle"

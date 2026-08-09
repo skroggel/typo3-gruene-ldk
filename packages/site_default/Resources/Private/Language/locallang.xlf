@@ -91,6 +91,9 @@
 			<trans-unit id="label.showLess">
 				<source>show less</source>
 			</trans-unit>
+			<trans-unit id="label.backToList">
+				<source>back to list</source>
+			</trans-unit>
 			<trans-unit id="label.searchPlaceholder">
 				<source>Search Keyword</source>
 			</trans-unit>
@@ -106,10 +109,16 @@
 			<trans-unit id="label.nextTopic">
 				<source>Another topic</source>
 			</trans-unit>
+			<trans-unit id="label.showAll">
+				<source>Show all</source>
+			</trans-unit>
 
 
 			<trans-unit id="news.dateFormat">
 				<source>d-m-Y</source>
+			</trans-unit>
+			<trans-unit id="news.timeFormat">
+				<source>h:i A</source>
 			</trans-unit>
 			<trans-unit id="news.headerDateFormat">
 				<source>F</source>

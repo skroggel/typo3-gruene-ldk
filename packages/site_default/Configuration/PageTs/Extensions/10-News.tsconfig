@@ -1,4 +1,5 @@
 tx_news.templateLayouts {
 	  0 = Default
 	  1 = Topic Slider
+	  2 = News Slider
 }

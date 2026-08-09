@@ -42,12 +42,30 @@
                                                 </span>
                                             </p>
 
-                                            <ul class="toggle-list accordion nav-main-flyout-accordion"
-                                                 id="accordion-container-{menuItem.data.uid}"
-                                                 role="tablist"
-                                            >
-                                                <f:render partial="Level2" arguments="{menuItems: menuItem.children, parentItem: menuItem}" />
-                                            </ul>
+                                            <div class="nav-main-columns level-2">
+                                                <ul class="toggle-list accordion nav-main-list level-2"
+                                                     id="accordion-container-{menuItem.data.uid}-odd"
+                                                     role="tablist"
+                                                >
+                                                    <f:render partial="Level2" arguments="{
+                                                        menuItems: menuItem.children,
+                                                        parentItem: menuItem,
+                                                        column: 'odd'
+                                                    }" />
+                                                </ul>
+
+
+                                                <ul class="toggle-list accordion nav-main-list level-2"
+                                                    id="accordion-container-{menuItem.data.uid}-even"
+                                                    role="tablist"
+                                                >
+                                                    <f:render partial="Level2" arguments="{
+                                                        menuItems: menuItem.children,
+                                                        parentItem: menuItem,
+                                                        column: 'even'
+                                                    }" />
+                                                </ul>
+                                            </div>
 
                                         </div>
                                     </div>
@@ -61,20 +79,22 @@
                                         </button>
                                     </div>
 
-                                    <f:render partial="Utils/Media"
-                                              arguments="{
-                                                    file: menuItem.imageFlyout.0,
-                                                    wrapClass: 'nav-main-flyout-image effect-edge-cut-image',
-                                                    settings: {
-                                                        media: {
-                                                            image: {
-                                                                dimensions: {
-                                                                    maxWidth : 1000
+                                    <f:comment><!--
+                                        <f:render partial="Utils/Media"
+                                                  arguments="{
+                                                        file: menuItem.imageFlyout.0,
+                                                        wrapClass: 'nav-main-flyout-image effect-edge-cut-image',
+                                                        settings: {
+                                                            media: {
+                                                                image: {
+                                                                    dimensions: {
+                                                                        maxWidth : 1000
+                                                                    }
                                                                 }
                                                             }
                                                         }
-                                                    }
-                                                }" />
+                                                    }" />
+                                    --></f:comment>
                                 </div>
 
 

@@ -2,7 +2,23 @@
       data-namespace-typo3-fluid="true"
 >
 
-    <section style="position: relative;" class="parallax-stack csp-section csp-not-last fullwidth-1 bg-color-{data.madj2k_background_color_extended} js-appear-on-scroll" id="c{data.uid}">
+    <f:if condition="{data.rawRecord.foreign_table_parent_uid} || {data.rawRecord.tx_news_related_news}">
+        <f:then>
+            <div style="position: relative;" class="parallax-stack csp-block csp-not-last fullwidth-1 bg-color-{data.madj2k_background_color_extended} js-appear-on-scroll" id="c{data.uid}">
+                <f:render section="Inner" arguments="{_all}" />
+            </div>
+        </f:then>
+        <f:else>
+            <section style="position: relative;" class="parallax-stack csp-section csp-not-last fullwidth-1 bg-color-{data.madj2k_background_color_extended} js-appear-on-scroll" id="c{data.uid}">
+                <f:render section="Inner" arguments="{_all}" />
+            </section>
+        </f:else>
+    </f:if>
+
+
+    <f:comment><!-- ==================================== --></f:comment>
+    <f:section name="Inner">
+
         <div class="parallax-stack-arrow"><span class="icon-arrow-down icon"></span></div>
 
         <div class="fullwidth-inner overflow-visible">
@@ -10,10 +26,9 @@
                 <f:comment><!-- {item.data} contains the Content Block data object. --></f:comment>
                 <f:format.raw>{item.content}</f:format.raw>
             </f:for>
-       </div>
+        </div>
 
-    </section>
-
+    </f:section>
 </html>
 
 

@@ -5,7 +5,8 @@
 	<f:comment><!-- Switch Templates --></f:comment>
 	<f:switch expression="{settings.templateLayout}">
 		<f:case value="1"><f:render section="TopicSlider" /></f:case>
-		<f:defaultCase><f:render section="Default" /></f:defaultCase>
+        <f:case value="2"><f:render section="NewsSlider" /></f:case>
+        <f:defaultCase><f:render section="Default" /></f:defaultCase>
 	</f:switch>
 
 </html>

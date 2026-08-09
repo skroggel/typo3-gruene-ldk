@@ -15,10 +15,10 @@ database:
     version: "10.11"
 hooks:
     post-import-db:
-        - exec: mysql -uroot -proot -e "GRANT ALL ON *.* TO `db`@`%`;"
+        - exec: mysql -uroot -proot -e "GRANT ALL ON *.* TO 'db'@'%';"
           service: db
     post-start:
-        - exec: mysql -uroot -proot -e "GRANT ALL ON *.* TO `db`@`%`;"
+        - exec: mysql -uroot -proot -e "GRANT ALL ON *.* TO 'db'@'%';"
           service: db
         - exec: cd /var/www && echo "*/1 * * * * /usr/bin/php /var/www/html/vendor/bin/typo3 scheduler:run" >> crontab_new && crontab crontab_new && rm crontab_new
         - exec: /var/www/html/vendor/bin/typo3 install:fixfolderstructure

@@ -1,47 +1,43 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
 	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+      xmlns:madj2k="http://typo3.org/ns/Madj2k/SiteDefault/ViewHelpers/Format"
 	  data-namespace-typo3-fluid="true">
 
-    <div class="news-item {wrapClass}" itemscope="itemscope" itemtype="https://schema.org/Article">
+    <div class="news-item mt-8 pb-8 mt-md-10 pb-md-10 {wrapClass}" itemscope="itemscope" itemtype="https://schema.org/Article">
         <n:link newsItem="{newsItem}"
                 settings="{settings}"
                 title="{newsItem.title -> f:format.stripTags()}"
                 additionalAttributes="{itemprop:'url'}"
                 class="link-wrap">
 
-            <div class="news-item-content">
-                <div class="tags">
-                    <div class="tag">
-                        <span class="icon-calendar"></span><span><f:format.date
-                              format="{f:translate(key:'news.dateFormat', extensionName:'site_default')}">{newsItem.datetime}</f:format.date></span>
+            <div class="container-fluid g-0">
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-7 col-xxl-8 pe-md-5 order-2 order-md-1">
+
+                        <f:comment><!-- Tags --></f:comment>
+                        <f:render partial="Common/Tags" arguments="{newsItem: newsItem, settings: settings}" />
+
+                        <f:comment><!-- Header --></f:comment>
+                        <f:render partial="Utils/Header"
+                                  arguments="{header: newsItem.title, wrapClass:'news-item-header',
+                                              settings: customSettings, additionalAttributes: 'itemprop=\"headline\"'}" />
+
+                        <f:comment><!-- Teaser --></f:comment>
+                        <f:render partial="Utils/Bodytext" section="Inline"
+                                  arguments="{text: newsItem.teaser, wrapClass: 'news-item-text',
+                                              settings: customSettings, additionalAttributes: 'itemprop=\"description\"'}" />
+
+                        <f:render partial="Utils/Cta"
+                                  arguments="{type:'default', wrapClass: 'news-item-cta', settings: customSettings}" />
                     </div>
-                    <f:if condition="{newsItem.categories}">
-                        <div class="tag">
-                            <span class="icon-tag"></span><span><f:render partial="Category/ItemsImploded"
-                                                                          arguments="{categories:newsItem.categories, settings: customSettings}" /></span>
-                        </div>
-                    </f:if>
+
+                    <f:comment><!-- Image --></f:comment>
+                    <f:render partial="Utils/Media"
+                              arguments="{file: newsItem.txSiteDefaultImagePreview.0,
+                                          wrapClass:'news-item-image col-12 col-md-6 col-lg-5 col-xxl-4 order-1 order-md-2 mb-4 mb-md-0',
+                                          settings: customSettings}"/>
                 </div>
-
-                <f:comment><!-- Header--></f:comment>
-                <f:render partial="Utils/Header"
-                          arguments="{header: newsItem.title, wrapClass:'news-item-header',
-                                      settings: customSettings, additionalAttributes: 'itemprop=\"headline\"'}" />
-
-                <f:comment><!-- Teaser --></f:comment>
-                <f:render partial="Utils/Bodytext" section="Inline"
-                          arguments="{text: newsItem.teaser, wrapClass: 'news-item-text',
-                                      settings: customSettings, additionalAttributes: 'itemprop=\"description\"'}" />
-
-                <f:render partial="Utils/Cta"
-                          arguments="{type:'default', settings: customSettings}" />
             </div>
-
-            <f:comment><!-- Image --></f:comment>
-            <f:render partial="Utils/Media"
-                      arguments="{file: newsItem.txSiteDefaultImagePreview.0, wrapClass:'news-item-image',
-                                  settings: customSettings}"/>
-
         </n:link>
     </div>
 

@@ -1,0 +1,8 @@
+TCEFORM {
+
+	tt_content {
+        CType {
+             keepItems = madj2k_banner, madj2k_text, madj2k_textimage, madj2k_parallaxstack, madj2k_parallaxstackitem, madj2k_parallaxstackitemquote
+        }
+    }
+}
