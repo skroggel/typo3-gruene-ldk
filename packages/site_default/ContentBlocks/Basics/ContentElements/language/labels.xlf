@@ -78,6 +78,9 @@
 			<trans-unit id="cite.label">
 				<source>Cite</source>
 			</trans-unit>
+			<trans-unit id="variant.label">
+				<source>Variant</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

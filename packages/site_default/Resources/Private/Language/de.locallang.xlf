@@ -145,6 +145,11 @@
 				<source>Another topic</source>
 				<target>Noch ein Thema</target>
 			</trans-unit>
+			<trans-unit id="label.showAll">
+				<source>Show all</source>
+				<target>Alle anzeigen</target>
+			</trans-unit>
+
 
 			<trans-unit id="news.dateFormat">
 				<source>d-m-Y</source>

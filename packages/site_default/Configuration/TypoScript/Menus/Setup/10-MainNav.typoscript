@@ -22,7 +22,7 @@ lib.siteDefault {
 
                         levels = 3
                         entryLevel = 0
-                        expandAll = 1
+                        includeNotInMenu = 0
                         includeSpacer = 0
 
                         titleField = nav_title // title

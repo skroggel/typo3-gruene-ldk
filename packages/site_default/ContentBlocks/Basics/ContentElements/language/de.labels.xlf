@@ -101,6 +101,10 @@
 				<source>Cite</source>
 				<target>Urheber</target>
 			</trans-unit>
+			<trans-unit id="variant.label">
+				<source>Variant</source>
+				<target>Variante</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

@@ -30,7 +30,7 @@
         span: '',
         button: ''
     ),
-    $margin: 16
+    $margin: 8
 );
 
 
@@ -59,6 +59,22 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+
+.icon-calendar {
+    &:before {
+        content: $icon-calendar;
+    }
+}
+.icon-location {
+    &:before {
+        content: $icon-location;
+    }
+}
+.icon-news {
+    &:before {
+        content: $icon-news;
+    }
+}
 .icon-heart {
     &:before {
         content: $icon-heart;
@@ -129,5 +145,4 @@
         content: $icon-arrow-left;
     }
 }
-
 

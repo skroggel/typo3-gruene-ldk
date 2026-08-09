@@ -14,6 +14,9 @@ $siteheader-height-tablet: 100px;
 $siteheader-breakpoint-tablet: sm;
 $siteheader-height-mobile: 80px;
 
+$icon-calendar: unquote('"\\e90e"');
+$icon-location: unquote('"\\e90f"');
+$icon-news: unquote('"\\e910"');
 $icon-heart: unquote('"\\e90d"');
 $icon-facebook: unquote('"\\e900"');
 $icon-close: unquote('"\\e901"');
@@ -28,6 +31,8 @@ $icon-arrow-down: unquote('"\\e90b"');
 $icon-arrow-up: unquote('"\\e90c"');
 $icon-arrow-right: unquote('"\\e905"');
 $icon-arrow-left: unquote('"\\e906"');
+
+
 
 
 :root {

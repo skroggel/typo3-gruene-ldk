@@ -55,7 +55,7 @@
 		"madj2k/t3-copyright-guardian": "~13.4.0",
 		"madj2k/t3-dr-serp": "~13.4.0",
 		"madj2k/t3-forminator": "~13.4.0",
-		"madj2k/t3-media-utils": "~13.4.0",
+		"madj2k/t3-media-utils": "~14.3.0",
 		"madj2k/t3-klarokratie": "~13.4.0",
 		"madj2k/t3-typoscript-rendering": "~13.4.0",
 		"typo3/cms-backend": "^13.4.0",
@@ -83,9 +83,8 @@
 		"typo3/cms-tstemplate": "^13.4.0",
 		"typo3/cms-viewpage": "^13.4.0",
 		"typo3/cms-webhooks": "^13.4.0",
-		"georgringer/news": "~12.3.0",
-		"sitegeist/sms-responsive-images": "~3.1.0",
-		"tpwd/ke_search": "~6.4.0",
+		"georgringer/news": "~13.0.0",
+		"tpwd/ke_search": "~6.6.0",
 		"yoast-seo-for-typo3/yoast_seo": "~11.0.0"
 	},
 	"require-dev": {

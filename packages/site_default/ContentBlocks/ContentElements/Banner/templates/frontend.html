@@ -1,9 +1,14 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
       data-namespace-typo3-fluid="true"
 >
+
+    <f:variable name="padding-tb" value="pt-5 pb-5" />
+    <f:if condition="{data.madj2k_variant} == 'big'">
+        <f:variable name="padding-tb" value="csp-section-padding" />
+    </f:if>
     <f:if condition="{data.rawRecord.foreign_table_parent_uid} || {data.rawRecord.tx_news_related_news}">
         <f:then>
-            <div class="banner fullwidth-1 pt-5 pb-5 bg-color-{data.madj2k_background_color_extended} js-appear-on-scroll">
+            <div class="banner fullwidth-1 {padding-tb} bg-color-{data.madj2k_background_color_extended} js-appear-on-scroll">
                 <f:if condition="{headerLayout} == 0">
                     <f:variable name="headerLayout" value="3" />
                 </f:if>
@@ -11,9 +16,9 @@
             </div>
         </f:then>
         <f:else>
-            <section class="banner fullwidth-1 pt-5 pb-5 bg-color-{data.madj2k_background_color_extended} js-appear-on-scroll" id="c{data.uid}">
+            <section class="banner fullwidth-1 {padding-tb} bg-color-{data.madj2k_background_color_extended} js-appear-on-scroll" id="c{data.uid}">
                 <div class="container-xxxl">
-                    <div class="row">
+                    <div class="row justify-content-center">
                         <div class="col-12 col-xl-10">
                             <f:render section="Inner" arguments="{_all}" />
                         </div>

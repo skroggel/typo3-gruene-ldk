@@ -42,8 +42,8 @@ plugin.tx_news {
 	        _custom {
 
                 topicSlider {
-                    tx_smsresponsiveimages < lib.madj2kMediaUtils.responsiveImages
-		            tx_smsresponsiveimages {
+                    txMediaUtils.responsiveImages < lib.txMediaUtils.responsiveImages
+		            txMediaUtils.responsiveImages {
                         loading = eager
                     }
 
@@ -64,7 +64,7 @@ plugin.tx_news {
                 }
 
                 listGrouped {
-                    tx_smsresponsiveimages < lib.madj2kMediaUtils.responsiveImages
+                    txMediaUtils.responsiveImages  < lib.txMediaUtils.responsiveImages
                     header {
                         defaultHeaderType = 3
                         // overrideHeaderType = 2
@@ -73,8 +73,8 @@ plugin.tx_news {
                 }
 
                 listItem {
-                    tx_smsresponsiveimages < lib.madj2kMediaUtils.responsiveImages
-                    tx_smsresponsiveimages {
+                    txMediaUtils.responsiveImages  < lib.txMediaUtils.responsiveImages
+                    txMediaUtils.responsiveImages {
 
                         breakpoints {
                             0 {

@@ -9,12 +9,25 @@ figcaption {
 }
 
 .img {
+    position: relative;
 	margin-bottom: 0;
 	display: inline-block;
 
     &-inner {
         height:100%;
         width:100%;
+    }
+
+    &-source {
+        position: absolute;
+        right: rem-calc($spacer);
+        bottom: rem-calc($spacer);
+        color: var(--color-text-default);
+        background-color: var(--color-surface-default);
+        font-size: rem-calc(14);
+        line-height: 100%;
+        padding: rem-calc(4);
+        opacity: 0.5;
     }
 
     &.fit-contain,

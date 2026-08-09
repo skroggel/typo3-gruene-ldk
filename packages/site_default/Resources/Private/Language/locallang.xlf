@@ -109,6 +109,9 @@
 			<trans-unit id="label.nextTopic">
 				<source>Another topic</source>
 			</trans-unit>
+			<trans-unit id="label.showAll">
+				<source>Show all</source>
+			</trans-unit>
 
 
 			<trans-unit id="news.dateFormat">

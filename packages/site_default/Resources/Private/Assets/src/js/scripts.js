@@ -175,7 +175,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
       // Navigation arrows
       navigation: {
-        nextEl: '.cta',
+        nextEl: '.js-topic-slider-cta',
         disabledClass: 'disabled'
       },
 

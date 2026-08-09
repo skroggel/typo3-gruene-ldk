@@ -4,24 +4,24 @@
 
    <div class="tag-list">
         <f:spaceless>
-            <div class="tag">
-                <span class="icon-calendar"></span><span><madj2k:timeRange
+            <span class="tag">
+                <span class="icon-calendar icon"></span><span><madj2k:timeRange
                 startDate="{newsItem.datetime}"
                 stopDate="{newsItem.txSitedefaultDatetimeEnd}"
                 dateFormat="{f:translate(key:'news.dateFormat', extensionName:'site_default')}"
                 timeFormat="{f:translate(key:'news.timeFormat', extensionName:'site_default')}"
             /></span>
-            </div>
+            </span>
             <f:if condition="{newsItem.txSitedefaultLocation}">
-                <div class="tag">
-                    <span class="icon-location"></span><span>{newsItem.txSitedefaultLocation}</span>
-                </div>
+                <span class="tag">
+                    <span class="icon-location icon"></span><span>{newsItem.txSitedefaultLocation}</span>
+                </span>
             </f:if>
             <f:if condition="{newsItem.categories}">
-                <div class="tag">
-                    <span class="icon-category"></span><span><f:render partial="Category/ItemsImploded"
+                <span class="tag">
+                    <span class="icon-news icon"></span><span><f:render partial="Category/ItemsImploded"
                                                                        arguments="{categories:newsItem.categories, settings: customSettings}" /></span>
-                </div>
+                </span>
             </f:if>
         </f:spaceless>
     </div>
