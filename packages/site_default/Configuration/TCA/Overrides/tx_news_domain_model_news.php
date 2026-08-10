@@ -52,8 +52,20 @@ call_user_func(
         unset($GLOBALS['TCA']['tx_news_domain_model_news']['columns']['type']['config']['items'][1]);
         //unset($GLOBALS['TCA']['tx_news_domain_model_news']['columns']['type']['config']['items'][2]);
 
+        // set new type
+        $GLOBALS['TCA']['tx_news_domain_model_news']['columns']['type']['config']['items'][3] = [
+            'label' => 'LLL:EXT:site_default/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_news.type.I.3',
+            'value' => 3,
+            'icon' => 'ext-news-type-default'
+        ];
+        $GLOBALS['TCA']['tx_news_domain_model_news']['types'][3] =
+            $GLOBALS['TCA']['tx_news_domain_model_news']['types'][0];
 
-        foreach ([0,2] as $type) {
+        // override label for type
+        $GLOBALS['TCA']['tx_news_domain_model_news']['columns']['type']['config']['items'][2]['label'] =
+            'LLL:EXT:site_default/Resources/Private/Language/locallang_db.xlf:tx_news_domain_model_news.type.I.2';
+
+        foreach ([0,2,3] as $type) {
 
            // remove globally unused fields
 //        $GLOBALS['TCA']['tx_news_domain_model_news']['types'][$type] = str_replace(
@@ -179,13 +191,13 @@ call_user_func(
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
             'tx_news_domain_model_news',
             'tx_sitedefault_datetime_end',
-            '',
+            '3',
             'after:datetime'
         );
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
             'tx_news_domain_model_news',
             'tx_sitedefault_location',
-            '',
+            '3',
             'after:teaser'
         );
         /*\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(

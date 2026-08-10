@@ -6,6 +6,7 @@
     <f:if condition="{data.madj2k_variant} == 'big'">
         <f:variable name="padding-tb" value="csp-section-padding" />
     </f:if>
+
     <f:if condition="{data.rawRecord.foreign_table_parent_uid} || {data.rawRecord.tx_news_related_news}">
         <f:then>
             <div class="banner fullwidth-1 {padding-tb} bg-color-{data.madj2k_background_color_extended} js-appear-on-scroll">

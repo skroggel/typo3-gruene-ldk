@@ -52,7 +52,8 @@
     &-inverted,
     &-white,
     &-icon-only,
-    &-icon-only-white {
+    &-icon-only-white,
+    &-big {
         @include button;
         @include accessibility-outline($color: var(--color-outline-accessibility));
 
@@ -149,5 +150,9 @@
             background-color: var(--cta-color-background-hover-white);
             border: rem-calc(1) solid var(--cta-color-border-icon-hover);
         }
+    }
+
+    &-big {
+        @include button-big;
     }
 }

@@ -33,6 +33,12 @@
 			</trans-unit>
 
 
+			<trans-unit id="tx_news_domain_model_news.type.I.3">
+				<source>Event</source>
+			</trans-unit>
+			<trans-unit id="tx_news_domain_model_news.type.I.2">
+				<source>News with seperate link</source>
+			</trans-unit>
 			<trans-unit id="tx_news_domain_model_news.tx_sitedefault_title_cleaned">
 				<source>Title for Slug (is generated automatically when post is saved)</source>
 			</trans-unit>

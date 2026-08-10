@@ -19,3 +19,5 @@ fields:
         CType:
           config:
             default: madj2k_linklist
+  - identifier: madj2k/palette-cta
+    type: Basic

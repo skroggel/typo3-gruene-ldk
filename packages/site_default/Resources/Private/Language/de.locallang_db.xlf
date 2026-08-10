@@ -44,6 +44,14 @@
 			</trans-unit>
 
 
+			<trans-unit id="tx_news_domain_model_news.type.I.3">
+				<source>Event</source>
+				<target>Termin</target>
+			</trans-unit>
+			<trans-unit id="tx_news_domain_model_news.type.I.2">
+				<source>News with seperate link</source>
+				<target>News mit separatem Link</target>
+			</trans-unit>
 			<trans-unit id="tx_news_domain_model_news.tx_sitedefault_title_cleaned">
 				<source>Title for Slug (is generated automatically when post is saved)</source>
 				<target>Titel für Slug (wird automatisch generiert, wenn Beitrag gespeichet wird)</target>

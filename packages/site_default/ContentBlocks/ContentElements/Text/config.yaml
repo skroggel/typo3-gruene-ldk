@@ -7,3 +7,5 @@ fields:
     type: Basic
   - identifier: madj2k/bodytext-required
     type: Basic
+  - identifier: madj2k/palette-cta
+    type: Basic

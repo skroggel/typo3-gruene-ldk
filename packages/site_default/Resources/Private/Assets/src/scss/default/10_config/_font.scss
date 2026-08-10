@@ -312,6 +312,15 @@ $font-formats: (
             'letter-spacing': 0,
         )
     ),
+    'button-big': (
+        'default': (
+            'font-family': var(--font-family),
+            'font-weight': $font-weight-bold,
+            'font-size': rem-calc(20),
+            'line-height': 130%,
+            'letter-spacing': 0,
+        )
+    ),
     'lead': (
         'mobile': (
             'font-family': var(--font-family),

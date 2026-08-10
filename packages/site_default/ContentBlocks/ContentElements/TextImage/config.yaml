@@ -7,6 +7,8 @@ fields:
     type: Basic
   - identifier: madj2k/bodytext-reduced-required
     type: Basic
+  - identifier: madj2k/palette-cta
+    type: Basic
   - identifier: tab-media
     type: Tab
   - identifier: madj2k/image-orientation
