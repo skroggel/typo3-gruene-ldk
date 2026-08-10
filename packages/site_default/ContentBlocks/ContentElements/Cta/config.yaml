@@ -1,0 +1,9 @@
+name: madj2k/cta-el
+prefixType: vendor # prefixing with vendor for reuse of database fields
+fields:
+  - identifier: madj2k/variant
+    type: Basic
+  - identifier: madj2k/palette-cta
+    type: Basic
+  - identifier: madj2k/palette-cta-2
+    type: Basic

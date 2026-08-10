@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages">
+		<body>
+			<!-- @see https://docs.typo3.org/p/friendsoftypo3/content-blocks/main/en-us/API/AutomaticLanguageKeys/Index.html#api_automatic_language_keys -->
+
+			<!-- element -->
+			<trans-unit id="title">
+				<source>CTA (Custom)</source>
+				<target>CTA (Custom)</target>
+			</trans-unit>
+			<trans-unit id="description">
+				<source>This is a call-to-action (CTA) element. It is used to encourage visitors to take a specific action, such as “Get involved”, “Learn more” or “Sign up now”.</source>
+				<target>Dies ist ein Call-to-Action-Element (CTA). Es wird eingesetzt, um Besucher*innen gezielt zu einer Handlung aufzufordern, z. B. „Mitmachen“, „Mehr erfahren“ oder „Jetzt anmelden“.</target>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

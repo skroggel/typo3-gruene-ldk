@@ -224,6 +224,10 @@
     @include font-format($font-formats: $font-formats, $font-format: 'button', $tablet-breakpoint: md, $desktop-breakpoint: lg);
 }
 
+@mixin button-big {
+    @include font-format($font-formats: $font-formats, $font-format: 'button-big', $tablet-breakpoint: md, $desktop-breakpoint: lg);
+}
+
 /// Enables word breaking and hyphenation for improved long text handling.
 ///
 /// Works across modern and legacy browsers.

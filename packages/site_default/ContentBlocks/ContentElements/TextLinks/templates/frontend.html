@@ -28,6 +28,17 @@
                                 <f:format.raw>{item.content}</f:format.raw>
                             </f:for>
 
+                            <f:if condition="{f:uri.typolink(parameter: data.madj2k_cta_link)}">
+                                <f:render partial="Utils/Cta"
+                                          arguments="{
+                                            label: data.madj2k_cta_label,
+                                            link: data.madj2k_cta_link,
+                                            type: 'white',
+                                            class: 'text-links-cta cta-big',
+                                            wrapClass: 'mt-7',
+                                            settings: settings
+                                  }" />
+                            </f:if>
                         </div>
                     </div>
 

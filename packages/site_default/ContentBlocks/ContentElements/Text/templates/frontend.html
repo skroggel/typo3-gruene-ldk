@@ -55,6 +55,16 @@
         <f:render partial="Utils/Bodytext"
                   arguments="{text: data.bodytext, wrapClass: 'text-text'}" />
 
+        <f:if condition="{f:uri.typolink(parameter: data.madj2k_cta_link)}">
+            <f:render partial="Utils/Cta"
+                      arguments="{
+                                label: data.madj2k_cta_label,
+                                link: data.madj2k_cta_link,
+                                class: 'text-cta',
+                                wrapClass: 'mt-5',
+                                settings: settings
+                      }" />
+        </f:if>
     </f:section>
 
 </html>
