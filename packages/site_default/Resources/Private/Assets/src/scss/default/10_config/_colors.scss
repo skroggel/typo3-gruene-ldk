@@ -75,6 +75,7 @@ $color-map: (
     /* Heading */
     --color-heading-default: #{map-get($color-map, 'pine')};
     --color-heading-inverted: #{map-get($color-map, 'white')};
+    --color-heading-subtle: #{map-get($color-map, 'grey-700')};
 
     /* Surface */
     --color-surface-default: #{map-get($color-map, 'white')};
