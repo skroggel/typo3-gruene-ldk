@@ -17,6 +17,8 @@ fields:
         CType:
           config:
             default: madj2k_text
+        madj2k_header:
+          displayCond: 'FIELD:foreign_table_parent_uid:REQ:false' # no header field if used in accordion!
         header_layout:
           displayCond: 'FIELD:foreign_table_parent_uid:REQ:false' # no header field if used in accordion!
         madj2k_background_color:

@@ -27,11 +27,11 @@ errorHandling:
     errorContentSource: 't3://page?uid=3'
 klarokratie:
   klaro:
-    enable: false
+    enable: true
     customCss: 'EXT:site_default/Resources/Public/Css/klaro.css'
-    config: EXT:klarokratie/Resources/Public/Config/KlaroConfigMinimal.js
-    includes:
-      - EXT:klarokratie/Resources/Public/Config/Includes/GoogleAnalytics.js
+    config: 'EXT:klarokratie/Resources/Public/Config/KlaroConfigMinimal.js'
+    #includes:
+    #  - EXT:klarokratie/Resources/Public/Config/Includes/GoogleAnalytics.js
   googleAnalytics:
     enable: 0
     useTagManager: 0

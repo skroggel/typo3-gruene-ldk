@@ -11,10 +11,12 @@ editor:
     contentsCss: "EXT:site_default/Resources/Public/Css/editor.css"
 
     # Styles in dropdown
-    #stylesSet:
-    #  - { name: "H2 as H1", element: "h2", attributes: { 'class': 'h1' } }
-    #  - { name: "Paragraph Big", element: "p", attributes: { 'class': 'p-big' } }
-    #  - { name: "Two Axes", element: "table", attributes: { 'class': 'table two-axes' } }
+    stylesSet:
+      - { name: "H1 as H2", element: "h1", attributes: { 'class': 'h2' } }
+      - { name: "H2 as H3", element: "h2", attributes: { 'class': 'h3' } }
+      - { name: "H3 as H4", element: "h3", attributes: { 'class': 'h4' } }
+      #- { name: "Paragraph Big", element: "p", attributes: { 'class': 'p-big' } }
+      #- { name: "Two Axes", element: "table", attributes: { 'class': 'table two-axes' } }
 
     # formats in dropdown
     format_tags: "p;h2;h3;h4;h5;pre"

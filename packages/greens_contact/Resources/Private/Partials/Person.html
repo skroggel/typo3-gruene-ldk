@@ -25,14 +25,34 @@
         </f:if>
     </f:section>
 
+    <f:comment><!-- ==================================== --></f:comment>
 
     <f:section name="SliderInner">
-        <f:render partial="Utils/Media"
-                  arguments="{
-                        file: person.imageSmall,
-                        wrapClass: 'contact-slider-image',
-                        settings: settings
-                  }" />
+
+        <f:if condition="!{person.imageSmall}">
+            <f:then>
+                <f:variable name="image" value="EXT:greens_contact/Resources/Public/Images/placeholder-man.png" />
+                <f:if condition="{person.salutation} == 1">
+                    <f:variable name="image" value="EXT:greens_contact/Resources/Public/Images/placeholder-woman.png" />
+                </f:if>
+
+                <f:render partial="Utils/Media"
+                          arguments="{
+                            src: image,
+                            wrapClass: 'contact-slider-image',
+                            settings: settings
+                      }" />
+            </f:then>
+            <f:else>
+                <f:render partial="Utils/Media"
+                          arguments="{
+                            file: person.imageSmall,
+                            wrapClass: 'contact-slider-image',
+                            settings: settings
+                      }" />
+            </f:else>
+        </f:if>
+
 
         <div class="contact-slider-labels">
             <f:render partial="Utils/Header"

@@ -12,6 +12,34 @@ routeEnhancers:
         _arguments:
           category: overwriteDemand/categories
 
+      # type filter
+      - routePath: 'news/type/{type}'
+        _controller: 'News::list'
+        _arguments:
+          type: overwriteDemand/types/0
+
+      # type filter with page
+      - routePath: 'news/type/{type}/{currentPage}'
+        _controller: 'News::list'
+        _arguments:
+          type: overwriteDemand/types/0
+          currentPage: currentPage
+
+      # type filter with order
+      - routePath: 'news/type-ordered/{type}/{order}'
+        _controller: 'News::list'
+        _arguments:
+          type: overwriteDemand/types/0
+          order: overwriteDemand/order
+
+      # type filter with order and page
+      - routePath: 'news/type-ordered/{type}/{order}/{currentPage}'
+        _controller: 'News::list'
+        _arguments:
+          type: overwriteDemand/types/0
+          order: overwriteDemand/order
+          currentPage: currentPage
+
       # list
       - routePath: 'news/list'
         _controller: 'News::list'
@@ -25,8 +53,19 @@ routeEnhancers:
     aspects:
       news-title:
         type: NewsTitle
+
       category:
         type: StaticRangeMapper
         start: '1'
         end: '999'
 
+      page:
+        type: StaticRangeMapper
+        start: '1'
+        end: '999'
+
+      type:
+        type: StaticValueMapper
+        map:
+          news: '0'
+          event: '3'

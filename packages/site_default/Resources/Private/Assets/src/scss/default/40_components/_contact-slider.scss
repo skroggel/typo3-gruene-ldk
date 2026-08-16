@@ -39,6 +39,7 @@
         img {
             max-width: rem-calc(360);
             aspect-ratio: 4/5;
+            object-fit: cover;
         }
     }
 

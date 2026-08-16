@@ -72,9 +72,17 @@
 				<source>Category</source>
 				<target>Kategorie</target>
 			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_person.topics" xml:space="preserve">
+				<source>Topics</source>
+				<target>Themen</target>
+			</trans-unit>
 			<trans-unit id="tx_contact_domain_model_person.vita" xml:space="preserve">
 				<source>Vita</source>
 				<target>Vita</target>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_person.political_vita" xml:space="preserve">
+				<source>Political Vita</source>
+				<target>Politische Vita</target>
 			</trans-unit>
 			<trans-unit id="tx_contact_domain_model_person.description">
 				<source>Description</source>

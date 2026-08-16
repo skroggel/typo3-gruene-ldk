@@ -7,34 +7,42 @@
         <f:variable name="variant" value="cta-big" />
     </f:if>
 
-    <section class="cta-el csp-section csp-not-last js-appear-on-scroll fullwidth-1" id="c{data.uid}">
-        <div class="container-xxxl ">
-            <div class="row g-5 justify-content-between justify-content-md-start">
-                <div class="col-auto">
-                    <f:if condition="{f:uri.typolink(parameter: data.madj2k_cta_link)}">
-                        <f:render partial="Utils/Cta"
-                                  arguments="{
-                                    label: data.madj2k_cta_label,
-                                    link: data.madj2k_cta_link,
-                                    type: 'inverted',
-                                    class: 'banner-cta {variant}',
-                                    settings: settings
-                          }" />
-                    </f:if>
-                </div>
-                <div class="col-auto">
-                    <f:if condition="{f:uri.typolink(parameter: data.madj2k_cta_link_2)}">
-                        <f:render partial="Utils/Cta"
-                                  arguments="{
-                                    label: data.madj2k_cta_label_2,
-                                    link: data.madj2k_cta_link_2,
-                                    class: 'banner-cta {variant}',
-                                    settings: settings
-                          }" />
-                    </f:if>
+    <f:if condition="{f:uri.typolink(parameter: data.madj2k_cta_link)} || {f:uri.typolink(parameter: data.madj2k_cta_link_2)}">
+        <section class="cta-el csp-section csp-not-last js-appear-on-scroll fullwidth-1" id="c{data.uid}">
+            <div class="container-xxxl">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="cta-group">
+
+                            <f:variable name="cta-type-1" value="default" />
+                            <f:if condition="{f:uri.typolink(parameter: data.madj2k_cta_link_2)}">
+                                <f:variable name="cta-type-1" value="inverted" />
+                            </f:if>
+
+                            <f:if condition="{f:uri.typolink(parameter: data.madj2k_cta_link)}">
+                                <f:render partial="Utils/Cta"
+                                          arguments="{
+                                            label: data.madj2k_cta_label,
+                                            link: data.madj2k_cta_link,
+                                            type: cta-type-1,
+                                            class: 'banner-cta {variant}',
+                                            settings: settings
+                                  }" />
+                            </f:if>
+                            <f:if condition="{f:uri.typolink(parameter: data.madj2k_cta_link_2)}">
+                                <f:render partial="Utils/Cta"
+                                          arguments="{
+                                        label: data.madj2k_cta_label_2,
+                                        link: data.madj2k_cta_link_2,
+                                        class: 'banner-cta {variant}',
+                                        settings: settings
+                              }" />
+                            </f:if>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </f:if>
 
 </html>

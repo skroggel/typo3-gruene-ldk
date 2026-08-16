@@ -126,6 +126,26 @@
 			<trans-unit id="news.headerDateFormatFirstOfYear">
 				<source>F, Y</source>
 			</trans-unit>
+			<trans-unit id="news.showAllTypes">
+				<source>All</source>
+			</trans-unit>
+			<trans-unit id="news.showNews">
+				<source>News</source>
+			</trans-unit>
+			<trans-unit id="news.showEvents">
+				<source>Events</source>
+			</trans-unit>
+
+
+			<trans-unit id="pagination.page">
+				<source>Page</source>
+			</trans-unit>
+			<trans-unit id="pagination.previous">
+				<source>Previous page</source>
+			</trans-unit>
+			<trans-unit id="pagination.next">
+				<source>Next page</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

@@ -55,15 +55,35 @@
         <f:render partial="Utils/Bodytext"
                   arguments="{text: data.bodytext, wrapClass: 'text-text'}" />
 
-        <f:if condition="{f:uri.typolink(parameter: data.madj2k_cta_link)}">
-            <f:render partial="Utils/Cta"
-                      arguments="{
-                                label: data.madj2k_cta_label,
-                                link: data.madj2k_cta_link,
-                                class: 'text-cta',
-                                wrapClass: 'mt-5',
-                                settings: settings
-                      }" />
+
+        <f:if condition="{f:uri.typolink(parameter: data.madj2k_cta_link)} || {f:uri.typolink(parameter: data.madj2k_cta_link_2)}">
+
+            <f:variable name="cta-type-1" value="default" />
+            <f:if condition="{f:uri.typolink(parameter: data.madj2k_cta_link_2)}">
+                <f:variable name="cta-type-1" value="inverted" />
+            </f:if>
+
+            <div class="cta-group mt-5">
+                <f:if condition="{f:uri.typolink(parameter: data.madj2k_cta_link)}">
+                    <f:render partial="Utils/Cta"
+                              arguments="{
+                                            label: data.madj2k_cta_label,
+                                            link: data.madj2k_cta_link,
+                                            type: cta-type-1,
+                                            class: 'text-cta',
+                                            settings: settings
+                                  }" />
+                </f:if>
+                <f:if condition="{f:uri.typolink(parameter: data.madj2k_cta_link_2)}">
+                    <f:render partial="Utils/Cta"
+                              arguments="{
+                                        label: data.madj2k_cta_label_2,
+                                        link: data.madj2k_cta_link_2,
+                                        class: 'text-cta',
+                                        settings: settings
+                              }" />
+                </f:if>
+            </div>
         </f:if>
     </f:section>
 

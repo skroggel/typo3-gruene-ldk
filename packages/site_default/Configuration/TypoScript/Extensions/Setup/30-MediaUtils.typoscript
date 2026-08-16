@@ -4,6 +4,12 @@
 plugin.tx_news {
 
     txMediaUtils.responsiveImages < lib.txMediaUtils.responsiveImages
+    list {
+        txMediaUtils.responsiveImages < lib.txMediaUtils.responsiveImages
+    }
+    detail {
+        txMediaUtils.responsiveImages < lib.txMediaUtils.responsiveImages
+    }
 
     settings._custom {
         _global.settings.txMediaUtils.responsiveImages < lib.txMediaUtils.responsiveImages

@@ -1,0 +1,6 @@
+services:
+  Madj2k\SiteDefault\EventListener\NewsDemandListener:
+    tags:
+      - name: event.listener
+        identifier: 'sitedefault-news-demand'
+        event: GeorgRinger\News\Event\CreateDemandObjectFromSettingsEvent

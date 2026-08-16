@@ -26,17 +26,22 @@ body .klaro {
     --klaro-color-text-inverted: var(--color-text-inverted);
 
     --klaro-color-button-text: var(--color-text-inverted);
-    --klaro-color-button-text-hover: var(--color-text-inverted);
-    --klaro-color-button-background: var(--color-brand-secondary);
-    --klaro-color-button-background-hover: var(--color-brand-primary);
+    --klaro-color-button-text-hover: var(--color-text-default);
+    --klaro-color-button-background: var(--color-brand-primary);
+    --klaro-color-button-background-hover: var(--color-surface-accent);
 
-    --klaro-color-slider-background: var(--color-brand-secondary);
-    --klaro-color-slider-background-active: var(--color-brand-primary);
+    --klaro-color-link-text: var(--color-text);
+    --klaro-color-link-text-hover: var(--color-text);
+
+    --klaro-color-slider-background: var(--color-brand-primary);
+    --klaro-color-slider-background-active: var(--color-brand-secondary);
 
     // Klaro internal variables
-    --green1: #{var(--klaro-color-brand)};
-    --green2: #{var(--klaro-color-brand)};
-    --green3: #{var(--klaro-color-brand)};
+    --green1: #{var(--color-brand-primary)};
+    --green2: #{var(--color-brand-primary)};
+    --green3: #{var(--color-brand-primary)};
+    --light1: #{var(--color-text-default)};
+    --dark3: #{var(--color-text-default)};
     --font-family: #{var(--font-family-sans)};
 
     // =========================================================================
@@ -120,6 +125,10 @@ body .klaro {
             @include copy-small;
         }
 
+        .cm-service + .cm-service {
+            padding-top: rem-calc($spacer);
+        }
+
         .cm-list-title {
             @include h5;
             margin-bottom: 0;
@@ -174,7 +183,7 @@ body .klaro {
         a:link,
         a:visited,
         a:hover {
-            color: var(--klaro-color-text-inverted);
+            color: var(--klaro-color-link-text);
             line-height: rem-calc(32);
             text-align: center;
         }
@@ -224,10 +233,12 @@ body .klaro {
     .context-notice .cm-btn.cm-btn-success-var,
     .cookie-notice .cm-btn.cm-btn-success-var,
     .cookie-modal .cm-btn.cm-btn-success-var,
+    .cookie-modal .cm-btn.cm-btn-success,
     .cookie-modal .cm-btn.cm-btn-accept,
     .cookie-modal .cm-btn.cm-btn-decline {
         color: var(--klaro-color-button-text);
         background-color: var(--klaro-color-button-background) !important;
+        font-weight: bold !important;
 
         &:hover:not(.disabled) {
             color: var(--klaro-color-button-text-hover);

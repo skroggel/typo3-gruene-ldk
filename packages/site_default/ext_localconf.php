@@ -39,7 +39,17 @@ call_user_func(
             'className' => \Madj2k\SiteDefault\Domain\Repository\NewsRepository::class,
         ];
 
+        //=================================================================
+        // cHash
+        //=================================================================
+        $GLOBALS['TYPO3_CONF_VARS']['FE']['cacheHash']['excludedParameters'][] =
+            'tx_news_pi1[overwriteDemand][types][0]';
 
+        $GLOBALS['TYPO3_CONF_VARS']['FE']['cacheHash']['excludedParameters'][] =
+            'tx_news_pi1[overwriteDemand][order]';
+
+        $GLOBALS['TYPO3_CONF_VARS']['FE']['cacheHash']['excludedParameters'][] =
+            'tx_news_pi1[currentPage]';
     },
 	'site_default'
 );

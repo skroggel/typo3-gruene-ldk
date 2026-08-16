@@ -41,6 +41,7 @@
 			"source": {
 				"default": [
 					"src/scss/styles.scss",
+					"src/scss/klaro.scss",
 					"src/scss/editor.scss",
 					"src/scss/fsc-defaults.scss"
 				],

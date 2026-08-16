@@ -53,6 +53,7 @@ $content-spacers-blocks: (
     'text-image',
     'text-video'
 );
+
 $content-spacers: (
     'xs': (
         'section': map-get($spacers, 9), // space between different sections
@@ -63,23 +64,23 @@ $content-spacers: (
         'block': map-get($spacers, 7), // space between content blocks
     ),
     'md': (
-        'section': map-get($spacers, 9), // space between different sections
+        'section': map-get($spacers, 10), // space between different sections
         'block': map-get($spacers, 7), // space between content blocks
     ),
     'lg': (
-        'section': map-get($spacers, 11), // space between different sections
+        'section': map-get($spacers, 12), // space between different sections
         'block': map-get($spacers, 7), // space between content blocks
     ),
     'xl': (
-        'section': map-get($spacers, 11), // space between different sections
+        'section': map-get($spacers, 12), // space between different sections
         'block': map-get($spacers, 7), // space between content blocks
     ),
     'xxl': (
-        'section': map-get($spacers, 11), // space between different sections
+        'section': map-get($spacers, 12), // space between different sections
         'block': map-get($spacers, 7), // space between content blocks
     ),
     'xxxl': (
-        'section': map-get($spacers, 11), // space between different sections
+        'section': map-get($spacers, 12), // space between different sections
         'block': map-get($spacers, 7), // space between content blocks
     )
 );

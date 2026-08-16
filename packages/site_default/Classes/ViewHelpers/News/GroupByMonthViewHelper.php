@@ -16,6 +16,7 @@ namespace Madj2k\SiteDefault\ViewHelpers\News;
 use DateTimeInterface;
 use GeorgRinger\News\Domain\Model\News;
 use TYPO3\CMS\Extbase\Persistence\Generic\QueryResult;
+use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 /**
@@ -52,7 +53,7 @@ class GroupByMonthViewHelper extends AbstractViewHelper
             'string',
             'Sort direction for groups: "asc" or "desc".',
             false,
-            'asc'
+            ''
         );
     }
 
@@ -87,14 +88,14 @@ class GroupByMonthViewHelper extends AbstractViewHelper
 
         foreach ($news as $newsItem) {
 
-            if (! $newsItem instanceof News) {
+            if (!$newsItem instanceof News) {
                 continue;
             }
 
             /** @var \DateTimeInterface|null $date */
             $date = $newsItem->getDatetime();
 
-            if (! $date instanceof DateTimeInterface) {
+            if (!$date instanceof DateTimeInterface) {
                 continue;
             }
 
@@ -104,7 +105,7 @@ class GroupByMonthViewHelper extends AbstractViewHelper
             /** @var int $timestamp */
             $timestamp = $monthStart->getTimestamp();
 
-            if (! isset($groups[$timestamp])) {
+            if (!isset($groups[$timestamp])) {
                 $groups[$timestamp] = [
                     'date' => $monthStart,
                     'isFirstOfYear' => false,
@@ -115,11 +116,18 @@ class GroupByMonthViewHelper extends AbstractViewHelper
             $groups[$timestamp]['items'][] = $newsItem;
         }
 
-        if ($sortDirection === 'desc') {
-            krsort($groups, SORT_NUMERIC);
-        } else {
-            ksort($groups, SORT_NUMERIC);
+
+        if ($sortDirection) {
+            if (
+                ($sortDirection === 'desc')
+                || (str_contains('desc', $sortDirection))
+            ) {
+                krsort($groups, SORT_NUMERIC);
+            } else {
+                ksort($groups, SORT_NUMERIC);
+            }
         }
+
 
         /** @var int|null $previousYear */
         $previousYear = null;

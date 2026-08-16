@@ -12,6 +12,7 @@
     -->
 
     <f:section name="content">
+
         <f:if condition="{newsItem}">
             <n:format.nothing>
                 <n:excludeDisplayedNews newsItem="{newsItem}" />
@@ -33,16 +34,24 @@
             </n:format.nothing>
 
             <f:comment><!-- Header  --></f:comment>
-            <f:render partial="Detail/Stage" arguments="{newsItem: newsItem, settings: settings}" />
+            <f:render partial="Detail/Stage" arguments="{newsItem: newsItem, settings: settings.detail}" />
 
             <f:comment><!-- Tags --></f:comment>
-            <f:render partial="Detail/Tags" arguments="{newsItem: newsItem, settings: settings}" />
+            <f:if condition="{newsItem.type} == '3'">
+                <f:then>
+                    <f:render partial="Detail/TagsEvent" arguments="{newsItem: newsItem, settings: settings.detail}" />
+                </f:then>
+                <f:else>
+                    <f:render partial="Detail/Tags" arguments="{newsItem: newsItem, settings: settings.detail}" />
+                </f:else>
+            </f:if>
 
-            <div itemprop="articleBody">
+
+            <div itemprop="articleBody" class="news-detail-body">
 
                 <f:comment><!-- maintext --></f:comment>
                 <f:if condition="{newsItem.bodytext}">
-                    <div class="csp-block csp-not-last pt-8"
+                    <div class="csp-block csp-not-last"
                          aria-labelledby="news-detail-headline">
                         <div class="container-xxxl">
                             <div class="row">
@@ -70,9 +79,9 @@
                                           arguments="{
                                             type: 'inverted',
                                             icon: 'arrow-left',
-                                            link: '{f:uri.page(pageUid: settings.backPid)}',
+                                            url: 'javascript:history.back()',
                                             label: '{f:translate(key:\'label.backToList\', extensionName:\'site_default\')}',
-                                            wrapClass: 'news-detail-cta', settings: customSettings}" />
+                                            wrapClass: 'news-detail-cta', settings: settings.detail}" />
                             </div>
                         </div>
                     </div>

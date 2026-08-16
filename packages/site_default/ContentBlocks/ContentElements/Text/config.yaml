@@ -9,3 +9,5 @@ fields:
     type: Basic
   - identifier: madj2k/palette-cta
     type: Basic
+  - identifier: madj2k/palette-cta-2
+    type: Basic
