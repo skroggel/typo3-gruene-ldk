@@ -163,9 +163,31 @@
 				<source>F</source>
 				<target>F</target>
 			</trans-unit>
-			<trans-unit id="news.headerDateFormatFirstOfYear">
-				<source>F, Y</source>
-				<target>F Y</target>
+			<trans-unit id="news.showAllTypes">
+				<source>All</source>
+				<target>Alle</target>
+			</trans-unit>
+			<trans-unit id="news.showNews">
+				<source>News</source>
+				<target>Neuigkeiten</target>
+			</trans-unit>
+			<trans-unit id="news.showEvents">
+				<source>Events</source>
+				<target>Termine</target>
+			</trans-unit>
+
+
+			<trans-unit id="pagination.page">
+				<source>Page</source>
+				<target>Seite</target>
+			</trans-unit>
+			<trans-unit id="pagination.previous">
+				<source>Previous page</source>
+				<target>Vorherige Seite</target>
+			</trans-unit>
+			<trans-unit id="pagination.next">
+				<source>Next page</source>
+				<target>Nächste Seite</target>
 			</trans-unit>
 
 		</body>

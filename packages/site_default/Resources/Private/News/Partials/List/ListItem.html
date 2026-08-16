@@ -3,7 +3,7 @@
       xmlns:madj2k="http://typo3.org/ns/Madj2k/SiteDefault/ViewHelpers/Format"
 	  data-namespace-typo3-fluid="true">
 
-    <div class="news-item mt-8 pb-8 mt-md-10 pb-md-10 {wrapClass}" itemscope="itemscope" itemtype="https://schema.org/Article">
+    <div class="news-item mt-8 pb-8 mt-md-10 pb-md-10 {wrapClass}" id="news-item-{newsItem.uid}" itemscope="itemscope" itemtype="https://schema.org/Article">
         <n:link newsItem="{newsItem}"
                 settings="{settings}"
                 title="{newsItem.title -> f:format.stripTags()}"

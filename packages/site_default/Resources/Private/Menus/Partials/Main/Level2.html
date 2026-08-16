@@ -9,42 +9,30 @@
         <f:variable name="title">{f:if(condition: '{noHtml}', then: '{menuItem.data.title}', else: '{menuItem.title}')}</f:variable>
 
         <f:if condition="({column} == 'odd' && {iterator.isOdd}) || ({column} == 'even' && {iterator.isEven}) || ({column} == 'all')">
-            <li class="toggle-list-item accordion-item nav-main-item level-2{f:if(condition: '{menuItem.active}', then: ' active')}">
+            <li class="nav-main-item level-2{f:if(condition: '{menuItem.active} && {menuItem.data.doktype} != \'4\'', then: ' active')}">
 
                 <f:if condition="{menuItem.children}">
                     <f:then>
-                        <button class="toggle toggle-list-link accordion-toggle nav-main-link level-2"
-                                role="tab"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#accordion-{menuItem.data.uid}"
-                                aria-expanded="{f:if(condition: '{menuItem.active}', then: 'true', else: 'false')}"
-                                aria-controls="accordion-{menuItem.data.uid}"
-                        >
-                            <span class="headline toggle-list-text"><span><f:format.html
+                        <div class="nav-main-link level-2" role="heading">
+                            <span class="headline"><span><f:format.html
                                 parseFuncTSPath="lib.parseFunc_Inline">{title}</f:format.html></span></span>
-                                <span class="toggle-icon icon-arrow-down icon"></span>
-                        </button>
-
-                        <div class="collapse js-no-scroll {f:if(condition: '{menuItem.active}', then: 'show')}"
-                             id="accordion-{menuItem.data.uid}"
-                             data-bs-parent="#accordion-container-{parentItem.data.uid}"
-                        >
-                            <div class="accordion-content">
-                                <ul class="nav-main-list nav-block-list level-3" role="menu">
-                                    <f:render partial="Level3" arguments="{menuItems: menuItem.children, parentItem: menuItem}" />
-                                </ul>
-                            </div>
                         </div>
+
+                        <ul class="nav-main-list level-3" role="menu">
+                            <f:render partial="Level3" arguments="{menuItems: menuItem.children, parentItem: menuItem}" />
+                        </ul>
                     </f:then>
+
                     <f:else>
-                        <a class="toggle toggle-list-link accordion-toggle nav-main-link level-2{f:if(condition:'{menuItem.active}', then:' active')}"
+
+                        <a class="nav-main-link level-2{f:if(condition:'{menuItem.active} && {menuItem.data.doktype} != \'4\'', then:' active')}"
                            href="{f:if(condition:'{menuItem.data.tx_klarokratie_open_modal}', then:'#', else :'{menuItem.link}')}"
                            {f:if(condition:'{menuItem.data.tx_klarokratie_open_modal}', then:'onclick="javascript:klaro.show(undefined, true);return false;"')}
                            target="{menuItem.target}"
                            title="{menuItem.data.title}"
                            role="menuitem"
                         >
-                            <span class="headline toggle-list-text"><span><f:format.html
+                            <span class="headline"><span><f:format.html
                                 parseFuncTSPath="lib.parseFunc_Inline">{title}</f:format.html></span>
                             </span>
                         </a>

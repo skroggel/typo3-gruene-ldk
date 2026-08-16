@@ -99,11 +99,28 @@ class Person extends AbstractEntity
 
 
     /**
+     * topcis
+     *
+     * @var string
+     */
+    protected string $topics = '';
+
+
+
+    /**
      * Vita or biography of the person
      *
      * @var string
      */
     protected string $vita = '';
+
+
+    /**
+     * Political vita or biography of the person
+     *
+     * @var string
+     */
+    protected string $politicalVita = '';
 
 
     /**
@@ -422,6 +439,29 @@ class Person extends AbstractEntity
 
 
     /**
+     * Get the topics
+     *
+     * @return string
+     */
+    public function getTopcis(): string
+    {
+        return $this->topics;
+    }
+
+
+    /**
+     * Set the topics
+     *
+     * @param string $topics
+     */
+    public function setTopics(string $topics): void
+    {
+        $this->topics = $topics;
+    }
+
+
+
+    /**
      * Get the vita
      *
      * @return string
@@ -440,6 +480,28 @@ class Person extends AbstractEntity
     public function setVita(string $vita): void
     {
         $this->vita = $vita;
+    }
+
+
+    /**
+     * Get the politicalVita
+     *
+     * @return string
+     */
+    public function getPoliticalVita(): string
+    {
+        return $this->politicalVita;
+    }
+
+
+    /**
+     * Set the politicalVita
+     *
+     * @param string $politicalVita
+     */
+    public function setPoliticalVita(string $politicalVita): void
+    {
+        $this->politicalVita = $politicalVita;
     }
 
 

@@ -10,7 +10,7 @@
                     <li class="pagination-item">
                     <f:if condition="{pagination.previousPageNumber} && {pagination.previousPageNumber} >= {pagination.firstPageNumber}">
                         <f:then>
-                            <a href="{f:uri.action(action:actionName, arguments:{currentPage: pagination.previousPageNumber},addQueryString:1)}"
+                            <a href="{f:uri.action(action:actionName, arguments:{currentPage: pagination.previousPageNumber}, addQueryString:1, section:'news-items-{contentObjectData.uid}')}"
                                class="pagination-link pagination-prev"
                                title="{f:translate(key:'pagination.previous', extensionName: 'siteDefault')}"></a>
                         </f:then>
@@ -35,8 +35,8 @@
                     <li
                         class="pagination-item{f:if(condition:'{paginator.currentPageNumber}=={page}',then:' active')}"
                     >
-                        <a href="{f:uri.action(action:actionName, arguments:{currentPage: page},addQueryString:1)}"
-                           title="{f:translate(key: \'pagination.page\', extensionName: \'siteDefault\')} {page}"
+                        <a href="{f:uri.action(action:actionName, arguments:{currentPage: page}, addQueryString:1, section:'news-items-{contentObjectData.uid}')}"
+                           title="{f:translate(key: 'pagination.page', extensionName: 'siteDefault')} {page}"
                            class="pagination-link"
                         >
                             {page}
@@ -55,7 +55,7 @@
                 <li class="pagination-item">
                     <f:if condition="{pagination.nextPageNumber} && {pagination.nextPageNumber} <= {pagination.lastPageNumber}">
                     <f:then>
-                            <a href="{f:uri.action(action:actionName, arguments:{currentPage: pagination.nextPageNumber},addQueryString:1)}"
+                            <a href="{f:uri.action(action:actionName, arguments:{currentPage: pagination.nextPageNumber},addQueryString:1, section:'news-items-{contentObjectData.uid}')}"
                                title="{f:translate(key:'pagination.next', extensionName: 'siteDefault')}"
                                class="pagination-link pagination-next"
                             ></a>

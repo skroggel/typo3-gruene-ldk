@@ -30,8 +30,10 @@ plugin.tx_news {
         startingpoint = {$site.news.startingpoint}
         recursive = 0
         overrideFlexformSettingsIfEmpty := addToList(startingpoint,recursive)
+        txMediaUtils.responsiveImages < lib.txMediaUtils.responsiveImages
 
 	    list {
+            txMediaUtils.responsiveImages < lib.txMediaUtils.responsiveImages
 
             paginate {
                 itemsPerPage = 6
@@ -109,6 +111,7 @@ plugin.tx_news {
 		detail {
 
 			showPrevNext = 1
+			txMediaUtils.responsiveImages < lib.txMediaUtils.responsiveImages
 
 			# override pageTitleProvider
 			pageTitle {

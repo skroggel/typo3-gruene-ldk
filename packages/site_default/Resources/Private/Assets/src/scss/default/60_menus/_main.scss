@@ -35,20 +35,22 @@
         display: flex;
         justify-content: end;
         flex-direction: column;
+        gap: rem-calc(map-get($spacers,4));
+
+        font-size: rem-calc(20);
+        line-height: 100%;
+
+        @include media-breakpoint-up(xl) {
+            font-size: rem-calc(25);
+        }
     }
 
     &-link,
     &-link:link,
     &-link:visited,
     &-link:hover {
-        font-size: rem-calc(20);
-        line-height: 100%;
+
         color: var(--main-menu-color-link);
-
-        @include media-breakpoint-up(xl) {
-            font-size: rem-calc(25);
-        }
-
         @include accessibility-outline($color: var(--color-outline-accessibility));
     }
 
@@ -68,21 +70,25 @@
         }
     }
 
+     &-list.level-2 {
+         display: flex;
+         flex-direction: column;
+         gap: rem-calc(map-get($spacers,4));
+    }
+
+    &-item.level-2 {
+        width: max-content;
+    }
+
     &-list.level-3 {
+        display: flex;
+        flex-direction: column;
+        gap: rem-calc(map-get($spacers,2));
         margin-left: rem-calc(map-get($spacers, 4));
-        margin-top: rem-calc(map-get($spacers, 3));
     }
 
     &-item.level-3 {
-        margin-top: rem-calc(map-get($spacers, 1));
         width: max-content;
-        display: block;
-    }
-
-    &-link.level-3,
-    &-link.level-3:link,
-    &-link.level-3:visited,
-    &-link.level-3:hover {
         font-size: rem-calc(18);
 
         @include media-breakpoint-up(xl) {
@@ -106,6 +112,7 @@
 
     /** Hover-effects */
     &-link.level-1,
+    &-link.level-2:not(div),
     &-link.level-3 {
         @include text-marker();
 

@@ -21,7 +21,14 @@
                 <f:render section="Linked" arguments="{_all}" />
             </f:then>
             <f:else>
-                <f:render section="NoLink" arguments="{_all}" />
+                <f:if condition="{url}">
+                    <f:then>
+                        <f:render section="Url" arguments="{_all}" />
+                    </f:then>
+                    <f:else>
+                        <f:render section="NoLink" arguments="{_all}" />
+                    </f:else>
+                </f:if>
             </f:else>
         </f:if>
     </div>
@@ -39,6 +46,21 @@
             </f:defaultCase>
         </f:switch>
     </f:section>
+
+    <f:comment><!-- ============================================================= --></f:comment>
+
+    <f:section name="Url">
+
+        <f:comment><!-- We use a switch here because this way we can also handle icons --></f:comment>
+        <f:switch expression="{type}">
+            <f:defaultCase>
+                <a href="{url}" class="cta cta-{type} {class}" title="{label}">
+                    <span class="cta-inner"><f:if condition="{iconPosition} == 'before'"><f:render section="Icon" arguments="{_all}" /></f:if><span>{label}</span><f:if condition="{iconPosition} == 'after'"><f:render section="Icon" arguments="{_all}" /></f:if></span>
+                </a>
+            </f:defaultCase>
+        </f:switch>
+    </f:section>
+
 
     <f:comment><!-- ============================================================= --></f:comment>
 

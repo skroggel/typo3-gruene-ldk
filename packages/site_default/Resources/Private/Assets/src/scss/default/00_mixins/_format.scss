@@ -143,53 +143,18 @@
     @include font-format($font-formats: $font-formats, $font-format: 'link', $tablet-breakpoint: md, $desktop-breakpoint: lg);
 }
 
-/*
-/// Typography style for subheaders.
+
+/// Typography style for tab-nav
 ///
 /// @group Typography
 ///
 /// @author Steffen Kroggel <developer@steffenkroggel>
 /// @license GNU General Public License v3.0 https://www.gnu.org/licenses/gpl-3.0.en.html
 ///
-@mixin subheader-1 {
-    @include font-format($font-formats: $font-formats, $font-format: 'subheader-1', $tablet-breakpoint: md, $desktop-breakpoint: lg);
+@mixin tab-nav {
+    @include font-format($font-formats: $font-formats, $font-format: 'tab-nav', $tablet-breakpoint: md, $desktop-breakpoint: lg);
 }
 
-/// Typography style for subheaders.
-///
-/// @group Typography
-///
-/// @author Steffen Kroggel <developer@steffenkroggel>
-/// @license GNU General Public License v3.0 https://www.gnu.org/licenses/gpl-3.0.en.html
-///
-@mixin subheader-2 {
-    @include font-format($font-formats: $font-formats, $font-format: 'subheader-2', $tablet-breakpoint: md, $desktop-breakpoint: lg);
-}
-
-/// Typography style for subheaders.
-///
-/// @group Typography
-///
-/// @author Steffen Kroggel <developer@steffenkroggel>
-/// @license GNU General Public License v3.0 https://www.gnu.org/licenses/gpl-3.0.en.html
-///
-@mixin subheader-3 {
-    @include font-format($font-formats: $font-formats, $font-format: 'subheader-3', $tablet-breakpoint: md, $desktop-breakpoint: lg);
-}
-
-
-/*
-/// Applies typographic styles for the lead
-///
-/// @group Utilities
-///
-/// @author Steffen Kroggel <developer@steffenkroggel>
-/// @license GNU General Public License v3.0 https://www.gnu.org/licenses/gpl-3.0.en.html
-///
-@mixin lead {
-    @include font-format($font-formats: $font-formats, $font-format: 'lead', $tablet-breakpoint: md, $desktop-breakpoint: lg);
-}
-*/
 
 /// Applies typographic styles for the input
 ///

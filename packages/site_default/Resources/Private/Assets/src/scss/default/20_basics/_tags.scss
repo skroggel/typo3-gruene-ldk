@@ -35,4 +35,33 @@
             }
         }
     }
+
+    &.variant-big {
+
+        flex-direction: column;
+        gap: rem-calc(map-get($spacers, 3));
+        margin-top: rem-calc(map-get($spacers, 8));
+
+        .tag,
+        .tag:link,
+        .tag:visited,
+        .tag:hover {
+            @include h5;
+            line-height: 100%;
+
+            .icon {
+                width: 40px;
+            }
+
+            span:not(.icon) {
+                padding-top: rem-calc(5);
+            }
+
+            &:not(:last-child) {
+                &:after {
+                    display:none;
+                }
+            }
+        }
+    }
 }

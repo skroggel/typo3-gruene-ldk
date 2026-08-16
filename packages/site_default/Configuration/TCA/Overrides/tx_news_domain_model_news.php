@@ -80,6 +80,12 @@ call_user_func(
 //        );
 
             $GLOBALS['TCA']['tx_news_domain_model_news']['types'][$type] = str_replace(
+                'bodytext,',
+                '',
+                $GLOBALS['TCA']['tx_news_domain_model_news']['types'][$type]
+            );
+
+            $GLOBALS['TCA']['tx_news_domain_model_news']['types'][$type] = str_replace(
                 'related_links,tags,',
                 '',
                 $GLOBALS['TCA']['tx_news_domain_model_news']['types'][$type]
@@ -169,7 +175,7 @@ call_user_func(
 					'config' => [
 						'type' => 'file',
 						'allowed' => ['jpeg','jpg','png','gif','svg','webp'],
-						'minitems' => 1,
+						'minitems' => 0,
 						'maxitems' => 1,
 					],
 				],

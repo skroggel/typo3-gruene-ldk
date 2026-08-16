@@ -155,4 +155,16 @@
     &-big {
         @include button-big;
     }
+
+
+    &-group {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 3rem;
+
+        @include media-breakpoint-up(md) {
+            justify-content: flex-start;
+        }
+    }
 }

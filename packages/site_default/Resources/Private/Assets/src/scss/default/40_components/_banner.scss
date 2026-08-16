@@ -13,6 +13,7 @@
         display: flex;
         align-items: center;
         flex-direction: column;
+        text-align: center;
     }
 
     .subheader,
@@ -28,7 +29,15 @@
 
     &:has(.cta) {
         .subheader {
-            margin-bottom: rem-calc(map-get($spacers, 3));
+            margin-bottom: rem-calc(map-get($spacers, 4));
+        }
+    }
+
+    &.variant-big {
+        &:has(.cta) {
+            .subheader {
+                margin-bottom: rem-calc(map-get($spacers, 6));
+            }
         }
     }
 }

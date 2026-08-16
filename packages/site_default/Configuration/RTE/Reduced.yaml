@@ -11,8 +11,8 @@ editor:
     contentsCss: "EXT:site_default/Resources/Public/Css/editor.css"
 
     # Styles in dropdown
-    stylesSet:
-      - { name: "Paragraph Big", element: "p", attributes: { 'class': 'p-big' } }
+    # stylesSet:
+    #  - { name: "Paragraph Big", element: "p", attributes: { 'class': 'p-big' } }
 
     # formats in dropdown
     format_tags: "p;pre"
@@ -28,6 +28,9 @@ editor:
         - subscript
         - superscript
         - softhyphen
+        - '|'
+        - bulletedList
+        - numberedList
         - '|'
         - findAndReplace
         - link

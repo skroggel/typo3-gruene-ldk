@@ -28,7 +28,7 @@ return [
             'showitem' => '
                 salutation, title, first_name, last_name, email, phone, position, category,
                     --palette--;;palette_detail_link, sorting,
-                --div--;' . $ll . 'tx_contact_domain_model_person.tab.meta, job, vita, description,
+                --div--;' . $ll . 'tx_contact_domain_model_person.tab.meta, job, topics, vita, political_vita, description,
                 --div--;' . $ll . 'tx_contact_domain_model_person.tab.media, image_small, image_big,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language, sys_language_uid, l10n_parent, l10n_diffsource,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access, hidden, starttime, endtime
@@ -127,7 +127,7 @@ return [
                 'size' => 10,
                 'minitems' => 0,
                 'maxitems' => 999,
-                'foreign_table_where' => 'AND {#sys_category}.{#sys_language_uid} IN (-1, 0) AND {#sys_category}.{#pid} = ###CURRENT_PID###',
+                'foreign_table_where' => 'AND {#sys_category}.{#sys_language_uid} IN (-1, 0)',
                 'treeConfig' => [
                     'appearance' => [
                         'nonSelectableLevels' => '0'
@@ -150,9 +150,33 @@ return [
                 'eval' => 'trim',
             ],
         ],
+        'topics' => [
+            'exclude' => false,
+            'label' => $ll . 'tx_contact_domain_model_person.topics',
+            'config' => [
+                'type' => 'text',
+                'enableRichtext' => true,
+                'richtextConfiguration' => 'Reduced',
+                'cols' => 40,
+                'rows' => 15,
+                'eval' => 'trim',
+            ],
+        ],
         'vita' => [
             'exclude' => false,
             'label' => $ll . 'tx_contact_domain_model_person.vita',
+            'config' => [
+                'type' => 'text',
+                'enableRichtext' => true,
+                'richtextConfiguration' => 'Reduced',
+                'cols' => 40,
+                'rows' => 15,
+                'eval' => 'trim',
+            ],
+        ],
+        'political_vita' => [
+            'exclude' => false,
+            'label' => $ll . 'tx_contact_domain_model_person.political_vita',
             'config' => [
                 'type' => 'text',
                 'enableRichtext' => true,
@@ -208,7 +232,7 @@ return [
                 'type' => 'file',
                 'allowed' => 'common-image-types',
                 'maxitems' => 1,
-                'minitems' => 1,
+                'minitems' => 0,
                 'overrideChildTca' => [
                     'columns' => [
                         'crop' => [
