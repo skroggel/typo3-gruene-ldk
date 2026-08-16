@@ -216,9 +216,14 @@
     }
 }
 
+.page-content {
+    filter: blur(0) brightness(100%);
+    transition: filter 0.5s;
+
+}
+
 .flyout-open {
-    .siteheader {
-       // position: absolute;
-       // overflow-x: clip;
+    .page-content {
+        filter: blur(4px) brightness(40%);
     }
 }
