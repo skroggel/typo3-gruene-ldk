@@ -5,12 +5,19 @@
 
     --news-items-group-color-surface-default: var(--color-surface-default);
     --news-items-group-color-surface-subtile: var(--color-surface-subtle);
+    --news-items-group-color-headline: var(--color-heading-subtle);
 
     display: flex;
     flex-direction: column;
 
     .headline {
         margin-bottom: 0;
+    }
+
+    &-header {
+        .headline {
+            color: var(--news-items-group-color-headline);
+        }
     }
 
     &-group {

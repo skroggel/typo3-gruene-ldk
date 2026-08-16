@@ -2378,16 +2378,16 @@
         },
         {
             "name": "madj2k/t3-media-utils",
-            "version": "14.3.7",
+            "version": "14.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/skroggel/t3-media-utils.git",
-                "reference": "1c2aff47e589b0b2324a349efb27af7752350b65"
+                "reference": "11a4134e4fa313e86abcb875ee4034d691945eda"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skroggel/t3-media-utils/zipball/1c2aff47e589b0b2324a349efb27af7752350b65",
-                "reference": "1c2aff47e589b0b2324a349efb27af7752350b65",
+                "url": "https://api.github.com/repos/skroggel/t3-media-utils/zipball/11a4134e4fa313e86abcb875ee4034d691945eda",
+                "reference": "11a4134e4fa313e86abcb875ee4034d691945eda",
                 "shasum": ""
             },
             "require": {
@@ -2430,9 +2430,9 @@
             "support": {
                 "email": "developer@steffenkroggel.de",
                 "issues": "https://github.com/skroggel/t3-media-utils/issues",
-                "source": "https://github.com/skroggel/t3-media-utils/tree/14.4.7"
+                "source": "https://github.com/skroggel/t3-media-utils/tree/14.4.8"
             },
-            "time": "2026-08-09T15:28:11+00:00"
+            "time": "2026-08-16T14:37:50+00:00"
         },
         {
             "name": "madj2k/t3-typoscript-rendering",
