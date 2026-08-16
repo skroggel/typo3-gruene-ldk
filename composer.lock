@@ -2321,16 +2321,16 @@
         },
         {
             "name": "madj2k/t3-klarokratie",
-            "version": "14.3.5",
+            "version": "14.3.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/skroggel/t3-klarokratie.git",
-                "reference": "8b13834133a81787594f3757eded29263366ca3e"
+                "reference": "846beffd01888a84ba63b1b516f291942d6854fb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skroggel/t3-klarokratie/zipball/8b13834133a81787594f3757eded29263366ca3e",
-                "reference": "8b13834133a81787594f3757eded29263366ca3e",
+                "url": "https://api.github.com/repos/skroggel/t3-klarokratie/zipball/846beffd01888a84ba63b1b516f291942d6854fb",
+                "reference": "846beffd01888a84ba63b1b516f291942d6854fb",
                 "shasum": ""
             },
             "require": {
@@ -2372,9 +2372,9 @@
             "support": {
                 "email": "developer@steffenkroggel.de",
                 "issues": "https://github.com/skroggel/t3-klarokratie/issues",
-                "source": "https://github.com/skroggel/t3-klarokratie/tree/14.3.5"
+                "source": "https://github.com/skroggel/t3-klarokratie/tree/14.4.6"
             },
-            "time": "2026-07-15T15:29:15+00:00"
+            "time": "2026-08-16T15:24:47+00:00"
         },
         {
             "name": "madj2k/t3-media-utils",
