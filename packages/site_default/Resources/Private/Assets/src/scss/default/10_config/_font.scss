@@ -24,14 +24,14 @@ $font-formats: (
         'mobile': (
             'font-family': var(--font-family-headline),
             'font-weight': var(--font-weight-headline),
-            'font-size': rem-calc(60),
+            'font-size': rem-calc(50),
             'line-height': 110%,
             'letter-spacing': 0
         ),
         'tablet': (
             'font-family': var(--font-family-headline),
             'font-weight': var(--font-weight-headline),
-            'font-size': rem-calc(80),
+            'font-size': rem-calc(60),
             'line-height': 110%,
             'letter-spacing': 0
         ),
@@ -47,14 +47,14 @@ $font-formats: (
         'mobile': (
             'font-family': var(--font-family-headline),
             'font-weight': var(--font-weight-headline),
-            'font-size': rem-calc(40),
+            'font-size': rem-calc(36),
             'line-height': 110%,
             'letter-spacing': 0
         ),
         'tablet': (
             'font-family': var(--font-family-headline),
             'font-weight': var(--font-weight-headline),
-            'font-size': rem-calc(60),
+            'font-size': rem-calc(50),
             'line-height': 110%,
             'letter-spacing': 0
         ),
@@ -139,14 +139,14 @@ $font-formats: (
         'mobile': (
             'font-family': var(--font-family-headline),
             'font-weight': var(---font-weight-headline),
-            'font-size': rem-calc(32),
+            'font-size': rem-calc(36), // 32
             'line-height': 110%,
             'letter-spacing': 0
         ),
         'tablet': (
             'font-family': var(--font-family-headline),
             'font-weight': var(--font-weight-headline),
-            'font-size': rem-calc(45),
+            'font-size': rem-calc(50), // 45
             'line-height': 110%,
             'letter-spacing': 0
         ),
@@ -261,7 +261,7 @@ $font-formats: (
         'mobile': (
             'font-family': var(--font-family),
             'font-weight': var(--font-weight),
-            'font-size': rem-calc(16),
+            'font-size': rem-calc(18),
             'line-height': 150%,
             'letter-spacing': 0
         ),
@@ -275,7 +275,7 @@ $font-formats: (
         'desktop': (
             'font-family': var(--font-family),
             'font-weight': var(--font-weight),
-            'font-size': rem-calc(20),
+            'font-size': rem-calc(22),
             'line-height': 155%,
             'letter-spacing': 0
         )
