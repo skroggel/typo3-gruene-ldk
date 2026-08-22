@@ -20,7 +20,8 @@ use GeorgRinger\News\Event\CreateDemandObjectFromSettingsEvent;
 /**
  * Class NewsDemandListener
  *
- * Filters news by type depending on the configured template layout.
+ * Filters news by type depending on the event restriction set in the plugin flexform.
+ * Type 3 is the custom type for events ("Veranstaltungen").
  *
  * @author Steffen Kroggel <developer@steffenkroggel.de>
  * @copyright Steffen Kroggel <developer@steffenkroggel.de>
@@ -45,14 +46,17 @@ class NewsDemandListener
             $settings = $event->getSettings();
             $demand = $event->getDemand();
 
-            $templateLayout = (int)($settings['templateLayout'] ?? 0);
-
-            switch ($templateLayout) {
-                case 2:
-                    $demand->setTypes([0,1,2,3]);
-                    break;
-                default:
+            // 0 = show all, 1 = show no events, 2 = show only events
+            switch ((int)($settings['eventRestriction'] ?? 0)) {
+                case 1:
                     $demand->setTypes([0,1,2]);
+                    break;
+                case 2:
+                    $demand->setTypes([3]);
+                    break;
+                case 0:
+                default:
+                    $demand->setTypes([0,1,2,3]);
                     break;
             }
 

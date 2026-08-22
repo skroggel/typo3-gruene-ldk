@@ -16,6 +16,20 @@
 			<trans-unit id="backend_layout.column.stage">
 				<source>Stage</source>
 			</trans-unit>
+
+
+			<trans-unit id="flexforms_news.eventRestriction">
+				<source>Display of events</source>
+			</trans-unit>
+			<trans-unit id="flexforms_news.eventRestriction.I.0">
+				<source>Show all</source>
+			</trans-unit>
+			<trans-unit id="flexforms_news.eventRestriction.I.1">
+				<source>Show no events</source>
+			</trans-unit>
+			<trans-unit id="flexforms_news.eventRestriction.I.2">
+				<source>Show only events</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

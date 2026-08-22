@@ -4,3 +4,9 @@ services:
       - name: event.listener
         identifier: 'sitedefault-news-demand'
         event: GeorgRinger\News\Event\CreateDemandObjectFromSettingsEvent
+
+  Madj2k\SiteDefault\EventListener\ModifyFlexformEventListener:
+    tags:
+      - name: event.listener
+        identifier: 'sitedefault-flexform-modify'
+        event: TYPO3\CMS\Core\Configuration\Event\AfterFlexFormDataStructureParsedEvent

@@ -1,5 +1,7 @@
 tx_news.templateLayouts {
 	  0 = Default
+      3 = List without Tabs
+
 	  1 = Topic Slider
 	  2 = News Slider
 }

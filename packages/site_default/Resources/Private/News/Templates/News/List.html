@@ -123,55 +123,57 @@
 		<!--TYPO3SEARCH_end-->
 		<f:if condition="{news}">
 
-            <div class="news-filter page-padding" id="news-filter-{contentObjectData.uid}">
-                <div class="container-xxxl">
-                    <div class="row">
-                        <div class="col-12">
+            <f:if condition="{settings.templateLayout} != '3'">
+                <div class="news-filter page-padding" id="news-filter-{contentObjectData.uid}">
+                    <div class="container-xxxl">
+                        <div class="row">
+                            <div class="col-12">
 
-                            <ul class="nav-inline-list news-filter-list">
-                                <f:comment><!-- Reset
-                                <li class="nav-inline-item news-filter-item {f:if(condition: '{overwriteDemand.types.0} == \'\'', then: 'active')}">
-                                    <f:link.action action="list"
-                                                   arguments="{overwriteDemand: {types: {}}}"
-                                                   section="news-items-{contentObjectData.uid}"
-                                                   class="nav-inline-link news-filter-link js-no-scroll">
-                                       <f:translate key="news.showAllTypes" extensionName="siteDefault" />
-                                    </f:link.action>
-                                </li>--></f:comment>
+                                <ul class="nav-inline-list news-filter-list">
+                                    <f:comment><!-- Reset
+                                    <li class="nav-inline-item news-filter-item {f:if(condition: '{overwriteDemand.types.0} == \'\'', then: 'active')}">
+                                        <f:link.action action="list"
+                                                       arguments="{overwriteDemand: {types: {}}}"
+                                                       section="news-items-{contentObjectData.uid}"
+                                                       class="nav-inline-link news-filter-link js-no-scroll">
+                                           <f:translate key="news.showAllTypes" extensionName="siteDefault" />
+                                        </f:link.action>
+                                    </li>--></f:comment>
 
-                                <!-- Default news -->
-                                <li class="nav-inline-item news-filter-item {f:if(condition: '{overwriteDemand.types.0} == \'0\' || !{overwriteDemand.types.0}', then: 'active')}">
-                                    <f:link.action action="list"
-                                                   arguments="{
-                                                        overwriteDemand: {
-                                                            types: {0: 0}
-                                                        }
-                                                   }"
-                                                   section="news-items-{contentObjectData.uid}"
-                                                   class="nav-inline-link news-filter-link js-no-scroll">
-                                        <f:translate key="news.showNews" extensionName="siteDefault" />
-                                    </f:link.action>
-                                </li>
+                                    <!-- Default news -->
+                                    <li class="nav-inline-item news-filter-item {f:if(condition: '{overwriteDemand.types.0} == \'0\' || !{overwriteDemand.types.0}', then: 'active')}">
+                                        <f:link.action action="list"
+                                                       arguments="{
+                                                            overwriteDemand: {
+                                                                types: {0: 0}
+                                                            }
+                                                       }"
+                                                       section="news-items-{contentObjectData.uid}"
+                                                       class="nav-inline-link news-filter-link js-no-scroll">
+                                            <f:translate key="news.showNews" extensionName="siteDefault" />
+                                        </f:link.action>
+                                    </li>
 
-                                <!-- Events -->
-                                <li class="nav-inline-item news-filter-item {f:if(condition: '{overwriteDemand.types.0} == \'3\'', then: 'active')}">
-                                    <f:link.action action="list"
-                                                   arguments="{
-                                                        overwriteDemand: {
-                                                            types: {0: 3},
-                                                            order: 'datetime asc'
-                                                        }
-                                                   }"
-                                                   section="news-items-{contentObjectData.uid}"
-                                                   class="nav-inline-link news-filter-link js-no-scroll">
-                                        <f:translate key="news.showEvents" extensionName="siteDefault" />
-                                    </f:link.action>
-                                </li>
-                            </ul>
+                                    <!-- Events -->
+                                    <li class="nav-inline-item news-filter-item {f:if(condition: '{overwriteDemand.types.0} == \'3\'', then: 'active')}">
+                                        <f:link.action action="list"
+                                                       arguments="{
+                                                            overwriteDemand: {
+                                                                types: {0: 3},
+                                                                order: 'datetime asc'
+                                                            }
+                                                       }"
+                                                       section="news-items-{contentObjectData.uid}"
+                                                       class="nav-inline-link news-filter-link js-no-scroll">
+                                            <f:translate key="news.showEvents" extensionName="siteDefault" />
+                                        </f:link.action>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </f:if>
 
             <div class="news-items" id="news-items-{contentObjectData.uid}">
                 <f:if condition="{settings.list.paginate.insertAbove}">
