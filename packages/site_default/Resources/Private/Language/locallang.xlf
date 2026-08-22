@@ -135,6 +135,9 @@
 			<trans-unit id="news.showEvents">
 				<source>Events</source>
 			</trans-unit>
+			<trans-unit id="news.not-found">
+				<source>Unfortunately, there are currently no matching entries. Please try again later!</source>
+			</trans-unit>
 
 
 			<trans-unit id="instagram.dateFormat">

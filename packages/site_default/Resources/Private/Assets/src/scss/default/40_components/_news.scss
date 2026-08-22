@@ -22,6 +22,7 @@
 
     &-group {
         padding-top: map-get($spacers, 10);
+        padding-bottom: map-get($spacers, 10);
         background-color: var(--news-items-group-color-surface-subtile);
 
         &.is-even {
