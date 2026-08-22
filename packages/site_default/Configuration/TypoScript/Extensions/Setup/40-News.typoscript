@@ -27,8 +27,8 @@ plugin.tx_news {
 	settings {
 
         cssFile >
-        startingpoint = 31,143
-        recursive = 1
+        startingpoint = 31,143,159
+        recursive = 3
         overrideFlexformSettingsIfEmpty := addToList(startingpoint,recursive)
         txMediaUtils.responsiveImages < lib.txMediaUtils.responsiveImages
 
