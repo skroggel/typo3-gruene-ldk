@@ -261,7 +261,7 @@ $font-formats: (
         'mobile': (
             'font-family': var(--font-family),
             'font-weight': var(--font-weight),
-            'font-size': rem-calc(16),
+            'font-size': rem-calc(18),
             'line-height': 150%,
             'letter-spacing': 0
         ),
@@ -275,7 +275,7 @@ $font-formats: (
         'desktop': (
             'font-family': var(--font-family),
             'font-weight': var(--font-weight),
-            'font-size': rem-calc(20),
+            'font-size': rem-calc(22),
             'line-height': 155%,
             'letter-spacing': 0
         )
