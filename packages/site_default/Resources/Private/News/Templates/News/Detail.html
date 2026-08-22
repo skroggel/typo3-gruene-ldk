@@ -37,15 +37,7 @@
             <f:render partial="Detail/Stage" arguments="{newsItem: newsItem, settings: settings.detail}" />
 
             <f:comment><!-- Tags --></f:comment>
-            <f:if condition="{newsItem.type} == '3'">
-                <f:then>
-                    <f:render partial="Detail/TagsEvent" arguments="{newsItem: newsItem, settings: settings.detail}" />
-                </f:then>
-                <f:else>
-                    <f:render partial="Detail/Tags" arguments="{newsItem: newsItem, settings: settings.detail}" />
-                </f:else>
-            </f:if>
-
+            <f:render partial="Detail/Tags" arguments="{newsItem: newsItem, settings: settings.detail}" />
 
             <div itemprop="articleBody" class="news-detail-body">
 

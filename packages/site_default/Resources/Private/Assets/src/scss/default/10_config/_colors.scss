@@ -81,6 +81,7 @@ $color-map: (
     --color-surface-default: #{map-get($color-map, 'white')};
     --color-surface-inverted: #{map-get($color-map, 'pine')};
     --color-surface-subtle: #{map-get($color-map, 'sand')};
+    --color-surface-subtle2: #{map-get($color-map, 'grey-400')};
     --color-surface-accent: #{map-get($color-map, 'sun')};
     --color-surface-strong: #{map-get($color-map, 'magenta')};
     --color-surface-dark: #{map-get($color-map, 'dark-grey')};

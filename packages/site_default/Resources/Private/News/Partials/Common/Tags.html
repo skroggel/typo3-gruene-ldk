@@ -2,7 +2,11 @@
       xmlns:madj2k="http://typo3.org/ns/Madj2k/SiteDefault/ViewHelpers/Format"
       data-namespace-typo3-fluid="true">
 
-   <div class="tag-list">
+    <f:if condition="!{variant}">
+        <f:variable name="variant" value="default" />
+    </f:if>
+
+    <div class="tag-list variant-{variant}">
         <f:spaceless>
             <span class="tag">
                 <span class="icon-calendar icon"></span><span><madj2k:timeRange
@@ -17,7 +21,7 @@
                     <span class="icon-location icon"></span><span>{newsItem.txSitedefaultLocation}</span>
                 </span>
             </f:if>
-            <f:if condition="{newsItem.categories}">
+            <f:if condition="{newsItem.categories} && {newsItem.type} != '3'">
                 <span class="tag">
                     <span class="icon-news icon"></span><span><f:render partial="Category/ItemsImploded"
                                                                        arguments="{categories:newsItem.categories, settings: customSettings}" /></span>
@@ -25,5 +29,4 @@
             </f:if>
         </f:spaceless>
     </div>
-
 </html>

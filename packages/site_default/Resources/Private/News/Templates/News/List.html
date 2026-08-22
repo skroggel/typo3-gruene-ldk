@@ -40,12 +40,13 @@
 
             <!-- If we need navigation buttons -->
             <f:if condition="{pagination.paginator.paginatedItems -> f:count() > 1}">
-                <div class="topic-slider-navigation mt-5 mb-2">
+
+                <div class="card-slider-navigation mt-5 mb-2">
                     <f:render partial="Utils/Cta"
                               arguments="{
                                     label: '{f:translate(key: \'label.nextTopic\', extensionName: \'SiteDefault\')}',
                                     type: 'inverted',
-                                    class: 'topic-slider-cta js-topic-slider-cta',
+                                    class: 'card-slider-cta js-card-slider-next',
                                     icon: 'reload',
                                     settings: settings.list._custom.topicSlider
                               }" />
@@ -92,14 +93,20 @@
 
             <!-- If we need navigation buttons -->
             <f:if condition="{settings.listPid}">
-                <div class="topic-slider-navigation mt-5 mb-2">
+
+                <div class="swiper-navigation">
+                    <div class="cta cta-icon-only cta-inverted cta-prev js-prev"></div>
+                    <div class="cta cta-icon-only cta-inverted cta-next js-next"></div>
+                </div>
+
+                <div class="card-slider-navigation mt-5 mb-2">
                     <f:render partial="Utils/Cta"
                               arguments="{
                                     link: '{f:uri.page(pageUid: settings.listPid)}',
                                     label: '{f:translate(key: \'label.showAll\', extensionName: \'SiteDefault\')}',
                                     type: 'inverted',
                                     icon: 'news',
-                                    class: 'topic-slider-cta',
+                                    class: 'card-slider-cta',
                                     settings: settings.list._custom.topicSlider
                               }" />
                 </div>

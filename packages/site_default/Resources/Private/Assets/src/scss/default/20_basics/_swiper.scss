@@ -46,5 +46,10 @@
                 @extend .icon-arrow-right;
             }
         }
+
+        @include media-breakpoint-down(lg) {
+            bottom: rem-calc($spacer);
+            transform: translateX(-50%);
+        }
     }
 }

@@ -58,6 +58,7 @@
 		"madj2k/t3-media-utils": "~14.3.0",
 		"madj2k/t3-klarokratie": "~14.3.0",
 		"madj2k/t3-typoscript-rendering": "~13.4.0",
+		"nitsan/ns-instagram": "~7.0.1",
 		"typo3/cms-backend": "^13.4.0",
 		"typo3/cms-belog": "^13.4.0",
 		"typo3/cms-beuser": "^13.4.0",

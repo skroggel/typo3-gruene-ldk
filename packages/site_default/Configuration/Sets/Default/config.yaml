@@ -7,6 +7,7 @@ dependencies:
   - typo3/seo-sitemap
   - georgringer/news
   - tpwd/ke_search
+  - nitsan/ns-instagram
   - madj2k/accelerator
   - madj2k/copyright-guardian
   - madj2k/dr-serp

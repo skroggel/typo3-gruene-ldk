@@ -61,8 +61,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
       // Navigation arrows
       navigation: {
-        nextEl: '.cta-next',
-        prevEl: '.cta-prev',
+        nextEl: '.js-next',
+        prevEl: '.js-prev',
         disabledClass: 'disabled'
       },
 
@@ -113,8 +113,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
       // Navigation arrows
       navigation: {
-        nextEl: '.cta-next',
-        prevEl: '.cta-prev',
+        nextEl: '.js-next',
+        prevEl: '.js-prev',
         disabledClass: 'disabled'
       },
 
@@ -129,10 +129,10 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  const slider3 = document.querySelector('.swiper.js-news-topic-slider');
+  const slider3 = document.querySelector('.swiper.js-card-slider');
   if (slider3) {
 
-    const swiper3 = new Swiper('.swiper.js-news-topic-slider', {
+    const swiper3 = new Swiper('.swiper.js-card-slider', {
       loop: slider3.classList.contains('js-loop'),
       autoplay: slider3.classList.contains('js-autoplay')
         ? {
@@ -140,7 +140,7 @@ window.addEventListener('DOMContentLoaded', () => {
           pauseOnMouseEnter: true
         }
         : false,
-      speed: 300,
+      speed: 500,
 
       effect: 'coverflow',
       grabCursor: true,
@@ -175,7 +175,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
       // Navigation arrows
       navigation: {
-        nextEl: '.js-topic-slider-cta',
+        nextEl: '.js-next',
+        prevEl: '.js-prev',
         disabledClass: 'disabled'
       },
 

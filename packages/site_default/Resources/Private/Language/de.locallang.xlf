@@ -177,6 +177,16 @@
 			</trans-unit>
 
 
+			<trans-unit id="instagram.dateFormat">
+				<source>d-m-Y</source>
+				<target>d.m.Y</target>
+			</trans-unit>
+			<trans-unit id="instagram.timeFormat">
+				<source>h:i A</source>
+				<target>H:i \U\h\r</target>
+			</trans-unit>
+
+
 			<trans-unit id="pagination.page">
 				<source>Page</source>
 				<target>Seite</target>
