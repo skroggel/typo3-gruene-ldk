@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3DataStructure>
+    <sDEF>
+        <ROOT>
+            <el>
+                <!-- Restriction of displayed types -->
+                <settings.eventRestriction>
+                    <label>LLL:EXT:site_default/Resources/Private/Language/locallang_be.xlf:flexforms_news.eventRestriction</label>
+                    <config>
+                        <type>select</type>
+                        <renderType>selectSingle</renderType>
+                        <size>1</size>
+                        <items>
+                            <numIndex index="0" type="array">
+                                <label>LLL:EXT:site_default/Resources/Private/Language/locallang_be.xlf:flexforms_news.eventRestriction.I.0</label>
+                                <value>0</value>
+                            </numIndex>
+                            <numIndex index="1" type="array">
+                                <label>LLL:EXT:site_default/Resources/Private/Language/locallang_be.xlf:flexforms_news.eventRestriction.I.1</label>
+                                <value>1</value>
+                            </numIndex>
+                            <numIndex index="2" type="array">
+                                <label>LLL:EXT:site_default/Resources/Private/Language/locallang_be.xlf:flexforms_news.eventRestriction.I.2</label>
+                                <value>2</value>
+                            </numIndex>
+                        </items>
+                        <default>0</default>
+                    </config>
+                </settings.eventRestriction>
+            </el>
+        </ROOT>
+    </sDEF>
+</T3DataStructure>

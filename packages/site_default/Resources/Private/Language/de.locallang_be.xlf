@@ -23,6 +23,22 @@
 			</trans-unit>
 
 
+			<trans-unit id="flexforms_news.eventRestriction">
+				<source>Display of events</source>
+				<target>Anzeige von Veranstaltungen</target>
+			</trans-unit>
+			<trans-unit id="flexforms_news.eventRestriction.I.0">
+				<source>Show all</source>
+				<target>Zeige alles</target>
+			</trans-unit>
+			<trans-unit id="flexforms_news.eventRestriction.I.1">
+				<source>Show no events</source>
+				<target>Zeige keine Veranstaltungen</target>
+			</trans-unit>
+			<trans-unit id="flexforms_news.eventRestriction.I.2">
+				<source>Show only events</source>
+				<target>Zeige nur Veranstaltungen</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

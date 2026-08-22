@@ -198,7 +198,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const scrolling = new Madj2kScrolling({
     anchorScrolling: {
       enabled: true,
-      selector: ['a[href^="#"]', 'a[href*="#"]'],
+      selector: ['a[href^="#"]:not(.pagination-link)', 'a[href*="#"]:not(.pagination-link)'],
       offsetSelector: null,
       disableSelector: '.js-no-scroll',
       collapsibleSelector: ['.collapse'],

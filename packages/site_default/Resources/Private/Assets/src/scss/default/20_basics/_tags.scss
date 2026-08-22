@@ -20,10 +20,11 @@
     flex-direction: column;
 
     color: var(--tag-list-color);
-    margin-bottom: rem-calc(map-get($spacers, 2));
+    margin-bottom: rem-calc(map-get($spacers, 4));
 
-    @include media-breakpoint-up(xl) {
+    @include media-breakpoint-up(xxl) {
         flex-direction: row;
+        margin-bottom: rem-calc(map-get($spacers, 2));
     }
 
     .tag,
@@ -39,7 +40,7 @@
                 padding-left: rem-calc(map-get($spacers, 3));
                 padding-right: rem-calc(map-get($spacers, 3));
                 display: none;
-                @include media-breakpoint-up(xl) {
+                @include media-breakpoint-up(xxl) {
                     display:inline;
                 }
             }

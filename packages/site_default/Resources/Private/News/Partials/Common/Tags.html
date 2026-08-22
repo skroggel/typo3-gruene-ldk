@@ -21,7 +21,7 @@
                     <span class="icon-location icon"></span><span>{newsItem.txSitedefaultLocation}</span>
                 </span>
             </f:if>
-            <f:if condition="{newsItem.categories} && {newsItem.type} != '3'">
+            <f:if condition="{newsItem.categories} && ({newsItem.type} != '3' || {variant} != 'big')">
                 <span class="tag">
                     <span class="icon-news icon"></span><span><f:render partial="Category/ItemsImploded"
                                                                        arguments="{categories:newsItem.categories, settings: customSettings}" /></span>
