@@ -19,6 +19,10 @@
 				<source>Contacts: Detail</source>
 				<target>Contacts: Detail</target>
 			</trans-unit>
+			<trans-unit id="plugin.tx_greenscontact_slider.title">
+				<source>Contacts: Slider</source>
+				<target>Contacts: Slider</target>
+			</trans-unit>
 
 
 			<!-- Flexform -->

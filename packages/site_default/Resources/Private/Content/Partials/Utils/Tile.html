@@ -17,7 +17,7 @@
 				<f:else>
                     <f:variable name="isLinked" value="true" />
                     <div class="tile {wrapClass}">
-						<f:link.typolink parameter="{link}" class="link-wrap">
+						<f:link.typolink parameter="{link}" target="{target}" class="link-wrap">
 							<f:render section="Inner" arguments="{_all}" />
 						</f:link.typolink>
 					</div>
@@ -38,8 +38,27 @@
 		<div class="tile-inner">
 
             <div class="tile-image">
-                <f:render partial="Utils/Media" arguments="{file: image, wrapClass: 'tile-image',
-                                                            settings: settings}" />
+                <f:if condition="{imageUrl}">
+                    <f:then>
+                        <figure class="img tile-image">
+                            <div class="img-inner">
+                                <picture>
+                                    <img src="{imageUrl}" alt="{imageAlt}" />
+                                </picture>
+                            </div>
+                        </figure>
+                    </f:then>
+                    <f:else>
+                        <f:render partial="Utils/Media" arguments="{file: image, wrapClass: 'tile-image',
+                                                                    settings: settings}" />
+                    </f:else>
+                </f:if>
+
+                <f:if condition="{mediaOverlay}">
+                    <div class="tile-image-overlay">
+                        <f:format.raw>{mediaOverlay}</f:format.raw>
+                    </div>
+                </f:if>
             </div>
 
 			<div class="tile-body">

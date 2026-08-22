@@ -6,7 +6,14 @@
         <div class="container-xxxl">
             <div class="row">
                 <div class="col-12">
-                    <f:render partial="Common/Tags" arguments="{newsItem: newsItem, settings: settings}" />
+                    <f:if condition="{newsItem.type} == '3'">
+                        <f:then>
+                            <f:render partial="Common/TagsEvent" arguments="{newsItem: newsItem, variant: 'big', settings: settings}" />
+                        </f:then>
+                        <f:else>
+                            <f:render partial="Common/Tags" arguments="{newsItem: newsItem, settings: settings}" />
+                        </f:else>
+                    </f:if>
                 </div>
             </div>
         </div>

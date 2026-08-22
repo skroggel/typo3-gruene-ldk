@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d721daf87c07f208e8d6aae6ffb430e5",
+    "content-hash": "db114fb0bb6a195000774ee496a5702f",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -2645,6 +2645,59 @@
                 "source": "https://github.com/nikic/PHP-Parser/tree/v5.8.0"
             },
             "time": "2026-07-04T14:30:18+00:00"
+        },
+        {
+            "name": "nitsan/ns-instagram",
+            "version": "7.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nitsan-technologies/ns_instagram.git",
+                "reference": "ab7a6851840dabf037dc9fcd577ff39c8fda0385"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nitsan-technologies/ns_instagram/zipball/ab7a6851840dabf037dc9fcd577ff39c8fda0385",
+                "reference": "ab7a6851840dabf037dc9fcd577ff39c8fda0385",
+                "shasum": ""
+            },
+            "require": {
+                "typo3/cms-core": "^8  || ^9 || ^10  || ^11 || ^12 || ^13 || ^14"
+            },
+            "replace": {
+                "typo3-ter/ns-instagram": "self.version"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "web-dir": ".Build/public",
+                    "extension-key": "ns_instagram",
+                    "cms-package-dir": "{$vendor-dir}/typo3/cms"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "NITSAN\\NsInstagram\\": "Classes"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "description": "TYPO3 Instagram Feed - The TYPO3 Instagram extension is a straightforward plugin that easily integrates to display your Instagram Feed. It offers clean, customizable, responsive feeds directly from your Instagram account. Showcase galleries, feeds, and photo tiles from multiple Instagram accounts in an appealing format.",
+            "homepage": "https://t3planet.com/typo3-instagram-extension",
+            "keywords": [
+                "TYPO3 CMS",
+                "gallery",
+                "instagram",
+                "nitsan",
+                "photos",
+                "t3terminal"
+            ],
+            "support": {
+                "issues": "https://github.com/nitsan-technologies/ns_instagram/issues",
+                "source": "https://github.com/nitsan-technologies/ns_instagram/tree/7.0.1"
+            },
+            "time": "2026-04-30T15:09:45+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",

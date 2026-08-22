@@ -39,8 +39,13 @@
 
         <f:comment><!-- We use a switch here because this way we can also handle icons --></f:comment>
         <f:switch expression="{type}">
+            <f:case value="icon-only">
+                <f:link.typolink parameter="{link}" class="cta cta-{type} {class}" title="{label}" target="{target}">
+                    <span class="cta-inner"><f:if condition="{iconPosition} == 'before'"><f:render section="Icon" arguments="{_all}" /></f:if><f:if condition="{iconPosition} == 'after'"><f:render section="Icon" arguments="{_all}" /></f:if></span>
+                </f:link.typolink>
+            </f:case>
             <f:defaultCase>
-                <f:link.typolink parameter="{link}" class="cta cta-{type} {class}" title="{label}">
+                <f:link.typolink parameter="{link}" class="cta cta-{type} {class}" title="{label}" target="{target}">
                     <span class="cta-inner"><f:if condition="{iconPosition} == 'before'"><f:render section="Icon" arguments="{_all}" /></f:if><span>{label}</span><f:if condition="{iconPosition} == 'after'"><f:render section="Icon" arguments="{_all}" /></f:if></span>
                 </f:link.typolink>
             </f:defaultCase>
@@ -53,8 +58,13 @@
 
         <f:comment><!-- We use a switch here because this way we can also handle icons --></f:comment>
         <f:switch expression="{type}">
+            <f:case value="icon-only">
+                <a href="{url}" class="cta cta-{type} {class}" title="{label}" target="{target}">
+                    <span class="cta-inner"><f:if condition="{iconPosition} == 'before'"><f:render section="Icon" arguments="{_all}" /></f:if><f:if condition="{iconPosition} == 'after'"><f:render section="Icon" arguments="{_all}" /></f:if></span>
+                </a>
+            </f:case>
             <f:defaultCase>
-                <a href="{url}" class="cta cta-{type} {class}" title="{label}">
+                <a href="{url}" class="cta cta-{type} {class}" title="{label}" target="{target}">
                     <span class="cta-inner"><f:if condition="{iconPosition} == 'before'"><f:render section="Icon" arguments="{_all}" /></f:if><span>{label}</span><f:if condition="{iconPosition} == 'after'"><f:render section="Icon" arguments="{_all}" /></f:if></span>
                 </a>
             </f:defaultCase>
@@ -68,6 +78,11 @@
 
         <f:comment><!-- We use a switch here because this way we can also handle icons --></f:comment>
         <f:switch expression="{type}">
+            <f:case value="icon-only">
+                <button tabindex="-1" class="cta cta-{type} {class}" title="{label}">
+                    <span class="cta-inner"><f:if condition="{iconPosition} == 'before'"><f:render section="Icon" arguments="{_all}" /></f:if><f:if condition="{iconPosition} == 'after'"><f:render section="Icon" arguments="{_all}" /></f:if></span>
+                </button>
+            </f:case>
             <f:defaultCase>
                 <button tabindex="-1" class="cta cta-{type} {class}" title="{label}">
                     <span class="cta-inner"><f:if condition="{iconPosition} == 'before'"><f:render section="Icon" arguments="{_all}" /></f:if><span>{label}</span><f:if condition="{iconPosition} == 'after'"><f:render section="Icon" arguments="{_all}" /></f:if></span>
@@ -75,6 +90,7 @@
             </f:defaultCase>
         </f:switch>
     </f:section>
+
 
     <f:comment><!-- ============================================================= --></f:comment>
     <f:section name="Icon"><f:spaceless><f:if condition="{iconType} == 'sprite'">

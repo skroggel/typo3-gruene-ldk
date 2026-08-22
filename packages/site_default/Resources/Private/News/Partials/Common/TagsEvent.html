@@ -2,7 +2,11 @@
       xmlns:madj2k="http://typo3.org/ns/Madj2k/SiteDefault/ViewHelpers/Format"
       data-namespace-typo3-fluid="true">
 
-   <div class="tag-list variant-big">
+    <f:if condition="!{variant}">
+        <f:variable name="variant" value="default" />
+    </f:if>
+
+   <div class="tag-list variant-{variant}">
         <f:spaceless>
             <span class="tag">
                 <span class="icon-calendar icon"></span><span><madj2k:timeRange

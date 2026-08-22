@@ -11,7 +11,17 @@ mod.wizards.newContentElement.wizardItems {
 	// removing elements that are only used in a container
 	default.removeItems := addToList(madj2k_linklistitem, madj2k_linklist, madj2k_accordionitem, madj2k_parallaxstackitem, madj2k_parallaxstackitemquote)
 
+    forms.removeItems = form_formframework, felogin_login
+
+    greens_contact.removeItems = greenscontact_list, greenscontact_slider, greenscontact_detail,
+
+    ke_search.removeItems = ke_search_pi1, ke_search_pi2, ke_search_pi3
+
+    Klarokratie.removeItems = klarokratie_trackingcode
+
 	news.removeItems = news_pi1, news_newsliststicky, news_newsdetail, news_categorylist
+
+    plugins.removeItems = greenscontact_list, greenscontact_slider, greenscontact_detail, nsinstagram_instagramfeeds
 
     special.removeItems = div
 }

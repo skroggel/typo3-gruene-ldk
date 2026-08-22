@@ -7,15 +7,15 @@
 
 			<!-- element -->
 			<trans-unit id="title">
-				<source>News and Topic Slider (Custom)</source>
+				<source>Instagram Slider (Custom)</source>
 			</trans-unit>
 			<trans-unit id="description">
-				<source>This element is a prominent topic card featuring an image, headline, short teaser text, and link. It highlights a key topic or “reason” and encourages users to explore further. The large image and concise message make it suitable for campaigns, topic hubs, or argument-driven pages.</source>
+				<source>This element prominently features selected Instagram posts, including their visual content and accompanying text. It brings social media content directly into the page and can be used to highlight current topics, campaigns, impressions, or community content in an engaging and authentic way.</source>
 			</trans-unit>
 
 
 			<!-- fields -->
-			<trans-unit id="plugin_news_slider.label">
+			<trans-unit id="plugin_instagram_slider.label">
 				<source>Plugin</source>
 			</trans-unit>
 		</body>

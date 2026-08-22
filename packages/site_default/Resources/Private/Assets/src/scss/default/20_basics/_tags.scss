@@ -17,8 +17,14 @@
 
     display: flex;
     gap: 0;
+    flex-direction: column;
+
     color: var(--tag-list-color);
     margin-bottom: rem-calc(map-get($spacers, 2));
+
+    @include media-breakpoint-up(xl) {
+        flex-direction: row;
+    }
 
     .tag,
     .tag:link,
@@ -32,6 +38,10 @@
                 content: '|';
                 padding-left: rem-calc(map-get($spacers, 3));
                 padding-right: rem-calc(map-get($spacers, 3));
+                display: none;
+                @include media-breakpoint-up(xl) {
+                    display:inline;
+                }
             }
         }
     }

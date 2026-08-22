@@ -136,14 +136,8 @@
             }
         }
 
-
         .swiper {
             .swiper-navigation {
-
-                @include media-breakpoint-down(lg) {
-                    bottom: rem-calc($spacer);
-                    transform: translateX(-50%);
-                }
 
                 .cta-prev,
                 .cta-next {
