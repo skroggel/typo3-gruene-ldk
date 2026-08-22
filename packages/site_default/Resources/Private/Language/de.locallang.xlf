@@ -175,6 +175,11 @@
 				<source>Events</source>
 				<target>Termine</target>
 			</trans-unit>
+			<trans-unit id="news.not-found">
+				<source>Unfortunately, there are currently no matching entries. Please try again later!</source>
+				<target>Leider gibt es derzeit keine passenden Eintäge. Bitte versuche es später noch mal!</target>
+			</trans-unit>
+
 
 
 			<trans-unit id="instagram.dateFormat">

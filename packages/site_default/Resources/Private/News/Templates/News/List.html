@@ -119,18 +119,14 @@
 
 	<f:section name="Default">
 
+        <f:if condition="{settings.templateLayout} != '3'">
+            <div class="news-filter page-padding" id="news-filter-{contentObjectData.uid}">
+                <div class="container-xxxl">
+                    <div class="row">
+                        <div class="col-12">
 
-		<!--TYPO3SEARCH_end-->
-		<f:if condition="{news}">
-
-            <f:if condition="{settings.templateLayout} != '3'">
-                <div class="news-filter page-padding" id="news-filter-{contentObjectData.uid}">
-                    <div class="container-xxxl">
-                        <div class="row">
-                            <div class="col-12">
-
-                                <ul class="nav-inline-list news-filter-list">
-                                    <f:comment><!-- Reset
+                            <ul class="nav-inline-list news-filter-list">
+                                <f:comment><!-- Reset
                                     <li class="nav-inline-item news-filter-item {f:if(condition: '{overwriteDemand.types.0} == \'\'', then: 'active')}">
                                         <f:link.action action="list"
                                                        arguments="{overwriteDemand: {types: {}}}"
@@ -140,94 +136,119 @@
                                         </f:link.action>
                                     </li>--></f:comment>
 
-                                    <!-- Default news -->
-                                    <li class="nav-inline-item news-filter-item {f:if(condition: '{overwriteDemand.types.0} == \'0\' || !{overwriteDemand.types.0}', then: 'active')}">
-                                        <f:link.action action="list"
-                                                       arguments="{
+                                <!-- Default news -->
+                                <li class="nav-inline-item news-filter-item {f:if(condition: '{overwriteDemand.types.0} == \'0\' || !{overwriteDemand.types.0}', then: 'active')}">
+                                    <f:link.action action="list"
+                                                   arguments="{
                                                             overwriteDemand: {
                                                                 types: {0: 0}
                                                             }
                                                        }"
-                                                       section="news-items-{contentObjectData.uid}"
-                                                       class="nav-inline-link news-filter-link js-no-scroll">
-                                            <f:translate key="news.showNews" extensionName="siteDefault" />
-                                        </f:link.action>
-                                    </li>
+                                                   section="news-items-{contentObjectData.uid}"
+                                                   class="nav-inline-link news-filter-link js-no-scroll">
+                                        <f:translate key="news.showNews" extensionName="siteDefault" />
+                                    </f:link.action>
+                                </li>
 
-                                    <!-- Events -->
-                                    <li class="nav-inline-item news-filter-item {f:if(condition: '{overwriteDemand.types.0} == \'3\'', then: 'active')}">
-                                        <f:link.action action="list"
-                                                       arguments="{
+                                <!-- Events -->
+                                <li class="nav-inline-item news-filter-item {f:if(condition: '{overwriteDemand.types.0} == \'3\'', then: 'active')}">
+                                    <f:link.action action="list"
+                                                   arguments="{
                                                             overwriteDemand: {
                                                                 types: {0: 3},
                                                                 order: 'datetime asc'
                                                             }
                                                        }"
-                                                       section="news-items-{contentObjectData.uid}"
-                                                       class="nav-inline-link news-filter-link js-no-scroll">
-                                            <f:translate key="news.showEvents" extensionName="siteDefault" />
-                                        </f:link.action>
-                                    </li>
-                                </ul>
-                            </div>
+                                                   section="news-items-{contentObjectData.uid}"
+                                                   class="nav-inline-link news-filter-link js-no-scroll">
+                                        <f:translate key="news.showEvents" extensionName="siteDefault" />
+                                    </f:link.action>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-            </f:if>
+            </div>
+        </f:if>
 
-            <div class="news-items" id="news-items-{contentObjectData.uid}">
-                <f:if condition="{settings.list.paginate.insertAbove}">
-                    <f:render partial="List/Pagination"
-                              arguments="{pagination: pagination.pagination, paginator: pagination.paginator,
-                                          contentObjectData: contentObjectData, settings: settings,
-                                          customSettings: settings.list._custom.listGrouped}" />
-                </f:if>
+		<!--TYPO3SEARCH_end-->
 
-                <f:for each="{siteDefault:news.groupByMonth(news:pagination.paginator.paginatedItems)}"
-                       as="group"
-                       iteration="iterator"
-                >
 
-                    <f:if condition="{group.isFirstOfYear}">
-                        <f:then>
-                            <f:variable name="formatedDate" ><siteDefault:format.localizedDate
-                                date="{group.date}"
-                                format="{f:translate(key:'news.headerDateFormatFirstOfYear', extensionName:'siteDefault')}" /></f:variable>
-                        </f:then>
-                        <f:else>
-                            <f:variable name="formatedDate" ><siteDefault:format.localizedDate
-                                date="{group.date}"
-                                format="{f:translate(key:'news.headerDateFormat', extensionName:'siteDefault')}" /></f:variable>
-                        </f:else>
+        <div class="news-items" id="news-items-{contentObjectData.uid}">
+
+            <f:if condition="{news}">
+                <f:then>
+
+                    <f:if condition="{settings.list.paginate.insertAbove}">
+                        <f:render partial="List/Pagination"
+                                  arguments="{pagination: pagination.pagination, paginator: pagination.paginator,
+                                              contentObjectData: contentObjectData, settings: settings,
+                                              customSettings: settings.list._custom.listGrouped}" />
                     </f:if>
 
-                    <div class="page-padding news-items-group{f:if(condition: iterator.isEven, then: ' is-even', else: ' is-odd')}">
+                    <f:for each="{siteDefault:news.groupByMonth(news:pagination.paginator.paginatedItems)}"
+                           as="group"
+                           iteration="iterator"
+                    >
+
+                        <f:if condition="{group.isFirstOfYear}">
+                            <f:then>
+                                <f:variable name="formatedDate" ><siteDefault:format.localizedDate
+                                    date="{group.date}"
+                                    format="{f:translate(key:'news.headerDateFormatFirstOfYear', extensionName:'siteDefault')}" /></f:variable>
+                            </f:then>
+                            <f:else>
+                                <f:variable name="formatedDate" ><siteDefault:format.localizedDate
+                                    date="{group.date}"
+                                    format="{f:translate(key:'news.headerDateFormat', extensionName:'siteDefault')}" /></f:variable>
+                            </f:else>
+                        </f:if>
+
+                        <div class="page-padding news-items-group{f:if(condition: iterator.isEven, then: ' is-even', else: ' is-odd')}">
+                            <div class="container-xxxl">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <f:render partial="Utils/Header"
+                                                  arguments="{header: formatedDate, wrapClass: 'news-items-header',
+                                                  settings: settings.list._custom.listGrouped}" />
+
+                                        <f:for each="{group.items}" as="newsItem">
+                                            <f:render partial="List/ListItem"
+                                                      arguments="{newsItem: newsItem, settings: settings, customSettings: settings.list._custom.listItem}" />
+                                        </f:for>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </f:for>
+
+                    <f:if condition="{settings.list.paginate.insertBelow}">
+                        <f:render partial="List/Pagination"
+                                  arguments="{pagination: pagination.pagination, paginator: pagination.paginator,
+                                              contentObjectData: contentObjectData, settings: settings,
+                                              customSettings: settings.list._custom.listGrouped}" />
+                    </f:if>
+
+                </f:then>
+
+                <f:else>
+
+                    <div class="page-padding news-items-group">
                         <div class="container-xxxl">
                             <div class="row">
                                 <div class="col-12">
-                                    <f:render partial="Utils/Header"
-                                              arguments="{header: formatedDate, wrapClass: 'news-items-header',
-                                              settings: settings.list._custom.listGrouped}" />
-
-                                    <f:for each="{group.items}" as="newsItem">
-                                        <f:render partial="List/ListItem"
-                                                  arguments="{newsItem: newsItem, settings: settings, customSettings: settings.list._custom.listItem}" />
-                                    </f:for>
+                                    <p class="alert alert-info">
+                                        <f:translate id="news.not-found" extensionName="siteDefault" />
+                                    </p>
                                 </div>
                             </div>
                         </div>
 
                     </div>
-                </f:for>
+                </f:else>
+            </f:if>
 
-                <f:if condition="{settings.list.paginate.insertBelow}">
-                    <f:render partial="List/Pagination"
-                              arguments="{pagination: pagination.pagination, paginator: pagination.paginator,
-                                          contentObjectData: contentObjectData, settings: settings,
-                                          customSettings: settings.list._custom.listGrouped}" />
-                </f:if>
-            </div>
-		</f:if>
+        </div>
 		<!--TYPO3SEARCH_begin-->
 	</f:section>
 
