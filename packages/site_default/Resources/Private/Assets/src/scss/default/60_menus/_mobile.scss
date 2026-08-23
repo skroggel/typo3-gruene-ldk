@@ -6,7 +6,7 @@
     --mobile-menu-color-link-active: var(--color-text-default);
     --mobile-menu-color-meta-link: var(--color-text-default);
 
-    left:rem-calc($spacer * -1);
+    left: rem-calc(map-get($spacers, 3) * -1);
 
     .nav-mobile-toggle {
         align-items: flex-start;
