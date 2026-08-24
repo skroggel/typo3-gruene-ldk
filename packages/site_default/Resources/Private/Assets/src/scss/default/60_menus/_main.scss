@@ -168,7 +168,7 @@
         }
 
         &-inner {
-            max-height: 100vh;
+            max-height: calc(100vh - 120px);
             overflow-y: auto;
             overflow-x: hidden;
         }
