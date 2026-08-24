@@ -1,6 +1,6 @@
 accelerator:
   htmlMinifier:
-    enable: 1
+    enable: 0
   pseudoCdn:
     enable: 0
   criticalCss:
@@ -10,7 +10,7 @@ acceleratorVariants:
     htmlMinifier:
       enable: 0
     condition: 'applicationContext == "Development/Local"'
-base: 'https://test.gruene-lahn-dill.de/'
+base: 'https://www.gruene-lahn-dill.de/'
 baseVariants:
   -
     base: 'https://gruene-ldk.ddev.site:8443/'
