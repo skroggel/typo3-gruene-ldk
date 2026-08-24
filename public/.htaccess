@@ -1,13 +1,3 @@
-<If "%{HTTP_HOST} == 'test.gruene-lahn-dill.de'">
-	AuthType Basic
-	AuthName "STAGING"
-	#We rely on this rule only being applied on staging, as it will break everywhere else
-	AuthUserFile /var/www/gruene-herborn.de/typo3/current/.htpasswd
-	Require valid-user
-</If>
-
-
-
 #####
 #
 # Example .htaccess file for TYPO3 CMS - for use with Apache Webserver
