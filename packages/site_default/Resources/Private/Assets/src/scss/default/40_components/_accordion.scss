@@ -10,5 +10,9 @@
             @include h4;
             color: var(--accordion-color-toggle);
         }
+
+        .toggle .toggle-icon {
+            width: auto;
+        }
     }
 }
