@@ -1,0 +1,4 @@
+name: madj2k/site-braunfels
+label: 'Site Package (Braunfels)'
+dependencies:
+  - madj2k/site-default

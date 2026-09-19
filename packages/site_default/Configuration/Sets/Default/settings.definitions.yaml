@@ -106,7 +106,7 @@ settings:
     label: 'Organization Name'
     category: siteDefault.schemaOrg
     type: string
-    default: 'GRÜNE Lahn-Dill'
+    default: 'DIE GRÜNEN Lahn-Dill'
 
   site.schemaOrg.sameAs:
     label: 'Schema.org sameAs URL'
@@ -118,7 +118,7 @@ settings:
     label: 'Startingpoint'
     category: siteDefault.news
     type: string
-    default: '31'
+    default: '31,99'
 
   site.greensContact.pages:
     label: 'Pages'
