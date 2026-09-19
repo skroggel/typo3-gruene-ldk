@@ -293,7 +293,7 @@ AddDefaultCharset utf-8
 
 	# Make sure we use the www-Subdomain
 	RewriteCond %{HTTP_HOST} !^gruene-ldk\.ddev\.site [NC]
-	RewriteCond %{HTTP_HOST} !^test\.gruene-lahn-dill\.de [NC]
+	RewriteCond %{HTTP_HOST} !^test\.gruene-braunfels\.de [NC]
 	RewriteCond %{HTTP_HOST} !^www\. [NC]
 	RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]
 
@@ -310,8 +310,8 @@ AddDefaultCharset utf-8
 	RewriteRule ^.*$ - [E=CWD:%2]
 
 	# Rules to set ApplicationContext based on hostname
-	# RewriteCond %{HTTP_HOST} ^test\.gruene-lahn-dill\.de$
-	# RewriteRule .? - [E=TYPO3_CONTEXT:Production/Staging]
+	RewriteCond %{HTTP_HOST} ^test\.gruene-braunfels\.de$
+	RewriteRule .? - [E=TYPO3_CONTEXT:Production/Staging]
 
     # remove trailing slash
 	RewriteCond %{REQUEST_METHOD} !POST

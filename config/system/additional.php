@@ -122,10 +122,22 @@ switch (\TYPO3\CMS\Core\Core\Environment::getContext()) {
         );
 
         break;
-    case 'Production\Staging':
+    case 'Production/Staging':
         $GLOBALS['TYPO3_CONF_VARS'] = array_replace_recursive(
             $GLOBALS['TYPO3_CONF_VARS'],
             [
+                'DB' => [
+                    'Connections' => [
+                        'Default' => [
+                            'dbname' => '###DB_NAME###',
+                            'driver' => 'mysqli',
+                            'host' => '###DB_HOST###',
+                            'password' => '###DB_PASSWORD###',
+                            'port' => '3306',
+                            'user' => '###DB_USER###',
+                        ],
+                    ],
+                ],
                 'FE' => [
                     'debug' => true,                            // If enabled, the total parse time of the page is added as HTTP response header
                 ],
