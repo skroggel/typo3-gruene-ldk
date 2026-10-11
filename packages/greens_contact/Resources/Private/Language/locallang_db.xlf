@@ -41,7 +41,7 @@
 				<source>Last Name</source>
 			</trans-unit>
 			<trans-unit id="tx_contact_domain_model_person.position" xml:space="preserve">
-				<source>Function (Please do not use any more. Use "Grouped Functions" instead)</source>
+				<source>Function (Better use "Grouped Functions" instead)</source>
 			</trans-unit>
 			<trans-unit id="tx_contact_domain_model_person.functions" xml:space="preserve">
 				<source>Grouped functions</source>

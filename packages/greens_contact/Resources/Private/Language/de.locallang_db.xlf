@@ -53,8 +53,8 @@
 				<target>Nachname</target>
 			</trans-unit>
 			<trans-unit id="tx_contact_domain_model_person.position" xml:space="preserve">
-				<source>Function (Please do not use any more. Use "Grouped Functions" instead)</source>
-				<target>Funktion (Bitte nicht mehr nutzen, statt dessen "Gruppierte Funktionen")</target>
+				<source>Function (Better use "Grouped Functions" instead)</source>
+				<target>Funktion (Besser "Gruppierte Funktionen" nutzen)</target>
 			</trans-unit>
 			<trans-unit id="tx_contact_domain_model_person.functions" xml:space="preserve">
 				<source>Grouped functions</source>
