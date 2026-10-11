@@ -17,6 +17,28 @@
                             <default>10</default>
                         </config>
                     </settings.limit>
+                    <settings.functionGroup>
+                        <label>LLL:EXT:greens_contact/Resources/Private/Language/locallang_be.xlf:flexform.functionGroup</label>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <foreign_table>tx_contact_domain_model_contactfunctiongroup</foreign_table>
+                            <foreign_table_where>
+                                AND tx_contact_domain_model_contactfunctiongroup.sys_language_uid IN (-1, ###REC_FIELD_sys_language_uid###)
+                                ORDER BY tx_contact_domain_model_contactfunctiongroup.sorting,
+                                         tx_contact_domain_model_contactfunctiongroup.title
+                            </foreign_table_where>
+                            <items>
+                                <numIndex index="0" type="array">
+                                    <label>LLL:EXT:greens_contact/Resources/Private/Language/locallang_be.xlf:flexform.functionGroup.none</label>
+                                    <value>0</value>
+                                </numIndex>
+                            </items>
+                            <minitems>0</minitems>
+                            <maxitems>1</maxitems>
+                            <default>0</default>
+                        </config>
+                    </settings.functionGroup>
                     <settings.persons>
                         <label>LLL:EXT:greens_contact/Resources/Private/Language/locallang_be.xlf:flexform.persons</label>
                         <config>

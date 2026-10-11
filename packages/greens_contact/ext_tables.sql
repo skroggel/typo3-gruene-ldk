@@ -28,3 +28,35 @@ CREATE TABLE tx_contact_domain_model_person
 	PRIMARY KEY (uid),
 	KEY               parent (pid)
 );
+
+#
+# Table structure for table 'tx_contact_domain_model_contactfunctiongroup'
+#
+CREATE TABLE tx_contact_domain_model_contactfunctiongroup
+(
+	uid               INT(11) NOT NULL AUTO_INCREMENT,
+	pid               INT(11) DEFAULT '0' NOT NULL,
+
+	title             VARCHAR(255) DEFAULT '' NOT NULL,
+
+	PRIMARY KEY (uid),
+	KEY               parent (pid)
+);
+
+#
+# Table structure for table 'tx_contact_domain_model_contactfunction'
+#
+CREATE TABLE tx_contact_domain_model_contactfunction
+(
+	uid               INT(11) NOT NULL AUTO_INCREMENT,
+	pid               INT(11) DEFAULT '0' NOT NULL,
+
+	person            INT(11) DEFAULT '0' NOT NULL,
+	function_group    INT(11) DEFAULT '0' NOT NULL,
+	position          TEXT,
+
+	PRIMARY KEY (uid),
+	KEY               parent (pid),
+	KEY               person (person),
+	KEY               function_group (function_group)
+);

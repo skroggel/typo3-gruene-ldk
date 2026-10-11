@@ -33,6 +33,7 @@ call_user_func(
 
         // make categories required
         $GLOBALS['TCA']['tx_news_domain_model_news']['columns']['categories']['config']['minitems'] = 1;
+        $GLOBALS['TCA']['tx_news_domain_model_news']['columns']['content_elements']['config']['minitems'] = 1;
 
         $GLOBALS['TCA']['tx_news_domain_model_news']['columns']['externalurl']['config'] = [
             'type' => 'link',
@@ -45,7 +46,7 @@ call_user_func(
             'columns' => [
                 'CType' => [
                     'config' => [
-                        'default' => 'madj2k_text'
+                        'default' => 'madj2k_text',
                     ]
                 ]
             ]
