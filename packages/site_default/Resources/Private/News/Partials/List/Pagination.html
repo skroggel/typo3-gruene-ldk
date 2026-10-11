@@ -11,7 +11,7 @@
                     <f:if condition="{pagination.previousPageNumber} && {pagination.previousPageNumber} >= {pagination.firstPageNumber}">
                         <f:then>
                             <a href="{f:uri.action(action:actionName, arguments:{currentPage: pagination.previousPageNumber}, addQueryString:1, section:'news-items-{contentObjectData.uid}')}"
-                               class="pagination-link pagination-prev"
+                               class="pagination-link pagination-prev js-no-scroll"
                                title="{f:translate(key:'pagination.previous', extensionName: 'siteDefault')}"></a>
                         </f:then>
                         <f:else>
@@ -37,7 +37,7 @@
                     >
                         <a href="{f:uri.action(action:actionName, arguments:{currentPage: page}, addQueryString:1, section:'news-items-{contentObjectData.uid}')}"
                            title="{f:translate(key: 'pagination.page', extensionName: 'siteDefault')} {page}"
-                           class="pagination-link"
+                           class="pagination-link js-no-scroll"
                         >
                             {page}
                         </a>
@@ -57,7 +57,7 @@
                     <f:then>
                             <a href="{f:uri.action(action:actionName, arguments:{currentPage: pagination.nextPageNumber},addQueryString:1, section:'news-items-{contentObjectData.uid}')}"
                                title="{f:translate(key:'pagination.next', extensionName: 'siteDefault')}"
-                               class="pagination-link pagination-next"
+                               class="pagination-link pagination-next js-no-scroll"
                             ></a>
                         </f:then>
                         <f:else>

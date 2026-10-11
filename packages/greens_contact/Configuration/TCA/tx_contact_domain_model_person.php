@@ -26,7 +26,7 @@ return [
     'types' => [
         '0' => [
             'showitem' => '
-                salutation, title, first_name, last_name, email, phone, position, category,
+                salutation, title, first_name, last_name, email, phone, position, functions, category,
                     --palette--;;palette_detail_link, sorting,
                 --div--;' . $ll . 'tx_contact_domain_model_person.tab.meta, job, topics, vita, political_vita, description,
                 --div--;' . $ll . 'tx_contact_domain_model_person.tab.media, image_small, image_big,
@@ -116,6 +116,26 @@ return [
                 'cols' => 40,
                 'rows' => 15,
                 'eval' => 'trim',
+            ],
+        ],
+        'functions' => [
+            'exclude' => false,
+            'label' => $ll . 'tx_contact_domain_model_person.functions',
+            'config' => [
+                'type' => 'inline',
+                'foreign_table' => 'tx_contact_domain_model_contactfunction',
+                'foreign_field' => 'person',
+                'foreign_sortby' => 'sorting',
+                'foreign_label' => 'position',
+                'maxitems' => 999,
+                'appearance' => [
+                    'collapseAll' => true,
+                    'newRecordLinkAddTitle' => true,
+                    'useSortable' => true,
+                ],
+                'behaviour' => [
+                    'enableCascadingDelete' => true,
+                ],
             ],
         ],
         'category' => [

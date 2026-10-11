@@ -25,6 +25,12 @@
 			<trans-unit id="flexform.limit">
 				<source>Items per Page</source>
 			</trans-unit>
+			<trans-unit id="flexform.functionGroup">
+				<source>Function group</source>
+			</trans-unit>
+			<trans-unit id="flexform.functionGroup.none">
+				<source>No function group (use default function)</source>
+			</trans-unit>
 			<trans-unit id="flexform.persons">
 				<source>Persons</source>
 			</trans-unit>

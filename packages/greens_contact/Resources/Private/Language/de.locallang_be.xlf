@@ -30,6 +30,14 @@
 				<source>Items per Page</source>
 				<target>Elemente je Seite</target>
 			</trans-unit>
+			<trans-unit id="flexform.functionGroup">
+				<source>Function group</source>
+				<target>Funktionsgruppe</target>
+			</trans-unit>
+			<trans-unit id="flexform.functionGroup.none">
+				<source>No function group (use default function)</source>
+				<target>Keine Funktionsgruppe (Standardfunktion verwenden)</target>
+			</trans-unit>
 			<trans-unit id="flexform.persons">
 				<source>Persons</source>
 				<target>Personen</target>

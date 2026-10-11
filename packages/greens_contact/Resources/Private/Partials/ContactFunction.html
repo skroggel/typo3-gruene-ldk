@@ -1,0 +1,19 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true"
+>
+    <f:if condition="{functionGroup}">
+        <f:for each="{person.functions}" as="function">
+            <f:if condition="{function.functionGroup.uid} == {functionGroup}">
+                <f:render partial="Utils/Subheader"
+                          arguments="{subheader: function.position, wrapClass: wrapClass,
+                                     settings: renderSettings}" />
+            </f:if>
+        </f:for>
+    </f:if>
+
+    <f:if condition="!{functionGroup}">
+        <f:render partial="Utils/Subheader"
+                  arguments="{subheader: person.position, wrapClass: wrapClass,
+                             settings: renderSettings}" />
+    </f:if>
+</html>
