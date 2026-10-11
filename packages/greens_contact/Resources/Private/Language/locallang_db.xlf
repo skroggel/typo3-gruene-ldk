@@ -41,8 +41,11 @@
 				<source>Last Name</source>
 			</trans-unit>
 			<trans-unit id="tx_contact_domain_model_person.position" xml:space="preserve">
-				<source>Function</source>
-´			</trans-unit>
+				<source>Function (Please do not use any more. Use "Grouped Functions" instead)</source>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_person.functions" xml:space="preserve">
+				<source>Grouped functions</source>
+			</trans-unit>
 			<trans-unit id="tx_contact_domain_model_person.job" xml:space="preserve">
 				<source>Job</source>
 			</trans-unit>
@@ -84,6 +87,31 @@
 			</trans-unit>
 			<trans-unit id="tx_contact_domain_model_person.sorting">
 				<source>Manual Sorting</source>
+			</trans-unit>
+
+
+			<trans-unit id="tx_contact_domain_model_contactfunctiongroup" xml:space="preserve">
+				<source>Function Group</source>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_contactfunctiongroup.title" xml:space="preserve">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_contactfunctiongroup.sorting" xml:space="preserve">
+				<source>Sorting</source>
+			</trans-unit>
+
+
+			<trans-unit id="tx_contact_domain_model_contactfunction" xml:space="preserve">
+				<source>Contact Function</source>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_contactfunction.position" xml:space="preserve">
+				<source>Function</source>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_contactfunction.function_group" xml:space="preserve">
+				<source>Function group</source>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_contactfunction.sorting" xml:space="preserve">
+				<source>Sorting</source>
 			</trans-unit>
 		</body>
 	</file>

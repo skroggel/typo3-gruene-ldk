@@ -75,6 +75,14 @@ class Person extends AbstractEntity
 
 
     /**
+     * Functions assigned to this person.
+     *
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Greens\Contact\Domain\Model\ContactFunction>
+     */
+    protected ObjectStorage $functions;
+
+
+    /**
      * Categories the person belongs to
      *
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\Category>
@@ -194,6 +202,7 @@ class Person extends AbstractEntity
     public function __construct()
     {
         $this->category = new ObjectStorage();
+        $this->functions = new ObjectStorage();
     }
 
 
@@ -347,6 +356,53 @@ class Person extends AbstractEntity
     public function setPosition(string $position): void
     {
         $this->position = $position;
+    }
+
+
+    /**
+     * Returns the grouped functions.
+     *
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Greens\Contact\Domain\Model\ContactFunction>
+     */
+    public function getFunctions(): ObjectStorage
+    {
+        return $this->functions;
+    }
+
+
+    /**
+     * Sets the grouped functions.
+     *
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Greens\Contact\Domain\Model\ContactFunction> $functions
+     * @return void
+     */
+    public function setFunctions(ObjectStorage $functions): void
+    {
+        $this->functions = $functions;
+    }
+
+
+    /**
+     * Adds a function to the contact.
+     *
+     * @param ContactFunction $function
+     * @return void
+     */
+    public function addFunction(ContactFunction $function): void
+    {
+        $this->functions->attach($function);
+    }
+
+
+    /**
+     * Removes a function from the contact.
+     *
+     * @param ContactFunction $function
+     * @return void
+     */
+    public function removeFunction(ContactFunction $function): void
+    {
+        $this->functions->detach($function);
     }
 
 

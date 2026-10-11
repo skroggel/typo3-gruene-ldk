@@ -153,8 +153,10 @@ class ContactIndexer extends IndexerBase
         $title = $this->cleanString(($record['title'] ? $record['title'] . ' ' : ''). $record['first_name'] . ' ' . $record['last_name']);
 
         $categories = implode(', ', $this->getCategoryTitlesForRecord($record));
+        $functions = implode(' ', $this->getFunctionPositionsForRecord((int)$record['uid']));
         $fullContent = $this->cleanString($categories . ' ' .
             $record['position'] . ' ' .
+            $functions . ' ' .
             $record['vita']
         );
 
@@ -170,6 +172,32 @@ class ContactIndexer extends IndexerBase
 
         $abstract = $fullContent;
         return [$title, $abstract, $fullContent, $params, $tags, $additionalFields];
+    }
+
+
+    /**
+     * Returns all grouped function texts assigned to a person.
+     *
+     * @param int $personUid
+     * @return string[]
+     * @throws \Doctrine\DBAL\Exception
+     */
+    protected function getFunctionPositionsForRecord(int $personUid): array
+    {
+        $queryBuilder = $this->createQueryBuilder();
+        $rows = $queryBuilder
+            ->select('position')
+            ->from('tx_contact_domain_model_contactfunction')
+            ->where(
+                $queryBuilder->expr()->eq(
+                    'person',
+                    $queryBuilder->createNamedParameter($personUid, ParameterType::INTEGER)
+                )
+            )
+            ->executeQuery()
+            ->fetchAllAssociative();
+
+        return array_column($rows, 'position');
     }
 
 

@@ -59,9 +59,9 @@
                       arguments="{header: person.combinedName, wrapClass: 'contact-slider-name',
                                  settings: settings}" />
 
-            <f:render partial="Utils/Subheader"
-                      arguments="{subheader: person.position, wrapClass: 'contact-slider-function',
-                                 settings: settings}" />
+            <f:render partial="ContactFunction"
+                      arguments="{person: person, functionGroup: settings.functionGroup,
+                                  wrapClass: 'contact-slider-function', renderSettings: settings}" />
 
             <f:if condition="{person.detailLink}">
 
@@ -119,9 +119,10 @@
                                   arguments="{header: person.combinedName, wrapClass: 'contact-modal-headline {f:if(condition: \'!{person.imageBig}\', then: \'mt-6 mt-md-0\')}',
                                              settings: settings.default}" />
 
-                        <f:render partial="Utils/Subheader"
-                                  arguments="{subheader: person.position, wrapClass: 'subtitle-h3 contact-modal-subheader',
-                                             settings: settings.default}" />
+                        <f:render partial="ContactFunction"
+                                  arguments="{person: person, functionGroup: settings.functionGroup,
+                                              wrapClass: 'subtitle-h3 contact-modal-subheader',
+                                              renderSettings: settings.default}" />
 
                         <f:if condition="{person.phone} || {person.email}">
                             <p class="paragraph-3 mt-2 mt-lg-4">

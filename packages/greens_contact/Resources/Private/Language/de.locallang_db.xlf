@@ -53,8 +53,12 @@
 				<target>Nachname</target>
 			</trans-unit>
 			<trans-unit id="tx_contact_domain_model_person.position" xml:space="preserve">
-				<source>Function</source>
-				<target>Funktion</target>
+				<source>Function (Please do not use any more. Use "Grouped Functions" instead)</source>
+				<target>Funktion (Bitte nicht mehr nutzen, statt dessen "Gruppierte Funktionen")</target>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_person.functions" xml:space="preserve">
+				<source>Grouped functions</source>
+				<target>Gruppierte Funktionen</target>
 			</trans-unit>
 			<trans-unit id="tx_contact_domain_model_person.job" xml:space="preserve">
 				<source>Job</source>
@@ -111,6 +115,40 @@
 			<trans-unit id="tx_contact_domain_model_person.sorting">
 				<source>Manual Sorting</source>
 				<target>Manuelle Sortierung</target>
+			</trans-unit>
+
+
+
+			<trans-unit id="tx_contact_domain_model_contactfunctiongroup" xml:space="preserve">
+				<source>Function Group</source>
+				<target>Funktionsgruppe</target>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_contactfunctiongroup.title" xml:space="preserve">
+				<source>Title</source>
+				<target>Bezeichnung</target>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_contactfunctiongroup.sorting" xml:space="preserve">
+				<source>Sorting</source>
+				<target>Sortierung</target>
+			</trans-unit>
+
+
+
+			<trans-unit id="tx_contact_domain_model_contactfunction" xml:space="preserve">
+				<source>Contact Function</source>
+				<target>Kontaktfunktion</target>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_contactfunction.position" xml:space="preserve">
+				<source>Function</source>
+				<target>Funktion</target>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_contactfunction.function_group" xml:space="preserve">
+				<source>Function group</source>
+				<target>Funktionsgruppe</target>
+			</trans-unit>
+			<trans-unit id="tx_contact_domain_model_contactfunction.sorting" xml:space="preserve">
+				<source>Sorting</source>
+				<target>Sortierung</target>
 			</trans-unit>
 		</body>
 	</file>
