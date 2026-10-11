@@ -19,6 +19,7 @@ return [
         'sortby' => 'sorting',
         'searchFields' => 'position',
         'iconfile' => 'EXT:greens_contact/Resources/Public/Icons/model-person.svg',
+        'hideTable' => true,
     ],
     'types' => [
         '0' => [
