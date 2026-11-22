@@ -32,6 +32,8 @@ hooks:
         - exec: cd /var/www/html/packages/site_braunfels/Resources/Private/Assets && pm2 start npm --name "site_braunfels" -- run watch
         - exec: cd /var/www/html/packages/site_herborn/Resources/Private/Assets && if [[ ! -d 'node_modules' ]]; then npm install; fi;
         - exec: cd /var/www/html/packages/site_herborn/Resources/Private/Assets && pm2 start npm --name "site_herborn" -- run watch
+        - exec: cd /var/www/html/packages/site_wetzlar/Resources/Private/Assets && if [[ ! -d 'node_modules' ]]; then npm install; fi;
+        - exec: cd /var/www/html/packages/site_wetzlar/Resources/Private/Assets && pm2 start npm --name "site_wetzlar" -- run watch
         - exec: cd /var/www/html/packages/site_politik_und_form/Resources/Private/Assets && if [[ ! -d 'node_modules' ]]; then npm install; fi;
         - exec: cd /var/www/html/packages/site_politik_und_form/Resources/Private/Assets && pm2 start npm --name "site_politik_und_form" -- run watch
 

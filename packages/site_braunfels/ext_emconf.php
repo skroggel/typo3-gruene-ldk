@@ -4,7 +4,7 @@
  * Extension Manager/Repository config file
  */
 $EM_CONF[$_EXTKEY] = [
-    'title' => 'Site-Package GRUENE Herborn',
+    'title' => 'Site-Package GRUENE Braunfels',
     'description' => '',
     'category' => 'templates',
     'constraints' => [
