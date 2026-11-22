@@ -1,4 +1,4 @@
-name: madj2k/site-wetzler
+name: madj2k/site-wetzlar
 label: 'Site Package (Wetzlar)'
 dependencies:
   - madj2k/site-default
