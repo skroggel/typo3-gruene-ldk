@@ -9,6 +9,7 @@ xdebug_enabled: false
 additional_hostnames:
   - gruene-braunfels
   - gruene-herborn
+  - gruene-wetzlar
   - politik-und-form
 additional_fqdns: []
 database:
