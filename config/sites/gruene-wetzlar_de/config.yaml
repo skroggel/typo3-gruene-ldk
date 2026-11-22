@@ -10,7 +10,7 @@ acceleratorVariants:
     htmlMinifier:
       enable: 0
     condition: 'applicationContext == "Development/Local"'
-base: 'https://www.gruene-wetzlar.de/'
+base: 'https://test.gruene-wetzlar.de/'
 baseVariants:
   -
     base: 'https://gruene-wetzlar.ddev.site:8443/'
