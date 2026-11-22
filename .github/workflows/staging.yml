@@ -66,6 +66,10 @@ jobs:
         working-directory: ./packages/site_herborn/Resources/Private/Assets
         run: npm run prod
 
+      - name: Build assets (CSS/JS)
+        working-directory: ./packages/site_wetzlar/Resources/Private/Assets
+        run: npm run prod
+
       - name: Install npm dependencies
         working-directory: ./packages/site_politik_und_form/Resources/Private/Assets
         run: npm ci
