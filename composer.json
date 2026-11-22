@@ -51,6 +51,7 @@
 		"madj2k/site-default": "@dev",
 		"madj2k/site-braunfels": "@dev",
 		"madj2k/site-herborn": "@dev",
+		"madj2k/site-wetzlar": "@dev",
 		"madj2k/site-politik-und-form": "@dev",
 		"madj2k/t3-accelerator": "~13.4.0",
 		"madj2k/t3-copyright-guardian": "~13.4.0",
